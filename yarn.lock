@@ -18,9 +18,77 @@
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/@std/esm/-/esm-0.19.2.tgz#36b1aab0d39bdf3d1f479cea4df5a2079610e15e"
 
-"@types/node@*":
+"@types/body-parser@*":
+  version "1.16.8"
+  resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.16.8.tgz#687ec34140624a3bec2b1a8ea9268478ae8f3be3"
+  dependencies:
+    "@types/express" "*"
+    "@types/node" "*"
+
+"@types/express-serve-static-core@*":
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.11.0.tgz#aaaf472777191c3e56ec7aa160034c6b55ebdd59"
+  dependencies:
+    "@types/node" "*"
+
+"@types/express@*", "@types/express@^4.11.0":
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.11.0.tgz#234d65280af917cb290634b7a8d6bcac24aecbad"
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/serve-static" "*"
+
+"@types/history@*":
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@types/history/-/history-4.6.2.tgz#12cfaba693ba20f114ed5765467ff25fdf67ddb0"
+
+"@types/mime@*":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
+
+"@types/node@*", "@types/node@^9.3.0":
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.3.0.tgz#3a129cda7c4e5df2409702626892cb4b96546dd5"
+
+"@types/react-dom@^16.0.3":
+  version "16.0.3"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.3.tgz#8accad7eabdab4cca3e1a56f5ccb57de2da0ff64"
+  dependencies:
+    "@types/node" "*"
+    "@types/react" "*"
+
+"@types/react-helmet@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.3.tgz#614e706cb73120936c7c067404809f8c2f1a840c"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-router-dom@^4.2.3":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.2.3.tgz#06e0b67ff536adc0681dffdbe592ae91fb85887d"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+    "@types/react-router" "*"
+
+"@types/react-router@*", "@types/react-router@^4.0.20":
+  version "4.0.20"
+  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.20.tgz#3404f54e44bba2239ea4320ea701d86d92f05486"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
+"@types/react@*", "@types/react@^16.0.34":
+  version "16.0.34"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.34.tgz#7a8f795afd8a404a9c4af9539b24c75d3996914e"
+
+"@types/serve-static@*":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.13.1.tgz#1d2801fa635d274cd97d4ec07e26b21b44127492"
+  dependencies:
+    "@types/express-serve-static-core" "*"
+    "@types/mime" "*"
 
 abab@^1.0.3:
   version "1.0.4"
@@ -1476,6 +1544,12 @@ commander@~2.12.1:
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.12.2.tgz#0f5946c427ed9ec0d91a46bb9def53e54650e555"
 
+comment-json@~1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/comment-json/-/comment-json-1.1.3.tgz#6986c3330fee0c4c9e00c2398cd61afa5d8f239e"
+  dependencies:
+    json-parser "^1.0.0"
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -2037,7 +2111,7 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
-enhanced-resolve@^3.4.0:
+enhanced-resolve@^3.0.0, enhanced-resolve@^3.4.0:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-3.4.1.tgz#0421e339fd71419b3da13d129b3979040230476e"
   dependencies:
@@ -2156,7 +2230,7 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-esprima@^2.6.0:
+esprima@^2.6.0, esprima@^2.7.0:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
 
@@ -2890,7 +2964,7 @@ home-or-tmp@^2.0.0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
 
-hops-build-config@9.5.0:
+hops-build-config@9.5.0, hops-build-config@^9.5.0:
   version "9.5.0"
   resolved "https://registry.yarnpkg.com/hops-build-config/-/hops-build-config-9.5.0.tgz#9e1548689711c3685dc7b56b85b9e1b008adb92b"
   dependencies:
@@ -2995,6 +3069,14 @@ hops-styled-components@./packages/hops-styled-components/:
   version "1.0.0"
   dependencies:
     "@std/esm" "^0.19.2"
+
+hops-typescript@./packages/hops-typescript/:
+  version "1.0.0"
+  dependencies:
+    hops-build-config "^9.5.0"
+    ts-loader "^3.2.0"
+    typescript "^2.6.2"
+    webpack-merge "^4.1.1"
 
 hops@9.6.0:
   version "9.6.0"
@@ -3855,6 +3937,12 @@ jsesc@~0.5.0:
 json-loader@^0.5.4, json-loader@^0.5.7:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.7.tgz#dca14a70235ff82f0ac9a3abeb60d337a365185d"
+
+json-parser@^1.0.0:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/json-parser/-/json-parser-1.1.5.tgz#e62ec5261d1a6a5fc20e812a320740c6d9005677"
+  dependencies:
+    esprima "^2.7.0"
 
 json-schema-traverse@^0.3.0:
   version "0.3.1"
@@ -5965,7 +6053,7 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.6.33"
 
-"semver@2 || 3 || 4 || 5", semver@^5.3.0:
+"semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.3.0:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
 
@@ -6582,6 +6670,25 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
+ts-config@^15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/ts-config/-/ts-config-15.0.0.tgz#83c9acfc662fc0ff633f0b027b2b3ae0f00b07ba"
+  dependencies:
+    comment-json "~1.1.3"
+
+ts-loader@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-3.2.0.tgz#23211922179b81f7448754b7fdfca45b8374a15a"
+  dependencies:
+    chalk "^2.3.0"
+    enhanced-resolve "^3.0.0"
+    loader-utils "^1.0.2"
+    semver "^5.0.1"
+
+tslib@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.8.1.tgz#6946af2d1d651a7b1863b531d6e5afa41aa44eac"
+
 tty-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
@@ -6612,6 +6719,22 @@ type-is@^1.6.14, type-is@~1.6.15:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typescript-styled-plugin@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/typescript-styled-plugin/-/typescript-styled-plugin-0.3.1.tgz#30396fb845103e20c20251b354b880f76979ec3e"
+  dependencies:
+    typescript-template-language-service-decorator "^1.1.0"
+    vscode-css-languageservice "^2.1.10"
+    vscode-languageserver-types "^3.4.0"
+
+typescript-template-language-service-decorator@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-1.1.0.tgz#0b3dacebc1442fea1e8288b0952ec01ba6bfa595"
+
+typescript@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
 
 ua-parser-js@^0.7.9:
   version "0.7.17"
@@ -6823,6 +6946,21 @@ vm-browserify@0.0.4:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
+
+vscode-css-languageservice@^2.1.10:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/vscode-css-languageservice/-/vscode-css-languageservice-2.1.11.tgz#051ad9681d50ceee5f83a20142c8c659a8011ede"
+  dependencies:
+    vscode-languageserver-types "^3.4.0"
+    vscode-nls "^2.0.1"
+
+vscode-languageserver-types@^3.4.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-3.5.0.tgz#e48d79962f0b8e02de955e3f524908e2b19c0374"
+
+vscode-nls@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/vscode-nls/-/vscode-nls-2.0.2.tgz#808522380844b8ad153499af5c3b03921aea02da"
 
 walker@~1.0.5:
   version "1.0.7"
