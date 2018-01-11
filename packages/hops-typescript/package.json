@@ -1,0 +1,12 @@
+{
+  "name": "hops-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "hops-build-config": "^9.5.0",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "webpack-merge": "^4.1.1"
+  }
+}
