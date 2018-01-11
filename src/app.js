@@ -1,12 +1,19 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 
-import { render, Miss, createContext } from 'hops-react';
+import { render, Miss } from 'hops-react';
+import { createContext } from 'hops-styled-components';
+import styled from 'styled-components';
 
 import { Home } from './home';
 
+const Root = styled.div`
+  text-align: center;
+  color: rebeccapurple;
+`;
+
 const App = () => (
-  <div>
+  <Root>
     <nav>
       <Link to="/">Home</Link>
     </nav>
@@ -14,7 +21,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Miss />
     </Switch>
-  </div>
+  </Root>
 );
 
 export default render(<App />, createContext());

@@ -17,12 +17,14 @@
   "dependencies": {
     "hops-express": "9.6.0",
     "hops-react": "9.5.0",
+    "hops-styled-components": "./packages/hops-styled-components/",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.2.0",
     "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^2.4.0"
   },
   "devDependencies": {
     "hops": "9.6.0",
