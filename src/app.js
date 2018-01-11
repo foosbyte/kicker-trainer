@@ -1,26 +1,20 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 
-import { render, Miss } from 'hops-react';
-import { createContext } from 'hops-redux';
+import { render, Miss, createContext } from 'hops-react';
 
 import { Home } from './home';
-import { Counter } from './counter';
-
-import reducers from './reducers';
 
 const App = () => (
   <div>
     <nav>
-      <Link to="/">Home</Link>&nbsp;
-      <Link to="/counter">Counter</Link>
+      <Link to="/">Home</Link>
     </nav>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/counter" component={Counter} />
       <Miss />
     </Switch>
   </div>
 );
 
-export default render(<App />, createContext({ reducers }));
+export default render(<App />, createContext());
