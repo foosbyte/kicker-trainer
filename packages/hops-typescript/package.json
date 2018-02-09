@@ -4,9 +4,9 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
-    "hops-build-config": "^9.5.0",
-    "ts-loader": "^3.2.0",
-    "typescript": "^2.6.2",
+    "hops-build-config": "^10.0.1",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.7.1",
     "webpack-merge": "^4.1.1"
   }
 }

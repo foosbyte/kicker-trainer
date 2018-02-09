@@ -5,12 +5,12 @@
   "module": "node.mjs",
   "browser": "browser.js",
   "peerDependencies": {
-    "hops-react": "^9.5.0",
+    "hops-react": "^10.0.1",
     "react": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "styled-components": "^2.4.0"
+    "styled-components": "^3.1.6"
   },
   "dependencies": {
-    "@std/esm": "^0.19.2"
+    "@std/esm": "^0.21.1"
   }
 }
