@@ -12,6 +12,11 @@ function getTypeStyle(props: LayoutProps): any {
       return css`
         flex-direction: ${props.type};
       `;
+    case 'centered-column':
+      return css`
+        flex-direction: column;
+        align-items: center;
+      `;
   }
 }
 
@@ -21,7 +26,7 @@ const LayoutWrapper = styled.div`
 `;
 
 export interface LayoutProps {
-  type: '2-columns' | 'column' | 'row';
+  type: 'centered-column' | '2-columns' | 'column' | 'row';
 }
 
 export class Layout extends React.PureComponent<LayoutProps> {

@@ -7,8 +7,7 @@ import { Layout } from '../components/layout';
 export class Profile extends React.PureComponent {
   public render(): JSX.Element {
     return (
-      <div>
-        <h1>profile</h1>
+      <Layout type="centered-column">
         <Avatar size="normal" />
         <Layout type="column">
           <Layout type="2-columns">
@@ -24,7 +23,7 @@ export class Profile extends React.PureComponent {
             <div>32 mins</div>
           </Layout>
         </Layout>
-      </div>
+      </Layout>
     );
   }
 }
