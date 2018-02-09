@@ -9,7 +9,8 @@
   "jsRules": {},
   "rules": {
     "prettier": true,
-    "typedef": [true, "call-signature", "property-declaration"]
+    "typedef": [true, "call-signature", "property-declaration"],
+    "max-classes-per-file": false
   },
   "rulesDirectory": []
 }
