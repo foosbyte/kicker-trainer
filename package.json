@@ -1,17 +1,34 @@
 {
   "name": "trainer",
   "version": "1.0.0",
+  "private": true,
   "main": "src/app.tsx",
   "license": "MIT",
+  "scripts": {
+    "start": "hops start",
+    "build": "hops build",
+    "test": "jest",
+    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "fmt": "prettier --write --ignore-path .gitignore 'src/**/*.{ts,tsx,json}'",
+    "precommit": "lint-staged"
+  },
   "hops": {
     "extends": "hops-typescript",
     "browsers": "last 1 Chrome versions",
     "locations": ["/"]
   },
-  "scripts": {
-    "start": "hops start",
-    "build": "hops build",
-    "test": "jest"
+  "lint-staged": {
+    "*.{ts,tsx,json,md}": [
+      "prettier --write --ignore-path .gitignore",
+      "git add"
+    ]
+  },
+  "jest": {
+    "preset": "jest-preset-hops"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
   },
   "dependencies": {
     "@types/express": "^4.11.1",
@@ -21,8 +38,8 @@
     "@types/react-helmet": "^5.0.3",
     "@types/react-router": "^4.0.21",
     "@types/react-router-dom": "^4.2.3",
-    "hops-express": "10.0.1",
-    "hops-react": "10.0.1",
+    "hops-express": "^10.0.1",
+    "hops-react": "^10.0.1",
     "hops-styled-components": "./packages/hops-styled-components/",
     "hops-typescript": "./packages/hops-typescript/",
     "prop-types": "^15.6.0",
@@ -37,14 +54,17 @@
     "typescript-styled-plugin": "^0.4.0"
   },
   "devDependencies": {
-    "hops": "10.0.0",
-    "hops-build": "10.0.1",
+    "hops": "^10.0.0",
+    "hops-build": "^10.0.1",
+    "husky": "^0.14.3",
     "jest": "^22.2.2",
-    "jest-preset-hops": "10.0.1",
-    "react-test-renderer": "^16.0.0"
-  },
-  "jest": {
-    "preset": "jest-preset-hops"
-  },
-  "private": true
+    "jest-preset-hops": "^10.0.1",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2",
+    "react-test-renderer": "^16.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.7.0",
+    "tslint-plugin-prettier": "^1.3.0",
+    "tslint-react": "^3.4.0"
+  }
 }
