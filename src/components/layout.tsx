@@ -11,6 +11,7 @@ function getTypeStyle(props: LayoutProps): any {
       return css`
         flex-direction: column;
         align-items: center;
+        flex-grow: 1;
       `;
     case 'content-bottom':
       return css`
