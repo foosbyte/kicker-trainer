@@ -5,7 +5,10 @@ import { Miss, render } from 'hops-react';
 import { createContext } from 'hops-styled-components';
 import styled from 'styled-components';
 
-import { Home } from './home';
+import { Categories } from './scenes/categories';
+import { Exercise } from './scenes/exercise';
+import { Exercises } from './scenes/exercises';
+import { Profile } from './scenes/profile';
 
 const Root = styled.div`
   text-align: center;
@@ -15,10 +18,18 @@ const Root = styled.div`
 const App = () => (
   <Root>
     <nav>
-      <Link to="/">Home</Link>
+      <Link to="/">Profile</Link>
+      <Link to="/categories">Categories</Link>
     </nav>
     <Switch>
-      <Route exact={true} path="/" component={Home} />
+      <Route exact={true} path="/" component={Profile} />
+      <Route exact={true} path="/categories" component={Categories} />
+      <Route exact={true} path="/exercises/:category" component={Exercises} />
+      <Route
+        exact={true}
+        path="/exercises/:category/:name"
+        component={Exercise}
+      />
       <Miss />
     </Switch>
   </Root>
