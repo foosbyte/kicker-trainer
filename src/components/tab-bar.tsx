@@ -27,6 +27,7 @@ const Link = styled(NavLink)`
   flex-grow: 1;
   padding: 12px;
   border-bottom: 4px none #8190a5;
+  text-align: center;
 `;
 
 export interface TabBarItemProps {
