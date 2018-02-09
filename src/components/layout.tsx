@@ -36,12 +36,17 @@ export interface LayoutProps {
     | 'equal-items'
     | 'content-bottom';
   direction: 'row' | 'column';
+  className?: string;
 }
 
 export class Layout extends React.PureComponent<LayoutProps> {
   public render(): JSX.Element {
     return (
-      <LayoutWrapper type={this.props.type} direction={this.props.direction}>
+      <LayoutWrapper
+        type={this.props.type}
+        direction={this.props.direction}
+        className={this.props.className}
+      >
         {this.getLayoutMarkup()}
       </LayoutWrapper>
     );
