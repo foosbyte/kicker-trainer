@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 function getTypeStyle(props: LayoutProps): any {
   switch (props.type) {
-    case '2-columns':
+    case 'items-left-right':
       return css`
         justify-content: space-between;
       `;
@@ -34,7 +34,12 @@ const GrowingContent = styled.div`
 `;
 
 export interface LayoutProps {
-  type: 'centered-column' | '2-columns' | 'column' | 'row' | 'content-bottom';
+  type:
+    | 'centered-column'
+    | 'items-left-right'
+    | 'column'
+    | 'row'
+    | 'content-bottom';
 }
 
 export class Layout extends React.PureComponent<LayoutProps> {

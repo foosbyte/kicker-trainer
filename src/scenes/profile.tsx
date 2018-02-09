@@ -11,15 +11,15 @@ export class Profile extends React.PureComponent {
         <Layout type="centered-column">
           <Avatar size="normal" />
           <Layout type="column">
-            <Layout type="2-columns">
+            <Layout type="items-left-right">
               <Badge>Slice</Badge>
               <div>38 mins</div>
             </Layout>
-            <Layout type="2-columns">
+            <Layout type="items-left-right">
               <Badge>Brush</Badge>
               <div>12 mins</div>
             </Layout>
-            <Layout type="2-columns">
+            <Layout type="items-left-right">
               <Badge>Bande</Badge>
               <div>32 mins</div>
             </Layout>
