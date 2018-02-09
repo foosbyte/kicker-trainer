@@ -15,8 +15,9 @@ const Root = styled.div`
   color: rebeccapurple;
 `;
 
-const App = () => (
+const App = (): JSX.Element => (
   <Root>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <nav>
       <Link to="/">Profile</Link>
       <Link to="/categories">Categories</Link>
