@@ -7,11 +7,6 @@ function getTypeStyle(props: LayoutProps): any {
       return css`
         justify-content: space-between;
       `;
-    case 'column':
-    case 'row':
-      return css`
-        flex-direction: ${props.type};
-      `;
     case 'centered-column':
       return css`
         flex-direction: column;
@@ -26,6 +21,7 @@ function getTypeStyle(props: LayoutProps): any {
 
 const LayoutWrapper = styled.div`
   display: flex;
+  flex-direction: ${(props: LayoutProps) => props.direction};
   ${(props: LayoutProps) => getTypeStyle(props)};
 `;
 
@@ -37,15 +33,15 @@ export interface LayoutProps {
   type:
     | 'centered-column'
     | 'items-left-right'
-    | 'column'
-    | 'row'
+    | 'equal-items'
     | 'content-bottom';
+  direction: 'row' | 'column';
 }
 
 export class Layout extends React.PureComponent<LayoutProps> {
   public render(): JSX.Element {
     return (
-      <LayoutWrapper type={this.props.type}>
+      <LayoutWrapper type={this.props.type} direction={this.props.direction}>
         {this.getLayoutMarkup()}
       </LayoutWrapper>
     );
@@ -61,6 +57,11 @@ export class Layout extends React.PureComponent<LayoutProps> {
             <div>{children[1]}</div>
           </>
         );
+      }
+      case 'equal-items': {
+        return React.Children.map(this.props.children, child => (
+          <GrowingContent>{child}</GrowingContent>
+        ));
       }
       default:
         return this.props.children;
