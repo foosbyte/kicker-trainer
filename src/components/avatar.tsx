@@ -10,7 +10,7 @@ export interface AvatarProps {
   size: 'normal';
 }
 
-export class Avatar extends React.Component<AvatarProps> {
+export class Avatar extends React.PureComponent<AvatarProps> {
   public render(): JSX.Element {
     return (
       <AvatarContainer>
