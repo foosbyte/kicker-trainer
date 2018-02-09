@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
-import { render, Miss } from 'hops-react';
+import { Miss, render } from 'hops-react';
 import { createContext } from 'hops-styled-components';
 import styled from 'styled-components';
 
@@ -18,7 +18,7 @@ const App = () => (
       <Link to="/">Home</Link>
     </nav>
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact={true} path="/" component={Home} />
       <Miss />
     </Switch>
   </Root>
