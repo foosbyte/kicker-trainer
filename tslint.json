@@ -10,7 +10,8 @@
   "rules": {
     "prettier": true,
     "typedef": [true, "call-signature", "property-declaration"],
-    "max-classes-per-file": false
+    "max-classes-per-file": false,
+    "interface-name": false
   },
   "rulesDirectory": []
 }
