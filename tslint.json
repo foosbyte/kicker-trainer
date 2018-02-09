@@ -8,7 +8,8 @@
   ],
   "jsRules": {},
   "rules": {
-    "prettier": true
+    "prettier": true,
+    "typedef": [true, "call-signature", "property-declaration"]
   },
   "rulesDirectory": []
 }
