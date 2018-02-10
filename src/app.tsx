@@ -5,9 +5,8 @@ import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import styled, { injectGlobal } from 'styled-components';
 
-import { Layout } from './components/layout';
 import { TabBar, TabBarItem } from './components/tab-bar';
-
+import { View } from './components/view';
 import { Categories } from './scenes/categories';
 import { Exercise } from './scenes/exercise';
 import { Exercises } from './scenes/exercises';
@@ -20,8 +19,10 @@ injectGlobal`
   }
 `;
 
-const Root = styled(Layout)`
+const Root = styled(View)`
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 const App = (): JSX.Element => (
@@ -29,7 +30,7 @@ const App = (): JSX.Element => (
     <Helmet>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Helmet>
-    <Root type="content-bottom" direction="column">
+    <Root>
       <Switch>
         <Route exact={true} path="/" component={Profile} />
         <Route exact={true} path="/categories" component={Categories} />
