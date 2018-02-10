@@ -26,7 +26,7 @@ const Link = styled(NavLink)`
   color: white;
   flex-grow: 1;
   padding: 12px;
-  border-bottom: 4px none #8190a5;
+  border-bottom: 4px solid transparent;
   text-align: center;
 `;
 
@@ -42,7 +42,7 @@ export class TabBarItem extends React.Component<TabBarItemProps> {
         to={this.props.to}
         exact
         activeStyle={{
-          borderBottomStyle: 'solid',
+          borderBottomColor: '#8190a5',
         }}
       >
         <Text>{this.props.title}</Text>
