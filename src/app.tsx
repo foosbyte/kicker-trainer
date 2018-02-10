@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import styled, { injectGlobal } from 'styled-components';
 
+import { ScrollContainer } from './components/scroll-container';
 import { TabBar, TabBarItem } from './components/tab-bar';
 import { View } from './components/view';
 import { Categories } from './scenes/categories';
@@ -26,8 +27,8 @@ const Root = styled(View)`
 `;
 
 const Content = styled(View)`
-  flex: 1 0 auto;
-  overflow: auto;
+  display: flex;
+  flex 1 0 0;
 `;
 
 const Nav = styled(View)`
@@ -41,21 +42,23 @@ const App = (): JSX.Element => (
     </Helmet>
     <Root>
       <Content>
-        <Switch>
-          <Route exact={true} path="/" component={Profile} />
-          <Route exact={true} path="/categories" component={Categories} />
-          <Route
-            exact={true}
-            path="/exercises/:category"
-            component={Exercises}
-          />
-          <Route
-            exact={true}
-            path="/exercises/:category/:name"
-            component={Exercise}
-          />
-          <Miss />
-        </Switch>
+        <ScrollContainer>
+          <Switch>
+            <Route exact={true} path="/" component={Profile} />
+            <Route exact={true} path="/categories" component={Categories} />
+            <Route
+              exact={true}
+              path="/exercises/:category"
+              component={Exercises}
+            />
+            <Route
+              exact={true}
+              path="/exercises/:category/:name"
+              component={Exercise}
+            />
+            <Miss />
+          </Switch>
+        </ScrollContainer>
       </Content>
       <Nav>
         <TabBar>
