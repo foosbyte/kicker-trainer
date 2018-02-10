@@ -11,7 +11,8 @@
     "prettier": true,
     "typedef": [true, "call-signature", "property-declaration"],
     "max-classes-per-file": false,
-    "interface-name": false
+    "interface-name": false,
+    "jsx-boolean-value": false
   },
   "rulesDirectory": []
 }

@@ -40,7 +40,7 @@ export class TabBarItem extends React.Component<TabBarItemProps> {
     return (
       <Link
         to={this.props.to}
-        exact={true}
+        exact
         activeStyle={{
           borderBottomStyle: 'solid',
         }}

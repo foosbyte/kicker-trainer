@@ -44,15 +44,11 @@ const App = (): JSX.Element => (
       <Content>
         <ScrollContainer>
           <Switch>
-            <Route exact={true} path="/" component={Profile} />
-            <Route exact={true} path="/categories" component={Categories} />
+            <Route exact path="/" component={Profile} />
+            <Route exact path="/categories" component={Categories} />
+            <Route exact path="/exercises/:category" component={Exercises} />
             <Route
-              exact={true}
-              path="/exercises/:category"
-              component={Exercises}
-            />
-            <Route
-              exact={true}
+              exact
               path="/exercises/:category/:name"
               component={Exercise}
             />
