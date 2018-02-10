@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import { Headline } from './headline';
 import { Image } from './image';
-import { Text } from './text';
 import { View } from './view';
 
 const CategoryWrapper = styled(View)`
@@ -17,7 +16,7 @@ const ImageTitleStack = styled(View)`
   width: 100%;
 `;
 
-const TitlePositioner = styled(Text)`
+const TitlePositioner = styled(View)`
   position: absolute;
   left: 10%;
   bottom: 20%;
