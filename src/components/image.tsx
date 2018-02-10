@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   position: relative;
   padding-bottom: ${({ width, height }: WrapperProps) =>
     height / width * 100 + '%'};
+  width: 100%;
 `;
 
 const Img = styled.img`
