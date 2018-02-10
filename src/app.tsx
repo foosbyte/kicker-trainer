@@ -12,6 +12,7 @@ import { Categories } from './scenes/categories';
 import { Exercise } from './scenes/exercise';
 import { Exercises } from './scenes/exercises';
 import { Profile } from './scenes/profile';
+import { theme } from './theme';
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
@@ -67,4 +68,9 @@ const App = (): JSX.Element => (
   </>
 );
 
-export default render(<App />, createContext());
+export default render(
+  <App />,
+  createContext({
+    theme,
+  }),
+);
