@@ -27,14 +27,14 @@ interface ExerciseProps {
 class Exercise extends React.PureComponent<ExerciseProps> {
   public render(): JSX.Element {
     return (
-      <ExerciseWrapper>
-        <Link to={this.props.to}>
+      <Link to={this.props.to}>
+        <ExerciseWrapper>
           <Text>{this.props.name}</Text>
           <ExerciseImage>
             <Image source={this.props.cover} width={180} height={90} />
           </ExerciseImage>
-        </Link>
-      </ExerciseWrapper>
+        </ExerciseWrapper>
+      </Link>
     );
   }
 }
