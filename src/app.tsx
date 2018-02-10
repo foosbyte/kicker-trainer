@@ -12,6 +12,7 @@ import { Categories } from './scenes/categories';
 import { Exercise } from './scenes/exercise';
 import { Exercises } from './scenes/exercises';
 import { Profile } from './scenes/profile';
+import { Stats } from './scenes/stats';
 import { theme } from './theme';
 
 // tslint:disable-next-line:no-unused-expression
@@ -53,6 +54,7 @@ const App = (): JSX.Element => (
               path="/exercises/:category/:name"
               component={Exercise}
             />
+            <Route exact path="/stats" component={Stats} />
             <Miss />
           </Switch>
         </ScrollContainer>
