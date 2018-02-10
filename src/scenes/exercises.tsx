@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Category } from '../components/category';
@@ -18,6 +19,7 @@ const ExerciseImage = styled(View)`
 `;
 
 interface ExerciseProps {
+  to: string;
   name: string;
   cover: string;
 }
@@ -26,10 +28,12 @@ class Exercise extends React.PureComponent<ExerciseProps> {
   public render(): JSX.Element {
     return (
       <ExerciseWrapper>
-        <Text>{this.props.name}</Text>
-        <ExerciseImage>
-          <Image source={this.props.cover} width={180} height={90} />
-        </ExerciseImage>
+        <Link to={this.props.to}>
+          <Text>{this.props.name}</Text>
+          <ExerciseImage>
+            <Image source={this.props.cover} width={180} height={90} />
+          </ExerciseImage>
+        </Link>
       </ExerciseWrapper>
     );
   }
@@ -62,18 +66,22 @@ export class Exercises extends React.PureComponent<ExercisesProps> {
           }
         />
         <Exercise
+          to="/exercises/3-bar/brush-oben"
           name="Brush oben"
           cover="https://dummyimage.com/180x90/000/fff"
         />
         <Exercise
+          to="/exercises/3-bar/brush-unten"
           name="Brush unten"
           cover="https://dummyimage.com/180x90/000/fff"
         />
         <Exercise
+          to="/exercises/3-bar/kantenpass"
           name="Kantenpass"
           cover="https://dummyimage.com/180x90/000/fff"
         />
         <Exercise
+          to="/exercises/3-bar/kantenpass"
           name="Kantenpass"
           cover="https://dummyimage.com/180x90/000/fff"
         />
