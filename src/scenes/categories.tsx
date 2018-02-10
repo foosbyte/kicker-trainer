@@ -1,20 +1,13 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
 import { Category } from '../components/category';
 import { Image } from '../components/image';
-import { View } from '../components/view';
-
-const CategoriesWrapper = styled(View)`
-  /* display: flex;
-  flex-grow: 1;
-  flex-direction: column; */
-`;
+import { Space } from '../components/space';
 
 export class Categories extends React.PureComponent {
   public render(): JSX.Element {
     return (
-      <CategoriesWrapper>
+      <Space between="s">
         <Category
           title="Create workout"
           image={this.getImage('https://dummyimage.com/320x148/755175/cacbdb')}
@@ -34,7 +27,7 @@ export class Categories extends React.PureComponent {
           title="3 Bar Excercises"
           image={this.getImage('https://dummyimage.com/320x148/755175/cacbdb')}
         />
-      </CategoriesWrapper>
+      </Space>
     );
   }
 

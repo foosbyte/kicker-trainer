@@ -2,6 +2,7 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { Space } from './space';
 import { Text } from './text';
 import { View } from './view';
 
@@ -25,7 +26,6 @@ const Link = styled(NavLink)`
   text-decoration: none;
   color: white;
   flex-grow: 1;
-  padding: 12px;
   border-bottom: 4px solid transparent;
   text-align: center;
 `;
@@ -45,7 +45,9 @@ export class TabBarItem extends React.Component<TabBarItemProps> {
           borderBottomColor: '#8190a5',
         }}
       >
-        <Text>{this.props.title}</Text>
+        <Space inset="m" squish>
+          <Text>{this.props.title}</Text>
+        </Space>
       </Link>
     );
   }
