@@ -25,28 +25,45 @@ const Root = styled(View)`
   flex-direction: column;
 `;
 
+const Content = styled(View)`
+  flex: 1 0 auto;
+  overflow: auto;
+`;
+
+const Nav = styled(View)`
+  flex: 0 0 auto;
+`;
+
 const App = (): JSX.Element => (
   <>
     <Helmet>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Helmet>
     <Root>
-      <Switch>
-        <Route exact={true} path="/" component={Profile} />
-        <Route exact={true} path="/categories" component={Categories} />
-        <Route exact={true} path="/exercises/:category" component={Exercises} />
-        <Route
-          exact={true}
-          path="/exercises/:category/:name"
-          component={Exercise}
-        />
-        <Miss />
-      </Switch>
-      <TabBar>
-        <TabBarItem title="Profile" to="/" />
-        <TabBarItem title="Categories" to="/categories" />
-        <TabBarItem title="Stats" to="/stats" />
-      </TabBar>
+      <Content>
+        <Switch>
+          <Route exact={true} path="/" component={Profile} />
+          <Route exact={true} path="/categories" component={Categories} />
+          <Route
+            exact={true}
+            path="/exercises/:category"
+            component={Exercises}
+          />
+          <Route
+            exact={true}
+            path="/exercises/:category/:name"
+            component={Exercise}
+          />
+          <Miss />
+        </Switch>
+      </Content>
+      <Nav>
+        <TabBar>
+          <TabBarItem title="Profile" to="/" />
+          <TabBarItem title="Categories" to="/categories" />
+          <TabBarItem title="Stats" to="/stats" />
+        </TabBar>
+      </Nav>
     </Root>
   </>
 );
