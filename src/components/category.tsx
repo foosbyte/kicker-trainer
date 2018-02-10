@@ -16,6 +16,11 @@ const ImageTitleStack = styled(View)`
   min-height: 400px;
 `;
 
+const StyledLink = styled(Link)`
+  display: block;
+  width: 100%;
+`;
+
 export interface CategoryProps {
   to?: string;
   title: string;
@@ -40,6 +45,6 @@ export class Category extends React.PureComponent<CategoryProps> {
     if (!this.props.to) {
       return component;
     }
-    return <Link to={this.props.to}>{component}</Link>;
+    return <StyledLink to={this.props.to}>{component}</StyledLink>;
   }
 }
