@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { Headline } from './headline';
 import { Image } from './image';
 import { Text } from './text';
 import { View } from './view';
@@ -20,7 +21,6 @@ const TitlePositioner = styled(Text)`
   position: absolute;
   left: 10%;
   bottom: 20%;
-  color: white;
   background-color: rgba(0, 0, 0, 0.29);
   box-shadow: 0px 0px 15px 12px rgba(0, 0, 0, 0.29);
 `;
@@ -43,7 +43,9 @@ export class Category extends React.PureComponent<CategoryProps> {
         {this.withLink(
           <ImageTitleStack>
             {this.props.image}
-            <TitlePositioner>{this.props.title}</TitlePositioner>
+            <TitlePositioner>
+              <Headline darkBackground>{this.props.title}</Headline>
+            </TitlePositioner>
           </ImageTitleStack>,
         )}
       </CategoryWrapper>
