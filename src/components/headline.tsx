@@ -15,6 +15,10 @@ export interface HeadlineProps {
 
 export class Headline extends React.Component<HeadlineProps> {
   public render(): JSX.Element {
-    return <HeadlineText>{this.props.children}</HeadlineText>;
+    return (
+      <HeadlineText darkBackground={this.props.darkBackground}>
+        {this.props.children}
+      </HeadlineText>
+    );
   }
 }
