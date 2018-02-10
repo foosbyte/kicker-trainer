@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Avatar } from '../components/avatar';
 import { Badge } from '../components/badge';
+import { Button } from '../components/button';
 import { View } from '../components/view';
 
 const ProfileWrapper = styled(View)`
@@ -39,6 +40,9 @@ export class Profile extends React.PureComponent {
           <Badge>Bande</Badge>
           <div>32 mins</div>
         </LeftRight>
+        <Centered>
+          <Button to="/categories">Start Training</Button>
+        </Centered>
       </ProfileWrapper>
     );
   }
