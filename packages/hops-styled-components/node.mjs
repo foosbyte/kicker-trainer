@@ -2,10 +2,15 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { combineContexts, ReactContext } from 'hops-react';
 import defaultTemplate from 'hops-react/lib/template';
-import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import {
+  ServerStyleSheet,
+  StyleSheetManager,
+  ThemeProvider,
+} from 'styled-components';
 
 export class StyledComponentsContext {
   constructor(options = {}) {
+    this.theme = options.theme || {};
     this.template = options.template || defaultTemplate;
     this.sheet = new ServerStyleSheet();
   }
@@ -14,7 +19,7 @@ export class StyledComponentsContext {
     return React.createElement(
       StyleSheetManager,
       { sheet: this.sheet.instance },
-      reactElement
+      React.createElement(ThemeProvider, { theme: this.theme }, reactElement),
     );
   }
 
@@ -30,5 +35,5 @@ export class StyledComponentsContext {
 export const contextDefinition = StyledComponentsContext;
 export const createContext = combineContexts(
   ReactContext,
-  StyledComponentsContext
+  StyledComponentsContext,
 );
