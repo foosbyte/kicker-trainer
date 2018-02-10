@@ -38,6 +38,7 @@
     "@types/react-helmet": "^5.0.3",
     "@types/react-router": "^4.0.21",
     "@types/react-router-dom": "^4.2.3",
+    "decko": "^1.2.0",
     "hops-express": "^10.0.1",
     "hops-react": "^10.0.1",
     "hops-styled-components": "./packages/hops-styled-components/",
