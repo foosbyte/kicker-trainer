@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Image } from './image';
+import { Text } from './text';
 import { View } from './view';
 
 const CategoryWrapper = styled(View)`
@@ -13,7 +14,15 @@ const CategoryWrapper = styled(View)`
 const ImageTitleStack = styled(View)`
   position: relative;
   width: 100%;
-  min-height: 400px;
+`;
+
+const TitlePositioner = styled(Text)`
+  position: absolute;
+  left: 10%;
+  bottom: 20%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 0px 15px 12px rgba(0, 0, 0, 0.29);
 `;
 
 const StyledLink = styled(Link)`
@@ -33,8 +42,8 @@ export class Category extends React.PureComponent<CategoryProps> {
       <CategoryWrapper>
         {this.withLink(
           <ImageTitleStack>
-            {this.props.children}
             {this.props.image}
+            <TitlePositioner>{this.props.title}</TitlePositioner>
           </ImageTitleStack>,
         )}
       </CategoryWrapper>
