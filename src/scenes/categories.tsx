@@ -1,27 +1,41 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import { Category } from '../components/category';
+import { Image } from '../components/image';
 import { View } from '../components/view';
 
 const CategoriesWrapper = styled(View)`
-  display: flex;
+  /* display: flex;
   flex-grow: 1;
-  flex-direction: column;
-`;
-
-const Category = styled(View)`
-  flex-grow: 1;
+  flex-direction: column; */
 `;
 
 export class Categories extends React.PureComponent {
   public render(): JSX.Element {
     return (
       <CategoriesWrapper>
-        <Category>Create workout</Category>
-        <Category>5 Bar Excercises</Category>
-        <Category>2 Bar Excercises</Category>
-        <Category>3 Bar Excercises</Category>
+        <Category
+          title="Create workout"
+          image={this.getImage('https://dummyimage.com/600x400/000/fff')}
+        />
+        <Category
+          title="5 Bar Excercises"
+          image={this.getImage('https://dummyimage.com/600x400/000/fff')}
+        />
+        <Category
+          title="2 Bar Excercises"
+          image={this.getImage('https://dummyimage.com/600x400/000/fff')}
+        />
+        <Category
+          title="3 Bar Excercises"
+          image={this.getImage('https://dummyimage.com/600x400/000/fff')}
+        />
       </CategoriesWrapper>
     );
+  }
+
+  private getImage(source: string): JSX.Element {
+    return <Image source={source} width={600} height={400} />;
   }
 }
