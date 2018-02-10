@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, match, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Category } from '../components/category';
@@ -19,15 +19,18 @@ const ExerciseImage = styled(View)`
 `;
 
 interface ExerciseProps {
+  match: match<any>;
+  location: any;
+  history: any;
   to: string;
   name: string;
   cover: string;
 }
 
-class Exercise extends React.PureComponent<ExerciseProps> {
+class RoutedExercise extends React.PureComponent<ExerciseProps> {
   public render(): JSX.Element {
     return (
-      <Link to={this.props.to}>
+      <Link to={`${this.props.match.url}/${this.props.to}`}>
         <ExerciseWrapper>
           <Text>{this.props.name}</Text>
           <ExerciseImage>
@@ -38,6 +41,8 @@ class Exercise extends React.PureComponent<ExerciseProps> {
     );
   }
 }
+
+const Exercise = withRouter(RoutedExercise);
 
 export interface ExercisesProps {
   match?: {
@@ -66,22 +71,22 @@ export class Exercises extends React.PureComponent<ExercisesProps> {
           }
         />
         <Exercise
-          to="/exercises/3-bar/brush-oben"
+          to="brush-oben"
           name="Brush oben"
           cover="https://dummyimage.com/180x90/000/fff"
         />
         <Exercise
-          to="/exercises/3-bar/brush-unten"
+          to="brush-unten"
           name="Brush unten"
           cover="https://dummyimage.com/180x90/000/fff"
         />
         <Exercise
-          to="/exercises/3-bar/kantenpass"
+          to="kantenpass"
           name="Kantenpass"
           cover="https://dummyimage.com/180x90/000/fff"
         />
         <Exercise
-          to="/exercises/3-bar/kantenpass"
+          to="kantenpass"
           name="Kantenpass"
           cover="https://dummyimage.com/180x90/000/fff"
         />
