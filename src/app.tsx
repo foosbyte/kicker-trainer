@@ -23,7 +23,9 @@ injectGlobal`
 `;
 
 const Root = styled(View)`
+  width: 100vw;
   height: 100vh;
+  position: fixed;
   display: flex;
   flex-direction: column;
 `;
