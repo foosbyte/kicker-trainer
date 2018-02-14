@@ -23,8 +23,8 @@ injectGlobal`
 `;
 
 const Root = styled(View)`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -43,6 +43,7 @@ const App = (): JSX.Element => (
   <>
     <Helmet>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="mobile-web-app-capable" content="yes" />
     </Helmet>
     <Root>
       <Content>
