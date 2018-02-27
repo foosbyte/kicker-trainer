@@ -10,7 +10,7 @@ declare module 'hops-styled-components/browser' {
     public options: Options & ReactOptions;
     public constructor(options?: Options & ReactOptions);
     public enhanceElement<P1, P2>(
-      reactElement: React.ReactElement<P1>
+      reactElement: React.ReactElement<P1>,
     ): Promise<React.ReactElement<P2>>;
   }
 }
@@ -23,7 +23,7 @@ declare module 'hops-styled-components/node' {
     public options: Options;
     public constructor(options?: Options);
     public enhanceElement<P1, P2>(
-      reactElement: React.ReactElement<P1>
+      reactElement: React.ReactElement<P1>,
     ): Promise<React.ReactElement<P2>>;
     public renderTemplate(templateData: TemplateData): string;
   }
@@ -32,11 +32,11 @@ declare module 'hops-styled-components/node' {
 declare module 'hops-styled-components' {
   import {
     Options as DomOptions,
-    StyledComponentsContext as DomContext
+    StyledComponentsContext as DomContext,
   } from 'hops-styled-components/browser';
   import {
     Options as NodeOptions,
-    StyledComponentsContext as NodeContext
+    StyledComponentsContext as NodeContext,
   } from 'hops-styled-components/node';
   import { Options as ReactOptions, ReactContext } from 'hops-react';
 

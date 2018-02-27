@@ -11,7 +11,7 @@ export class StyledComponentsContext {
     return React.createElement(
       ThemeProvider,
       { theme: this.theme },
-      reactElement
+      reactElement,
     );
   }
 }
@@ -19,5 +19,5 @@ export class StyledComponentsContext {
 export const contextDefinition = StyledComponentsContext;
 export const createContext = combineContexts(
   ReactContext,
-  StyledComponentsContext
+  StyledComponentsContext,
 );

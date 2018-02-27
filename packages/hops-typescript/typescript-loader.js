@@ -1,20 +1,24 @@
 module.exports = {
   resolve: {
-    extensions: [".ts", ".tsx"]
+    extensions: ['.ts', '.tsx'],
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: [
+        oneOf: [
           {
-            loader: require.resolve("ts-loader"),
-            options: {
-              configFile: "tsconfig.json"
-            }
-          }
-        ]
-      }
-    ]
-  }
+            test: /\.tsx?$/,
+            use: [
+              {
+                loader: require.resolve('ts-loader'),
+                options: {
+                  configFile: 'tsconfig.json',
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 };

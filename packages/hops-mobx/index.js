@@ -1,10 +1,10 @@
-const React = require("react");
-const hopsReact = require("hops-react");
-const mobxReact = require("mobx-react");
+const React = require('react');
+const hopsReact = require('hops-react');
+const mobxReact = require('mobx-react');
 
 const { Provider } = mobxReact;
 
-const INITIAL_STATE = "INITIAL_STATE";
+const INITIAL_STATE = 'INITIAL_STATE';
 
 class MobXContext {
   constructor(options = {}) {
@@ -29,7 +29,7 @@ class MobXContext {
     return ReactContext.createElement(
       Provider,
       this.getRootState(),
-      reactElement
+      reactElement,
     );
   }
 
@@ -38,9 +38,9 @@ class MobXContext {
       globals: (templateData.globals || []).concat([
         {
           name: INITIAL_STATE,
-          value: this.getRootState().toJS()
-        }
-      ])
+          value: this.getRootState().toJS(),
+        },
+      ]),
     });
   }
 }
@@ -49,5 +49,5 @@ exports.MobXContext = MobXContext;
 exports.contextDefinition = MobXContext;
 exports.createContext = hopsReact.combineContexts(
   hopsReact.ReactContext,
-  MobXContext
+  MobXContext,
 );

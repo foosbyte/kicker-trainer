@@ -1,7 +1,11 @@
-const baseHopsConfig = require("hops-build-config/configs/node");
-const merge = require("webpack-merge");
-const typeScriptLoader = require("./typescript-loader");
+const baseHopsConfig = require('hops-build-config/configs/node');
+const typeScriptLoader = require('./typescript-loader');
 
-module.exports = merge.strategy({
-  "module.rules": "prepend"
-})(baseHopsConfig, typeScriptLoader);
+baseHopsConfig.resolve.extensions = typeScriptLoader.resolve.extensions.concat(
+  baseHopsConfig.resolve.extensions,
+);
+baseHopsConfig.module.rules[0].oneOf.unshift(
+  typeScriptLoader.module.rules[0].oneOf[0],
+);
+
+module.exports = baseHopsConfig;

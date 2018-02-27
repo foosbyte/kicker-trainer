@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/ts-config/tsconfig.json",
+  "extends": "../node_modules/ts-config/tsconfig.json",
   "compilerOptions": {
     "target": "es2015",
     "module": "esnext",
@@ -10,7 +10,7 @@
     "rootDir": "./src",
     "declaration": false,
     "importHelpers": true,
-    "typeRoots": ["./node_modules/@types", "./typings"],
+    "typeRoots": ["../node_modules/@types", "./typings"],
     "strict": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
