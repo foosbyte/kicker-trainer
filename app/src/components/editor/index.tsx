@@ -31,9 +31,10 @@ export interface EditorProps {
 
 export class Editor extends React.PureComponent<EditorProps> {
   private canvas?: HTMLCanvasElement | null;
-  private playfield = new Image();
+  private playfield?: HTMLImageElement;
 
   public componentDidMount(): void {
+    this.playfield = new Image();
     this.playfield.onload = () => {
       this.forceUpdate();
     };
@@ -41,7 +42,7 @@ export class Editor extends React.PureComponent<EditorProps> {
   }
 
   public componentDidUpdate(): void {
-    if (this.canvas && this.playfield.src) {
+    if (this.canvas && this.playfield && this.playfield.src) {
       const ctx = this.canvas.getContext('2d');
       if (ctx) {
         ctx.drawImage(
