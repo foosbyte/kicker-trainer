@@ -7,9 +7,11 @@
     "app/"
   ],
   "scripts": {
+    "start": "cd app && yarn start",
+    "build": "cd app && yarn build",
+    "deploy": "cd app && yarn deploy",
     "fmt": "prettier --write '{app/src,packages}/**/*.{js,ts,tsx,json}'",
-    "precommit": "lint-staged",
-    "test": "echo 'no tests'; exit 0"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.{ts,tsx,json,md}": [

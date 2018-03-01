@@ -3,10 +3,13 @@ node_js: stable
 
 before_install: npm install -g yarn
 
+script: yarn build
+
 deploy:
   provider: script
   script:
-    - cd app && yarn build
+    - echo 'building'
+    - yarn build
     - cd app && yarn deploy
   skip_cleanup: true
   on:
