@@ -2,6 +2,8 @@ language: node_js
 
 deploy:
   provider: script
-  script: cd app && hops lambda deploy
+  script:
+    - cd app && yarn build
+    - cd app && yarn deploy
   on:
     branch: master

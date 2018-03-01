@@ -7,6 +7,7 @@
   "scripts": {
     "start": "hops start",
     "build": "hops build",
+    "deploy": "hops lambda deploy",
     "test": "jest",
     "lint": "tslint 'src/**/*.{ts,tsx}'"
   },
