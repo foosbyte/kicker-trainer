@@ -3,14 +3,9 @@ node_js: stable
 
 before_install: npm install -g yarn
 
-script: yarn build
+before_script: yarn build
+script: yarn deploy
 
-deploy:
-  provider: script
-  script:
-    - echo 'building'
-    - yarn build
-    - cd app && yarn deploy
-  skip_cleanup: true
-  on:
-    branch: master
+branches:
+  only:
+    - master
