@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "fmt": "prettier --write '{app/src,packages}/**/*.{js,ts,tsx,json}'",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test": "echo 'no tests'; exit 0"
   },
   "lint-staged": {
     "*.{ts,tsx,json,md}": [
