@@ -74,7 +74,7 @@ export class Exercise extends React.PureComponent<{}, ExerciseState> {
 
   private renderState(): JSX.Element {
     if (this.state.end) {
-      return this.renderFinished();
+      return this.renderPaused();
     } else if (this.state.start) {
       return this.renderActive();
     }
@@ -86,24 +86,35 @@ export class Exercise extends React.PureComponent<{}, ExerciseState> {
   }
 
   private renderActive(): JSX.Element {
+    return (
+      <>
+        <Button onPress={this.onStop}>Stop Timer</Button>
+        {this.renderTimer()}
+      </>
+    );
+  }
+
+  private renderTimer(): JSX.Element {
     const now = new Date().getTime();
     const diff = now - (this.state.start || now);
     const s = Math.floor(diff / 1000) % 60;
     const m = Math.floor(diff / 1000 / 60) % 60;
     const h = Math.floor(diff / 1000 / 60 / 60);
     return (
-      <>
-        <Button onPress={this.onStop}>Stop Timer</Button>
-        <div>
-          {h.toString().padStart(2, '0')}h {m.toString().padStart(2, '0')}m{' '}
-          {s.toString().padStart(2, '0')}s
-        </div>
-      </>
+      <div>
+        {h.toString().padStart(2, '0')}h {m.toString().padStart(2, '0')}m{' '}
+        {s.toString().padStart(2, '0')}s
+      </div>
     );
   }
 
-  private renderFinished(): JSX.Element {
-    return <Button onPress={this.reset}>Reset</Button>;
+  private renderPaused(): JSX.Element {
+    return (
+      <>
+        <Button onPress={this.restart}>Restart</Button>
+        {this.renderTimer()}
+      </>
+    );
   }
 
   @bind
@@ -127,10 +138,15 @@ export class Exercise extends React.PureComponent<{}, ExerciseState> {
   }
 
   @bind
-  private reset(): void {
-    this.setState({
-      end: undefined,
-      start: undefined,
-    });
+  private restart(): void {
+    this.setState(
+      {
+        end: undefined,
+        start: undefined,
+      },
+      () => {
+        this.onStart();
+      },
+    );
   }
 }
