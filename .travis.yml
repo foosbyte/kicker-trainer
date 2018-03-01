@@ -8,5 +8,6 @@ deploy:
   script:
     - cd app && yarn build
     - cd app && yarn deploy
+  skip_cleanup: true
   on:
     branch: master
