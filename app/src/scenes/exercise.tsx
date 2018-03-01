@@ -1,5 +1,7 @@
+import { bind } from 'decko';
 import * as React from 'react';
 import styled from 'styled-components';
+import { clearInterval, setInterval } from 'timers';
 
 import { Badge } from '../components/badge';
 import { Button } from '../components/button';
@@ -23,7 +25,26 @@ const LeftRight = styled(View)`
   justify-content: space-between;
 `;
 
-export class Exercise extends React.PureComponent {
+export interface ExerciseState {
+  start?: number;
+  end?: number;
+}
+
+export class Exercise extends React.PureComponent<{}, ExerciseState> {
+  private interval?: NodeJS.Timer;
+
+  constructor(props: {}) {
+    super(props);
+
+    this.state = {};
+  }
+
+  public componentWillUnmount(): void {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  }
+
   public render(): JSX.Element {
     return (
       <ExerciseWrapper>
@@ -46,8 +67,70 @@ export class Exercise extends React.PureComponent {
           <Text>Aktuelle Quote</Text>
           <Badge>64%</Badge>
         </LeftRight>
-        <Button>click</Button>
+        {this.renderState()}
       </ExerciseWrapper>
     );
+  }
+
+  private renderState(): JSX.Element {
+    if (this.state.end) {
+      return this.renderFinished();
+    } else if (this.state.start) {
+      return this.renderActive();
+    }
+    return this.renderInitial();
+  }
+
+  private renderInitial(): JSX.Element {
+    return <Button onPress={this.onStart}>Start Timer</Button>;
+  }
+
+  private renderActive(): JSX.Element {
+    const now = new Date().getTime();
+    const diff = now - (this.state.start || now);
+    const s = Math.floor(diff / 1000) % 60;
+    const m = Math.floor(diff / 1000 / 60) % 60;
+    const h = Math.floor(diff / 1000 / 60 / 60);
+    return (
+      <>
+        <Button onPress={this.onStop}>Stop Timer</Button>
+        <div>
+          {h.toString().padStart(2, '0')}h {m.toString().padStart(2, '0')}m{' '}
+          {s.toString().padStart(2, '0')}s
+        </div>
+      </>
+    );
+  }
+
+  private renderFinished(): JSX.Element {
+    return <Button onPress={this.reset}>Reset</Button>;
+  }
+
+  @bind
+  private onStart(): void {
+    this.setState({
+      start: new Date().getTime(),
+    });
+    this.interval = setInterval(() => {
+      this.forceUpdate();
+    }, 1000);
+  }
+
+  @bind
+  private onStop(): void {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+    this.setState({
+      end: new Date().getTime(),
+    });
+  }
+
+  @bind
+  private reset(): void {
+    this.setState({
+      end: undefined,
+      start: undefined,
+    });
   }
 }
