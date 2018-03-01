@@ -12,7 +12,8 @@
     "typedef": [true, "call-signature", "property-declaration"],
     "max-classes-per-file": false,
     "interface-name": false,
-    "jsx-boolean-value": false
+    "jsx-boolean-value": false,
+    "member-ordering": false
   },
   "rulesDirectory": []
 }
