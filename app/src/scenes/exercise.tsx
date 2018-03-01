@@ -5,7 +5,7 @@ import { clearInterval, setInterval } from 'timers';
 
 import { Badge } from '../components/badge';
 import { Button } from '../components/button';
-import { Image } from '../components/image';
+import { Editor } from '../components/editor';
 import { Text } from '../components/text';
 import { View } from '../components/view';
 
@@ -49,11 +49,7 @@ export class Exercise extends React.PureComponent<{}, ExerciseState> {
     return (
       <ExerciseWrapper>
         <ImageSizer>
-          <Image
-            source="https://dummyimage.com/600x400/755175/cacbdb"
-            width={600}
-            height={400}
-          />
+          <Editor width={300} height={200} />
         </ImageSizer>
         <LeftRight>
           <Text>Gesamt Trainingszeit</Text>
