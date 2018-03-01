@@ -1,3 +1,4 @@
+import installServiceWorker from 'hops-pwa';
 import { Miss, render } from 'hops-react';
 import { createContext } from 'hops-styled-components';
 import * as React from 'react';
@@ -8,6 +9,7 @@ import styled, { injectGlobal } from 'styled-components';
 import { ScrollContainer } from './components/scroll-container';
 import { TabBar, TabBarItem } from './components/tab-bar';
 import { View } from './components/view';
+import manifest from './manifest.webmanifest';
 import { Categories } from './scenes/categories';
 import { Exercise } from './scenes/exercise';
 import { Exercises } from './scenes/exercises';
@@ -21,6 +23,8 @@ injectGlobal`
     margin: 0;
   }
 `;
+
+installServiceWorker();
 
 const Root = styled(View)`
   width: 100%;
@@ -43,7 +47,8 @@ const App = (): JSX.Element => (
   <>
     <Helmet>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="mobile-web-app-capable" content="yes" />
+      <link rel="manifest" href={manifest} />
+      <meta name="theme-color" content="#000" />
     </Helmet>
     <Root>
       <Content>

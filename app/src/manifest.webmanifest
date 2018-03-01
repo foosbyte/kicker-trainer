@@ -1,0 +1,23 @@
+{
+  "name": "Foosball Trainer",
+  "short_name": "Kickercoach",
+  "description":
+    "An awesome application that helps you train and track your fooball skills.",
+  "lang": "en-US",
+  "start_url": "/trainer/",
+  "display": "standalone",
+  "background_color": "#00c846",
+  "theme_color": "#000",
+  "icons": [
+    {
+      "src": "./logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
