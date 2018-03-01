@@ -21,6 +21,7 @@
       "/"
     ],
     "aws": {
+      "region": "eu-central-1",
       "stageName": "trainer",
       "memorySize": 1024
     }
