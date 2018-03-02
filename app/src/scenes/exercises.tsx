@@ -9,6 +9,9 @@ import { Space } from '../components/space';
 import { Text } from '../components/text';
 import { View } from '../components/view';
 
+import placeholder180 from '../placeholder-180x90.png';
+import placeholder320 from '../placeholder-320x148.png';
+
 const ExerciseWrapper = styled(View)`
   display: flex;
   flex-direction: row;
@@ -64,34 +67,16 @@ export class Exercises extends React.PureComponent<ExercisesProps> {
         <Space between="m">
           <Category
             title="5 Bar Excercises"
-            image={
-              <Image
-                source="https://dummyimage.com/320x148/755175/cacbdb"
-                width={320}
-                height={148}
-              />
-            }
+            image={<Image source={placeholder320} width={320} height={148} />}
           />
-          <Exercise
-            to="brush-oben"
-            name="Brush oben"
-            cover="https://dummyimage.com/180x90/755175/cacbdb"
-          />
+          <Exercise to="brush-oben" name="Brush oben" cover={placeholder180} />
           <Exercise
             to="brush-unten"
             name="Brush unten"
-            cover="https://dummyimage.com/180x90/755175/cacbdb"
+            cover={placeholder180}
           />
-          <Exercise
-            to="kantenpass"
-            name="Kantenpass"
-            cover="https://dummyimage.com/180x90/755175/cacbdb"
-          />
-          <Exercise
-            to="kantenpass"
-            name="Kantenpass"
-            cover="https://dummyimage.com/180x90/755175/cacbdb"
-          />
+          <Exercise to="kantenpass" name="Kantenpass" cover={placeholder180} />
+          <Exercise to="kantenpass" name="Kantenpass" cover={placeholder180} />
         </Space>
       </ScrollContainer>
     );
