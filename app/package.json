@@ -18,15 +18,15 @@
     "workerFile": "./src/service-worker.js",
     "basePath": "trainer",
     "assetPath": "trainer/assets",
-    "domainName": "trainer.nerdlabs.it",
-    "certificateArn": "arn:aws:acm:us-east-1:440520855754:certificate/2fa97b22-2cb3-4050-9f1f-73b741959fdc",
     "locations": [
       "/"
     ],
     "aws": {
       "region": "eu-central-1",
       "stageName": "trainer",
-      "memorySize": 1024
+      "memorySize": 1024,
+      "domainName": "trainer.nerdlabs.it",
+      "certificateArn": "arn:aws:acm:us-east-1:440520855754:certificate/2fa97b22-2cb3-4050-9f1f-73b741959fdc"
     }
   },
   "jest": {
