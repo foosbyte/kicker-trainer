@@ -3156,9 +3156,9 @@ hops-lambda@^10.2.0-rc.3:
     resolve-tree "^0.1.13"
     serverless-http "^1.5.2"
 
-hops-pwa@^10.2.0-rc.0:
-  version "10.2.0-rc.0"
-  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-10.2.0-rc.0.tgz#941de70f5bf66eeee32c6bccd9b13d3d8dd1aaff"
+hops-pwa@^10.2.0-rc.4:
+  version "10.2.0-rc.4"
+  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-10.2.0-rc.4.tgz#615c7627bc89ab6d165d5f3cfa0bc267b947d485"
   dependencies:
     hops-config "10.2.0-rc.0"
 
