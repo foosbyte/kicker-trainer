@@ -1,5 +1,7 @@
+var workbox = require('workbox-sw');
+
 module.exports = function(assets) {
-  self.addEventListener('fetch', () => {
-    return undefined;
-  });
+  workbox.precaching.preacheAndRoute(assets.map(a => '/' + a));
+
+  workbox.routing.registerRoute();
 };
