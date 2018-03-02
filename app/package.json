@@ -19,7 +19,9 @@
     "workerPath": "sw.js",
     "assetPath": "assets",
     "locations": [
-      "/"
+      "/",
+      "/categories",
+      "/stats"
     ],
     "aws": {
       "region": "eu-central-1",
