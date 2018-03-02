@@ -4,7 +4,7 @@
   "description":
     "An awesome application that helps you train and track your fooball skills.",
   "lang": "en-US",
-  "start_url": "/trainer/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#00c846",
   "theme_color": "#000",
