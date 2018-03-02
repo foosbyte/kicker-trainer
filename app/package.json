@@ -16,8 +16,7 @@
     "browsers": "last 1 Chrome versions",
     "node": "6.10.3",
     "workerFile": "./src/service-worker.js",
-    "basePath": "trainer",
-    "assetPath": "trainer/assets",
+    "assetPath": "assets",
     "locations": [
       "/"
     ],
