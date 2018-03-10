@@ -51,6 +51,7 @@ export class Editor extends React.PureComponent<EditorProps> {
         .rotate(90)
         .translate(Editor.playfieldHeight / 2, Editor.playfieldWidth / 2);
       this.drawTable(this.ctx, tableMatrix);
+      this.drawBars(this.ctx, tableMatrix);
     }
   }
 
@@ -170,6 +171,78 @@ export class Editor extends React.PureComponent<EditorProps> {
 
     ctx.moveTo(center.x, center.y);
     ctx.arc(center.x, center.y, 5, 0, 360 * Math.PI / 180);
+  }
+
+  private drawBars(ctx: CanvasRenderingContext2D, mat: Matrix): void {
+    ctx.lineWidth = 15;
+    ctx.strokeStyle = 'silver';
+    ctx.beginPath();
+
+    // bottom 1 (offset 2,5cm)
+    let left = new Vector(
+      -Editor.playfieldWidth / 2,
+      Editor.playfieldHeight / 2 - 25,
+    ).mul(mat);
+    let right = new Vector(
+      Editor.playfieldWidth / 2,
+      Editor.playfieldHeight / 2 - 25,
+    ).mul(mat);
+    ctx.moveTo(left.x, left.y);
+    ctx.lineTo(right.x, right.y);
+
+    // bottom 2 (offset 17,5cm)
+    left = new Vector(
+      -Editor.playfieldWidth / 2,
+      Editor.playfieldHeight / 2 - 175,
+    ).mul(mat);
+    right = new Vector(
+      Editor.playfieldWidth / 2,
+      Editor.playfieldHeight / 2 - 175,
+    ).mul(mat);
+    ctx.moveTo(left.x, left.y);
+    ctx.lineTo(right.x, right.y);
+
+    // bottom 5 (offset 47,5cm)
+    left = new Vector(
+      -Editor.playfieldWidth / 2,
+      Editor.playfieldHeight / 2 - 475,
+    ).mul(mat);
+    right = new Vector(
+      Editor.playfieldWidth / 2,
+      Editor.playfieldHeight / 2 - 475,
+    ).mul(mat);
+    ctx.moveTo(left.x, left.y);
+    ctx.lineTo(right.x, right.y);
+
+    // bottom 3 (offsete 77,5cm)
+    left = new Vector(
+      -Editor.playfieldWidth / 2,
+      Editor.playfieldHeight / 2 - 775,
+    ).mul(mat);
+    right = new Vector(
+      Editor.playfieldWidth / 2,
+      Editor.playfieldHeight / 2 - 775,
+    ).mul(mat);
+    ctx.moveTo(left.x, left.y);
+    ctx.lineTo(right.x, right.y);
+
+    // top 1 (offset 2,5cm)
+    left = new Vector(
+      -Editor.playfieldWidth / 2,
+      -Editor.playfieldHeight / 2 + 25,
+    ).mul(mat);
+    right = new Vector(
+      Editor.playfieldWidth / 2,
+      -Editor.playfieldHeight / 2 + 25,
+    ).mul(mat);
+    ctx.moveTo(left.x, left.y);
+    ctx.lineTo(right.x, right.y);
+
+    // top 2
+    // top 5
+    // top 3
+
+    ctx.stroke();
   }
 
   public render(): JSX.Element {
