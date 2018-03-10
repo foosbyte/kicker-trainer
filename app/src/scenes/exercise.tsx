@@ -49,7 +49,7 @@ export class Exercise extends React.PureComponent<{}, ExerciseState> {
     return (
       <ExerciseWrapper>
         <ImageSizer>
-          <Editor width={300} height={200} />
+          <Editor width={1115} height={680} />
         </ImageSizer>
         <LeftRight>
           <Text>Gesamt Trainingszeit</Text>
