@@ -29,6 +29,18 @@ export interface EditorProps {
   height: number;
 }
 
+function drawLine(
+  ctx: CanvasRenderingContext2D,
+  mat: Matrix,
+  from: Vector,
+  to: Vector,
+): void {
+  const dFrom = from.mul(mat);
+  const dTo = to.mul(mat);
+  ctx.moveTo(dFrom.x, dFrom.y);
+  ctx.lineTo(dTo.x, dTo.y);
+}
+
 export class Editor extends React.PureComponent<EditorProps> {
   private static playfieldWidth = 680;
   private static playfieldHeight = 1115;
@@ -115,26 +127,24 @@ export class Editor extends React.PureComponent<EditorProps> {
     const circleHeight = 47;
 
     // goal box
-    const gtl = new Vector(-goalWidth / 2, 0).mul(mat);
-    const gbl = new Vector(-goalWidth / 2, goalHeight).mul(mat);
-    const gbr = new Vector(goalWidth / 2, goalHeight).mul(mat);
-    const gtr = new Vector(goalWidth / 2, 0).mul(mat);
-    ctx.moveTo(gtl.x, gtl.y);
-    ctx.lineTo(gbl.x, gbl.y);
-    ctx.lineTo(gbr.x, gbr.y);
-    ctx.lineTo(gtr.x, gtr.y);
+    const gtl = new Vector(-goalWidth / 2, 0);
+    const gbl = new Vector(-goalWidth / 2, goalHeight);
+    const gbr = new Vector(goalWidth / 2, goalHeight);
+    const gtr = new Vector(goalWidth / 2, 0);
+    drawLine(ctx, mat, gtl, gbl);
+    drawLine(ctx, mat, gbl, gbr);
+    drawLine(ctx, mat, gbr, gtr);
 
     // penalty box
     // width: 24 cm
     // height: 9,6 cm
-    const ptl = new Vector(-penaltyWidth / 2, 0).mul(mat);
-    const pbl = new Vector(-penaltyWidth / 2, penaltyHeight).mul(mat);
-    const pbr = new Vector(penaltyWidth / 2, penaltyHeight).mul(mat);
-    const ptr = new Vector(penaltyWidth / 2, 0).mul(mat);
-    ctx.moveTo(ptl.x, ptl.y);
-    ctx.lineTo(pbl.x, pbl.y);
-    ctx.lineTo(pbr.x, pbr.y);
-    ctx.lineTo(ptr.x, ptr.y);
+    const ptl = new Vector(-penaltyWidth / 2, 0);
+    const pbl = new Vector(-penaltyWidth / 2, penaltyHeight);
+    const pbr = new Vector(penaltyWidth / 2, penaltyHeight);
+    const ptr = new Vector(penaltyWidth / 2, 0);
+    drawLine(ctx, mat, ptl, pbl);
+    drawLine(ctx, mat, pbl, pbr);
+    drawLine(ctx, mat, pbr, ptr);
 
     // penalty circle
     // http://mathforum.org/library/drmath/view/55037.html
@@ -152,15 +162,13 @@ export class Editor extends React.PureComponent<EditorProps> {
   private drawHalfwayMarkers(ctx: CanvasRenderingContext2D, mat: Matrix): void {
     const radius = 205 / 2;
 
-    const leftSide = new Vector(-Editor.playfieldWidth / 2, 0).mul(mat);
-    const leftEnd = new Vector(0 - radius, 0).mul(mat);
-    ctx.moveTo(leftSide.x, leftSide.y);
-    ctx.lineTo(leftEnd.x, leftEnd.y);
+    const leftSide = new Vector(-Editor.playfieldWidth / 2, 0);
+    const leftEnd = new Vector(0 - radius, 0);
+    drawLine(ctx, mat, leftSide, leftEnd);
 
-    const rightSide = new Vector(Editor.playfieldWidth / 2, 0).mul(mat);
-    const rightEnd = new Vector(0 + radius, 0).mul(mat);
-    ctx.moveTo(rightSide.x, rightSide.y);
-    ctx.lineTo(rightEnd.x, rightEnd.y);
+    const rightSide = new Vector(Editor.playfieldWidth / 2, 0);
+    const rightEnd = new Vector(0 + radius, 0);
+    drawLine(ctx, mat, rightSide, rightEnd);
 
     const center = new Vector(0, 0).mul(mat);
     const start = new Vector(radius, 0).mul(mat);
@@ -178,69 +186,38 @@ export class Editor extends React.PureComponent<EditorProps> {
     ctx.strokeStyle = 'silver';
     ctx.beginPath();
 
-    // bottom 1 (offset 2,5cm)
-    let left = new Vector(
-      -Editor.playfieldWidth / 2,
-      Editor.playfieldHeight / 2 - 25,
-    ).mul(mat);
-    let right = new Vector(
-      Editor.playfieldWidth / 2,
-      Editor.playfieldHeight / 2 - 25,
-    ).mul(mat);
-    ctx.moveTo(left.x, left.y);
-    ctx.lineTo(right.x, right.y);
+    const bars = [
+      { players: 1, height: 25, maximumPullOut: 250, distanceBetween: 0 },
+      { players: 2, height: 175, maximumPullOut: 0, distanceBetween: 210 },
+      { players: 5, height: 475, maximumPullOut: 0, distanceBetween: 160 },
+      { players: 3, height: 775, maximumPullOut: 0, distanceBetween: 98 },
+    ];
 
-    // bottom 2 (offset 17,5cm)
-    left = new Vector(
-      -Editor.playfieldWidth / 2,
-      Editor.playfieldHeight / 2 - 175,
-    ).mul(mat);
-    right = new Vector(
-      Editor.playfieldWidth / 2,
-      Editor.playfieldHeight / 2 - 175,
-    ).mul(mat);
-    ctx.moveTo(left.x, left.y);
-    ctx.lineTo(right.x, right.y);
+    // bottom player
+    bars.forEach(bar => {
+      const left = new Vector(
+        -Editor.playfieldWidth / 2,
+        Editor.playfieldHeight / 2 - bar.height,
+      );
+      const right = new Vector(
+        Editor.playfieldWidth / 2,
+        Editor.playfieldHeight / 2 - bar.height,
+      );
+      drawLine(ctx, mat, left, right);
+    });
 
-    // bottom 5 (offset 47,5cm)
-    left = new Vector(
-      -Editor.playfieldWidth / 2,
-      Editor.playfieldHeight / 2 - 475,
-    ).mul(mat);
-    right = new Vector(
-      Editor.playfieldWidth / 2,
-      Editor.playfieldHeight / 2 - 475,
-    ).mul(mat);
-    ctx.moveTo(left.x, left.y);
-    ctx.lineTo(right.x, right.y);
-
-    // bottom 3 (offsete 77,5cm)
-    left = new Vector(
-      -Editor.playfieldWidth / 2,
-      Editor.playfieldHeight / 2 - 775,
-    ).mul(mat);
-    right = new Vector(
-      Editor.playfieldWidth / 2,
-      Editor.playfieldHeight / 2 - 775,
-    ).mul(mat);
-    ctx.moveTo(left.x, left.y);
-    ctx.lineTo(right.x, right.y);
-
-    // top 1 (offset 2,5cm)
-    left = new Vector(
-      -Editor.playfieldWidth / 2,
-      -Editor.playfieldHeight / 2 + 25,
-    ).mul(mat);
-    right = new Vector(
-      Editor.playfieldWidth / 2,
-      -Editor.playfieldHeight / 2 + 25,
-    ).mul(mat);
-    ctx.moveTo(left.x, left.y);
-    ctx.lineTo(right.x, right.y);
-
-    // top 2
-    // top 5
-    // top 3
+    // top player
+    bars.forEach(bar => {
+      const left = new Vector(
+        -Editor.playfieldWidth / 2,
+        -Editor.playfieldHeight / 2 + bar.height,
+      );
+      const right = new Vector(
+        Editor.playfieldWidth / 2,
+        -Editor.playfieldHeight / 2 + bar.height,
+      );
+      drawLine(ctx, mat, left, right);
+    });
 
     ctx.stroke();
   }
