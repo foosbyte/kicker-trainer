@@ -82,6 +82,7 @@ export class Editor extends React.PureComponent<EditorProps> {
     this.drawGrass(ctx, mat);
     ctx.lineWidth = 8;
     ctx.strokeStyle = '#fff';
+    ctx.lineCap = 'square';
     ctx.beginPath();
 
     const goalTopMatrix = Matrix.identity
