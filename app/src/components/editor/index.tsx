@@ -4,6 +4,20 @@ import styled from 'styled-components';
 
 import { Matrix, Vector } from './math';
 
+function drawLine(
+  ctx: CanvasRenderingContext2D,
+  mat: Matrix,
+  from: Vector,
+  to: Vector,
+): void {
+  const dFrom = from.mul(mat);
+  const dTo = to.mul(mat);
+  ctx.beginPath();
+  ctx.moveTo(dFrom.x, dFrom.y);
+  ctx.lineTo(dTo.x, dTo.y);
+  ctx.stroke();
+}
+
 interface WrapperProps {
   width: number;
   height: number;
@@ -27,20 +41,18 @@ const Canvas = styled.canvas`
 export interface EditorProps {
   width: number;
   height: number;
-}
-
-function drawLine(
-  ctx: CanvasRenderingContext2D,
-  mat: Matrix,
-  from: Vector,
-  to: Vector,
-): void {
-  const dFrom = from.mul(mat);
-  const dTo = to.mul(mat);
-  ctx.beginPath();
-  ctx.moveTo(dFrom.x, dFrom.y);
-  ctx.lineTo(dTo.x, dTo.y);
-  ctx.stroke();
+  blueBars: {
+    1: number;
+    2: number;
+    5: number;
+    3: number;
+  };
+  redBars: {
+    1: number;
+    2: number;
+    5: number;
+    3: number;
+  };
 }
 
 export class Editor extends React.PureComponent<EditorProps> {
@@ -194,18 +206,25 @@ export class Editor extends React.PureComponent<EditorProps> {
   }
 
   private drawBars(): void {
+    const playerWidth = 23;
+    const bars = [
+      { players: 1, height: 25, offset: 240, distanceBetween: 0, max: 0 },
+      { players: 2, height: 175, offset: 0, distanceBetween: 210, max: 0 },
+      { players: 5, height: 475, offset: 0, distanceBetween: 98, max: 0 },
+      { players: 3, height: 775, offset: 0, distanceBetween: 160, max: 0 },
+    ];
+    bars.forEach(bar => {
+      bar.max =
+        Editor.playfieldWidth -
+        bar.offset * 2 -
+        (bar.players * playerWidth + (bar.players - 1) * bar.distanceBetween);
+    });
+
     this.ctx.lineWidth = 15;
     this.ctx.strokeStyle = 'silver';
     this.ctx.beginPath();
 
-    const bars = [
-      { players: 1, height: 25, maximumPullOut: 250, distanceBetween: 0 },
-      { players: 2, height: 175, maximumPullOut: 0, distanceBetween: 210 },
-      { players: 5, height: 475, maximumPullOut: 0, distanceBetween: 98 },
-      { players: 3, height: 775, maximumPullOut: 0, distanceBetween: 160 },
-    ];
-
-    // bottom player
+    // blue player
     bars.forEach(bar => {
       const left = new Vector(
         -Editor.playfieldWidth / 2,
@@ -217,16 +236,21 @@ export class Editor extends React.PureComponent<EditorProps> {
       );
       drawLine(this.ctx, this.renderMatrix, left, right);
 
+      const propsPosition = this.props.blueBars[bar.players as 1 | 2 | 5 | 3];
+      const barPosition =
+        bar.offset + bar.max / 2 + bar.max / 2 * (propsPosition / 100);
+
       this.drawPlayers(
         left,
         bar.players,
-        bar.maximumPullOut,
+        barPosition,
         bar.distanceBetween,
+        playerWidth,
         '#00f',
       );
     });
 
-    // top player
+    // red player
     bars.forEach(bar => {
       const left = new Vector(
         -Editor.playfieldWidth / 2,
@@ -238,11 +262,19 @@ export class Editor extends React.PureComponent<EditorProps> {
       );
       drawLine(this.ctx, this.renderMatrix, left, right);
 
+      const propsPosition = Math.max(
+        -100,
+        Math.min(this.props.blueBars[bar.players as 1 | 2 | 5 | 3], 100),
+      );
+      const barPosition =
+        bar.offset + bar.max / 2 + bar.max / 2 * (propsPosition / 100);
+
       this.drawPlayers(
         left,
         bar.players,
-        bar.maximumPullOut,
+        barPosition,
         bar.distanceBetween,
+        playerWidth,
         '#f00',
       );
     });
@@ -255,12 +287,12 @@ export class Editor extends React.PureComponent<EditorProps> {
     players: number,
     maximumPullOut: number,
     distanceBetween: number,
+    playerWidth: number,
     color: string,
   ): void {
     this.ctx.save();
     this.ctx.fillStyle = color;
 
-    const playerWidth = 23;
     let position = left.add(new Vector(maximumPullOut, 20));
     for (let i = 0; i < players; i++) {
       this.drawPlayer(position, playerWidth);
