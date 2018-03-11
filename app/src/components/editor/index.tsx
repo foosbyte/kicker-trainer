@@ -37,8 +37,10 @@ function drawLine(
 ): void {
   const dFrom = from.mul(mat);
   const dTo = to.mul(mat);
+  ctx.beginPath();
   ctx.moveTo(dFrom.x, dFrom.y);
   ctx.lineTo(dTo.x, dTo.y);
+  ctx.stroke();
 }
 
 export class Editor extends React.PureComponent<EditorProps> {
@@ -155,8 +157,10 @@ export class Editor extends React.PureComponent<EditorProps> {
     const cc = new Vector(0, goalHeight - (cr - circleHeight)).mul(mat);
     const start = Math.atan2(c1.y - cc.y, c1.x - cc.x);
     const end = Math.atan2(c2.y - cc.y, c2.x - cc.x);
+    ctx.beginPath();
     ctx.moveTo(c1.x, c1.y);
     ctx.arc(cc.x, cc.y, cr, start, end, true);
+    ctx.stroke();
   }
 
   private drawHalfwayMarkers(ctx: CanvasRenderingContext2D, mat: Matrix): void {
@@ -173,12 +177,14 @@ export class Editor extends React.PureComponent<EditorProps> {
     const center = new Vector(0, 0).mul(mat);
     const start = new Vector(radius, 0).mul(mat);
 
+    ctx.beginPath();
     ctx.moveTo(start.x, start.y);
     const alpha = Math.atan2(mat.y0, mat.x0);
     ctx.arc(center.x, center.y, radius, alpha, alpha + 360 * Math.PI / 180);
 
     ctx.moveTo(center.x, center.y);
     ctx.arc(center.x, center.y, 5, 0, 360 * Math.PI / 180);
+    ctx.stroke();
   }
 
   private drawBars(ctx: CanvasRenderingContext2D, mat: Matrix): void {
@@ -189,8 +195,8 @@ export class Editor extends React.PureComponent<EditorProps> {
     const bars = [
       { players: 1, height: 25, maximumPullOut: 250, distanceBetween: 0 },
       { players: 2, height: 175, maximumPullOut: 0, distanceBetween: 210 },
-      { players: 5, height: 475, maximumPullOut: 0, distanceBetween: 160 },
-      { players: 3, height: 775, maximumPullOut: 0, distanceBetween: 98 },
+      { players: 5, height: 475, maximumPullOut: 0, distanceBetween: 98 },
+      { players: 3, height: 775, maximumPullOut: 0, distanceBetween: 160 },
     ];
 
     // bottom player
@@ -204,6 +210,16 @@ export class Editor extends React.PureComponent<EditorProps> {
         Editor.playfieldHeight / 2 - bar.height,
       );
       drawLine(ctx, mat, left, right);
+
+      this.drawPlayers(
+        ctx,
+        mat,
+        left,
+        bar.players,
+        bar.maximumPullOut,
+        bar.distanceBetween,
+        '#00f',
+      );
     });
 
     // top player
@@ -217,8 +233,53 @@ export class Editor extends React.PureComponent<EditorProps> {
         -Editor.playfieldHeight / 2 + bar.height,
       );
       drawLine(ctx, mat, left, right);
+
+      this.drawPlayers(
+        ctx,
+        mat,
+        left,
+        bar.players,
+        bar.maximumPullOut,
+        bar.distanceBetween,
+        '#f00',
+      );
     });
 
+    ctx.stroke();
+  }
+
+  private drawPlayers(
+    ctx: CanvasRenderingContext2D,
+    mat: Matrix,
+    left: Vector,
+    players: number,
+    maximumPullOut: number,
+    distanceBetween: number,
+    color: string,
+  ): void {
+    ctx.save();
+    ctx.fillStyle = color;
+
+    const playerWidth = 23;
+    let position = left.add(new Vector(maximumPullOut, 20));
+    for (let i = 0; i < players; i++) {
+      this.drawPlayer(ctx, mat, position, playerWidth);
+      position = position.add(new Vector(playerWidth + distanceBetween, 0));
+    }
+
+    ctx.restore();
+  }
+
+  private drawPlayer(
+    ctx: CanvasRenderingContext2D,
+    mat: Matrix,
+    position: Vector,
+    width: number,
+  ): void {
+    const dPosition = position.mul(mat);
+
+    ctx.beginPath();
+    ctx.fillRect(dPosition.x, dPosition.y, 45, width);
     ctx.stroke();
   }
 
