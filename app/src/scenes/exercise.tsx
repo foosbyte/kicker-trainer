@@ -10,6 +10,8 @@ import { Editor } from '../components/editor';
 import { Text } from '../components/text';
 import { View } from '../components/view';
 import { Exercise as ExerciseStore, State } from '../stores/exercise';
+import { Storage } from '../stores/storage';
+import { formatDuration } from '../utils';
 
 const ExerciseWrapper = styled(View)`
   display: flex;
@@ -29,9 +31,10 @@ const LeftRight = styled(View)`
 
 export interface ExerciseProps {
   exercise: ExerciseStore;
+  storage: Storage;
 }
 
-@inject('exercise')
+@inject('exercise', 'storage')
 @observer
 export class Exercise extends React.Component<
   ExerciseProps & RouteComponentProps<{ id: string }>
@@ -49,7 +52,11 @@ export class Exercise extends React.Component<
         </ImageSizer>
         <LeftRight>
           <Text>Gesamt Trainingszeit</Text>
-          <Badge>5 hr 18 min</Badge>
+          <Badge>
+            {formatDuration(
+              this.props.storage.totalTrainingTime(this.props.match.params.id)
+            )}
+          </Badge>
         </LeftRight>
         <LeftRight>
           <Text>Auslösen</Text>
@@ -80,21 +87,8 @@ export class Exercise extends React.Component<
       <>
         <Button onPress={this.onPause}>Pause</Button>
         <Button onPress={this.onStop}>Stop</Button>
-        {this.renderTimer()}
+        <div>{formatDuration(this.props.exercise.elapsedTime)}</div>
       </>
-    );
-  }
-
-  private renderTimer(): JSX.Element {
-    const diff = this.props.exercise.elapsedTime;
-    const s = Math.floor(diff / 1000) % 60;
-    const m = Math.floor(diff / 1000 / 60) % 60;
-    const h = Math.floor(diff / 1000 / 60 / 60);
-    return (
-      <div>
-        {h.toString().padStart(2, '0')}h {m.toString().padStart(2, '0')}m{' '}
-        {s.toString().padStart(2, '0')}s
-      </div>
     );
   }
 
