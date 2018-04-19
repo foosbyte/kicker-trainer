@@ -37,13 +37,20 @@ export class Storage {
     }
   }
 
-  public totalTrainingTime(id: Exercise['id']): number {
+  public exerciseTrainingTime(id: Exercise['id']): number {
     const exercise = this.exercises.find(e => e.id === id);
     if (!exercise) {
       return 0;
     }
     return exercise.trainings.reduce(
       (total, training) => total + training.duration,
+      0
+    );
+  }
+
+  public totalTrainingTime(): number {
+    return this.exercises.reduce(
+      (total, exercise) => total + this.exerciseTrainingTime(exercise.id),
       0
     );
   }

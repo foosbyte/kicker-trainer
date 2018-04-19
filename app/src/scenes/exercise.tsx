@@ -54,7 +54,9 @@ export class Exercise extends React.Component<
           <Text>Gesamt Trainingszeit</Text>
           <Badge>
             {formatDuration(
-              this.props.storage.totalTrainingTime(this.props.match.params.id)
+              this.props.storage.exerciseTrainingTime(
+                this.props.match.params.id
+              )
             )}
           </Badge>
         </LeftRight>
