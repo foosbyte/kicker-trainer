@@ -15,17 +15,17 @@ export class Categories extends React.PureComponent {
           image={this.getImage(placeholder320)}
         />
         <Category
-          to="/exercises/5-bar"
+          to="/exercises/5bar"
           title="5 Bar Excercises"
           image={this.getImage(placeholder320)}
         />
         <Category
-          to="/exercises/2-bar"
+          to="/exercises/2bar"
           title="2 Bar Excercises"
           image={this.getImage(placeholder320)}
         />
         <Category
-          to="/exercises/3-bar"
+          to="/exercises/3bar"
           title="3 Bar Excercises"
           image={this.getImage(placeholder320)}
         />

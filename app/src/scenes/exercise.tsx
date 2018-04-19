@@ -1,6 +1,7 @@
 import { bind } from 'decko';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Badge } from '../components/badge';
@@ -32,7 +33,9 @@ export interface ExerciseProps {
 
 @inject('exercise')
 @observer
-export class Exercise extends React.Component<ExerciseProps> {
+export class Exercise extends React.Component<
+  ExerciseProps & RouteComponentProps<{ id: string }>
+> {
   public render(): JSX.Element {
     return (
       <ExerciseWrapper>
@@ -97,7 +100,7 @@ export class Exercise extends React.Component<ExerciseProps> {
 
   @bind
   private onStart(): void {
-    this.props.exercise.start();
+    this.props.exercise.start(this.props.match.params.id);
   }
 
   @bind
