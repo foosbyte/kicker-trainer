@@ -1,13 +1,14 @@
 import { bind } from 'decko';
+import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import styled from 'styled-components';
-import { clearInterval, setInterval } from 'timers';
 
 import { Badge } from '../components/badge';
 import { Button } from '../components/button';
 import { Editor } from '../components/editor';
 import { Text } from '../components/text';
 import { View } from '../components/view';
+import { Exercise as ExerciseStore, State } from '../stores/exercise';
 
 const ExerciseWrapper = styled(View)`
   display: flex;
@@ -25,26 +26,13 @@ const LeftRight = styled(View)`
   justify-content: space-between;
 `;
 
-export interface ExerciseState {
-  start?: number;
-  end?: number;
+export interface ExerciseProps {
+  exercise: ExerciseStore;
 }
 
-export class Exercise extends React.PureComponent<{}, ExerciseState> {
-  private interval?: NodeJS.Timer;
-
-  constructor(props: {}) {
-    super(props);
-
-    this.state = {};
-  }
-
-  public componentWillUnmount(): void {
-    if (this.interval) {
-      clearInterval(this.interval);
-    }
-  }
-
+@inject('exercise')
+@observer
+export class Exercise extends React.Component<ExerciseProps> {
   public render(): JSX.Element {
     return (
       <ExerciseWrapper>
@@ -74,9 +62,7 @@ export class Exercise extends React.PureComponent<{}, ExerciseState> {
   }
 
   private renderState(): JSX.Element {
-    if (this.state.end) {
-      return this.renderPaused();
-    } else if (this.state.start) {
+    if (this.props.exercise.state !== State.NONE) {
       return this.renderActive();
     }
     return this.renderInitial();
@@ -89,15 +75,15 @@ export class Exercise extends React.PureComponent<{}, ExerciseState> {
   private renderActive(): JSX.Element {
     return (
       <>
-        <Button onPress={this.onStop}>Stop Timer</Button>
+        <Button onPress={this.onPause}>Pause</Button>
+        <Button onPress={this.onStop}>Stop</Button>
         {this.renderTimer()}
       </>
     );
   }
 
   private renderTimer(): JSX.Element {
-    const now = new Date().getTime();
-    const diff = now - (this.state.start || now);
+    const diff = this.props.exercise.elapsedTime;
     const s = Math.floor(diff / 1000) % 60;
     const m = Math.floor(diff / 1000 / 60) % 60;
     const h = Math.floor(diff / 1000 / 60 / 60);
@@ -109,45 +95,18 @@ export class Exercise extends React.PureComponent<{}, ExerciseState> {
     );
   }
 
-  private renderPaused(): JSX.Element {
-    return (
-      <>
-        <Button onPress={this.restart}>Restart</Button>
-        {this.renderTimer()}
-      </>
-    );
-  }
-
   @bind
   private onStart(): void {
-    this.setState({
-      start: new Date().getTime(),
-    });
-    this.interval = setInterval(() => {
-      this.forceUpdate();
-    }, 1000);
+    this.props.exercise.start();
   }
 
   @bind
   private onStop(): void {
-    if (this.interval) {
-      clearInterval(this.interval);
-    }
-    this.setState({
-      end: new Date().getTime(),
-    });
+    this.props.exercise.stop();
   }
 
   @bind
-  private restart(): void {
-    this.setState(
-      {
-        end: undefined,
-        start: undefined,
-      },
-      () => {
-        this.onStart();
-      }
-    );
+  private onPause(): void {
+    this.props.exercise.pause();
   }
 }

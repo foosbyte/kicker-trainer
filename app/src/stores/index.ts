@@ -1,3 +1,3 @@
-import { Store } from './store';
+import { Exercise } from './exercise';
 
-export const store = new Store();
+export const exercise = new Exercise();

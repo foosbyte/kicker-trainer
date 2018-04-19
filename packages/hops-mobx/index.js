@@ -1,6 +1,11 @@
 const React = require('react');
 const hopsReact = require('hops-react');
+const { configure } = require('mobx');
 const mobxReact = require('mobx-react');
+
+configure({
+  enforceActions: 'strict',
+});
 
 const { Provider } = mobxReact;
 

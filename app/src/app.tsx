@@ -5,7 +5,7 @@ import { StyledComponentsContext } from 'hops-styled-components';
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import styled, { injectGlobal } from 'styled-components';
 
 import { ScrollContainer } from './components/scroll-container';
@@ -52,9 +52,10 @@ const Nav = styled(View)`
   flex: 0 0 auto;
 `;
 
+@withRouter
 @observer
-class App extends React.Component {
-  public render(): JSX.Element {
+class App extends React.Component<any> {
+  public render(): any {
     return (
       <>
         <Helmet>
