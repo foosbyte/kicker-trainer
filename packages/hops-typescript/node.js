@@ -8,4 +8,6 @@ baseHopsConfig.module.rules[0].oneOf.unshift(
   typeScriptLoader.module.rules[0].oneOf[0]
 );
 
+baseHopsConfig.externals.unshift('mobx');
+
 module.exports = baseHopsConfig;

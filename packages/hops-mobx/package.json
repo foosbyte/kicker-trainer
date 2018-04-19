@@ -1,5 +1,9 @@
 {
   "name": "hops-mobx",
   "version": "1.0.0",
-  "main": "index.js"
+  "main": "index.js",
+  "peerDependencies": {
+    "mobx": "^4.2.0",
+    "mobx-react": "^5.0.0"
+  }
 }

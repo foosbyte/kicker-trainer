@@ -1,3 +1,4 @@
+import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import styled from 'styled-components';
 
@@ -5,6 +6,7 @@ import { Avatar } from '../components/avatar';
 import { Badge } from '../components/badge';
 import { Button } from '../components/button';
 import { View } from '../components/view';
+import { Store } from '../stores/store';
 
 const ProfileWrapper = styled(View)`
   display: flex;
@@ -21,7 +23,13 @@ const LeftRight = styled(View)`
   justify-content: space-between;
 `;
 
-export class Profile extends React.PureComponent {
+export interface ProfileProps {
+  store: Store;
+}
+
+@inject('store')
+@observer
+export class Profile extends React.Component<ProfileProps> {
   public render(): JSX.Element {
     return (
       <ProfileWrapper>
@@ -41,7 +49,9 @@ export class Profile extends React.PureComponent {
           <div>32 mins</div>
         </LeftRight>
         <Centered>
-          <Button to="/categories">Start Training</Button>
+          <Button to="/categories">
+            Start Training {this.props.store.text}
+          </Button>
         </Centered>
       </ProfileWrapper>
     );

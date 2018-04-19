@@ -12,14 +12,14 @@ declare module 'hops-react/dom' {
     public constructor(options?: Options);
     public bootstrap(): Promise<void>;
     public enhanceElement<P1, P2>(
-      reactElement: React.ReactElement<P1>,
+      reactElement: React.ReactElement<P1>
     ): Promise<React.ReactElement<P2>>;
     public getMountpoint(): Element | null;
   }
 
   export function render<P>(
     reactElement: React.ReactElement<P>,
-    context: ReactContext,
+    context: ReactContext
   ): () => Promise<void>;
 }
 
@@ -58,18 +58,18 @@ declare module 'hops-react/node' {
     public constructor(options?: Options);
     public bootstrap(): Promise<void>;
     public enhanceElement<P1, P2>(
-      reactElement: React.ReactElement<P1>,
+      reactElement: React.ReactElement<P1>
     ): Promise<React.ReactElement<P2>>;
     public getTemplateData<P>(
       templateData: Partial<TemplateData>,
-      rootElement: React.ReactElement<P>,
+      rootElement: React.ReactElement<P>
     ): Promise<TemplateData>;
     public renderTemplate(templateData: TemplateData): string;
   }
 
   export function render<P>(
     reactElement: React.ReactElement<P>,
-    context: ReactContext,
+    context: ReactContext
   ): RequestHandler;
 }
 
@@ -87,11 +87,7 @@ declare module 'hops-react' {
   } from 'hops-react/node';
 
   export { ReactContext as DomContext } from 'hops-react/dom';
-  export {
-    ReactContext as NodeContext,
-    Request,
-    TemplateData,
-  } from 'hops-react/node';
+  export { ReactContext as NodeContext, TemplateData } from 'hops-react/node';
 
   export type Options = DomOptions & NodeOptions;
 
@@ -115,9 +111,15 @@ declare module 'hops-react' {
     new (options?: O): ReactContext;
   }
 
-  export function combineContexts<O extends Options>(
-    ...Contexts: PartialContextConstructor<O>[]
-  ): ContextConstructor<O>;
+  export function combineContexts<
+    O1 extends Options,
+    O2 extends Options,
+    O3 extends Options
+  >(
+    Context1: PartialContextConstructor<O1>,
+    Context2: PartialContextConstructor<O2>,
+    Context3?: PartialContextConstructor<O3>
+  ): (option?: O1 & O2 & O3) => ReactContext;
 
   export class Miss extends React.Component<any, any> {}
 
@@ -128,6 +130,6 @@ declare module 'hops-react' {
 
   export function render<P>(
     reactElement: React.ReactElement<P>,
-    context: ReactContext,
+    context: ReactContext
   ): RequestHandler | (() => Promise<void>);
 }
