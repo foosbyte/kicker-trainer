@@ -1,16 +1,12 @@
 {
   "name": "hops-styled-components",
   "version": "1.0.0",
-  "main": "node",
-  "module": "node.mjs",
+  "main": "node.js",
   "browser": "browser.js",
   "peerDependencies": {
-    "hops-react": "^10.2.0-rc.0",
+    "hops-react": "^10.4.0",
     "react": "^16.2.0",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.1.6"
-  },
-  "dependencies": {
-    "@std/esm": "^0.23.3"
   }
 }
