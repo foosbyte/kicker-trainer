@@ -9,8 +9,8 @@ export default function(assets: string[]): void {
 
   self.addEventListener('install', event =>
     event.waitUntil(
-      precacheIfNotExists(assetsToCache).then(() => self.skipWaiting()),
-    ),
+      precacheIfNotExists(assetsToCache).then(() => self.skipWaiting())
+    )
   );
 
   self.addEventListener('activate', event =>
@@ -18,8 +18,8 @@ export default function(assets: string[]): void {
       removeOldCacheEntries(assetsToCache.concat(hopsConfig.locations))
         .then(() => precache(hopsConfig.locations))
         .then(() => notifyAllClients())
-        .then(() => self.clients.claim()),
-    ),
+        .then(() => self.clients.claim())
+    )
   );
 
   self.addEventListener('fetch', event => {
@@ -35,7 +35,7 @@ export default function(assets: string[]): void {
             event.waitUntil(addToCache(request, response.clone()));
             return response;
           })
-          .catch(() => fromCache(request)),
+          .catch(() => fromCache(request))
       );
     } else {
       event.respondWith(
@@ -48,8 +48,8 @@ export default function(assets: string[]): void {
             fromNetwork(request, 60000).then(response => {
               event.waitUntil(addToCache(request, response.clone()));
               return response;
-            }),
-          ),
+            })
+          )
       );
     }
   });
@@ -59,7 +59,7 @@ function fromNetwork(request: Request, timeout: number): Promise<Response> {
   return Promise.race([
     fetch(request),
     new Promise((_, reject) =>
-      setTimeout(() => reject('timed-out'), timeout),
+      setTimeout(() => reject('timed-out'), timeout)
     ) as any,
   ]);
 }
@@ -73,7 +73,7 @@ function fromCache(request: Request): Promise<Response> {
 
 function updateCache(request: Request): Promise<void> {
   return Promise.all([caches.open(CACHE_NAME), fetch(request)]).then(
-    ([cache, response]) => cache.put(request, response),
+    ([cache, response]) => cache.put(request, response)
   );
 }
 
@@ -88,8 +88,8 @@ function removeOldCacheEntries(assets: string[]): Promise<void> {
         if (!assets.find(asset => request.url === location.origin + asset)) {
           cache.delete(request);
         }
-      }),
-    ),
+      })
+    )
   );
 }
 
@@ -107,7 +107,7 @@ function precacheIfNotExists(assets: string[]): Promise<void> {
           cache.add(asset);
         }
       });
-    }),
+    })
   );
 }
 
@@ -117,8 +117,8 @@ function notifyAllClients(): Promise<void> {
       client.postMessage(
         JSON.stringify({
           type: 'serviceworker-updated',
-        }),
-      ),
-    ),
+        })
+      )
+    )
   );
 }

@@ -8,7 +8,7 @@ function drawLine(
   ctx: CanvasRenderingContext2D,
   mat: Matrix,
   from: Vector,
-  to: Vector,
+  to: Vector
 ): void {
   const dFrom = from.mul(mat);
   const dTo = to.mul(mat);
@@ -96,7 +96,7 @@ export class Editor extends React.PureComponent<EditorProps> {
 
     const goalTopMatrix = Matrix.identity.translate(
       0,
-      -Editor.playfieldHeight / 2,
+      -Editor.playfieldHeight / 2
     );
     this.drawGoal(goalTopMatrix);
 
@@ -115,18 +115,18 @@ export class Editor extends React.PureComponent<EditorProps> {
 
     const leftTop = new Vector(
       -Editor.playfieldWidth / 2,
-      -Editor.playfieldHeight / 2,
+      -Editor.playfieldHeight / 2
     ).mul(this.renderMatrix);
     const bottomRight = new Vector(
       Editor.playfieldWidth / 2,
-      Editor.playfieldHeight / 2,
+      Editor.playfieldHeight / 2
     ).mul(this.renderMatrix);
 
     this.ctx.fillRect(
       leftTop.x,
       leftTop.y,
       bottomRight.x - leftTop.x,
-      bottomRight.y - leftTop.y,
+      bottomRight.y - leftTop.y
     );
   }
 
@@ -197,7 +197,7 @@ export class Editor extends React.PureComponent<EditorProps> {
       center.y,
       radius,
       alpha,
-      alpha + 360 * Math.PI / 180,
+      alpha + 360 * Math.PI / 180
     );
 
     this.ctx.moveTo(center.x, center.y);
@@ -228,11 +228,11 @@ export class Editor extends React.PureComponent<EditorProps> {
     bars.forEach(bar => {
       const left = new Vector(
         -Editor.playfieldWidth / 2,
-        Editor.playfieldHeight / 2 - bar.height,
+        Editor.playfieldHeight / 2 - bar.height
       );
       const right = new Vector(
         Editor.playfieldWidth / 2,
-        Editor.playfieldHeight / 2 - bar.height,
+        Editor.playfieldHeight / 2 - bar.height
       );
       drawLine(this.ctx, this.renderMatrix, left, right);
 
@@ -246,7 +246,7 @@ export class Editor extends React.PureComponent<EditorProps> {
         barPosition,
         bar.distanceBetween,
         playerWidth,
-        '#00f',
+        '#00f'
       );
     });
 
@@ -254,17 +254,17 @@ export class Editor extends React.PureComponent<EditorProps> {
     bars.forEach(bar => {
       const left = new Vector(
         -Editor.playfieldWidth / 2,
-        -Editor.playfieldHeight / 2 + bar.height,
+        -Editor.playfieldHeight / 2 + bar.height
       );
       const right = new Vector(
         Editor.playfieldWidth / 2,
-        -Editor.playfieldHeight / 2 + bar.height,
+        -Editor.playfieldHeight / 2 + bar.height
       );
       drawLine(this.ctx, this.renderMatrix, left, right);
 
       const propsPosition = Math.max(
         -100,
-        Math.min(this.props.blueBars[bar.players as 1 | 2 | 5 | 3], 100),
+        Math.min(this.props.blueBars[bar.players as 1 | 2 | 5 | 3], 100)
       );
       const barPosition =
         bar.offset + bar.max / 2 + bar.max / 2 * (propsPosition / 100);
@@ -275,7 +275,7 @@ export class Editor extends React.PureComponent<EditorProps> {
         barPosition,
         bar.distanceBetween,
         playerWidth,
-        '#f00',
+        '#f00'
       );
     });
 
@@ -288,7 +288,7 @@ export class Editor extends React.PureComponent<EditorProps> {
     maximumPullOut: number,
     distanceBetween: number,
     playerWidth: number,
-    color: string,
+    color: string
   ): void {
     this.ctx.save();
     this.ctx.fillStyle = color;

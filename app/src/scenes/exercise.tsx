@@ -147,7 +147,7 @@ export class Exercise extends React.PureComponent<{}, ExerciseState> {
       },
       () => {
         this.onStart();
-      },
+      }
     );
   }
 }

@@ -82,5 +82,5 @@ export default render(
   <App />,
   createContext({
     theme,
-  }),
+  })
 );

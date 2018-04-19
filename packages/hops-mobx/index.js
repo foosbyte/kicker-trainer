@@ -29,7 +29,7 @@ class MobXContext {
     return ReactContext.createElement(
       Provider,
       this.getRootState(),
-      reactElement,
+      reactElement
     );
   }
 
@@ -49,5 +49,5 @@ exports.MobXContext = MobXContext;
 exports.contextDefinition = MobXContext;
 exports.createContext = hopsReact.combineContexts(
   hopsReact.ReactContext,
-  MobXContext,
+  MobXContext
 );

@@ -45,7 +45,7 @@ export class Category extends React.PureComponent<CategoryProps> {
             <TitlePositioner>
               <Headline darkBackground>{this.props.title}</Headline>
             </TitlePositioner>
-          </ImageTitleStack>,
+          </ImageTitleStack>
         )}
       </CategoryWrapper>
     );

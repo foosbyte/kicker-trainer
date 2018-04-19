@@ -11,7 +11,7 @@ export class Vector {
     }
     return new Vector(
       this.x * val.x0 + this.y * val.x1 + val.x2,
-      this.x * val.y0 + this.y * val.y1 + val.y2,
+      this.x * val.y0 + this.y * val.y1 + val.y2
     );
   }
 
@@ -35,7 +35,7 @@ export class Matrix {
     -Math.sin(Math.PI),
     Math.cos(Math.PI),
     1 - Math.cos(Math.PI),
-    1 - Math.cos(Math.PI),
+    1 - Math.cos(Math.PI)
   );
 
   public static translate(v: Vector): Matrix {
@@ -55,7 +55,7 @@ export class Matrix {
     public readonly x1: number,
     public readonly y1: number,
     public readonly x2: number,
-    public readonly y2: number,
+    public readonly y2: number
   ) {}
 
   public translate(x: number, y: number): Matrix {
@@ -73,7 +73,7 @@ export class Matrix {
       m.x0 * this.x1 + m.x1 * this.y1,
       m.y0 * this.x1 + m.y1 * this.y1,
       m.x0 * this.x2 + m.x1 * this.y2 + m.x2,
-      m.y0 * this.x2 + m.y1 * this.y2 + m.y2,
+      m.y0 * this.x2 + m.y1 * this.y2 + m.y2
     );
   }
 }

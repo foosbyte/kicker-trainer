@@ -19,7 +19,7 @@ class StyledComponentsContext {
     return React.createElement(
       StyleSheetManager,
       { sheet: this.sheet.instance },
-      React.createElement(ThemeProvider, { theme: this.theme }, reactElement),
+      React.createElement(ThemeProvider, { theme: this.theme }, reactElement)
     );
   }
 
@@ -36,5 +36,5 @@ module.exports.StyledComponentsContext = StyledComponentsContext;
 module.exports.contextDefinition = StyledComponentsContext;
 module.exports.createContext = combineContexts(
   ReactContext,
-  StyledComponentsContext,
+  StyledComponentsContext
 );
