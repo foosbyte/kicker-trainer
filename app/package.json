@@ -14,7 +14,7 @@
   "hops": {
     "extends": "hops-typescript",
     "browsers": "last 1 Chrome versions",
-    "node": "8.10",
+    "node": "6.10.3",
     "workerFile": "./src/service-worker.ts",
     "workerPath": "sw.js",
     "assetPath": "assets",
