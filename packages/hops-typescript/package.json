@@ -4,8 +4,8 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
-    "hops-build-config": "^10.4.0",
-    "ts-loader": "^4.2.0",
-    "typescript": "^2.8.1"
+    "hops-build-config": "10.4.0",
+    "ts-loader": "4.2.0",
+    "typescript": "2.8.1"
   }
 }
