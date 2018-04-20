@@ -35,7 +35,7 @@ class RoutedExercise extends React.PureComponent<
 > {
   public render(): JSX.Element {
     return (
-      <Link to={`${this.props.match.url}/${this.props.to}`}>
+      <Link to={`/training/${this.props.to}`}>
         <ExerciseWrapper>
           <Text>{this.props.name}</Text>
           <ExerciseImage>
@@ -55,7 +55,7 @@ export interface ExercisesProps {
 
 @inject('s3')
 export class Exercises extends React.Component<
-  ExercisesProps & RouteComponentProps<{ category: Bars }>
+  ExercisesProps & RouteComponentProps<{ category: keyof typeof Bars }>
 > {
   public render(): JSX.Element {
     return (

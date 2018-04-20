@@ -264,7 +264,7 @@ export class Editor extends React.PureComponent<EditorProps> {
 
       const propsPosition = Math.max(
         -100,
-        Math.min(this.props.blueBars[bar.players as 1 | 2 | 5 | 3], 100)
+        Math.min(this.props.redBars[bar.players as 1 | 2 | 5 | 3], 100)
       );
       const barPosition =
         bar.offset + bar.max / 2 + bar.max / 2 * (propsPosition / 100);

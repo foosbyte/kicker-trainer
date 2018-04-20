@@ -10,6 +10,7 @@ import { Editor } from '../components/editor';
 import { Text } from '../components/text';
 import { View } from '../components/view';
 import { Exercise as ExerciseStore, State } from '../stores/exercise';
+import { S3 } from '../stores/s3';
 import { Storage } from '../stores/storage';
 import { formatDuration } from '../utils';
 
@@ -32,23 +33,21 @@ const LeftRight = styled(View)`
 export interface ExerciseProps {
   exercise: ExerciseStore;
   storage: Storage;
+  s3: S3;
 }
 
-@inject('exercise', 'storage')
+@inject('exercise', 'storage', 's3')
 @observer
 export class Exercise extends React.Component<
   ExerciseProps & RouteComponentProps<{ id: string }>
 > {
   public render(): JSX.Element {
+    const id = this.props.match.params.id;
+    const [blue, red] = this.props.s3.getBarPositions(id);
     return (
       <ExerciseWrapper>
         <ImageSizer>
-          <Editor
-            width={1115}
-            height={680}
-            blueBars={{ 1: 0, 2: 0, 5: 0, 3: 0 }}
-            redBars={{ 1: 0, 2: 0, 5: 0, 3: 0 }}
-          />
+          <Editor width={1115} height={680} blueBars={blue} redBars={red} />
         </ImageSizer>
         <LeftRight>
           <Text>Gesamt Trainingszeit</Text>

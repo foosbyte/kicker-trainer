@@ -74,11 +74,7 @@ class App extends React.Component<any> {
                   path="/exercises/:category"
                   component={Exercises}
                 />
-                <Route
-                  exact
-                  path="/exercises/:category/:id"
-                  component={Exercise}
-                />
+                <Route exact path="/training/:id" component={Exercise} />
                 <Route exact path="/stats" component={Stats} />
                 <Miss />
               </Switch>
