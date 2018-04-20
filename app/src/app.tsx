@@ -34,6 +34,9 @@ export class App extends React.Component<any> {
     return (
       <Root>
         <Helmet>
+          <meta charSet="utf-8" />
+          <title>Foosball trainer</title>
+          <html lang="en" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="manifest" href={manifest} />
           <meta name="theme-color" content="#000" />
