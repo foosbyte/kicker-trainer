@@ -3,7 +3,7 @@ node_js: stable
 
 before_install: npm install -g yarn
 
-before_script: yarn build
+before_script: yarn build -p
 script: yarn deploy
 
 branches:
