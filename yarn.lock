@@ -38,7 +38,7 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/express@*", "@types/express@^4.11.1":
+"@types/express@*", "@types/express@4.11.1":
   version "4.11.1"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.11.1.tgz#f99663b3ab32d04cb11db612ef5dd7933f75465b"
   dependencies:
@@ -54,24 +54,24 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
 
-"@types/node@*", "@types/node@^9.6.5":
+"@types/node@*", "@types/node@9.6.6":
   version "9.6.6"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.6.tgz#439b91f9caf3983cad2eef1e11f6bedcbf9431d2"
 
-"@types/react-dom@^16.0.5":
+"@types/react-dom@16.0.5":
   version "16.0.5"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.5.tgz#a757457662e3819409229e8f86795ff37b371f96"
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react-helmet@^5.0.5":
+"@types/react-helmet@5.0.5":
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.5.tgz#30a12b0431732a20882f0fa9b75bf56ff91700d3"
   dependencies:
     "@types/react" "*"
 
-"@types/react-router-dom@^4.2.6":
+"@types/react-router-dom@4.2.6":
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.2.6.tgz#9f7eb3c0e6661a9607d878ff8675cc4ea95cd276"
   dependencies:
@@ -79,14 +79,14 @@
     "@types/react" "*"
     "@types/react-router" "*"
 
-"@types/react-router@*", "@types/react-router@^4.0.23":
+"@types/react-router@*", "@types/react-router@4.0.23":
   version "4.0.23"
   resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.23.tgz#d0509dcbdb1c686aed8f3d5cb186f42e5fbe7c2a"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.3.11":
+"@types/react@*", "@types/react@16.3.12":
   version "16.3.12"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.12.tgz#68d9146f3e9797e38ffbf22f7ed1dde91a2cfd2e"
   dependencies:
@@ -1987,7 +1987,7 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
-decko@^1.2.0:
+decko@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decko/-/decko-1.2.0.tgz#fd43c735e967b8013306884a56fbe665996b6817"
 
@@ -3016,7 +3016,7 @@ home-or-tmp@^2.0.0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
 
-hops-build-config@10.4.0, hops-build-config@^10.4.0:
+hops-build-config@10.4.0:
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/hops-build-config/-/hops-build-config-10.4.0.tgz#0d6ed155693f3a54a125857de9daedea4acc581f"
   dependencies:
@@ -3055,7 +3055,7 @@ hops-build-config@10.4.0, hops-build-config@^10.4.0:
     webpack-sources "^1.1.0"
     webpack-stats-plugin "^0.2.0"
 
-hops-build@^10.4.2:
+hops-build@10.4.2:
   version "10.4.2"
   resolved "https://registry.yarnpkg.com/hops-build/-/hops-build-10.4.2.tgz#ed67675ffad72ca06189aaff9e87591ac32a4813"
   dependencies:
@@ -3084,7 +3084,7 @@ hops-config@10.4.0:
     lodash.mergewith "^4.6.1"
     pkg-dir "^2.0.0"
 
-hops-express@10.4.2, hops-express@^10.4.2:
+hops-express@10.4.2:
   version "10.4.2"
   resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-10.4.2.tgz#b0b8a399dbd0ec2d71bdca8c13c8f4f5aec063e8"
   dependencies:
@@ -3095,7 +3095,7 @@ hops-express@10.4.2, hops-express@^10.4.2:
     mime "^2.2.0"
     server-timings "^2.0.1"
 
-hops-lambda@^10.4.2:
+hops-lambda@10.4.2:
   version "10.4.2"
   resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-10.4.2.tgz#b65f1a6df826b4fa09c7a9412c70b109741f0350"
   dependencies:
@@ -3107,13 +3107,13 @@ hops-lambda@^10.4.2:
     resolve-tree "^0.1.13"
     serverless-http "^1.5.2"
 
-hops-pwa@^10.4.0:
+hops-pwa@10.4.0:
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-10.4.0.tgz#dce11ecba4cd6e0522249ebd526709b7df207083"
   dependencies:
     hops-config "10.4.0"
 
-hops-react@^10.4.0:
+hops-react@10.4.0:
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-10.4.0.tgz#acf0a378a42bfb45869cdf11b1e49f11bc178578"
   dependencies:
@@ -3121,7 +3121,7 @@ hops-react@^10.4.0:
     mixinable "1.5.2"
     serialize-javascript "^1.4.0"
 
-hops@^10.4.0:
+hops@10.4.0:
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/hops/-/hops-10.4.0.tgz#541fabf679a38e1fa92a47765413a9af45cc4f0f"
   dependencies:
@@ -3195,7 +3195,7 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
-husky@^0.14.3:
+husky@0.14.3:
   version "0.14.3"
   resolved "https://registry.yarnpkg.com/husky/-/husky-0.14.3.tgz#c69ed74e2d2779769a17ba8399b54ce0b63c12c3"
   dependencies:
@@ -3823,7 +3823,7 @@ jest-mock@^22.4.3:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-22.4.3.tgz#f63ba2f07a1511772cdc7979733397df770aabc7"
 
-jest-preset-hops@^10.4.0:
+jest-preset-hops@10.4.0:
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/jest-preset-hops/-/jest-preset-hops-10.4.0.tgz#d0fbe7f20dd65e5ada4cc16ab46f734bf96a98cd"
   dependencies:
@@ -3933,7 +3933,7 @@ jest-worker@^22.4.3:
   dependencies:
     merge-stream "^1.0.1"
 
-jest@^22.4.3:
+jest@22.4.3:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/jest/-/jest-22.4.3.tgz#2261f4b117dc46d9a4a1a673d2150958dee92f16"
   dependencies:
@@ -4116,7 +4116,7 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lint-staged@^7.0.4:
+lint-staged@7.0.4:
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-7.0.4.tgz#1aa7f27427e4c4c85d4d6524ac98aac10cbaf1b8"
   dependencies:
@@ -4531,13 +4531,13 @@ mkdirp@0.x.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
-mobx-react@^5.0.0:
+mobx-react@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-5.0.0.tgz#8d5a33be376fa22b184a6f555d40a6a3a8459a16"
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-mobx@^4.2.0:
+mobx@4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.2.0.tgz#ee0b0a4f3da2f4776225046ab208ac329a4841d4"
 
@@ -5633,7 +5633,7 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.12.1:
+prettier@1.12.1:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.12.1.tgz#c1ad20e803e7749faf905a409d2367e06bbe7325"
 
@@ -5677,7 +5677,7 @@ prompt@^1.0.0:
     utile "0.3.x"
     winston "2.1.x"
 
-prop-types@^15.5.4, prop-types@^15.6.0:
+prop-types@15.6.1, prop-types@^15.5.4, prop-types@^15.6.0:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -5806,7 +5806,7 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^16.3.2:
+react-dom@16.3.2:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.3.2.tgz#cb90f107e09536d683d84ed5d4888e9640e0e4df"
   dependencies:
@@ -5815,7 +5815,7 @@ react-dom@^16.3.2:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-helmet@^5.2.0:
+react-helmet@5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"
   dependencies:
@@ -5828,7 +5828,7 @@ react-is@^16.3.1, react-is@^16.3.2:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.3.2.tgz#f4d3d0e2f5fbb6ac46450641eb2e25bf05d36b22"
 
-react-router-dom@^4.2.2:
+react-router-dom@4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
   dependencies:
@@ -5839,7 +5839,7 @@ react-router-dom@^4.2.2:
     react-router "^4.2.0"
     warning "^3.0.0"
 
-react-router@^4.2.0:
+react-router@4.2.0, react-router@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
   dependencies:
@@ -5858,7 +5858,7 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-test-renderer@^16.3.2:
+react-test-renderer@16.3.2:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.3.2.tgz#3d1ed74fda8db42521fdf03328e933312214749a"
   dependencies:
@@ -5867,7 +5867,7 @@ react-test-renderer@^16.3.2:
     prop-types "^15.6.0"
     react-is "^16.3.2"
 
-react@^16.3.2:
+react@16.3.2:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
   dependencies:
@@ -6688,7 +6688,7 @@ style-loader@^0.20.0:
     loader-utils "^1.1.0"
     schema-utils "^0.4.5"
 
-styled-components@^3.2.6:
+styled-components@3.2.6:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.2.6.tgz#99e6e75a746bdedd295a17e03dd1493055a1cc3b"
   dependencies:
@@ -6874,13 +6874,13 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-config@^18.0.0:
+ts-config@18.0.0:
   version "18.0.0"
   resolved "https://registry.yarnpkg.com/ts-config/-/ts-config-18.0.0.tgz#996c2c714ffdee0e14945bd88c52be4de1f16dde"
   dependencies:
     comment-json "^1.1.3"
 
-ts-loader@^4.2.0:
+ts-loader@4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-4.2.0.tgz#c380c399fc81f82cad0e3044f9c1f775ecde6efa"
   dependencies:
@@ -6890,28 +6890,28 @@ ts-loader@^4.2.0:
     micromatch "^3.1.4"
     semver "^5.0.1"
 
-tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@1.9.0, tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
 
-tslint-config-prettier@^1.12.0:
+tslint-config-prettier@1.12.0:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.12.0.tgz#bc8504f286ecf42b906f3d1126a093114f5729cc"
 
-tslint-plugin-prettier@^1.3.0:
+tslint-plugin-prettier@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/tslint-plugin-prettier/-/tslint-plugin-prettier-1.3.0.tgz#7eb65d19ea786a859501a42491b78c5de2031a3f"
   dependencies:
     eslint-plugin-prettier "^2.2.0"
     tslib "^1.7.1"
 
-tslint-react@^3.4.0:
+tslint-react@3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/tslint-react/-/tslint-react-3.5.1.tgz#a5ca48034bf583fb63b42763bb89fa23062d5390"
   dependencies:
     tsutils "^2.13.1"
 
-tslint@^5.9.1:
+tslint@5.9.1:
   version "5.9.1"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.9.1.tgz#1255f87a3ff57eb0b0e1f0e610a8b4748046c9ae"
   dependencies:
@@ -6965,7 +6965,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript-styled-plugin@^0.6.2:
+typescript-styled-plugin@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/typescript-styled-plugin/-/typescript-styled-plugin-0.6.2.tgz#7d9fb1e00ae4382b15fc980bb892344efc15e521"
   dependencies:
@@ -6978,7 +6978,7 @@ typescript-template-language-service-decorator@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-1.2.0.tgz#6d5b20b2b0f394a055390d901a4c5f273e3754ab"
 
-typescript@^2.8.1:
+typescript@2.8.1:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.1.tgz#6160e4f8f195d5ba81d4876f9c0cc1fbc0820624"
 
