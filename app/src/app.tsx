@@ -1,39 +1,14 @@
-import { MobXContext } from 'hops-mobx';
-import installServiceWorker from 'hops-pwa';
-import { combineContexts, Miss, ReactContext, render } from 'hops-react';
-import { StyledComponentsContext } from 'hops-styled-components';
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { Route, Switch, withRouter } from 'react-router-dom';
-import styled, { injectGlobal } from 'styled-components';
+import { withRouter } from 'react-router-dom';
+import styled from 'styled-components';
 
-import { ScrollContainer } from './components/scroll-container';
+import { ScrollView } from './components/scroll-view';
 import { TabBar, TabBarItem } from './components/tab-bar';
 import { View } from './components/view';
 import manifest from './manifest.webmanifest';
-import { Categories } from './scenes/categories';
-import { Exercise } from './scenes/exercise';
-import { Exercises } from './scenes/exercises';
-import { Profile } from './scenes/profile';
-import { Stats } from './scenes/stats';
-import * as stores from './stores';
-import { theme } from './theme';
-
-const createContext = combineContexts(
-  ReactContext,
-  MobXContext,
-  StyledComponentsContext
-);
-
-// tslint:disable-next-line:no-unused-expression
-injectGlobal`
-  body {
-    margin: 0;
-  }
-`;
-
-installServiceWorker();
+import { Scenes } from './scenes';
 
 const Root = styled(View)`
   width: 100%;
@@ -54,43 +29,28 @@ const Nav = styled(View)`
 
 @withRouter
 @observer
-class App extends React.Component<any> {
+export class App extends React.Component<any> {
   public render(): any {
     return (
-      <>
+      <Root>
         <Helmet>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="manifest" href={manifest} />
           <meta name="theme-color" content="#000" />
         </Helmet>
-        <Root>
-          <Content>
-            <ScrollContainer>
-              <Switch>
-                <Route exact path="/" component={Profile} />
-                <Route exact path="/categories" component={Categories} />
-                <Route
-                  exact
-                  path="/exercises/:category"
-                  component={Exercises}
-                />
-                <Route exact path="/training/:id" component={Exercise} />
-                <Route exact path="/stats" component={Stats} />
-                <Miss />
-              </Switch>
-            </ScrollContainer>
-          </Content>
-          <Nav>
-            <TabBar>
-              <TabBarItem title="Profile" to="/" />
-              <TabBarItem title="Categories" to="/categories" />
-              <TabBarItem title="Stats" to="/stats" />
-            </TabBar>
-          </Nav>
-        </Root>
-      </>
+        <Content>
+          <ScrollView>
+            <Scenes location={this.props.location} />
+          </ScrollView>
+        </Content>
+        <Nav>
+          <TabBar>
+            <TabBarItem title="Profile" to="/" />
+            <TabBarItem title="Categories" to="/categories" />
+            <TabBarItem title="Stats" to="/stats" />
+          </TabBar>
+        </Nav>
+      </Root>
     );
   }
 }
-
-export default render(<App />, createContext({ theme, stores }));

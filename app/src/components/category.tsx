@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Headline } from './headline';
-import { Image } from './image';
+import { ImageProps } from './image';
 import { View } from './view';
 
 const CategoryWrapper = styled(View)`
@@ -32,7 +32,7 @@ const StyledLink = styled(Link)`
 export interface CategoryProps {
   to?: string;
   title: string;
-  image: React.ReactElement<Image>;
+  image: React.ReactElement<ImageProps>;
 }
 
 export class Category extends React.PureComponent<CategoryProps> {

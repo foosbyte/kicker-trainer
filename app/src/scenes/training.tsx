@@ -14,7 +14,7 @@ import { S3 } from '../stores/s3';
 import { Storage } from '../stores/storage';
 import { formatDuration } from '../utils';
 
-const ExerciseWrapper = styled(View)`
+const Wrapper = styled(View)`
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -36,16 +36,16 @@ export interface ExerciseProps {
   s3: S3;
 }
 
+type RouteProps = RouteComponentProps<{ id: string }>;
+
 @inject('exercise', 'storage', 's3')
 @observer
-export class Exercise extends React.Component<
-  ExerciseProps & RouteComponentProps<{ id: string }>
-> {
+export class Training extends React.Component<ExerciseProps & RouteProps> {
   public render(): JSX.Element {
     const id = this.props.match.params.id;
     const [blue, red] = this.props.s3.getBarPositions(id);
     return (
-      <ExerciseWrapper>
+      <Wrapper>
         <ImageSizer>
           <Editor width={1115} height={680} blueBars={blue} redBars={red} />
         </ImageSizer>
@@ -68,29 +68,21 @@ export class Exercise extends React.Component<
           <Badge>64%</Badge>
         </LeftRight>
         {this.renderState()}
-      </ExerciseWrapper>
+      </Wrapper>
     );
   }
 
   private renderState(): JSX.Element {
     if (this.props.exercise.state !== State.NONE) {
-      return this.renderActive();
+      return (
+        <>
+          <Button onPress={this.onPause}>Pause</Button>
+          <Button onPress={this.onStop}>Stop</Button>
+          <div>{formatDuration(this.props.exercise.elapsedTime)}</div>
+        </>
+      );
     }
-    return this.renderInitial();
-  }
-
-  private renderInitial(): JSX.Element {
     return <Button onPress={this.onStart}>Start Timer</Button>;
-  }
-
-  private renderActive(): JSX.Element {
-    return (
-      <>
-        <Button onPress={this.onPause}>Pause</Button>
-        <Button onPress={this.onStop}>Stop</Button>
-        <div>{formatDuration(this.props.exercise.elapsedTime)}</div>
-      </>
-    );
   }
 
   @bind

@@ -1,11 +1,11 @@
 import { inject } from 'mobx-react';
 import * as React from 'react';
-import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Category } from '../components/category';
 import { Image } from '../components/image';
-import { ScrollContainer } from '../components/scroll-container';
+import { ScrollView } from '../components/scroll-view';
 import { Space } from '../components/space';
 import { Text } from '../components/text';
 import { View } from '../components/view';
@@ -30,9 +30,7 @@ interface ExerciseProps {
   cover: string;
 }
 
-class RoutedExercise extends React.PureComponent<
-  ExerciseProps & RouteComponentProps<{}>
-> {
+class Exercise extends React.PureComponent<ExerciseProps> {
   public render(): JSX.Element {
     return (
       <Link to={`/training/${this.props.to}`}>
@@ -47,19 +45,17 @@ class RoutedExercise extends React.PureComponent<
   }
 }
 
-const Exercise = withRouter(RoutedExercise);
-
 export interface ExercisesProps {
   s3: S3;
 }
 
+type RouteProps = RouteComponentProps<{ category: keyof typeof Bars }>;
+
 @inject('s3')
-export class Exercises extends React.Component<
-  ExercisesProps & RouteComponentProps<{ category: keyof typeof Bars }>
-> {
+export class Exercises extends React.Component<ExercisesProps & RouteProps> {
   public render(): JSX.Element {
     return (
-      <ScrollContainer>
+      <ScrollView>
         <Space between="m">
           <Category
             title="5 Bar Excercises"
@@ -76,7 +72,7 @@ export class Exercises extends React.Component<
             )
           )}
         </Space>
-      </ScrollContainer>
+      </ScrollView>
     );
   }
 }

@@ -2,7 +2,7 @@
   "name": "foosball-trainer",
   "version": "1.0.0",
   "private": true,
-  "main": "src/app.tsx",
+  "main": "src/main.tsx",
   "license": "MIT",
   "scripts": {
     "start": "hops start",
