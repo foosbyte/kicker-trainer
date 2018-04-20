@@ -19,6 +19,13 @@
       "git add"
     ]
   },
+  "renovate": {
+    "extends": ["config:base"],
+    "semanticPrefix": "chore:",
+    "lockFileMaintenance": {
+      "enabled": true
+    }
+  },
   "prettier": {
     "trailingComma": "es5",
     "singleQuote": true
