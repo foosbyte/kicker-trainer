@@ -49,7 +49,7 @@ export interface ExercisesProps {
   s3: S3;
 }
 
-type RouteProps = RouteComponentProps<{ category: keyof typeof Bars }>;
+type RouteProps = RouteComponentProps<{ category: Bars }>;
 
 @inject('s3')
 export class Exercises extends React.Component<ExercisesProps & RouteProps> {

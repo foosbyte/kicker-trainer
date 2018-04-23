@@ -11,7 +11,7 @@ interface Exercise {
 }
 
 export class Storage {
-  @observable private exercises!: Exercise[];
+  @observable public exercises!: Exercise[];
   private static key = 'exercises';
 
   constructor() {
