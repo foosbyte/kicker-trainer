@@ -62,65 +62,72 @@ function fromNetwork(request: Request, timeout: number): Promise<Response> {
     fetch(request),
     new Promise((_, reject) =>
       setTimeout(() => reject('timed-out'), timeout)
-    ) as any,
+    ) as Promise<never>,
   ]);
 }
 
-function fromCache(request: Request): Promise<Response> {
-  return caches
-    .open(CACHE_NAME)
-    .then(cache => cache.match(request))
-    .then(matching => matching || Promise.reject('no-match'));
+async function fromCache(request: Request): Promise<Response> {
+  const cache = await caches.open(CACHE_NAME);
+  const match = await cache.match(request);
+  if (match) {
+    return match;
+  }
+  throw new Error('no-match');
 }
 
-function updateCache(request: Request): Promise<void> {
-  return Promise.all([caches.open(CACHE_NAME), fetch(request)]).then(
-    ([cache, response]) => cache.put(request, response)
-  );
+async function updateCache(request: Request): Promise<void> {
+  const [cache, response] = await Promise.all([
+    caches.open(CACHE_NAME),
+    fetch(request),
+  ]);
+  return cache.put(request, response);
 }
 
-function addToCache(request: Request, response: Response): Promise<void> {
-  return caches.open(CACHE_NAME).then(cache => cache.put(request, response));
+async function addToCache(request: Request, response: Response): Promise<void> {
+  const cache = await caches.open(CACHE_NAME);
+  return cache.put(request, response);
 }
 
-function removeOldCacheEntries(assets: string[]): Promise<void> {
-  return caches.open(CACHE_NAME).then(cache =>
-    cache.keys().then(requests =>
-      requests.forEach(request => {
-        if (!assets.find(asset => request.url === location.origin + asset)) {
-          cache.delete(request);
-        }
-      })
-    )
-  );
-}
+async function removeOldCacheEntries(assets: string[]): Promise<boolean[]> {
+  const cache = await caches.open(CACHE_NAME);
+  const requests = await cache.keys();
 
-function precache(assets: string[]): Promise<void> {
-  return caches.open(CACHE_NAME).then(cache => cache.addAll(assets));
-}
-
-function precacheIfNotExists(assets: string[]): Promise<void> {
-  return caches.open(CACHE_NAME).then(cache =>
-    cache.keys().then(requests => {
-      assets.forEach(asset => {
-        if (
-          !requests.find(request => request.url === location.origin + asset)
-        ) {
-          cache.add(asset);
-        }
-      });
-    })
-  );
-}
-
-function notifyAllClients(): Promise<void> {
-  return self.clients.matchAll({ includeUncontrolled: true }).then(clients =>
-    clients.forEach(client =>
-      client.postMessage(
-        JSON.stringify({
-          type: 'serviceworker-updated',
-        })
+  return Promise.all(
+    requests
+      .filter(
+        request =>
+          !assets.some(asset => request.url === location.origin + asset)
       )
+      .map(request => cache.delete(request))
+  );
+}
+
+async function precache(assets: string[]): Promise<void> {
+  const cache = await caches.open(CACHE_NAME);
+  return cache.addAll(assets);
+}
+
+async function precacheIfNotExists(assets: string[]): Promise<void[]> {
+  const cache = await caches.open(CACHE_NAME);
+  const requests = await cache.keys();
+
+  return Promise.all(
+    assets
+      .filter(
+        asset =>
+          !requests.some(request => request.url === location.origin + asset)
+      )
+      .map(asset => cache.add(asset))
+  );
+}
+
+async function notifyAllClients(): Promise<void> {
+  const clients = await self.clients.matchAll({ includeUncontrolled: true });
+  clients.forEach(client =>
+    client.postMessage(
+      JSON.stringify({
+        type: 'serviceworker-updated',
+      })
     )
   );
 }
