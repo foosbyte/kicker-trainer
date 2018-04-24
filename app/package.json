@@ -47,7 +47,7 @@
     "hops-lambda": "10.4.2",
     "hops-mobx": "^1.0.0",
     "hops-pwa": "10.4.0",
-    "hops-react": "10.4.0",
+    "hops-react": "10.4.3",
     "hops-styled-components": "^1.0.0",
     "hops-typescript": "^1.0.0",
     "mobx": "4.2.0",
