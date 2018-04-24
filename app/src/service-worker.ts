@@ -30,26 +30,28 @@ export default function(assets: string[]): void {
 
     if (new URL(request.url).origin !== location.origin) {
       event.respondWith(
-        fromNetwork(request, 5000)
-          .then(response => {
+        fromNetwork(request, 5000).then(
+          response => {
             event.waitUntil(addToCache(request, response.clone()));
             return response;
-          })
-          .catch(() => fromCache(request))
+          },
+          () => fromCache(request)
+        )
       );
     } else {
       event.respondWith(
-        fromCache(request)
-          .then(response => {
+        fromCache(request).then(
+          response => {
             event.waitUntil(updateCache(request));
             return response;
-          })
-          .catch(() =>
-            fromNetwork(request, 60000).then(response => {
+          },
+          () => {
+            return fromNetwork(request, 60000).then(response => {
               event.waitUntil(addToCache(request, response.clone()));
               return response;
-            })
-          )
+            });
+          }
+        )
       );
     }
   });
