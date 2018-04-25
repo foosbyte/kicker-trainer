@@ -40,7 +40,7 @@
     "@types/react": "16.3.12",
     "@types/react-dom": "16.0.5",
     "@types/react-helmet": "5.0.5",
-    "@types/react-router": "4.0.23",
+    "@types/react-router": "4.0.24",
     "@types/react-router-dom": "4.2.6",
     "decko": "1.2.0",
     "hops-express": "10.4.2",
