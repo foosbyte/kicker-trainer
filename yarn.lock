@@ -2941,45 +2941,6 @@ home-or-tmp@^2.0.0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
 
-hops-build-config@10.4.3:
-  version "10.4.3"
-  resolved "https://registry.yarnpkg.com/hops-build-config/-/hops-build-config-10.4.3.tgz#61b8f7055aca7d9d42381c86a2dc5a4af68197ae"
-  dependencies:
-    babel-core "^6.26.0"
-    babel-loader "^7.1.2"
-    babel-plugin-dynamic-import-node "^1.1.0"
-    babel-plugin-syntax-dynamic-import "^6.18.0"
-    babel-plugin-transform-class-properties "^6.24.1"
-    babel-plugin-transform-object-rest-spread "^6.26.0"
-    babel-plugin-transform-react-remove-prop-types "^0.4.12"
-    babel-polyfill "^6.26.0"
-    babel-preset-env "^1.6.0"
-    babel-preset-react "^6.24.1"
-    caniuse-lite "^1.0.30000789"
-    css-loader "^0.28.8"
-    file-loader "^1.1.6"
-    find-up "^2.1.0"
-    hops-config "10.4.0"
-    loader-utils "^1.1.0"
-    lodash.template "^4.4.0"
-    mini-css-extract-plugin "^0.4.0"
-    mkdirp "^0.5.1"
-    optimize-css-assets-webpack-plugin "^4.0.0"
-    pkg-dir "^2.0.0"
-    postcss "^6.0.16"
-    postcss-cssnext "^3.0.2"
-    postcss-import "^11.0.0"
-    postcss-loader "^2.0.10"
-    steed "^1.1.3"
-    style-loader "^0.21.0"
-    uglifyjs-webpack-plugin "^1.2.4"
-    url-join "^4.0.0"
-    url-loader "^1.0.0"
-    webpack "^4.3.0"
-    webpack-node-externals "^1.6.0"
-    webpack-sources "^1.1.0"
-    webpack-stats-plugin "^0.2.0"
-
 hops-build-config@10.4.4:
   version "10.4.4"
   resolved "https://registry.yarnpkg.com/hops-build-config/-/hops-build-config-10.4.4.tgz#a7e9515a155e0d85b4b97a581f1ab050d2065f6c"
@@ -3019,14 +2980,14 @@ hops-build-config@10.4.4:
     webpack-sources "^1.1.0"
     webpack-stats-plugin "^0.2.0"
 
-hops-build@10.4.3:
-  version "10.4.3"
-  resolved "https://registry.yarnpkg.com/hops-build/-/hops-build-10.4.3.tgz#e04d675055ec6c3073e3709a1e1a9daa4e5431f7"
+hops-build@10.4.4:
+  version "10.4.4"
+  resolved "https://registry.yarnpkg.com/hops-build/-/hops-build-10.4.4.tgz#93bf1e98eaebe8272dac6ba4af64cf7189f54034"
   dependencies:
     directory-index "^0.1.0"
     express "^4.16.0"
     filesize "^3.5.11"
-    hops-build-config "10.4.3"
+    hops-build-config "10.4.4"
     hops-config "10.4.0"
     hops-express "10.4.2"
     memory-fs "^0.4.1"
@@ -3785,13 +3746,13 @@ jest-mock@^22.4.3:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-22.4.3.tgz#f63ba2f07a1511772cdc7979733397df770aabc7"
 
-jest-preset-hops@10.4.3:
-  version "10.4.3"
-  resolved "https://registry.yarnpkg.com/jest-preset-hops/-/jest-preset-hops-10.4.3.tgz#4677d67b9a2bc87fa21be8cb77faf574bc756e9d"
+jest-preset-hops@10.4.4:
+  version "10.4.4"
+  resolved "https://registry.yarnpkg.com/jest-preset-hops/-/jest-preset-hops-10.4.4.tgz#0202454e931f1bef595f025b664572032079aefc"
   dependencies:
     babel-core "^6.26.0"
     babel-jest "^22.0.4"
-    hops-build-config "10.4.3"
+    hops-build-config "10.4.4"
     identity-obj-proxy "^3.0.0"
 
 jest-regex-util@^22.4.3:
