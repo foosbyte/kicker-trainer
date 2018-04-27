@@ -3,7 +3,9 @@ node_js: "8"
 
 before_install: npm install -g yarn
 
-before_script: yarn build -p
+before_script:
+  - yarn lint
+  - yarn build -p
 script: yarn deploy
 
 branches:

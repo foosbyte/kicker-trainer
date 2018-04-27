@@ -9,7 +9,9 @@
   "scripts": {
     "start": "cd app && yarn start",
     "build": "cd app && yarn build",
+    "serve": "cd app && yarn serve",
     "deploy": "cd app && yarn deploy",
+    "lint": "cd app && yarn lint",
     "fmt": "prettier --write '{app/src,packages}/**/*.{js,ts,tsx,json}'",
     "precommit": "lint-staged"
   },
