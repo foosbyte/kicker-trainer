@@ -3,11 +3,11 @@ node_js: "8"
 
 before_install: npm install -g yarn
 
-before_script:
-  - yarn lint
-  - yarn build -p
-script: yarn deploy
+before_script: yarn lint
+script: yarn build -p
 
-branches:
-  only:
-    - master
+deploy:
+  provider: script
+  script: yarn deploy
+  on:
+    branch: master
