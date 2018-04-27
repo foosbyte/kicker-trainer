@@ -8,7 +8,6 @@
     "start": "hops start",
     "build": "hops build",
     "deploy": "hops lambda deploy",
-    "test": "jest",
     "lint": "tslint 'src/**/*.{ts,tsx}'"
   },
   "hops": {
@@ -30,9 +29,6 @@
       "domainName": "trainer.nerdlabs.it",
       "certificateArn": "arn:aws:acm:us-east-1:440520855754:certificate/2fa97b22-2cb3-4050-9f1f-73b741959fdc"
     }
-  },
-  "jest": {
-    "preset": "jest-preset-hops"
   },
   "dependencies": {
     "@types/express": "4.11.1",
@@ -66,9 +62,6 @@
   "devDependencies": {
     "hops": "10.4.0",
     "hops-build": "10.4.4",
-    "jest": "22.4.3",
-    "jest-preset-hops": "10.4.4",
-    "react-test-renderer": "16.3.2",
     "tslint": "5.9.1",
     "tslint-config-prettier": "1.12.0",
     "tslint-plugin-prettier": "1.3.0",
