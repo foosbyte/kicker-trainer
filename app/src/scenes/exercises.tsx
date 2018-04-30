@@ -9,7 +9,7 @@ import { ScrollView } from '../components/scroll-view';
 import { Space } from '../components/space';
 import { Text } from '../components/text';
 import { View } from '../components/view';
-import { Bars, S3 } from '../stores/s3';
+import { Bars, ExerciseCatalogue } from '../stores/exercise-catalogue';
 
 import placeholder180 from '../placeholder-180x90.png';
 import placeholder320 from '../placeholder-320x148.png';
@@ -46,12 +46,12 @@ class Exercise extends React.PureComponent<ExerciseProps> {
 }
 
 export interface ExercisesProps {
-  s3: S3;
+  exerciseCatalogue: ExerciseCatalogue;
 }
 
 type RouteProps = RouteComponentProps<{ category: Bars }>;
 
-@inject('s3')
+@inject('exerciseCatalogue')
 export class Exercises extends React.Component<ExercisesProps & RouteProps> {
   public render(): JSX.Element {
     return (
@@ -61,16 +61,16 @@ export class Exercises extends React.Component<ExercisesProps & RouteProps> {
             title="5 Bar Excercises"
             image={<Image source={placeholder320} width={320} height={148} />}
           />
-          {this.props.s3.data[this.props.match.params.category].map(
-            exercise => (
-              <Exercise
-                key={exercise.id}
-                to={exercise.id}
-                name={exercise.name}
-                cover={placeholder180}
-              />
-            )
-          )}
+          {this.props.exerciseCatalogue.data[
+            this.props.match.params.category
+          ].map(exercise => (
+            <Exercise
+              key={exercise.id}
+              to={exercise.id}
+              name={exercise.name}
+              cover={placeholder180}
+            />
+          ))}
         </Space>
       </ScrollView>
     );

@@ -9,9 +9,9 @@ import { Button } from '../components/button';
 import { Editor } from '../components/editor';
 import { Text } from '../components/text';
 import { View } from '../components/view';
-import { Exercise as ExerciseStore, State } from '../stores/exercise';
-import { S3 } from '../stores/s3';
-import { Storage } from '../stores/storage';
+import { ExerciseCatalogue } from '../stores/exercise-catalogue';
+import { TrainingJournal } from '../stores/training-journal';
+import { State, TrainingSession } from '../stores/training-session';
 import { formatDuration } from '../utils';
 
 const Wrapper = styled(View)`
@@ -31,19 +31,19 @@ const LeftRight = styled(View)`
 `;
 
 export interface ExerciseProps {
-  exercise: ExerciseStore;
-  storage: Storage;
-  s3: S3;
+  trainingSession: TrainingSession;
+  trainingJournal: TrainingJournal;
+  exerciseCatalogue: ExerciseCatalogue;
 }
 
 type RouteProps = RouteComponentProps<{ id: string }>;
 
-@inject('exercise', 'storage', 's3')
+@inject('trainingSession', 'trainingJournal', 'exerciseCatalogue')
 @observer
 export class Training extends React.Component<ExerciseProps & RouteProps> {
   public render(): JSX.Element {
     const id = this.props.match.params.id;
-    const [blue, red] = this.props.s3.getBarPositions(id);
+    const [blue, red] = this.props.exerciseCatalogue.getBarPositions(id);
     return (
       <Wrapper>
         <ImageSizer>
@@ -53,7 +53,7 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
           <Text>Gesamt Trainingszeit</Text>
           <Badge>
             {formatDuration(
-              this.props.storage.exerciseTrainingTime(
+              this.props.trainingJournal.exerciseTrainingTime(
                 this.props.match.params.id
               )
             )}
@@ -73,12 +73,12 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
   }
 
   private renderState(): JSX.Element {
-    if (this.props.exercise.state !== State.NONE) {
+    if (this.props.trainingSession.state !== State.NONE) {
       return (
         <>
           <Button onPress={this.onPause}>Pause</Button>
           <Button onPress={this.onStop}>Stop</Button>
-          <div>{formatDuration(this.props.exercise.elapsedTime)}</div>
+          <div>{formatDuration(this.props.trainingSession.elapsedTime)}</div>
         </>
       );
     }
@@ -87,16 +87,16 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
 
   @bind
   private onStart(): void {
-    this.props.exercise.start(this.props.match.params.id);
+    this.props.trainingSession.start(this.props.match.params.id);
   }
 
   @bind
   private onStop(): void {
-    this.props.exercise.stop();
+    this.props.trainingSession.stop();
   }
 
   @bind
   private onPause(): void {
-    this.props.exercise.pause();
+    this.props.trainingSession.pause();
   }
 }

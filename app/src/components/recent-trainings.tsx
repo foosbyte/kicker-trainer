@@ -2,8 +2,8 @@ import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { S3 } from '../stores/s3';
-import { Storage } from '../stores/storage';
+import { ExerciseCatalogue } from '../stores/exercise-catalogue';
+import { TrainingJournal } from '../stores/training-journal';
 import { formatDuration } from '../utils';
 import { Badge } from './badge';
 import { View } from './view';
@@ -14,21 +14,23 @@ const LeftRight = styled(View)`
 `;
 
 export interface RecentTrainingsProps {
-  storage?: Storage;
-  s3?: S3;
+  trainingJournal?: TrainingJournal;
+  exerciseCatalogue?: ExerciseCatalogue;
 }
 
-@inject('storage', 's3')
+@inject('trainingJournal', 'exerciseCatalogue')
 @observer
 export class RecentTrainings extends React.Component<RecentTrainingsProps> {
   public render(): JSX.Element | null {
-    if (!this.props.storage) {
+    if (!this.props.trainingJournal) {
       return null;
     }
     return (
       <View>
-        {this.props.storage.exercises.map(exercise => {
-          const ex = this.props.s3 && this.props.s3.getExercise(exercise.id);
+        {this.props.trainingJournal.exercises.map(exercise => {
+          const ex =
+            this.props.exerciseCatalogue &&
+            this.props.exerciseCatalogue.getExercise(exercise.id);
           if (!ex) {
             return null;
           }
@@ -37,7 +39,7 @@ export class RecentTrainings extends React.Component<RecentTrainingsProps> {
               <Badge>{ex.name}</Badge>
               <div>
                 {formatDuration(
-                  this.props.storage!.exerciseTrainingTime(exercise.id)
+                  this.props.trainingJournal!.exerciseTrainingTime(exercise.id)
                 )}
               </div>
             </LeftRight>
