@@ -10,7 +10,7 @@ interface Exercise {
   trainings: Training[];
 }
 
-export class Storage {
+export class TrainingJournal {
   @observable public exercises!: Exercise[];
   private static key = 'exercises';
 
@@ -26,14 +26,14 @@ export class Storage {
 
   public load(): Exercise[] {
     if (typeof window !== 'undefined' && window.localStorage) {
-      return JSON.parse(localStorage.getItem(Storage.key) || '[]');
+      return JSON.parse(localStorage.getItem(TrainingJournal.key) || '[]');
     }
     return [];
   }
 
   public save(exercises: Exercise[]): void {
     if (typeof window !== 'undefined' && window.localStorage) {
-      localStorage.setItem(Storage.key, JSON.stringify(exercises));
+      localStorage.setItem(TrainingJournal.key, JSON.stringify(exercises));
     }
   }
 

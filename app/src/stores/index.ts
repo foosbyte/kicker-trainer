@@ -1,7 +1,7 @@
-import { Exercise } from './exercise';
-import { S3 } from './s3';
-import { Storage } from './storage';
+import { ExerciseCatalogue } from './exercise-catalogue';
+import { TrainingJournal } from './training-journal';
+import { TrainingSession } from './training-session';
 
-export const s3 = new S3();
-export const storage = new Storage();
-export const exercise = new Exercise(storage);
+export const exerciseCatalogue = new ExerciseCatalogue();
+export const trainingJournal = new TrainingJournal();
+export const trainingSession = new TrainingSession(trainingJournal);

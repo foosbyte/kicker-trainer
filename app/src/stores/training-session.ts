@@ -1,5 +1,5 @@
 import { action, computed, observable, runInAction } from 'mobx';
-import { Storage } from './storage';
+import { TrainingJournal } from './training-journal';
 
 export enum State {
   RUNNING,
@@ -7,17 +7,17 @@ export enum State {
   NONE,
 }
 
-export class Exercise {
+export class TrainingSession {
   @observable private startDate?: Date;
   @observable private endDate?: Date;
   @observable private totalDuration?: number;
   @observable public elapsedTime!: number;
   @observable public state!: State;
   private id?: string;
-  private storage: Storage;
+  private trainingJournal: TrainingJournal;
 
-  constructor(storage: Storage) {
-    this.storage = storage;
+  constructor(trainingJournal: TrainingJournal) {
+    this.trainingJournal = trainingJournal;
     runInAction(() => {
       this.state = State.NONE;
       this.elapsedTime = 0;
@@ -61,7 +61,7 @@ export class Exercise {
     if (this.startDate && typeof this.totalDuration === 'number') {
       this.totalDuration += this.endDate.getTime() - this.startDate.getTime();
 
-      this.storage.addTraining(this.id!, {
+      this.trainingJournal.addTraining(this.id!, {
         date: this.startDate,
         duration: this.totalDuration,
       });

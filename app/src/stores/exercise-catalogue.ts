@@ -5,7 +5,7 @@ export enum Bars {
   '5bar' = '5bar',
 }
 
-export class S3 {
+export class ExerciseCatalogue {
   public data: {
     [B in Bars]: Array<{
       bars?: {
