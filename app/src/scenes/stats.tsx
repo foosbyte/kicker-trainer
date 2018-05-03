@@ -1,5 +1,7 @@
+import Chart from 'chart.js';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
+import ReactChartkick, { LineChart } from 'react-chartkick';
 import styled from 'styled-components';
 
 import { Text } from '../components/text';
@@ -7,6 +9,8 @@ import { View } from '../components/view';
 import { ExerciseCatalogue } from '../stores/exercise-catalogue';
 import { TrainingJournal } from '../stores/training-journal';
 import { formatDuration, calculateQuota, formatQuota } from '../utils';
+
+ReactChartkick.addAdapter(Chart);
 
 export interface StatsProps {
   trainingJournal: TrainingJournal;
@@ -70,6 +74,26 @@ export class Stats extends React.Component<StatsProps> {
             })}
           </tbody>
         </FullWidthTable>
+        <LineChart
+          data={this.props.trainingJournal.exercises.map(exercise => {
+            const ex =
+              this.props.exerciseCatalogue &&
+              this.props.exerciseCatalogue.getExercise(exercise.id);
+            return {
+              name: (ex && ex.name) || 'unknown',
+              data: exercise.trainings.reduce(
+                (data, training) => {
+                  const quota = calculateQuota(training.quota);
+                  if (quota) {
+                    data[new Date(training.date).toISOString()] = quota;
+                  }
+                  return data;
+                },
+                {} as { [date: string]: number }
+              ),
+            };
+          })}
+        />
       </>
     );
   }
