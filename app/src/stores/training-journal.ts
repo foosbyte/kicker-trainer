@@ -104,7 +104,6 @@ export class TrainingJournal {
           Math.max(...ex.trainings.map(training => training.date));
         return lastTraining(a) > lastTraining(b) ? 1 : -1;
       })
-      .slice(0, 3)
       .reverse();
   }
 }

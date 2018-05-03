@@ -27,7 +27,7 @@ export class RecentTrainings extends React.Component<RecentTrainingsProps> {
     }
     return (
       <View>
-        {this.props.trainingJournal.lastExercises.map(exercise => {
+        {this.props.trainingJournal.lastExercises.slice(0, 3).map(exercise => {
           const ex =
             this.props.exerciseCatalogue &&
             this.props.exerciseCatalogue.getExercise(exercise.id);
