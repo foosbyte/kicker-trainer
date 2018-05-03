@@ -41,6 +41,10 @@ type RouteProps = RouteComponentProps<{ id: string }>;
 @inject('trainingSession', 'trainingJournal', 'exerciseCatalogue')
 @observer
 export class Training extends React.Component<ExerciseProps & RouteProps> {
+  public componentWillUnmount(): void {
+    this.props.trainingSession.stop();
+  }
+
   public render(): JSX.Element {
     const id = this.props.match.params.id;
     const [blue, red] = this.props.exerciseCatalogue.getBarPositions(id);
