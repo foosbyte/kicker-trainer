@@ -75,6 +75,8 @@ export class Stats extends React.Component<StatsProps> {
           </tbody>
         </FullWidthTable>
         <LineChart
+          xtitle="Time"
+          ytitle="Quota"
           data={this.props.trainingJournal.exercises.map(exercise => {
             const ex =
               this.props.exerciseCatalogue &&
@@ -82,15 +84,24 @@ export class Stats extends React.Component<StatsProps> {
             return {
               name: (ex && ex.name) || 'unknown',
               data: exercise.trainings.reduce(
-                (data, training) => {
-                  const quota = calculateQuota(training.quota);
+                (accum, training) => {
+                  accum.quota = [
+                    accum.quota[0] + training.quota[0],
+                    accum.quota[1] + training.quota[1],
+                  ];
+                  const quota = calculateQuota(accum.quota);
                   if (quota) {
-                    data[new Date(training.date).toISOString()] = quota;
+                    accum.data[
+                      new Date(training.date).toISOString()
+                    ] = Math.floor(quota * 100);
                   }
-                  return data;
+                  return accum;
                 },
-                {} as { [date: string]: number }
-              ),
+                { data: {}, quota: [0, 0] } as {
+                  data: { [date: string]: number };
+                  quota: [number, number];
+                }
+              ).data,
             };
           })}
         />
