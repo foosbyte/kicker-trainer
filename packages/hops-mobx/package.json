@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "peerDependencies": {
-    "mobx": "^4.2.0",
+    "mobx": "^4.0.0",
     "mobx-react": "^5.0.0"
   }
 }
