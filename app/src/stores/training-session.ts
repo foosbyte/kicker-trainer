@@ -11,8 +11,10 @@ export enum State {
 export class TrainingSession {
   private startDate?: number;
   @observable private startTime?: number;
-  @observable private current!: number;
-  @observable private tracked!: number;
+  @observable private currentTime!: number;
+  @observable private trackedTime!: number;
+  @observable private hits!: number;
+  @observable private misses!: number;
   @observable public state!: State;
   private id?: string;
   private trainingJournal: TrainingJournal;
@@ -22,8 +24,10 @@ export class TrainingSession {
 
     runInAction(() => {
       this.state = State.NONE;
-      this.tracked = 0;
-      this.current = 0;
+      this.trackedTime = 0;
+      this.currentTime = 0;
+      this.hits = 0;
+      this.misses = 0;
     });
 
     autorun(() => {
@@ -34,7 +38,7 @@ export class TrainingSession {
 
       runInAction(() => {
         if (time >= 0) {
-          this.current = time;
+          this.currentTime = time;
         }
       });
     });
@@ -42,7 +46,12 @@ export class TrainingSession {
 
   @computed
   public get totalTime(): number {
-    return this.tracked + this.current;
+    return this.trackedTime + this.currentTime;
+  }
+
+  @computed
+  public get quota(): [number, number] {
+    return [this.hits, this.misses];
   }
 
   @action
@@ -50,8 +59,8 @@ export class TrainingSession {
     this.state = State.RUNNING;
     this.startTime = now();
     this.startDate = now();
-    this.tracked = 0;
-    this.current = 0;
+    this.trackedTime = 0;
+    this.currentTime = 0;
     this.id = id;
   }
 
@@ -62,10 +71,13 @@ export class TrainingSession {
       this.trainingJournal.addTraining(this.id!, {
         date: this.startDate,
         duration: this.totalTime,
+        quota: [this.hits, this.misses],
       });
     }
-    this.current = 0;
-    this.tracked = 0;
+    this.currentTime = 0;
+    this.trackedTime = 0;
+    this.hits = 0;
+    this.misses = 0;
   }
 
   @action
@@ -73,11 +85,21 @@ export class TrainingSession {
     if (this.startTime) {
       this.state = State.PAUSED;
       this.startTime = undefined;
-      this.tracked += this.current;
-      this.current = 0;
+      this.trackedTime += this.currentTime;
+      this.currentTime = 0;
     } else {
       this.state = State.RUNNING;
       this.startTime = now();
     }
+  }
+
+  @action
+  public recordHit(): void {
+    this.hits += 1;
+  }
+
+  @action
+  public recordMiss(): void {
+    this.misses += 1;
   }
 }

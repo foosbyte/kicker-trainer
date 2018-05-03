@@ -12,7 +12,7 @@ import { View } from '../components/view';
 import { ExerciseCatalogue } from '../stores/exercise-catalogue';
 import { TrainingJournal } from '../stores/training-journal';
 import { State, TrainingSession } from '../stores/training-session';
-import { formatDuration } from '../utils';
+import { formatDuration, calculateQuota } from '../utils';
 
 const Wrapper = styled(View)`
   display: flex;
@@ -48,6 +48,7 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
   public render(): JSX.Element {
     const id = this.props.match.params.id;
     const [blue, red] = this.props.exerciseCatalogue.getBarPositions(id);
+
     return (
       <Wrapper>
         <ImageSizer>
@@ -68,25 +69,42 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
           <Badge>1h 14m</Badge>
         </LeftRight>
         <LeftRight>
-          <Text>Aktuelle Quote</Text>
-          <Badge>64%</Badge>
+          <Text>Gesamt Quote</Text>
+          <Badge>{this.calculateQuota()}</Badge>
         </LeftRight>
-        {this.renderState()}
+        {this.props.trainingSession.state === State.NONE ? (
+          <Button onPress={this.onStart}>Start training</Button>
+        ) : (
+          <>
+            <Button onPress={this.onPause}>
+              {this.props.trainingSession.state === State.PAUSED
+                ? 'Resume'
+                : 'Pause'}
+            </Button>
+            <Button onPress={this.onStop}>End training</Button>
+            <div>{formatDuration(this.props.trainingSession.totalTime)}</div>
+            <Text>Optionally: Track your quota</Text>
+            <Button onPress={this.onHit}>Hit</Button>
+            <Button onPress={this.onMiss}>Miss</Button>
+          </>
+        )}
       </Wrapper>
     );
   }
 
-  private renderState(): JSX.Element {
-    if (this.props.trainingSession.state !== State.NONE) {
-      return (
-        <>
-          <Button onPress={this.onPause}>Pause</Button>
-          <Button onPress={this.onStop}>Stop</Button>
-          <div>{formatDuration(this.props.trainingSession.totalTime)}</div>
-        </>
-      );
+  private calculateQuota(): string {
+    const [pastHits, pastMisses] = this.props.trainingJournal.exerciseQuota(
+      this.props.match.params.id
+    );
+    const [hits, misses] = this.props.trainingSession.quota;
+
+    const quota = calculateQuota([pastHits + hits, pastMisses + misses]);
+
+    if (quota === null) {
+      return '-';
     }
-    return <Button onPress={this.onStart}>Start Timer</Button>;
+
+    return Math.floor(quota * 100) + '%';
   }
 
   @bind
@@ -102,5 +120,15 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
   @bind
   private onPause(): void {
     this.props.trainingSession.pause();
+  }
+
+  @bind
+  private onHit(): void {
+    this.props.trainingSession.recordHit();
+  }
+
+  @bind
+  private onMiss(): void {
+    this.props.trainingSession.recordMiss();
   }
 }

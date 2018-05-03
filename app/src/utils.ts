@@ -9,3 +9,10 @@ export function formatDuration(duration: number): string {
 
   return `${hours}h ${minutes}m ${seconds}s`;
 }
+
+export function calculateQuota([hits, misses]: [number, number]):
+  | number
+  | null {
+  const tries = hits + misses;
+  return tries === 0 ? null : hits / tries;
+}

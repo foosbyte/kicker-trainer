@@ -4,6 +4,7 @@ export interface Training {
   exercise?: Exercise;
   date: number;
   duration: number;
+  quota: [number, number];
 }
 
 export interface Exercise {
@@ -82,6 +83,21 @@ export class TrainingJournal {
       (total, exercise) => total + this.exerciseTrainingTime(exercise.id),
       0
     );
+  }
+
+  public exerciseQuota(id: Exercise['id']): [number, number] {
+    const exercise = this.exercises.find(e => e.id === id);
+    if (!exercise) {
+      return [0, 0];
+    }
+    const [hits, misses] = exercise.trainings
+      .filter(t => t.quota[0] + t.quota[1] > 0)
+      .reduce(
+        ([hits, misses], { quota: [th, tm] }) => [hits + th, misses + tm],
+        [0, 0]
+      );
+
+    return [hits, misses];
   }
 
   @action
