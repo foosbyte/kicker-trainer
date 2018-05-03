@@ -16,3 +16,7 @@ export function calculateQuota([hits, misses]: [number, number]):
   const tries = hits + misses;
   return tries === 0 ? null : hits / tries;
 }
+
+export function formatQuota(quota: number | null): string {
+  return quota === null ? '-' : Math.floor(quota * 100) + '%';
+}

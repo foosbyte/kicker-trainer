@@ -12,7 +12,7 @@ import { View } from '../components/view';
 import { ExerciseCatalogue } from '../stores/exercise-catalogue';
 import { TrainingJournal } from '../stores/training-journal';
 import { State, TrainingSession } from '../stores/training-session';
-import { formatDuration, calculateQuota } from '../utils';
+import { formatDuration, calculateQuota, formatQuota } from '../utils';
 
 const Wrapper = styled(View)`
   display: flex;
@@ -98,13 +98,7 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
     );
     const [hits, misses] = this.props.trainingSession.quota;
 
-    const quota = calculateQuota([pastHits + hits, pastMisses + misses]);
-
-    if (quota === null) {
-      return '-';
-    }
-
-    return Math.floor(quota * 100) + '%';
+    return formatQuota(calculateQuota([pastHits + hits, pastMisses + misses]));
   }
 
   @bind
