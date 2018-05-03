@@ -1,4 +1,5 @@
-import { action, computed, observable, runInAction } from 'mobx';
+import { action, autorun, computed, observable, runInAction } from 'mobx';
+import { now } from 'mobx-utils';
 import { TrainingJournal } from './training-journal';
 
 export enum State {
@@ -8,76 +9,75 @@ export enum State {
 }
 
 export class TrainingSession {
-  @observable private startDate?: Date;
-  @observable private endDate?: Date;
-  @observable private totalDuration?: number;
-  @observable public elapsedTime!: number;
+  private startDate?: number;
+  @observable private startTime?: number;
+  @observable private current!: number;
+  @observable private tracked!: number;
   @observable public state!: State;
   private id?: string;
   private trainingJournal: TrainingJournal;
 
   constructor(trainingJournal: TrainingJournal) {
     this.trainingJournal = trainingJournal;
+
     runInAction(() => {
       this.state = State.NONE;
-      this.elapsedTime = 0;
+      this.tracked = 0;
+      this.current = 0;
+    });
+
+    autorun(() => {
+      if (this.state !== State.RUNNING) {
+        return;
+      }
+      const time = now() - (this.startTime || 0);
+
+      runInAction(() => {
+        if (time >= 0) {
+          this.current = time;
+        }
+      });
     });
   }
 
   @computed
-  public get startTime(): number {
-    return this.startDate ? this.startDate.getTime() : 0;
-  }
-
-  @computed
   public get totalTime(): number {
-    return this.totalDuration || 0;
+    return this.tracked + this.current;
   }
 
   @action
   public start(id: string): void {
     this.state = State.RUNNING;
-    this.startDate = new Date();
-    this.totalDuration = 0;
+    this.startTime = now();
+    this.startDate = now();
+    this.tracked = 0;
+    this.current = 0;
     this.id = id;
-    this.tick();
-  }
-
-  @action
-  private tick(): void {
-    if (this.state !== State.RUNNING) {
-      return;
-    }
-
-    this.elapsedTime = Date.now() - this.startTime + this.totalTime;
-
-    setTimeout(this.tick.bind(this), 1000);
   }
 
   @action
   public stop(): void {
     this.state = State.NONE;
-    this.endDate = new Date();
-    if (this.startDate && typeof this.totalDuration === 'number') {
-      this.totalDuration += this.endDate.getTime() - this.startDate.getTime();
-
+    if (this.startDate) {
       this.trainingJournal.addTraining(this.id!, {
         date: this.startDate,
-        duration: this.totalDuration,
+        duration: this.totalTime,
       });
     }
+    this.current = 0;
+    this.tracked = 0;
   }
 
   @action
   public pause(): void {
-    if (this.startDate) {
-      this.stop();
+    if (this.startTime) {
       this.state = State.PAUSED;
-      this.startDate = undefined;
+      this.startTime = undefined;
+      this.tracked += this.current;
+      this.current = 0;
     } else {
       this.state = State.RUNNING;
-      this.startDate = new Date();
-      this.tick();
+      this.startTime = now();
     }
   }
 }

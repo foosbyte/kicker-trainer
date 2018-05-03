@@ -1,7 +1,7 @@
 import { action, autorun, observable, runInAction } from 'mobx';
 
 interface Training {
-  date: Date;
+  date: number;
   duration: number;
 }
 

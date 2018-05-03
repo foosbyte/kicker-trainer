@@ -55,7 +55,7 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
             {formatDuration(
               this.props.trainingJournal.exerciseTrainingTime(
                 this.props.match.params.id
-              )
+              ) + this.props.trainingSession.totalTime
             )}
           </Badge>
         </LeftRight>
@@ -78,7 +78,7 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
         <>
           <Button onPress={this.onPause}>Pause</Button>
           <Button onPress={this.onStop}>Stop</Button>
-          <div>{formatDuration(this.props.trainingSession.elapsedTime)}</div>
+          <div>{formatDuration(this.props.trainingSession.totalTime)}</div>
         </>
       );
     }

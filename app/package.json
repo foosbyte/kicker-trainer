@@ -49,6 +49,7 @@
     "hops-typescript": "1.0.0",
     "mobx": "4.2.0",
     "mobx-react": "5.1.2",
+    "mobx-utils": "4.0.1",
     "prop-types": "15.6.1",
     "react": "16.3.2",
     "react-dom": "16.3.2",
