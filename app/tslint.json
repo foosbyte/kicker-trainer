@@ -13,7 +13,15 @@
     "max-classes-per-file": false,
     "interface-name": false,
     "jsx-boolean-value": false,
-    "member-ordering": false
+    "member-ordering": false,
+    "no-shadowed-variable": false,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "case-insensitive",
+        "named-imports-order": "any"
+      }
+    ]
   },
   "rulesDirectory": []
 }
