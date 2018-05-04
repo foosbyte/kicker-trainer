@@ -10,6 +10,8 @@ declare module 'react-chartkick' {
     data: { name: string; data?: { [date: string]: number } }[];
     xtitle?: string;
     ytitle?: string;
+    min?: number;
+    max?: number;
   }
 
   export class LineChart extends React.Component<LineChartProps> {}

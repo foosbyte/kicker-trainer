@@ -77,6 +77,8 @@ export class Stats extends React.Component<StatsProps> {
         <LineChart
           xtitle="Time"
           ytitle="Quota"
+          min={0}
+          max={100}
           data={this.props.trainingJournal.exercises.map(exercise => {
             const ex =
               this.props.exerciseCatalogue &&
