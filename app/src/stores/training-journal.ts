@@ -1,4 +1,5 @@
 import { action, autorun, computed, observable, runInAction } from 'mobx';
+import { migrate } from './migrations';
 
 export interface Training {
   exercise?: Exercise;
@@ -15,6 +16,8 @@ export interface Exercise {
 export class TrainingJournal {
   @observable public exercises!: Exercise[];
   private static key = 'exercises';
+  private static versionKey = 'db_version';
+  private static version = 'v1';
 
   constructor() {
     runInAction(() => (this.exercises = []));
@@ -28,11 +31,16 @@ export class TrainingJournal {
   @action
   private load(): void {
     if (typeof window !== 'undefined' && window.localStorage) {
-      this.exercises.splice(
-        0,
-        this.exercises.length,
-        ...JSON.parse(localStorage.getItem(TrainingJournal.key) || '[]')
+      const storedExercises = JSON.parse(
+        localStorage.getItem(TrainingJournal.key) || '[]'
       );
+      const storedVersion = localStorage.getItem(TrainingJournal.versionKey);
+      const exercises = migrate(
+        storedVersion,
+        TrainingJournal.version,
+        storedExercises
+      );
+      this.exercises.splice(0, this.exercises.length, ...exercises);
       this.exercises.forEach(exercise => {
         exercise.trainings.forEach(training => {
           training.exercise = exercise;
@@ -63,6 +71,7 @@ export class TrainingJournal {
   @action
   public save(data: string): void {
     if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem(TrainingJournal.versionKey, TrainingJournal.version);
       localStorage.setItem(TrainingJournal.key, data);
     }
   }
