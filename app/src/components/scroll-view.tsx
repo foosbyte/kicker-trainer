@@ -6,6 +6,7 @@ import { View } from './view';
 const ScrollViewWrapper = styled(View)`
   flex: 1 0 auto;
   overflow: auto;
+  width: 100%;
 `;
 
 export class ScrollView extends React.PureComponent {
