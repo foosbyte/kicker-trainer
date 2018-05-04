@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Categories } from './categories';
 import { Exercises } from './exercises';
 import { Profile } from './profile';
+import { Settings } from './settings';
 import { Stats } from './stats';
 import { Training } from './training';
 
@@ -21,6 +22,7 @@ export class Scenes extends React.PureComponent<ScenesProps> {
         <Route exact path="/exercises/:category" component={Exercises} />
         <Route exact path="/training/:id" component={Training} />
         <Route exact path="/stats" component={Stats} />
+        <Route exact path="/settings" component={Settings} />
         <Miss />
       </Switch>
     );

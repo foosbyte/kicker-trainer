@@ -27,6 +27,9 @@ export class Profile extends React.PureComponent {
         <Centered>
           <Button to="/categories">Start Training</Button>
         </Centered>
+        <Centered>
+          <Button to="/settings">Settings</Button>
+        </Centered>
       </ProfileWrapper>
     );
   }
