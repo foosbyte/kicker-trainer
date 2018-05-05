@@ -5,16 +5,9 @@ export enum Bars {
   '5bar' = '5bar',
 }
 
-export enum Modes {
-  time,
-  quota,
-  trigger,
-}
-
 export interface Exercise {
   id: string;
   name: string;
-  modes: Modes[];
   bars?: {
     red: { [B in Bars]: number };
     blue: { [B in Bars]: number };
@@ -41,51 +34,42 @@ export class ExerciseCatalogue {
           },
         },
         id: '2bar-backpin-bottom',
-        modes: [Modes.time],
         name: 'Backpin (unten)',
       },
       {
         id: '2bar-bank-top',
-        modes: [Modes.time],
         name: 'Bande (oben)',
       },
       {
         id: '2bar-push-shot',
-        modes: [Modes.time],
         name: 'Schieber',
       },
     ],
     [Bars['3bar']]: [
       {
         id: '3bar-snake-center',
-        modes: [Modes.time, Modes.quota, Modes.trigger],
         name: 'Jet Mitte',
       },
       {
         id: '3bar-pin-center',
-        modes: [Modes.time, Modes.quota, Modes.trigger],
         name: 'Pin Mitte',
       },
       {
         id: '3bar-pull-shot',
-        modes: [Modes.time, Modes.quota],
         name: 'Zieher',
       },
     ],
     [Bars['5bar']]: [
       {
         id: '5bar-chip-bottom',
-        modes: [Modes.time],
         name: 'Kantenpass (unten)',
       },
       {
         id: '5bar-brush-bottom',
-        modes: [Modes.time],
         name: 'Brush (unten)',
       },
       {
         id: '5bar-stick-bottom',
-        modes: [Modes.time],
         name: 'Stickpass (unten)',
       },
     ],
