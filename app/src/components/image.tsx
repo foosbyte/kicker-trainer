@@ -9,7 +9,7 @@ interface WrapperProps {
 const Wrapper = styled.div`
   position: relative;
   padding-bottom: ${({ width, height }: WrapperProps) =>
-    height / width * 100 + '%'};
+    (height / width) * 100 + '%'};
   width: 100%;
 `;
 
