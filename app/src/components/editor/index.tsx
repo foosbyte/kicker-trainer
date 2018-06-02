@@ -26,7 +26,7 @@ interface WrapperProps {
 const Wrapper = styled.div`
   position: relative;
   padding-bottom: ${({ width, height }: WrapperProps) =>
-    height / width * 100 + '%'};
+    (height / width) * 100 + '%'};
   width: 100%;
 `;
 
@@ -197,11 +197,11 @@ export class Editor extends React.PureComponent<EditorProps> {
       center.y,
       radius,
       alpha,
-      alpha + 360 * Math.PI / 180
+      alpha + (360 * Math.PI) / 180
     );
 
     this.ctx.moveTo(center.x, center.y);
-    this.ctx.arc(center.x, center.y, 5, 0, 360 * Math.PI / 180);
+    this.ctx.arc(center.x, center.y, 5, 0, (360 * Math.PI) / 180);
     this.ctx.stroke();
   }
 
@@ -238,7 +238,7 @@ export class Editor extends React.PureComponent<EditorProps> {
 
       const propsPosition = this.props.blueBars[bar.players as 1 | 2 | 5 | 3];
       const barPosition =
-        bar.offset + bar.max / 2 + bar.max / 2 * (propsPosition / 100);
+        bar.offset + bar.max / 2 + (bar.max / 2) * (propsPosition / 100);
 
       this.drawPlayers(
         left,
@@ -267,7 +267,7 @@ export class Editor extends React.PureComponent<EditorProps> {
         Math.min(this.props.redBars[bar.players as 1 | 2 | 5 | 3], 100)
       );
       const barPosition =
-        bar.offset + bar.max / 2 + bar.max / 2 * (propsPosition / 100);
+        bar.offset + bar.max / 2 + (bar.max / 2) * (propsPosition / 100);
 
       this.drawPlayers(
         left,

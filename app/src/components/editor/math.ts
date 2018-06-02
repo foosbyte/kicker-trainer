@@ -20,7 +20,7 @@ export class Vector {
   }
 
   public rotate(alpha: number): Vector {
-    const rad = alpha * Math.PI / 180;
+    const rad = (alpha * Math.PI) / 180;
     const sin = Math.sin(rad);
     const cos = Math.cos(rad);
     return new Vector(this.x * cos - this.y * sin, this.x * sin + this.y * cos);
@@ -43,7 +43,7 @@ export class Matrix {
   }
 
   public static rotate(alpha: number): Matrix {
-    const rad = alpha * Math.PI / 180;
+    const rad = (alpha * Math.PI) / 180;
     const sin = Math.sin(rad);
     const cos = Math.cos(rad);
     return new Matrix(cos, sin, -sin, cos, 1 - cos, 1 - cos);
