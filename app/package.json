@@ -51,7 +51,7 @@
     "hops-typescript": "1.0.0",
     "mobx": "4.3.1",
     "mobx-react": "5.2.2",
-    "mobx-utils": "4.0.1",
+    "mobx-utils": "5.0.0",
     "prop-types": "15.6.1",
     "react": "16.4.0",
     "react-chartkick": "0.2.0",
