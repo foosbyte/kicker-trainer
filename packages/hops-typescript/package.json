@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "hops-build-config": "10.4.4",
-    "ts-loader": "4.3.0",
+    "ts-loader": "4.4.1",
     "typescript": "2.9.1"
   }
 }
