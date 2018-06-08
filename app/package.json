@@ -50,7 +50,7 @@
     "hops-styled-components": "1.0.0",
     "hops-typescript": "1.0.0",
     "mobx": "4.3.0",
-    "mobx-react": "5.1.2",
+    "mobx-react": "5.2.2",
     "mobx-utils": "4.0.1",
     "prop-types": "15.6.1",
     "react": "16.4.0",
