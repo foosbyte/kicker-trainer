@@ -124,6 +124,7 @@ export class TrainingJournal {
   @computed
   public get lastExercises(): Exercise[] {
     return this.exercises
+      .slice()
       .sort((a, b) => {
         const lastTraining = (ex: Exercise) =>
           Math.max(...ex.trainings.map(training => training.date));
