@@ -22,7 +22,8 @@
         "named-imports-order": "any"
       }
     ],
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "array-type": false
   },
   "rulesDirectory": []
 }
