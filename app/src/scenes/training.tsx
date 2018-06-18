@@ -21,7 +21,7 @@ const Wrapper = styled(View)`
 
 const ImageSizer = styled(View)`
   align-self: center;
-  width: 300px;
+  width: 95%;
 `;
 
 const LeftRight = styled(View)`
