@@ -80,6 +80,7 @@ export class Editor extends React.PureComponent<EditorProps> {
     }
     if (this.ctx) {
       this.renderMatrix = Matrix.identity
+        .scale(1)
         .rotate(90)
         .translate(Editor.playfieldHeight / 2, Editor.playfieldWidth / 2);
       this.drawTable();
@@ -126,10 +127,12 @@ export class Editor extends React.PureComponent<EditorProps> {
   }
 
   private drawTable(): void {
+    const scale = new Vector(this.renderMatrix.x0, this.renderMatrix.y0).length;
+
     this.drawGrass();
-    this.ctx.lineWidth = 8;
+    this.ctx.lineWidth = 8 * scale;
     this.ctx.strokeStyle = '#fff';
-    this.ctx.lineCap = 'square';
+    this.ctx.lineCap = 'butt';
     this.ctx.beginPath();
 
     const goalTopMatrix = Matrix.identity.translate(
@@ -176,7 +179,13 @@ export class Editor extends React.PureComponent<EditorProps> {
     const circleWidth = 185;
     const circleHeight = 47;
 
+    this.ctx.save();
+    this.ctx.lineCap = 'square';
+
     const mat = goalMatrix.mul(this.renderMatrix);
+
+    // extract scaling factor
+    const scale = new Vector(this.renderMatrix.x0, this.renderMatrix.y0).length;
 
     // goal box
     const gtl = new Vector(-goalWidth / 2, 0);
@@ -186,6 +195,14 @@ export class Editor extends React.PureComponent<EditorProps> {
     drawLine(this.ctx, mat, gtl, gbl);
     drawLine(this.ctx, mat, gbl, gbr);
     drawLine(this.ctx, mat, gbr, gtr);
+
+    const penaltyPoint = new Vector(0, goalHeight + 80).mul(mat);
+    this.ctx.save();
+    this.ctx.beginPath();
+    this.ctx.arc(penaltyPoint.x, penaltyPoint.y, 8 * scale, 0, 2 * Math.PI);
+    this.ctx.fillStyle = '#fff';
+    this.ctx.fill();
+    this.ctx.restore();
 
     // penalty box
     // width: 24 cm
@@ -200,51 +217,57 @@ export class Editor extends React.PureComponent<EditorProps> {
 
     // penalty circle
     // http://mathforum.org/library/drmath/view/55037.html
-    const c1 = new Vector(-circleWidth / 2, goalHeight).mul(mat);
-    const c2 = new Vector(circleWidth / 2, goalHeight).mul(mat);
     const cd = circleWidth / 2;
+    const c1 = new Vector(-cd, goalHeight).mul(mat);
+    const c2 = new Vector(cd, goalHeight).mul(mat);
     const cr = (cd * cd + circleHeight * circleHeight) / (2 * circleHeight);
+    const radius = new Vector(cr, 0).mul(scale).length;
     const cc = new Vector(0, goalHeight - (cr - circleHeight)).mul(mat);
     const start = Math.atan2(c1.y - cc.y, c1.x - cc.x);
     const end = Math.atan2(c2.y - cc.y, c2.x - cc.x);
+    this.ctx.lineCap = 'butt';
     this.ctx.beginPath();
-    this.ctx.moveTo(c1.x, c1.y);
-    this.ctx.arc(cc.x, cc.y, cr, start, end, true);
+    this.ctx.arc(cc.x, cc.y, radius, start, end, true);
     this.ctx.stroke();
+
+    this.ctx.restore();
   }
 
   private drawHalfwayMarkers(): void {
-    const radius = 205 / 2;
+    // extract scaling factor
+    const originalRadius = 205 / 2;
+    const scale = new Vector(this.renderMatrix.x0, this.renderMatrix.y0).length;
+    const radius = new Vector(originalRadius, 0).mul(scale).length;
 
     const leftSide = new Vector(-Editor.playfieldWidth / 2, 0);
-    const leftEnd = new Vector(0 - radius, 0);
+    const leftEnd = new Vector(0 - originalRadius, 0);
     drawLine(this.ctx, this.renderMatrix, leftSide, leftEnd);
 
     const rightSide = new Vector(Editor.playfieldWidth / 2, 0);
-    const rightEnd = new Vector(0 + radius, 0);
+    const rightEnd = new Vector(0 + originalRadius, 0);
     drawLine(this.ctx, this.renderMatrix, rightSide, rightEnd);
 
     const center = new Vector(0, 0).mul(this.renderMatrix);
-    const start = new Vector(radius, 0).mul(this.renderMatrix);
 
     this.ctx.beginPath();
-    this.ctx.moveTo(start.x, start.y);
-    const alpha = Math.atan2(this.renderMatrix.y0, this.renderMatrix.x0);
-    this.ctx.arc(
-      center.x,
-      center.y,
-      radius,
-      alpha,
-      alpha + (360 * Math.PI) / 180
-    );
-
-    this.ctx.moveTo(center.x, center.y);
-    this.ctx.arc(center.x, center.y, 5, 0, (360 * Math.PI) / 180);
+    this.ctx.arc(center.x, center.y, radius, 0, 2 * Math.PI);
     this.ctx.stroke();
+
+    this.ctx.save();
+    this.ctx.beginPath();
+    this.ctx.arc(center.x, center.y, 8 * scale, 0, 2 * Math.PI);
+    this.ctx.fillStyle = '#fff';
+    this.ctx.fill();
+    this.ctx.restore();
   }
 
   private drawBars(): void {
-    const playerWidth = 23;
+    const scale = new Vector(this.renderMatrix.x0, this.renderMatrix.y0).length;
+
+    const playerWidth = 23 * scale;
+    const playerHeight = 45 * scale;
+    const barWidth = 15 * scale;
+
     const bars = [
       { players: 1, height: 25, offset: 240, distanceBetween: 0, max: 0 },
       { players: 2, height: 175, offset: 0, distanceBetween: 210, max: 0 },
@@ -258,7 +281,7 @@ export class Editor extends React.PureComponent<EditorProps> {
         (bar.players * playerWidth + (bar.players - 1) * bar.distanceBetween);
     });
 
-    this.ctx.lineWidth = 15;
+    this.ctx.lineWidth = barWidth;
     this.ctx.strokeStyle = 'silver';
     this.ctx.beginPath();
 
@@ -284,6 +307,7 @@ export class Editor extends React.PureComponent<EditorProps> {
         barPosition,
         bar.distanceBetween,
         playerWidth,
+        playerHeight,
         '#00f'
       );
     });
@@ -313,6 +337,7 @@ export class Editor extends React.PureComponent<EditorProps> {
         barPosition,
         bar.distanceBetween,
         playerWidth,
+        playerHeight,
         '#f00'
       );
     });
@@ -326,6 +351,7 @@ export class Editor extends React.PureComponent<EditorProps> {
     maximumPullOut: number,
     distanceBetween: number,
     playerWidth: number,
+    playerHeight: number,
     color: string
   ): void {
     this.ctx.save();
@@ -333,18 +359,18 @@ export class Editor extends React.PureComponent<EditorProps> {
 
     let position = left.add(new Vector(maximumPullOut, 20));
     for (let i = 0; i < players; i++) {
-      this.drawPlayer(position, playerWidth);
+      this.drawPlayer(position, playerWidth, playerHeight);
       position = position.add(new Vector(playerWidth + distanceBetween, 0));
     }
 
     this.ctx.restore();
   }
 
-  private drawPlayer(position: Vector, width: number): void {
+  private drawPlayer(position: Vector, width: number, height: number): void {
     const dPosition = position.mul(this.renderMatrix);
 
     this.ctx.beginPath();
-    this.ctx.fillRect(dPosition.x, dPosition.y, 45, width);
+    this.ctx.fillRect(dPosition.x, dPosition.y, height, width);
     this.ctx.stroke();
   }
 
