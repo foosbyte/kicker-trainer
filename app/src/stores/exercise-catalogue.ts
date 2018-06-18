@@ -12,6 +12,7 @@ export interface Exercise {
     red: { [B in Bars]: number };
     blue: { [B in Bars]: number };
   };
+  arrows?: { start: { x: number; y: number }; end: { x: number; y: number } }[];
 }
 
 export class ExerciseCatalogue {
@@ -35,6 +36,16 @@ export class ExerciseCatalogue {
         },
         id: '2bar-backpin-bottom',
         name: 'Backpin (unten)',
+        arrows: [
+          {
+            start: { x: 200, y: -410 },
+            end: { x: 50, y: -410 },
+          },
+          {
+            start: { x: 40, y: -390 },
+            end: { x: 40, y: 500 },
+          },
+        ],
       },
       {
         id: '2bar-bank-top',

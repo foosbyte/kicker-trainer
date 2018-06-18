@@ -3,7 +3,6 @@ import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import styled from 'styled-components';
-
 import { Badge } from '../components/badge';
 import { Button } from '../components/button';
 import { Editor } from '../components/editor';
@@ -12,7 +11,7 @@ import { View } from '../components/view';
 import { ExerciseCatalogue } from '../stores/exercise-catalogue';
 import { TrainingJournal } from '../stores/training-journal';
 import { State, TrainingSession } from '../stores/training-session';
-import { formatDuration, calculateQuota, formatQuota } from '../utils';
+import { calculateQuota, formatDuration, formatQuota } from '../utils';
 
 const Wrapper = styled(View)`
   display: flex;
@@ -47,12 +46,23 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
 
   public render(): JSX.Element {
     const id = this.props.match.params.id;
+    const exercise = this.props.exerciseCatalogue.getExercise(id);
+    if (!exercise) {
+      throw new Error(`Invalid exercise '${id}'`);
+    }
+    const { arrows } = exercise;
     const [blue, red] = this.props.exerciseCatalogue.getBarPositions(id);
 
     return (
       <Wrapper>
         <ImageSizer>
-          <Editor width={1115} height={680} blueBars={blue} redBars={red} />
+          <Editor
+            width={1115}
+            height={680}
+            blueBars={blue}
+            redBars={red}
+            arrows={arrows}
+          />
         </ImageSizer>
         <LeftRight>
           <Text>Gesamt Trainingszeit</Text>

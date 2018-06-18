@@ -1,8 +1,7 @@
 import { bind } from 'decko';
 import * as React from 'react';
 import styled from 'styled-components';
-
-import { Matrix, Vector } from './math';
+import { Matrix, rad2deg, Vector } from './math';
 
 function drawLine(
   ctx: CanvasRenderingContext2D,
@@ -53,6 +52,7 @@ export interface EditorProps {
     5: number;
     3: number;
   };
+  arrows?: { start: { x: number; y: number }; end: { x: number; y: number } }[];
 }
 
 export class Editor extends React.PureComponent<EditorProps> {
@@ -84,7 +84,45 @@ export class Editor extends React.PureComponent<EditorProps> {
         .translate(Editor.playfieldHeight / 2, Editor.playfieldWidth / 2);
       this.drawTable();
       this.drawBars();
+      if (this.props.arrows) {
+        this.props.arrows.forEach(arrow => {
+          this.drawArrow(
+            new Vector(arrow.start.x, -arrow.start.y),
+            new Vector(arrow.end.x, -arrow.end.y)
+          );
+        });
+      }
     }
+  }
+
+  private drawArrow(s: Vector, e: Vector): void {
+    const lineWidth = 8;
+
+    const start = s.mul(this.renderMatrix);
+    const end = e.mul(this.renderMatrix);
+
+    const angle = rad2deg(Math.atan2(e.y - s.y, e.x - s.x));
+    const rot = Matrix.rotate(angle)
+      .translate(e.x, e.y)
+      .mul(this.renderMatrix);
+
+    const headRight = new Vector(-3 * lineWidth, -1.75 * lineWidth).mul(rot);
+    const headLeft = new Vector(-3 * lineWidth, +1.75 * lineWidth).mul(rot);
+
+    this.ctx.lineWidth = lineWidth;
+    this.ctx.strokeStyle = 'yellow';
+    this.ctx.beginPath();
+
+    this.ctx.moveTo(start.x, start.y);
+    this.ctx.lineTo(end.x, end.y);
+
+    this.ctx.moveTo(headRight.x, headRight.y);
+    this.ctx.lineTo(end.x, end.y);
+
+    this.ctx.moveTo(headLeft.x, headLeft.y);
+    this.ctx.lineTo(end.x, end.y);
+
+    this.ctx.stroke();
   }
 
   private drawTable(): void {
