@@ -1,5 +1,11 @@
 export class Vector {
-  constructor(public readonly x: number, public readonly y: number) {}
+  public readonly x: number;
+  public readonly y: number;
+
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
 
   public add(that: Vector): Vector {
     return new Vector(this.x + that.x, this.y + that.y);
@@ -13,6 +19,10 @@ export class Vector {
       this.x * val.x0 + this.y * val.x1 + val.x2,
       this.x * val.y0 + this.y * val.y1 + val.y2
     );
+  }
+
+  public dot(v: Vector): number {
+    return this.x * v.x + this.y * v.y;
   }
 
   get length(): number {
@@ -76,4 +86,8 @@ export class Matrix {
       m.y0 * this.x2 + m.y1 * this.y2 + m.y2
     );
   }
+}
+
+export function rad2deg(rad: number): number {
+  return (rad / Math.PI) * 180;
 }
