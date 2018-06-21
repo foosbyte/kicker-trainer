@@ -13,7 +13,9 @@ build:
 before_install: npm install -g yarn
 
 before_script: yarn lint
-script: yarn build -p
+script:
+  - yarn build -p
+  - yarn test
 
 deploy:
   provider: script

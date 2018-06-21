@@ -9,7 +9,8 @@
     "build": "hops build",
     "serve": "hops serve",
     "deploy": "hops lambda deploy",
-    "lint": "tslint 'src/**/*.{ts,tsx}'"
+    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "test": "jest"
   },
   "hops": {
     "extends": "hops-typescript",
@@ -31,10 +32,27 @@
       "certificateArn": "arn:aws:acm:us-east-1:440520855754:certificate/2fa97b22-2cb3-4050-9f1f-73b741959fdc"
     }
   },
+  "jest": {
+    "preset": "jest-puppeteer",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/__tests__/*.+(ts|tsx|js)"
+    ]
+  },
   "dependencies": {
     "@types/chart.js": "2.7.23",
     "@types/express": "4.16.0",
+    "@types/jest": "23.1.1",
     "@types/node": "10.3.3",
+    "@types/puppeteer": "1.3.4",
     "@types/react": "16.4.1",
     "@types/react-dom": "16.0.6",
     "@types/react-helmet": "5.0.6",
@@ -49,10 +67,13 @@
     "hops-react": "10.4.3",
     "hops-styled-components": "1.0.0",
     "hops-typescript": "1.0.0",
+    "jest": "23.1.0",
+    "jest-puppeteer": "3.2.1",
     "mobx": "5.0.3",
     "mobx-react": "5.2.3",
     "mobx-utils": "5.0.0",
     "prop-types": "15.6.2",
+    "puppeteer": "1.5.0",
     "react": "16.4.1",
     "react-chartkick": "0.2.1",
     "react-dom": "16.4.1",
@@ -61,6 +82,7 @@
     "react-router-dom": "4.3.1",
     "styled-components": "3.3.3",
     "ts-config": "18.0.0",
+    "ts-jest": "22.4.6",
     "tslib": "1.9.2",
     "typescript-styled-plugin": "0.6.3"
   },
