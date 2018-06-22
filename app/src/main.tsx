@@ -4,8 +4,7 @@ import { combineContexts, ReactContext, render } from 'hops-react';
 import { StyledComponentsContext } from 'hops-styled-components';
 import * as React from 'react';
 import { injectGlobal } from 'styled-components';
-
-import { App } from './app';
+import { RoutedApp } from './app';
 import * as stores from './stores';
 import { theme } from './theme';
 
@@ -24,4 +23,4 @@ injectGlobal`
   }
 `;
 
-export default render(<App />, createContext({ theme, stores }));
+export default render(<RoutedApp />, createContext({ theme, stores }));
