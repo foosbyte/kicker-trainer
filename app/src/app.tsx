@@ -1,9 +1,9 @@
-import { observer } from 'mobx-react';
+import { bind } from 'decko';
+import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { withRouter } from 'react-router-dom';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
-
 import { ScrollView } from './components/scroll-view';
 import { TabBar, TabBarItem } from './components/tab-bar';
 import { View } from './components/view';
@@ -27,9 +27,38 @@ const Nav = styled(View)`
   flex: 0 0 auto;
 `;
 
-@withRouter
+const Backdrop = styled.div`
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const DataPrivacyLayer = styled.div`
+  background-color: white;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+`;
+
+interface AppProps {
+  dataPrivacy?: import('./stores/data-privacty').DataPrivacy;
+}
+
+@inject('dataPrivacy')
 @observer
-export class App extends React.Component<any> {
+class App extends React.Component<AppProps & RouteComponentProps<AppProps>> {
+  public componentDidMount(): void {
+    this.props.dataPrivacy!.location = this.props.location.pathname;
+  }
+
+  public componentDidUpdate(): void {
+    this.props.dataPrivacy!.location = this.props.location.pathname;
+  }
+
   public render(): any {
     return (
       <Root>
@@ -53,7 +82,37 @@ export class App extends React.Component<any> {
             <TabBarItem title="Stats" to="/stats" />
           </TabBar>
         </Nav>
+        {this.renderDataPrivacyAgreement()}
       </Root>
     );
   }
+
+  private renderDataPrivacyAgreement(): JSX.Element | null {
+    if (this.props.dataPrivacy!.accepted) {
+      return null;
+    }
+    return (
+      <Backdrop>
+        <DataPrivacyLayer>
+          <label>
+            <input id="data-privacy" type="checkbox" defaultChecked={false} />
+            GDPR (Tracking with Google Analytics)
+          </label>
+          <button onClick={this.acceptDataPrivacyAgreement}>Accept</button>
+        </DataPrivacyLayer>
+      </Backdrop>
+    );
+  }
+
+  @bind
+  private acceptDataPrivacyAgreement(): void {
+    const checkbox = document.getElementById(
+      'data-privacy'
+    ) as HTMLInputElement;
+    if (checkbox.checked) {
+      this.props.dataPrivacy!.accept();
+    }
+  }
 }
+
+export const RoutedApp = withRouter(App);
