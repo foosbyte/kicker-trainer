@@ -27,7 +27,15 @@
     "semanticPrefix": "chore:",
     "lockFileMaintenance": {
       "enabled": true
-    }
+    },
+    "updateLockFiles": true,
+    "prCreation": "not-pending",
+    "packageRules": [
+      {
+        "packagePatterns": ["^@types/"],
+        "automerge": true
+      }
+    ]
   },
   "prettier": {
     "trailingComma": "es5",
