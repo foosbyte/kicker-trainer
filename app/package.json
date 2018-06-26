@@ -13,12 +13,11 @@
     "test": "jest"
   },
   "hops": {
-    "extends": "hops-typescript",
     "browsers": "last 1 Chrome versions",
-    "node": "6.10.3",
-    "workerFile": "./src/service-worker.ts",
-    "workerPath": "sw.js",
-    "assetPath": "assets",
+    "node": "8.10",
+    "workerFile": "<rootDir>/src/service-worker.ts",
+    "workerPath": "/sw.js",
+    "assetPath": "/assets",
     "locations": [
       "/",
       "/categories",
@@ -26,11 +25,13 @@
     ],
     "aws": {
       "region": "eu-central-1",
-      "stageName": "trainer",
       "memorySize": 1024,
       "domainName": "trainer.nerdlabs.it",
       "certificateArn": "arn:aws:acm:us-east-1:440520855754:certificate/2fa97b22-2cb3-4050-9f1f-73b741959fdc"
-    }
+    },
+    "mixins": [
+      "./hops-mixins"
+    ]
   },
   "jest": {
     "preset": "jest-puppeteer",
@@ -49,14 +50,15 @@
   },
   "dependencies": {
     "chart.js": "2.7.3",
+    "css-loader": "1.0.0",
     "decko": "1.2.0",
-    "hops-express": "10.4.6",
-    "hops-lambda": "10.4.6",
+    "hops-lambda": "11.0.0-rc.41",
     "hops-mobx": "1.0.0",
-    "hops-pwa": "10.4.6",
-    "hops-react": "10.4.6",
-    "hops-styled-components": "1.0.0",
-    "hops-typescript": "1.0.0",
+    "hops-preset-defaults": "11.0.0-rc.41",
+    "hops-pwa": "11.0.0-rc.41",
+    "hops-react": "11.0.0-rc.41",
+    "hops-styled-components": "11.0.0-rc.41",
+    "hops-typescript": "11.0.0-rc.41",
     "lodash.merge": "4.6.1",
     "mobx": "5.5.0",
     "mobx-react": "5.3.1",
@@ -69,10 +71,12 @@
     "react-helmet": "5.2.0",
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
+    "style-loader": "0.23.0",
     "styled-components": "3.4.10",
     "tslib": "1.9.3"
   },
   "devDependencies": {
+    "@babel/core": "7.0.0",
     "@types/chart.js": "2.7.38",
     "@types/express": "4.16.0",
     "@types/jest": "23.3.5",
@@ -84,8 +88,7 @@
     "@types/react-helmet": "5.0.7",
     "@types/react-router": "4.0.32",
     "@types/react-router-dom": "4.3.1",
-    "hops": "10.4.0",
-    "hops-build": "10.4.6",
+    "hops": "11.0.0-rc.41",
     "jest": "23.6.0",
     "jest-puppeteer": "3.4.0",
     "puppeteer": "1.9.0",
