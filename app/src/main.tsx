@@ -1,17 +1,9 @@
-import { MobXContext } from 'hops-mobx';
-import { combineContexts, ReactContext, render } from 'hops-react';
-import { StyledComponentsContext } from 'hops-styled-components';
+import { render } from 'hops-react';
 import * as React from 'react';
 import { injectGlobal } from 'styled-components';
 import { RoutedApp } from './app';
 import * as stores from './stores';
 import { theme } from './theme';
-
-const createContext = combineContexts(
-  ReactContext,
-  MobXContext,
-  StyledComponentsContext
-);
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
@@ -20,4 +12,7 @@ injectGlobal`
   }
 `;
 
-export default render(<RoutedApp />, createContext({ theme, stores }));
+export default render(<RoutedApp />, {
+  styled: { theme },
+  mobx: { stores },
+});

@@ -1,10 +1,8 @@
-import hopsConfig from 'hops-config';
-
 declare var self: ServiceWorkerGlobalScope;
 
 const CACHE_NAME = 'hops-pwa-cache';
 
-export default function(assets: string[]): void {
+export default (hopsConfig: any, assets: string[]): void => {
   const assetsToCache = assets.map(asset => '/' + asset);
 
   self.addEventListener('message', messageEvent => {
@@ -51,7 +49,7 @@ export default function(assets: string[]): void {
       )
     );
   });
-}
+};
 
 function fromNetwork(request: Request, timeout: number): Promise<Response> {
   return Promise.race([

@@ -46,4 +46,4 @@ jspm_packages/
 .DS_Store
 
 # Default hops build directory
-build
+dist
