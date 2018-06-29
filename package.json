@@ -28,8 +28,6 @@
     "lockFileMaintenance": {
       "enabled": true
     },
-    "updateLockFiles": true,
-    "prCreation": "not-pending",
     "packageRules": [
       {
         "packagePatterns": ["^@types/"],
