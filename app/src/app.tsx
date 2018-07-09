@@ -51,12 +51,8 @@ interface AppProps {
 @inject('dataPrivacy')
 @observer
 class App extends React.Component<AppProps & RouteComponentProps<AppProps>> {
-  public componentDidMount(): void {
-    this.props.dataPrivacy!.location = this.props.location.pathname;
-  }
-
   public componentDidUpdate(): void {
-    this.props.dataPrivacy!.location = this.props.location.pathname;
+    this.props.dataPrivacy!.setLocation(this.props.location.pathname);
   }
 
   public render(): any {

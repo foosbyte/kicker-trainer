@@ -3,7 +3,6 @@ import { action, computed, observable, reaction, runInAction } from 'mobx';
 const GA_ID = 'UA-121233177-1';
 const GA_CONFIG = {
   anonymize_ip: true,
-  send_page_view: false,
 };
 const hasDocument = () => typeof document !== 'undefined';
 const hasStorage = () => typeof window !== 'undefined' && window.localStorage;
@@ -34,15 +33,14 @@ export class DataPrivacy {
       () => this.currentLocation,
       location => {
         this.trackPageView(location);
-      },
-      { fireImmediately: true }
+      }
     );
   }
 
   private loadGA(): void {
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-121233177-1';
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
     script.onload = () => {
       this.gtag('js', new Date());
       this.gtag('config', GA_ID, GA_CONFIG);
@@ -56,7 +54,7 @@ export class DataPrivacy {
   }
 
   @action
-  public set location(location: string) {
+  public setLocation(location: string): void {
     this.currentLocation = location;
   }
 
