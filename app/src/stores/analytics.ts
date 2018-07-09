@@ -44,6 +44,7 @@ export class Analytics {
     script.onload = () => {
       this.gtag('js', new Date());
       this.gtag('config', GA_ID, GA_CONFIG);
+      this.trackUserTimings();
     };
     document.body.appendChild(script);
   }
@@ -61,6 +62,32 @@ export class Analytics {
     this.gtag('config', GA_ID, { ...GA_CONFIG, page_path: page });
   }
 
+  public trackUserTimings(): void {
+    if (window.performance && window.performance.timing) {
+      const timing = window.performance.timing;
+      this.gtag('event', 'timing_complete', {
+        name: 'dns',
+        value: timing.domainLookupEnd - timing.domainLookupStart,
+      });
+      this.gtag('event', 'timing_complete', {
+        name: 'connect',
+        value: timing.connectEnd - timing.connectStart,
+      });
+      this.gtag('event', 'timing_complete', {
+        name: 'ttfb',
+        value: timing.responseStart - timing.connectEnd,
+      });
+      this.gtag('event', 'timing_complete', {
+        name: 'response',
+        value: timing.responseEnd - timing.responseStart,
+      });
+      this.gtag('event', 'timing_complete', {
+        name: 'load',
+        value: timing.loadEventStart - timing.responseEnd,
+      });
+    }
+  }
+
   private gtag(
     command: 'config',
     id: string,
@@ -75,7 +102,7 @@ export class Analytics {
   private gtag(
     command: 'event',
     name: string,
-    params?: { [key: string]: string }
+    params?: { [key: string]: string | number }
   ): void;
   private gtag(): void {
     if (typeof dataLayer !== 'undefined') {
