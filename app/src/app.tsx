@@ -56,6 +56,10 @@ class App extends React.Component<AppProps & RouteComponentProps<AppProps>> {
     this.props.analytics!.setLocation(this.props.location.pathname);
   }
 
+  public componentDidCatch(error: Error): void {
+    this.props.analytics!.trackException(error);
+  }
+
   public render(): any {
     return (
       <Root>
