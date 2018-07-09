@@ -1,10 +1,12 @@
+import { bind } from 'decko';
+import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import styled from 'styled-components';
-
 import { Avatar } from '../components/avatar';
 import { Button } from '../components/button';
 import { RecentTrainings } from '../components/recent-trainings';
 import { View } from '../components/view';
+import { PWAIntegration } from '../stores/pwa';
 
 const ProfileWrapper = styled(View)`
   display: flex;
@@ -16,7 +18,9 @@ const Centered = styled(View)`
   align-self: center;
 `;
 
-export class Profile extends React.PureComponent {
+@inject('pwa')
+@observer
+export class Profile extends React.Component<{ pwa: PWAIntegration }> {
   public render(): JSX.Element {
     return (
       <ProfileWrapper>
@@ -30,7 +34,17 @@ export class Profile extends React.PureComponent {
         <Centered>
           <Button to="/settings">Settings</Button>
         </Centered>
+        {this.props.pwa.installable && (
+          <Centered>
+            <Button onPress={this.installPwa}>Install on device</Button>
+          </Centered>
+        )}
       </ProfileWrapper>
     );
+  }
+
+  @bind
+  private installPwa(): void {
+    this.props.pwa.install();
   }
 }
