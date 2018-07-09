@@ -8,6 +8,7 @@ import { Button } from '../components/button';
 import { Editor } from '../components/editor';
 import { Text } from '../components/text';
 import { View } from '../components/view';
+import { Analytics } from '../stores/analytics';
 import { ExerciseCatalogue } from '../stores/exercise-catalogue';
 import { TrainingJournal } from '../stores/training-journal';
 import { State, TrainingSession } from '../stores/training-session';
@@ -33,11 +34,12 @@ export interface ExerciseProps {
   trainingSession: TrainingSession;
   trainingJournal: TrainingJournal;
   exerciseCatalogue: ExerciseCatalogue;
+  analytics: Analytics;
 }
 
 type RouteProps = RouteComponentProps<{ id: string }>;
 
-@inject('trainingSession', 'trainingJournal', 'exerciseCatalogue')
+@inject('trainingSession', 'trainingJournal', 'exerciseCatalogue', 'analytics')
 @observer
 export class Training extends React.Component<ExerciseProps & RouteProps> {
   public componentWillUnmount(): void {
@@ -114,25 +116,40 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
   @bind
   private onStart(): void {
     this.props.trainingSession.start(this.props.match.params.id);
+    this.props.analytics.track('start', {
+      event_category: 'training',
+    });
   }
 
   @bind
   private onStop(): void {
     this.props.trainingSession.stop();
+    this.props.analytics.track('stop', {
+      event_category: 'training',
+    });
   }
 
   @bind
   private onPause(): void {
     this.props.trainingSession.pause();
+    this.props.analytics.track('pause', {
+      event_category: 'training',
+    });
   }
 
   @bind
   private onHit(): void {
     this.props.trainingSession.recordHit();
+    this.props.analytics.track('hit', {
+      event_category: 'training',
+    });
   }
 
   @bind
   private onMiss(): void {
     this.props.trainingSession.recordMiss();
+    this.props.analytics.track('miss', {
+      event_category: 'training',
+    });
   }
 }

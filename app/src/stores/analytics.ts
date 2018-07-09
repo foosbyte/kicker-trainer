@@ -9,6 +9,14 @@ const hasDocument = () => typeof document !== 'undefined';
 
 declare const dataLayer: any[];
 
+export interface EventTrackingParameters {
+  event_category?: string;
+  event_label?: string;
+  value?: number;
+  non_interaction?: boolean;
+  [name: string]: any;
+}
+
 export class Analytics {
   @observable private currentLocation!: string;
 
@@ -54,8 +62,8 @@ export class Analytics {
     this.currentLocation = location;
   }
 
-  public track(): void {
-    this.gtag('event', 'bla');
+  public track(action: string, params?: EventTrackingParameters): void {
+    this.gtag('event', action, params);
   }
 
   public trackPageView(page: string): void {
@@ -101,8 +109,8 @@ export class Analytics {
   private gtag(command: 'set', data: { [key: string]: string }): void;
   private gtag(
     command: 'event',
-    name: string,
-    params?: { [key: string]: string | number }
+    action: string,
+    params?: EventTrackingParameters
   ): void;
   private gtag(): void {
     if (typeof dataLayer !== 'undefined') {
