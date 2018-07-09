@@ -70,6 +70,12 @@ export class Analytics {
     this.gtag('config', GA_ID, { ...GA_CONFIG, page_path: page });
   }
 
+  public trackException(exception: Error): void {
+    this.gtag('event', 'exception', {
+      description: exception.stack || exception.toString(),
+    });
+  }
+
   public trackUserTimings(): void {
     if (window.performance && window.performance.timing) {
       const timing = window.performance.timing;
