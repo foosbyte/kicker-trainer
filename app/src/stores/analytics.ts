@@ -16,8 +16,8 @@ export class Analytics {
     runInAction(() => {
       if (typeof window !== 'undefined') {
         (window as any).dataLayer = [];
+        this.currentLocation = window.location.pathname;
       }
-      this.currentLocation = '/';
     });
 
     reaction(
