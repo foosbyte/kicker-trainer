@@ -46,13 +46,14 @@ const DataPrivacyLayer = styled.div`
 
 interface AppProps {
   dataPrivacy?: import('./stores/data-privacty').DataPrivacy;
+  analytics?: import('./stores/analytics').Analytics;
 }
 
-@inject('dataPrivacy')
+@inject('dataPrivacy', 'analytics')
 @observer
 class App extends React.Component<AppProps & RouteComponentProps<AppProps>> {
   public componentDidUpdate(): void {
-    this.props.dataPrivacy!.setLocation(this.props.location.pathname);
+    this.props.analytics!.setLocation(this.props.location.pathname);
   }
 
   public render(): any {
