@@ -2015,7 +2015,7 @@ cosmiconfig@^4.0.0:
     parse-json "^4.0.0"
     require-from-string "^2.0.1"
 
-cosmiconfig@^5.0.2:
+cosmiconfig@^5.0.1, cosmiconfig@^5.0.2:
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-5.0.5.tgz#a809e3c2306891ce17ab70359dc8bdf661fe2cd0"
   dependencies:
@@ -3501,6 +3501,15 @@ hops-config@10.4.0:
     lodash.mergewith "^4.6.1"
     pkg-dir "^2.0.0"
 
+hops-config@10.4.6:
+  version "10.4.6"
+  resolved "https://registry.yarnpkg.com/hops-config/-/hops-config-10.4.6.tgz#7d21fb53b970e80b917e725537ca711fc2675888"
+  dependencies:
+    cosmiconfig "^5.0.1"
+    is-plain-object "^2.0.4"
+    lodash.mergewith "^4.6.1"
+    pkg-dir "^2.0.0"
+
 hops-express@10.4.2:
   version "10.4.2"
   resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-10.4.2.tgz#b0b8a399dbd0ec2d71bdca8c13c8f4f5aec063e8"
@@ -3530,12 +3539,12 @@ hops-pwa@10.4.0:
   dependencies:
     hops-config "10.4.0"
 
-hops-react@10.4.3:
-  version "10.4.3"
-  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-10.4.3.tgz#89222b9090cbfc164096968657dc9c2c55c19bbd"
+hops-react@10.4.6:
+  version "10.4.6"
+  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-10.4.6.tgz#f76e69637f92b8e5f1700f0590fcd3d3729d628c"
   dependencies:
-    hops-config "10.4.0"
-    mixinable "2.0.0"
+    hops-config "10.4.6"
+    mixinable "2.1.0"
     serialize-javascript "^1.4.0"
 
 hops@10.4.0:
@@ -5032,9 +5041,9 @@ mixin-deep@^1.2.0:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
 
-mixinable@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/mixinable/-/mixinable-2.0.0.tgz#733b5ba8c1e997fdfef7a653064d36b23c8a34d5"
+mixinable@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/mixinable/-/mixinable-2.1.0.tgz#c7e38a7d44a94d77b96e9b0552e34c73d7119954"
 
 mkdirp@0.5.1, mkdirp@0.x.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   version "0.5.1"
