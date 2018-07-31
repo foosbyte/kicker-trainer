@@ -83,9 +83,9 @@
   version "10.5.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.4.tgz#6eccc158504357d1da91434d75e86acde94bb10b"
 
-"@types/puppeteer@1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.5.1.tgz#8e924528322e184d1cd171f33fd2c94329bf059e"
+"@types/puppeteer@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.6.0.tgz#3dc6613cfbbb5e91443f5137fb4831973857ab7f"
   dependencies:
     "@types/events" "*"
     "@types/node" "*"
