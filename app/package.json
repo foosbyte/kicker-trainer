@@ -53,7 +53,7 @@
     "hops-express": "10.4.2",
     "hops-lambda": "10.4.2",
     "hops-mobx": "1.0.0",
-    "hops-pwa": "10.4.0",
+    "hops-pwa": "10.4.6",
     "hops-react": "10.4.6",
     "hops-styled-components": "1.0.0",
     "hops-typescript": "1.0.0",
