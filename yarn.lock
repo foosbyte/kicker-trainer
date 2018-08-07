@@ -3516,11 +3516,11 @@ hops-lambda@10.4.2:
     resolve-tree "^0.1.13"
     serverless-http "^1.5.2"
 
-hops-pwa@10.4.0:
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-10.4.0.tgz#dce11ecba4cd6e0522249ebd526709b7df207083"
+hops-pwa@10.4.6:
+  version "10.4.6"
+  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-10.4.6.tgz#948245b10dd164b56098e954b76264d3ca1116d3"
   dependencies:
-    hops-config "10.4.0"
+    hops-config "10.4.6"
 
 hops-react@10.4.6:
   version "10.4.6"
