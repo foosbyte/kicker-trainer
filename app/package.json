@@ -84,7 +84,7 @@
     "hops": "10.4.0",
     "hops-build": "10.4.4",
     "jest": "23.3.0",
-    "jest-puppeteer": "3.2.1",
+    "jest-puppeteer": "3.3.0",
     "puppeteer": "1.7.0",
     "ts-config": "19.0.0",
     "ts-jest": "23.0.1",
