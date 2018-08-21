@@ -1,4 +1,5 @@
 import { bind } from 'decko';
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import styled from 'styled-components';
 import { Matrix, rad2deg, Vector } from './math';
@@ -55,7 +56,8 @@ export interface EditorProps {
   arrows?: { start: { x: number; y: number }; end: { x: number; y: number } }[];
 }
 
-export class Editor extends React.PureComponent<EditorProps> {
+@observer
+export class Editor extends React.Component<EditorProps> {
   private static playfieldWidth = 680;
   private static playfieldHeight = 1115;
 
