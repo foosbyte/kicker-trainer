@@ -2,19 +2,143 @@
   "1bar": [
     {
       "id": "1bar-brush-top",
-      "name": "Brush oben"
+      "name": "Brush oben",
+      "arrows": [
+        {
+          "start": {
+            "x": -3,
+            "y": -487
+          },
+          "end": {
+            "x": -59,
+            "y": 486
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 16,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        }
+      }
     },
     {
       "id": "1bar-brush-bottom",
-      "name": "Brush unten"
+      "name": "Brush unten",
+      "arrows": [
+        {
+          "start": {
+            "x": -3,
+            "y": -487
+          },
+          "end": {
+            "x": 59,
+            "y": 486
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": -16,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        }
+      }
     },
     {
       "id": "1bar-bank-top",
-      "name": "Bande oben"
+      "name": "Bande oben",
+      "arrows": [
+        {
+          "start": {
+            "x": -91,
+            "y": -487
+          },
+          "end": {
+            "x": -303,
+            "y": -30
+          }
+        },
+        {
+          "start": {
+            "x": -300,
+            "y": 32
+          },
+          "end": {
+            "x": -100,
+            "y": 512
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 46,
+          "2bar": -41,
+          "3bar": -63,
+          "5bar": 24
+        },
+        "blue": {
+          "1bar": -82,
+          "2bar": -50,
+          "3bar": 26,
+          "5bar": 24
+        }
+      }
     },
     {
       "id": "1bar-bank-bottom",
-      "name": "Bande unten"
+      "name": "Bande unten",
+      "arrows": [
+        {
+          "start": {
+            "x": 98,
+            "y": -483
+          },
+          "end": {
+            "x": 293,
+            "y": -61
+          }
+        },
+        {
+          "start": {
+            "x": 293,
+            "y": 54
+          },
+          "end": {
+            "x": 93,
+            "y": 503
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 76,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        }
+      }
     }
   ],
   "2bar": [
