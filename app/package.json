@@ -51,7 +51,7 @@
     "chart.js": "2.7.2",
     "decko": "1.2.0",
     "hops-express": "10.4.2",
-    "hops-lambda": "10.4.2",
+    "hops-lambda": "10.4.6",
     "hops-mobx": "1.0.0",
     "hops-pwa": "10.4.6",
     "hops-react": "10.4.6",

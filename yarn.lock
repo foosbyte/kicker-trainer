@@ -3500,16 +3500,17 @@ hops-express@10.4.2:
     mime "^2.2.0"
     server-timings "^2.0.1"
 
-hops-lambda@10.4.2:
-  version "10.4.2"
-  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-10.4.2.tgz#b65f1a6df826b4fa09c7a9412c70b109741f0350"
+hops-lambda@10.4.6:
+  version "10.4.6"
+  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-10.4.6.tgz#e24693992457d83aeb701dfe4d14765fda8ea33c"
   dependencies:
     archiver "^2.1.0"
     aws-sdk "^2.177.0"
     globby "^7.1.1"
-    hops-config "10.4.0"
+    hops-config "10.4.6"
     prompt "^1.0.0"
     resolve-tree "^0.1.13"
+    semver "^5.5.0"
     serverless-http "^1.5.2"
 
 hops-pwa@10.4.6:
