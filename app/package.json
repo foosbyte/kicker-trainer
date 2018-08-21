@@ -57,7 +57,7 @@
     "hops-react": "10.4.6",
     "hops-styled-components": "1.0.0",
     "hops-typescript": "1.0.0",
-    "mobx": "5.0.3",
+    "mobx": "5.0.4",
     "mobx-react": "5.2.3",
     "mobx-utils": "5.0.0",
     "prop-types": "15.6.2",
