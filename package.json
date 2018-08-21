@@ -23,14 +23,18 @@
     ]
   },
   "renovate": {
-    "extends": ["config:base"],
+    "extends": [
+      "config:base"
+    ],
     "semanticPrefix": "chore:",
     "lockFileMaintenance": {
       "enabled": true
     },
     "packageRules": [
       {
-        "packagePatterns": ["^@types/"],
+        "packagePatterns": [
+          "^@types/"
+        ],
         "automerge": true
       }
     ]
@@ -42,6 +46,6 @@
   "devDependencies": {
     "husky": "0.14.3",
     "lint-staged": "7.2.2",
-    "prettier": "1.13.7"
+    "prettier": "1.14.2"
   }
 }
