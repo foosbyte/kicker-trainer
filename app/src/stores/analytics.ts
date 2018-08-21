@@ -18,7 +18,8 @@ export interface EventTrackingParameters {
 }
 
 export class Analytics {
-  @observable private currentLocation!: string;
+  @observable
+  private currentLocation!: string;
 
   constructor(dataPrivacy: DataPrivacy) {
     runInAction(() => {

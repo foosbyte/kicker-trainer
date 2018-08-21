@@ -14,7 +14,8 @@ export interface Exercise {
 }
 
 export class TrainingJournal {
-  @observable public exercises!: Exercise[];
+  @observable
+  public exercises!: Exercise[];
   private static key = 'exercises';
   private static versionKey = 'db_version';
   private static version = 'v1';

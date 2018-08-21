@@ -3,7 +3,8 @@ import { action, computed, observable, runInAction } from 'mobx';
 const hasStorage = () => typeof window !== 'undefined' && window.localStorage;
 
 export class DataPrivacy {
-  @observable private saved!: boolean | null;
+  @observable
+  private saved!: boolean | null;
 
   constructor() {
     const read = (): string =>

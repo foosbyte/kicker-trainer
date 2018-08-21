@@ -11,7 +11,8 @@ interface PWAInstallPromptEvent extends Event {
 const hasWindow = () => typeof window !== 'undefined';
 
 export class PWAIntegration {
-  @observable private installPrompt?: PWAInstallPromptEvent;
+  @observable
+  private installPrompt?: PWAInstallPromptEvent;
 
   private analytics: Analytics;
 

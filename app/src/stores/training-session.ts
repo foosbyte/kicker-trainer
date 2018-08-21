@@ -10,12 +10,18 @@ export enum State {
 
 export class TrainingSession {
   private startDate?: number;
-  @observable private startTime?: number;
-  @observable private currentTime!: number;
-  @observable private trackedTime!: number;
-  @observable private hits!: number;
-  @observable private misses!: number;
-  @observable public state!: State;
+  @observable
+  private startTime?: number;
+  @observable
+  private currentTime!: number;
+  @observable
+  private trackedTime!: number;
+  @observable
+  private hits!: number;
+  @observable
+  private misses!: number;
+  @observable
+  public state!: State;
   private id?: string;
   private trainingJournal: TrainingJournal;
 
