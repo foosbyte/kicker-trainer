@@ -53,8 +53,10 @@ export class Editor extends React.Component<EditorProps> {
 
                 return (
                   <li key={exercise.id}>
-                    {bar} {exercise.name}
-                    <ExerciseEditor exercise={exercise} />
+                    <EditorDetail
+                      summary={`${bar} ${exercise.name}`}
+                      exercise={exercise}
+                    />
                   </li>
                 );
               }),
@@ -72,6 +74,47 @@ export class Editor extends React.Component<EditorProps> {
           readOnly
         />
       </>
+    );
+  }
+}
+
+interface EditorDetailProps {
+  summary: string;
+  exercise: Exercise;
+}
+
+interface EditorDetailState {
+  open: boolean;
+}
+
+class EditorDetail extends React.PureComponent<
+  EditorDetailProps,
+  EditorDetailState
+> {
+  private detailsRef = React.createRef<HTMLDetailsElement>();
+
+  constructor(props: EditorDetailProps) {
+    super(props);
+
+    this.state = {
+      open: false,
+    };
+  }
+
+  public componentDidMount(): void {
+    if (this.detailsRef.current) {
+      this.detailsRef.current.addEventListener('toggle', () => {
+        this.setState({ open: this.detailsRef.current!.open });
+      });
+    }
+  }
+
+  public render(): JSX.Element {
+    return (
+      <details ref={this.detailsRef}>
+        <summary>{this.props.summary}</summary>
+        {this.state.open && <ExerciseEditor exercise={this.props.exercise} />}
+      </details>
     );
   }
 }
