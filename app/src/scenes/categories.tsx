@@ -15,6 +15,11 @@ export class Categories extends React.PureComponent {
           image={this.getImage(placeholder320)}
         />
         <Category
+          to="/exercises/3bar"
+          title="3 Bar Excercises"
+          image={this.getImage(placeholder320)}
+        />
+        <Category
           to="/exercises/5bar"
           title="5 Bar Excercises"
           image={this.getImage(placeholder320)}
@@ -25,8 +30,8 @@ export class Categories extends React.PureComponent {
           image={this.getImage(placeholder320)}
         />
         <Category
-          to="/exercises/3bar"
-          title="3 Bar Excercises"
+          to="/exercises/1bar"
+          title="1 Bar Excercises"
           image={this.getImage(placeholder320)}
         />
       </Space>

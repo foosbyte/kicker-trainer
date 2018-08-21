@@ -51,6 +51,13 @@ export interface ExercisesProps {
 
 type RouteProps = RouteComponentProps<{ category: Bars }>;
 
+const categoryMap = {
+  '1bar': '1 Bar',
+  '2bar': '2 Bar',
+  '3bar': '3 Bar',
+  '5bar': '5 Bar',
+};
+
 @inject('exerciseCatalogue')
 export class Exercises extends React.Component<ExercisesProps & RouteProps> {
   public render(): JSX.Element {
@@ -58,7 +65,9 @@ export class Exercises extends React.Component<ExercisesProps & RouteProps> {
       <ScrollView>
         <Space between="m">
           <Category
-            title="5 Bar Excercises"
+            title={`${
+              categoryMap[this.props.match.params.category]
+            } Excercises`}
             image={<Image source={placeholder320} width={320} height={148} />}
           />
           {this.props.exerciseCatalogue.data[
