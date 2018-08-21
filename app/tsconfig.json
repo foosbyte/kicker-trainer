@@ -1,8 +1,8 @@
 {
-  "extends": "../node_modules/ts-config/tsconfig.json",
   "compilerOptions": {
     "target": "es2015",
     "module": "esnext",
+    "moduleResolution": "node",
     "lib": ["dom", "webworker", "es2015", "es2016", "es2017", "es2018"],
     "jsx": "react",
     "sourceMap": true,
@@ -19,8 +19,12 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
     "pretty": true,
     "stripInternal": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   }
 }
