@@ -224,71 +224,613 @@
     },
     {
       "id": "2bar-center-bank-straight",
-      "name": "Mitte Bande: Gerade"
+      "name": "Mitte Bande: Gerade",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": -53,
+          "3bar": 0,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": 0,
+            "y": -345
+          },
+          "end": {
+            "x": 0,
+            "y": 476
+          }
+        }
+      ]
     },
     {
       "id": "2bar-center-bank-brush-left",
-      "name": "Mitte Bande: Links"
+      "name": "Mitte Bande: Links",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 58,
+          "3bar": 0,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": 0,
+            "y": -341
+          },
+          "end": {
+            "x": -64,
+            "y": 516
+          }
+        }
+      ]
     },
     {
       "id": "2bar-center-bank-brush-right",
-      "name": "Mitte Bande: Rechts"
+      "name": "Mitte Bande: Rechts",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": -55,
+          "3bar": 0,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": 0,
+            "y": -341
+          },
+          "end": {
+            "x": 66,
+            "y": 489
+          }
+        }
+      ]
     },
     {
       "id": "2bar-center-bank-brush-pass-top",
-      "name": "Mitte Bande: Pass oben"
+      "name": "Mitte Bande: Pass oben",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": -56,
+          "3bar": -86,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": 0,
+            "y": -345
+          },
+          "end": {
+            "x": -113,
+            "y": 170
+          }
+        }
+      ]
     },
     {
       "id": "2bar-center-bank-brush-pass-bottom",
-      "name": "Mitte Bande: Pass unten"
+      "name": "Mitte Bande: Pass unten",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": -56,
+          "3bar": -88,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": 0,
+            "y": -332
+          },
+          "end": {
+            "x": 52,
+            "y": 188
+          }
+        }
+      ]
     },
     {
       "id": "2bar-pin-right-long-short",
-      "name": "Pin Rechtslang: Kurz"
+      "name": "Pin Rechtslang: Kurz",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": -4,
+          "3bar": 0,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": -129,
+            "y": -341
+          },
+          "end": {
+            "x": -75,
+            "y": -341
+          }
+        },
+        {
+          "start": {
+            "x": -62,
+            "y": -345
+          },
+          "end": {
+            "x": -62,
+            "y": 485
+          }
+        }
+      ]
     },
     {
       "id": "2bar-pin-right-long-middle",
-      "name": "Pin Rechtslang: Mitte"
+      "name": "Pin Rechtslang: Mitte",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 5,
+          "3bar": 0,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": -110,
+            "y": -336
+          },
+          "end": {
+            "x": -18,
+            "y": -336
+          }
+        },
+        {
+          "start": {
+            "x": 0,
+            "y": -327
+          },
+          "end": {
+            "x": 0,
+            "y": 485
+          }
+        }
+      ]
     },
     {
       "id": "2bar-pin-right-long-long",
-      "name": "Pin Rechtslang: Lang"
+      "name": "Pin Rechtslang: Lang",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 6,
+          "3bar": 0,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": -102,
+            "y": -345
+          },
+          "end": {
+            "x": 58,
+            "y": -345
+          }
+        },
+        {
+          "start": {
+            "x": 76,
+            "y": -332
+          },
+          "end": {
+            "x": 76,
+            "y": 498
+          }
+        }
+      ]
     },
     {
       "id": "2bar-pin-right-long-bank-top",
-      "name": "Pin Rechtslang: Bande oben"
+      "name": "Pin Rechtslang: Bande oben",
+      "arrows": [
+        {
+          "start": {
+            "x": -118,
+            "y": -341
+          },
+          "end": {
+            "x": -300,
+            "y": -43
+          }
+        },
+        {
+          "start": {
+            "x": -292,
+            "y": 28
+          },
+          "end": {
+            "x": -86,
+            "y": 485
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        }
+      }
     },
     {
       "id": "2bar-pin-right-long-bank-bottom",
-      "name": "Pin Rechtslang: Bande unten"
+      "name": "Pin Rechtslang: Bande unten",
+      "arrows": [
+        {
+          "start": {
+            "x": -116,
+            "y": -332
+          },
+          "end": {
+            "x": 293,
+            "y": 14
+          }
+        },
+        {
+          "start": {
+            "x": 288,
+            "y": 41
+          },
+          "end": {
+            "x": -29,
+            "y": 472
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        }
+      }
     },
     {
       "id": "2bar-pin-right-long-short-angled",
-      "name": "Pin Rechtslang: Kurz Schräg"
+      "name": "Pin Rechtslang: Kurz Schräg",
+      "arrows": [
+        {
+          "start": {
+            "x": -121,
+            "y": -341
+          },
+          "end": {
+            "x": -83,
+            "y": -341
+          }
+        },
+        {
+          "start": {
+            "x": -64,
+            "y": -336
+          },
+          "end": {
+            "x": 60,
+            "y": 489
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        }
+      }
     },
     {
       "id": "2bar-pin-right-long-middle-angled",
-      "name": "Pin Rechtslang: Mitte Schräg"
+      "name": "Pin Rechtslang: Mitte Schräg",
+      "arrows": [
+        {
+          "start": {
+            "x": -113,
+            "y": -341
+          },
+          "end": {
+            "x": -13,
+            "y": -341
+          }
+        },
+        {
+          "start": {
+            "x": 0,
+            "y": -327
+          },
+          "end": {
+            "x": 76,
+            "y": 476
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        }
+      }
     },
     {
       "id": "2bar-pin-right-long-slice",
-      "name": "Pin Rechtslang: Slice"
+      "name": "Pin Rechtslang: Slice",
+      "arrows": [
+        {
+          "start": {
+            "x": -116,
+            "y": -341
+          },
+          "end": {
+            "x": -89,
+            "y": -345
+          }
+        },
+        {
+          "start": {
+            "x": -75,
+            "y": -350
+          },
+          "end": {
+            "x": 25,
+            "y": 481
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        }
+      }
     },
     {
       "id": "2bar-pin-right-long-cutback",
-      "name": "Pin Rechtslang: Cutback"
+      "name": "Pin Rechtslang: Cutback",
+      "arrows": [
+        {
+          "start": {
+            "x": -105,
+            "y": -336
+          },
+          "end": {
+            "x": -167,
+            "y": -336
+          }
+        },
+        {
+          "start": {
+            "x": -167,
+            "y": -314
+          },
+          "end": {
+            "x": -64,
+            "y": 476
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        }
+      }
     },
     {
       "id": "2bar-pin-right-long-pass-to-middle",
-      "name": "Pin Rechtslang: Gekurbelter Pass auf Mittelpuppe"
+      "name": "Pin Rechtslang: Gekurbelter Pass auf Mittelpuppe",
+      "arrows": [
+        {
+          "start": {
+            "x": -118,
+            "y": -341
+          },
+          "end": {
+            "x": -118,
+            "y": 174
+          }
+        }
+      ],
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 64
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": -83,
+          "5bar": -58
+        }
+      }
     },
     {
       "id": "2bar-pin-right-long-brush-to-top",
-      "name": "Pin Rechtslang: Brushpass auf obere Aussenpuppe"
+      "name": "Pin Rechtslang: Brushpass auf obere Aussenpuppe",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": -82,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": -116,
+            "y": -341
+          },
+          "end": {
+            "x": -294,
+            "y": 174
+          }
+        }
+      ]
     },
     {
       "id": "2bar-pin-right-long-stick-wall-top",
-      "name": "Pin Rechtslang: Bandenpass auf obere Aussenpuppe"
+      "name": "Pin Rechtslang: Bandenpass auf obere Aussenpuppe",
+      "bars": {
+        "red": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": 0,
+          "5bar": 0
+        },
+        "blue": {
+          "1bar": 0,
+          "2bar": 0,
+          "3bar": -84,
+          "5bar": 0
+        }
+      },
+      "arrows": [
+        {
+          "start": {
+            "x": -113,
+            "y": -345
+          },
+          "end": {
+            "x": -319,
+            "y": -341
+          }
+        },
+        {
+          "start": {
+            "x": -316,
+            "y": -310
+          },
+          "end": {
+            "x": -311,
+            "y": 161
+          }
+        }
+      ]
     }
   ],
   "3bar": [
