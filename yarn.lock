@@ -3500,6 +3500,17 @@ hops-express@10.4.2:
     mime "^2.2.0"
     server-timings "^2.0.1"
 
+hops-express@10.4.6:
+  version "10.4.6"
+  resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-10.4.6.tgz#e6e86504002cd2d0954d7436de959b3b823693c9"
+  dependencies:
+    compression "^1.7.2"
+    express "^4.16.0"
+    helmet "^3.8.2"
+    hops-config "10.4.6"
+    mime "^2.2.0"
+    server-timings "^2.0.1"
+
 hops-lambda@10.4.2:
   version "10.4.2"
   resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-10.4.2.tgz#b65f1a6df826b4fa09c7a9412c70b109741f0350"
