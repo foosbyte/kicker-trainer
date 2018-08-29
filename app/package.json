@@ -79,7 +79,7 @@
     "@types/lodash.merge": "4.6.4",
     "@types/node": "10.9.3",
     "@types/puppeteer": "1.6.0",
-    "@types/react": "16.4.12",
+    "@types/react": "16.4.13",
     "@types/react-dom": "16.0.7",
     "@types/react-helmet": "5.0.7",
     "@types/react-router": "4.0.30",
