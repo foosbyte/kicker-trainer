@@ -4,7 +4,7 @@ const { configure } = require('mobx');
 const mobxReact = require('mobx-react');
 
 configure({
-  enforceActions: 'strict',
+  enforceActions: 'observed',
 });
 
 const { Provider } = mobxReact;

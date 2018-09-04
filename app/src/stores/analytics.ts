@@ -1,4 +1,4 @@
-import { action, observable, reaction, runInAction } from 'mobx';
+import { action, observable, reaction } from 'mobx';
 import { DataPrivacy } from './data-privacty';
 
 const GA_ID = 'UA-121233177-1';
@@ -22,12 +22,10 @@ export class Analytics {
   private currentLocation!: string;
 
   constructor(dataPrivacy: DataPrivacy) {
-    runInAction(() => {
-      if (typeof window !== 'undefined') {
-        (window as any).dataLayer = [];
-        this.currentLocation = window.location.pathname;
-      }
-    });
+    if (typeof window !== 'undefined') {
+      (window as any).dataLayer = [];
+      this.currentLocation = window.location.pathname;
+    }
 
     reaction(
       () => dataPrivacy.accepted,

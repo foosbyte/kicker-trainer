@@ -1,16 +1,12 @@
 import { bind } from 'decko';
 import installServiceWorker from 'hops-pwa';
-import { observable, runInAction, action } from 'mobx';
+import { observable, action } from 'mobx';
 
 export class ServiceWorker {
   @observable
-  public updateAvailable!: boolean;
+  public updateAvailable = false;
 
   constructor() {
-    runInAction(() => {
-      this.updateAvailable = false;
-    });
-
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       let refreshing = false;
       navigator.serviceWorker.addEventListener('controllerchange', () => {
@@ -67,10 +63,9 @@ export class ServiceWorker {
   }
 
   @bind
+  @action
   private handleUpdate(): void {
-    runInAction(() => {
-      this.updateAvailable = true;
-    });
+    this.updateAvailable = true;
   }
 
   @action

@@ -1,4 +1,4 @@
-import { action, autorun, computed, observable, runInAction } from 'mobx';
+import { action, autorun, computed, observable } from 'mobx';
 import { migrate } from './migrations';
 
 export interface Training {
@@ -15,13 +15,12 @@ export interface Exercise {
 
 export class TrainingJournal {
   @observable
-  public exercises!: Exercise[];
+  public exercises: Exercise[] = [];
   private static key = 'exercises';
   private static versionKey = 'db_version';
   private static version = 'v2';
 
   constructor() {
-    runInAction(() => (this.exercises = []));
     this.load();
 
     autorun(() => {

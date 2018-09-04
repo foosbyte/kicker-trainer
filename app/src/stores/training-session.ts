@@ -13,29 +13,18 @@ export class TrainingSession {
   @observable
   private startTime?: number;
   @observable
-  private currentTime!: number;
+  private currentTime = 0;
   @observable
-  private trackedTime!: number;
+  private trackedTime = 0;
   @observable
-  private hits!: number;
+  private hits = 0;
   @observable
-  private misses!: number;
+  private misses = 0;
   @observable
-  public state!: State;
+  public state = State.NONE;
   private id?: string;
-  private trainingJournal: TrainingJournal;
 
-  constructor(trainingJournal: TrainingJournal) {
-    this.trainingJournal = trainingJournal;
-
-    runInAction(() => {
-      this.state = State.NONE;
-      this.trackedTime = 0;
-      this.currentTime = 0;
-      this.hits = 0;
-      this.misses = 0;
-    });
-
+  constructor(private trainingJournal: TrainingJournal) {
     autorun(() => {
       if (this.state !== State.RUNNING) {
         return;

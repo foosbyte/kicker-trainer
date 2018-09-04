@@ -1,19 +1,17 @@
-import { action, computed, observable, runInAction } from 'mobx';
+import { action, computed, observable } from 'mobx';
 
 const hasStorage = () => typeof window !== 'undefined' && window.localStorage;
 
 export class DataPrivacy {
   @observable
-  private saved!: boolean | null;
+  private saved: boolean | null;
 
   constructor() {
     const read = (): string =>
       hasStorage()
         ? window.localStorage.getItem('data-privacy') || 'false'
         : 'null';
-    runInAction(() => {
-      this.saved = JSON.parse(read());
-    });
+    this.saved = JSON.parse(read());
   }
 
   @computed
