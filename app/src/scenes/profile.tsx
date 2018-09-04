@@ -7,6 +7,7 @@ import { Button } from '../components/button';
 import { RecentTrainings } from '../components/recent-trainings';
 import { View } from '../components/view';
 import { PWAIntegration } from '../stores/pwa';
+import { ServiceWorker } from '../stores/service-worker';
 
 const ProfileWrapper = styled(View)`
   display: flex;
@@ -18,9 +19,14 @@ const Centered = styled(View)`
   align-self: center;
 `;
 
-@inject('pwa')
+export interface ProfileProps {
+  pwa: PWAIntegration;
+  serviceWorker: ServiceWorker;
+}
+
+@inject('pwa', 'serviceWorker')
 @observer
-export class Profile extends React.Component<{ pwa: PWAIntegration }> {
+export class Profile extends React.Component<ProfileProps> {
   public render(): JSX.Element {
     return (
       <ProfileWrapper>
@@ -39,6 +45,11 @@ export class Profile extends React.Component<{ pwa: PWAIntegration }> {
             <Button onPress={this.installPwa}>Install on device</Button>
           </Centered>
         )}
+        {this.props.serviceWorker.updateAvailable && (
+          <Centered>
+            <Button onPress={this.installUpdate}>Install new version</Button>
+          </Centered>
+        )}
       </ProfileWrapper>
     );
   }
@@ -46,5 +57,10 @@ export class Profile extends React.Component<{ pwa: PWAIntegration }> {
   @bind
   private installPwa(): void {
     this.props.pwa.install();
+  }
+
+  @bind
+  private installUpdate(): void {
+    this.props.serviceWorker.install();
   }
 }

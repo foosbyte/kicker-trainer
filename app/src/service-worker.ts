@@ -7,53 +7,49 @@ const CACHE_NAME = 'hops-pwa-cache';
 export default function(assets: string[]): void {
   const assetsToCache = assets.map(asset => '/' + asset);
 
-  self.addEventListener('install', event =>
-    event.waitUntil(
-      precacheIfNotExists(assetsToCache).then(() => self.skipWaiting())
-    )
-  );
+  self.addEventListener('message', messageEvent => {
+    if (messageEvent.data === 'skipWaiting') {
+      self.skipWaiting();
+    }
+  });
 
-  self.addEventListener('activate', event =>
-    event.waitUntil(
-      removeOldCacheEntries(assetsToCache.concat(hopsConfig.locations))
-        .then(() => precache(hopsConfig.locations))
-        .then(() => notifyAllClients())
-        .then(() => self.clients.claim())
-    )
-  );
+  self.addEventListener('install', event => {
+    return event.waitUntil(precacheIfNotExists(assetsToCache));
+  });
+
+  self.addEventListener('activate', event => {
+    return event.waitUntil(
+      removeOldCacheEntries(assetsToCache.concat(hopsConfig.locations)).then(
+        () => precache(hopsConfig.locations)
+      )
+    );
+  });
 
   self.addEventListener('fetch', event => {
     const { request } = event;
-    if (request.method !== 'GET' || process.env.NODE_ENV !== 'production') {
+
+    if (
+      request.method !== 'GET' ||
+      new URL(request.url).origin !== location.origin ||
+      /__webpack_hmr/.test(request.url)
+    ) {
       return;
     }
 
-    if (new URL(request.url).origin !== location.origin) {
-      event.respondWith(
-        fromNetwork(request, 5000).then(
-          response => {
+    event.respondWith(
+      fromCache(request).then(
+        response => {
+          event.waitUntil(updateCache(request));
+          return response;
+        },
+        () => {
+          return fromNetwork(request, 60000).then(response => {
             event.waitUntil(addToCache(request, response.clone()));
             return response;
-          },
-          () => fromCache(request)
-        )
-      );
-    } else {
-      event.respondWith(
-        fromCache(request).then(
-          response => {
-            event.waitUntil(updateCache(request));
-            return response;
-          },
-          () => {
-            return fromNetwork(request, 60000).then(response => {
-              event.waitUntil(addToCache(request, response.clone()));
-              return response;
-            });
-          }
-        )
-      );
-    }
+          });
+        }
+      )
+    );
   });
 }
 
@@ -118,16 +114,5 @@ async function precacheIfNotExists(assets: string[]): Promise<void[]> {
           !requests.some(request => request.url === location.origin + asset)
       )
       .map(asset => cache.add(asset))
-  );
-}
-
-async function notifyAllClients(): Promise<void> {
-  const clients = await self.clients.matchAll({ includeUncontrolled: true });
-  clients.forEach(client =>
-    client.postMessage(
-      JSON.stringify({
-        type: 'serviceworker-updated',
-      })
-    )
   );
 }
