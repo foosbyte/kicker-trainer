@@ -175,9 +175,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/puppeteer@1.6.2":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.6.2.tgz#9b4ba40a67abad3c729a021ffd259d929d00c5e0"
+"@types/puppeteer@1.6.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.6.3.tgz#13b4a70ae9997b7f6b6c9d6771d2aa34c710b809"
   dependencies:
     "@types/events" "*"
     "@types/node" "*"
