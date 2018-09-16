@@ -1,5 +1,5 @@
 import { observable } from 'mobx';
-import exercises from './exercises.json';
+import exercises from './exercises';
 
 export enum Bars {
   '1bar' = '1bar',
