@@ -86,7 +86,7 @@
     "@types/react-router-dom": "4.3.1",
     "hops": "10.4.0",
     "hops-build": "10.4.6",
-    "jest": "23.5.0",
+    "jest": "23.6.0",
     "jest-puppeteer": "3.3.1",
     "puppeteer": "1.8.0",
     "ts-jest": "23.1.4",
