@@ -33,9 +33,9 @@
     "@types/connect" "*"
     "@types/node" "*"
 
-"@types/chart.js@2.7.35":
-  version "2.7.35"
-  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.7.35.tgz#22f977ec83c46835b248a8bbbf81ef808927562e"
+"@types/chart.js@2.7.36":
+  version "2.7.36"
+  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.7.36.tgz#561fee60e09acabc25c6414d36554f80dcf33dca"
 
 "@types/connect@*":
   version "3.4.32"
