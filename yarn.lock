@@ -99,11 +99,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/puppeteer@1.6.4":
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.6.4.tgz#c3b27b72241c782053f21e3996edad561e31db9a"
+"@types/puppeteer@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.8.0.tgz#b414871bfeaf7a20976b955f3a7546b81091d0b4"
   dependencies:
-    "@types/events" "*"
     "@types/node" "*"
 
 "@types/range-parser@*":
