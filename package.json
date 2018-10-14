@@ -13,8 +13,12 @@
     "deploy": "cd app && yarn deploy",
     "test": "cd app && yarn test",
     "lint": "cd app && yarn lint",
-    "fmt": "prettier --write '{app/src,packages}/**/*.{js,ts,tsx,json}'",
-    "precommit": "lint-staged"
+    "fmt": "prettier --write '{app/src,packages}/**/*.{js,ts,tsx,json}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{ts,tsx,json,md}": [
