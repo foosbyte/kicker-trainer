@@ -4921,9 +4921,9 @@ mobx-utils@5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.0.2.tgz#82325c66c86a4b0a9c161df08bd71ebca0f9c902"
 
-mobx@5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.1.1.tgz#b8579ea7e7fbb07b79d56a71c3191287afc45f93"
+mobx@5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.5.0.tgz#a29f6a7526eed28edcd3f0e921a1edaa8bb22575"
 
 moment@^2.10.2:
   version "2.22.2"
