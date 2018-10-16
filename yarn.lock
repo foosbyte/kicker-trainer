@@ -33,9 +33,9 @@
     "@types/connect" "*"
     "@types/node" "*"
 
-"@types/chart.js@2.7.37":
-  version "2.7.37"
-  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.7.37.tgz#6d3443f6ea2561c1a229d8e5e51976b1812b139c"
+"@types/chart.js@2.7.38":
+  version "2.7.38"
+  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.7.38.tgz#b8590885aea0b71d4e8400af45cd85eab960d528"
 
 "@types/connect@*":
   version "3.4.32"
@@ -1601,9 +1601,9 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
 
-chart.js@2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.7.2.tgz#3c9fde4dc5b95608211bdefeda7e5d33dffa5714"
+chart.js@2.7.3:
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.7.3.tgz#cdb61618830bf216dc887e2f7b1b3c228b73c57e"
   dependencies:
     chartjs-color "^2.1.0"
     moment "^2.10.2"
