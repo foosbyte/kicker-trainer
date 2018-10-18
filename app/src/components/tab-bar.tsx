@@ -1,15 +1,23 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
+import { ThemeInterface } from '../theme';
+import { Icon, IconType } from './icon';
 import { Space } from './space';
 import { Text } from './text';
 import { View } from './view';
 
+const FlexedSpace = styled(Space)`
+  display: flex;
+  flex-direction: column;
+`;
+
 const Bar = styled(View)`
   display: flex;
   flex-direction: row;
-  background-color: #262626;
+  background-color: ${(props: { theme?: ThemeInterface }) =>
+    props.theme ? props.theme.color.anthrazit : 'initial'};
 `;
 
 export interface TabBarProps {
@@ -33,22 +41,29 @@ const Link = styled(NavLink)`
 export interface TabBarItemProps {
   title: string;
   to: string;
+  icon: IconType;
+  theme?: ThemeInterface;
 }
 
-export class TabBarItem extends React.Component<TabBarItemProps> {
-  public render(): JSX.Element {
-    return (
-      <Link
-        to={this.props.to}
-        exact
-        activeStyle={{
-          borderBottomColor: '#8190a5',
-        }}
-      >
-        <Space inset="m" squish>
-          <Text>{this.props.title}</Text>
-        </Space>
-      </Link>
-    );
+export const TabBarItem = withTheme(
+  class TabBarItem extends React.Component<TabBarItemProps> {
+    public render(): JSX.Element {
+      return (
+        <Link
+          to={this.props.to}
+          exact
+          activeStyle={{
+            color: this.props.theme ? this.props.theme.color.green : 'inherit',
+          }}
+        >
+          <Space inset="s">
+            <FlexedSpace between="xxs">
+              <Icon icon={this.props.icon} />
+              <Text>{this.props.title}</Text>
+            </FlexedSpace>
+          </Space>
+        </Link>
+      );
+    }
   }
-}
+);

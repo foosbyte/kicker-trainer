@@ -23,6 +23,7 @@ const StyledOutset = styled.div`
 `;
 
 export interface SpaceProps {
+  className?: string;
   inset?: keyof ThemeInterface['space'];
   squish?: boolean;
   stretch?: boolean;
@@ -35,6 +36,7 @@ export class Space extends React.PureComponent<SpaceProps> {
     const numChildren = React.Children.count(this.props.children);
     return this.props.inset ? (
       <StyledInset
+        className={this.props.className}
         inset={this.props.inset}
         squish={this.props.squish}
         stretch={this.props.stretch}
@@ -45,7 +47,11 @@ export class Space extends React.PureComponent<SpaceProps> {
       React.Children.map(this.props.children, (child, i) => {
         const Wrapper = i < numChildren - 1 ? StyledOutset : View;
         return (
-          <Wrapper between={this.props.between} inline={this.props.inline}>
+          <Wrapper
+            className={this.props.className}
+            between={this.props.between}
+            inline={this.props.inline}
+          >
             {child}
           </Wrapper>
         );
