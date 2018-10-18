@@ -1,33 +1,37 @@
 import { bind } from 'decko';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled, { css, ThemeInterface } from '../styled-components';
 
 import { View } from './view';
 
-function getButtonStyle(): any {
+interface ButtonStyleProps {
+  theme: ThemeInterface;
+}
+
+function getButtonStyle(props: ButtonStyleProps): any {
   return css`
     text-decoration: initial;
     cursor: pointer;
     display: block;
-    border-radius: 8px;
-    background-color: #262626;
-    padding: 12px 8px;
+    border-radius: 2px;
+    background-color: ${props.theme.color.green};
+    padding: ${props.theme.space.s}px;
     text-align: center;
-    color: white;
+    color: ${props.theme.color.anthrazit};
   `;
 }
 
 const StyledA = styled.a`
-  ${getButtonStyle()};
+  ${getButtonStyle};
 `;
 
 const StyledButton: any = styled(View)`
-  ${getButtonStyle()};
+  ${getButtonStyle};
 `;
 
 const StyledLink = styled(Link)`
-  ${getButtonStyle()};
+  ${getButtonStyle};
 `;
 
 export interface ButtonProps {

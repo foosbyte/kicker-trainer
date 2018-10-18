@@ -70,6 +70,14 @@ class App extends React.Component<AppProps> {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="manifest" href={manifest} />
           <meta name="theme-color" content="#000" />
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/jam-icons@2.0.0/css/jam.min.css"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Work+Sans"
+            rel="stylesheet"
+          />
         </Helmet>
         <Content>
           <ScrollView>
@@ -78,9 +86,13 @@ class App extends React.Component<AppProps> {
         </Content>
         <Nav>
           <TabBar>
-            <TabBarItem title="Profile" to="/" />
-            <TabBarItem title="Categories" to="/categories" />
-            <TabBarItem title="Stats" to="/stats" />
+            <TabBarItem icon="user-circle" title="Profile" to="/" />
+            <TabBarItem
+              icon="settings-alt"
+              title="Categories"
+              to="/categories"
+            />
+            <TabBarItem icon="bar-chart" title="Stats" to="/stats" />
           </TabBar>
         </Nav>
         {this.renderDataPrivacyAgreement()}
