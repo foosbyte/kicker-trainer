@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
-    "@types/chart.js": "2.7.38",
+    "@types/chart.js": "2.7.40",
     "@types/express": "4.16.0",
     "@types/jest": "23.3.5",
     "@types/lodash.merge": "4.6.4",
