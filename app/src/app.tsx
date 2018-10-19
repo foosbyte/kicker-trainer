@@ -3,12 +3,21 @@ import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { ScrollView } from './components/scroll-view';
 import { TabBar, TabBarItem } from './components/tab-bar';
 import { View } from './components/view';
 import manifest from './manifest.webmanifest';
 import { Scenes } from './scenes';
+import { theme } from './theme';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-size: ${theme.fontSize.m}px;
+  }
+`;
 
 const Root = styled(View)`
   width: 100%;
@@ -79,6 +88,7 @@ class App extends React.Component<AppProps> {
             rel="stylesheet"
           />
         </Helmet>
+        <GlobalStyle />
         <Content>
           <ScrollView>
             <Scenes location={this.props.location} />
