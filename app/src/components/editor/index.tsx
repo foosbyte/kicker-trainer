@@ -1,4 +1,3 @@
-import { bind } from 'decko';
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import styled from 'styled-components';
@@ -61,7 +60,7 @@ export class Editor extends React.Component<EditorProps> {
   private static playfieldWidth = 680;
   private static playfieldHeight = 1115;
 
-  private canvas?: HTMLCanvasElement | null;
+  private canvas = React.createRef<HTMLCanvasElement>();
   private ctx!: CanvasRenderingContext2D;
   private renderMatrix!: Matrix;
 
@@ -74,8 +73,8 @@ export class Editor extends React.Component<EditorProps> {
   }
 
   private draw(): void {
-    if (this.canvas && !this.ctx) {
-      const ctx = this.canvas.getContext('2d');
+    if (this.canvas.current && !this.ctx) {
+      const ctx = this.canvas.current.getContext('2d');
       if (ctx) {
         this.ctx = ctx;
       }
@@ -380,13 +379,8 @@ export class Editor extends React.Component<EditorProps> {
     const { width, height } = this.props;
     return (
       <Wrapper width={width} height={height}>
-        <Canvas innerRef={this.canvasRef} width={width} height={height} />
+        <Canvas ref={this.canvas} width={width} height={height} />
       </Wrapper>
     );
-  }
-
-  @bind
-  private canvasRef(ref: HTMLCanvasElement | null): void {
-    this.canvas = ref;
   }
 }
