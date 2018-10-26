@@ -879,6 +879,23 @@
     mixinable "^4.0.0"
     supports-color "^5.4.0"
 
+"@untool/core@^1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@untool/core/-/core-1.0.0-rc.8.tgz#08d5f44c2e3686642117a2ac0a3fe6386a76681a"
+  integrity sha512-uxt2revn/Yi6TqVjra90mTmPPxX9PtVyW2Plq+fGJunCuG0kBnSHMhfmjRC04ZsEGd6H195e4HrO0ExCOFP0xQ==
+  dependencies:
+    cosmiconfig "^5.0.5"
+    debug "^4.0.0"
+    dotenv "^6.0.0"
+    enhanced-resolve "^4.0.0"
+    escape-string-regexp "^1.0.5"
+    find-up "^3.0.0"
+    flat "^4.0.0"
+    is-plain-object "^2.0.4"
+    lodash.mergewith "^4.6.1"
+    mixinable "^4.0.0"
+    supports-color "^5.4.0"
+
 "@untool/express@^1.0.0-rc.5", "@untool/express@^1.0.0-rc.6":
   version "1.0.0-rc.6"
   resolved "https://registry.yarnpkg.com/@untool/express/-/express-1.0.0-rc.6.tgz#38db18972e3abe967ec5d2618f172790e84ad329"
@@ -886,6 +903,24 @@
   dependencies:
     "@untool/core" "^1.0.0-rc.6"
     "@untool/yargs" "^1.0.0-rc.6"
+    debug "^4.0.0"
+    directory-index "^0.1.0"
+    express "^4.16.2"
+    helmet "^3.12.1"
+    micromatch "^3.1.10"
+    mime "^2.2.2"
+    mixinable "^4.0.0"
+    node-mocks-http "^1.7.0"
+    portfinder "^1.0.17"
+    supports-color "^5.4.0"
+
+"@untool/express@^1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@untool/express/-/express-1.0.0-rc.8.tgz#0bb35e24d29e2a0942f2362accae4a2f06e84391"
+  integrity sha512-JkqmcVEh6iTPzu9FKDXzzpXuzFLO6nPtJNczwnwkHVuiXJzNsXaWb0v/vULpF+WIsQQ3C/v03V3S0kh8eJ7YsA==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.8"
+    "@untool/yargs" "^1.0.0-rc.8"
     debug "^4.0.0"
     directory-index "^0.1.0"
     express "^4.16.2"
@@ -945,12 +980,58 @@
     webpack-hot-middleware "^2.22.2"
     webpack-sources "^1.1.0"
 
+"@untool/webpack@^1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@untool/webpack/-/webpack-1.0.0-rc.8.tgz#3c65fe8590dbd717151a1422b4f90e2fd60ad9e6"
+  integrity sha512-iam0SDYqwMuiFs3Jd3nzaUZdVWrQ1bTqALv22BzpxsVCCFE9ZaxDEi2rYspipfytd4R9vXPt6kv7QilGkaHBhA==
+  dependencies:
+    "@babel/core" "^7.0.0"
+    "@babel/plugin-syntax-dynamic-import" "^7.0.0"
+    "@babel/polyfill" "^7.0.0"
+    "@babel/preset-env" "^7.0.0"
+    "@untool/core" "^1.0.0-rc.8"
+    "@untool/express" "^1.0.0-rc.8"
+    "@untool/yargs" "^1.0.0-rc.8"
+    babel-loader "8"
+    babel-plugin-dynamic-import-node "^2.0.0"
+    browserslist-useragent "^2.0.1"
+    caniuse-lite "^1.0.30000846"
+    debug "^4.0.0"
+    enhanced-resolve "^4.0.0"
+    eprom "^0.0.1"
+    file-loader "^2.0.0"
+    find-up "^3.0.0"
+    loader-utils "^1.1.0"
+    memory-fs "^0.4.1"
+    mixinable "^4.0.0"
+    pathifist "^0.0.2"
+    require-from-string "^2.0.1"
+    rimraf "^2.6.2"
+    source-map-support "^0.5.6"
+    supports-color "^5.4.0"
+    terser-webpack-plugin "^1.1.0"
+    url-loader "^1.0.1"
+    webpack "^4.10.2"
+    webpack-dev-middleware "^3.1.0"
+    webpack-hot-middleware "^2.22.2"
+    webpack-sources "^1.1.0"
+
 "@untool/yargs@^1.0.0-rc.5", "@untool/yargs@^1.0.0-rc.6":
   version "1.0.0-rc.6"
   resolved "https://registry.yarnpkg.com/@untool/yargs/-/yargs-1.0.0-rc.6.tgz#45f295b05bbdf23dc347b1a9f94ba5db66f07f69"
   integrity sha512-HUi/t0wkci1QgBmwhs2oQtnrmEWn/N4sOShGffqmO37G2Ibz4lZyFUtUbQZJwU6RwJKaFBgpk7ipQlruPKI6Kw==
   dependencies:
     "@untool/core" "^1.0.0-rc.6"
+    mixinable "^4.0.0"
+    pretty-ms "^4.0.0"
+    yargs "^12.0.0"
+
+"@untool/yargs@^1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@untool/yargs/-/yargs-1.0.0-rc.8.tgz#e0529a99b4289a8b27f5525ab68b6d803198ce8b"
+  integrity sha512-Gt33TKMITZb1uKWRleo1wJ6hMW20p5C+ZsOiG20wIgcI2ydM0DnLtROZt4UI4sO5uQOhuV5Z8Z5CKVHZEtyz2w==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.8"
     mixinable "^4.0.0"
     pretty-ms "^4.0.0"
     yargs "^12.0.0"
@@ -2907,6 +2988,11 @@ enhanced-resolve@^4.0.0, enhanced-resolve@^4.1.0:
     memory-fs "^0.4.0"
     tapable "^1.0.0"
 
+eprom@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/eprom/-/eprom-0.0.1.tgz#43d0180998ed39e3c152554c9951b8d77144e568"
+  integrity sha512-g8hnWeRig8kno+shd0maZWVdWWDPfcBzk7lwF0BhbOG0JODWurRFx5CiaGUXP3NybWPCOWmtTvvjo1dW2F14gg==
+
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.7.tgz#4684d71779ad39af177e3f007996f7c67c852618"
@@ -3964,13 +4050,13 @@ hops-config@11.0.0-rc.41:
     "@untool/core" "^1.0.0-rc.5"
     "@untool/webpack" "^1.0.0-rc.5"
 
-hops-express@11.0.0-rc.41:
-  version "11.0.0-rc.41"
-  resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-11.0.0-rc.41.tgz#df6783a3de0d05b8133b084f1712c1e813b3c4ce"
-  integrity sha512-zCVCker5pteSeAeNcTyX38WfZ3Zc5f2QWjmp/Dj1wls9D0rqwugI1NasLLa03DbgZnxyD+02+ozngaAYjImMKg==
+hops-express@11.0.0-rc.44:
+  version "11.0.0-rc.44"
+  resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-11.0.0-rc.44.tgz#d8d507a28af41aa1277f390a9e3a5d5d60c217e6"
+  integrity sha512-oDPyDX7SThs5yNUebMmhfWQa6SBMDDcGs+8SW7yM1q//QBUKoCvMLA6unaNrf6iyNxcjHLkwe63HBIV0dUIJkg==
   dependencies:
     compression "^1.7.3"
-    hops-mixin "11.0.0-rc.41"
+    hops-mixin "11.0.0-rc.44"
 
 hops-lambda@11.0.0-rc.41:
   version "11.0.0-rc.41"
@@ -3999,15 +4085,23 @@ hops-mixin@11.0.0-rc.41:
     "@untool/core" "^1.0.0-rc.5"
     mixinable "^4.0.0"
 
-hops-preset-defaults@11.0.0-rc.41:
-  version "11.0.0-rc.41"
-  resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.41.tgz#71cf7afc574eacb3ee3ea5ad4e520ce98982f985"
-  integrity sha512-41XbAHuiP0AOXbDbBTcyB4ejWSXxqyS1McbF0YR1xKZNS21IS8aOB6PXV/e0EsJUs4QH+yAXsN4gmID4KToGpQ==
+hops-mixin@11.0.0-rc.44:
+  version "11.0.0-rc.44"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-rc.44.tgz#7eee4b930654c21ee3a258a9264018b81962c959"
+  integrity sha512-22FnKuECl+AA/PfPd5t+ykK1ghAEuo3kGLQCihV0OC6BRu6OoLiIZEePIhhZXgPlpqaoDDr/yMk55SFIC8i+Dw==
   dependencies:
-    "@untool/express" "^1.0.0-rc.5"
-    "@untool/webpack" "^1.0.0-rc.5"
-    "@untool/yargs" "^1.0.0-rc.5"
-    hops-express "11.0.0-rc.41"
+    "@untool/core" "^1.0.0-rc.8"
+    mixinable "^4.0.0"
+
+hops-preset-defaults@11.0.0-rc.44:
+  version "11.0.0-rc.44"
+  resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.44.tgz#7c6f8ea1ffee79e507356d365d41d900f9627e75"
+  integrity sha512-UGawfGsG/K/93gcXC8aHWuvOOU8s9D19AoiZMpEVfzLewPKOg4XzstYFBExOlZrrzDUIPaZ/Vfge3XeUE1uQog==
+  dependencies:
+    "@untool/express" "^1.0.0-rc.8"
+    "@untool/webpack" "^1.0.0-rc.8"
+    "@untool/yargs" "^1.0.0-rc.8"
+    hops-express "11.0.0-rc.44"
 
 hops-pwa@11.0.0-rc.41:
   version "11.0.0-rc.41"
