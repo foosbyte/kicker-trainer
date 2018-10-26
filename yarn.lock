@@ -862,6 +862,23 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
+"@untool/core@^0.14.0":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@untool/core/-/core-0.14.0.tgz#751e1ea1eceb160f30ec7e15379822aab1ca5842"
+  integrity sha1-dR4eoezrFg8w7H4VN5giqrHKWEI=
+  dependencies:
+    cosmiconfig "^5.0.5"
+    debug "^3.1.0"
+    dotenv "^6.0.0"
+    enhanced-resolve "^4.0.0"
+    escape-string-regexp "^1.0.5"
+    find-up "^3.0.0"
+    flat "^4.0.0"
+    is-plain-object "^2.0.4"
+    lodash.mergewith "^4.6.1"
+    mixinable "^3.1.2"
+    supports-color "^5.4.0"
+
 "@untool/core@^1.0.0-rc.8":
   version "1.0.0-rc.8"
   resolved "https://registry.yarnpkg.com/@untool/core/-/core-1.0.0-rc.8.tgz#08d5f44c2e3686642117a2ac0a3fe6386a76681a"
@@ -4005,6 +4022,14 @@ hops-mixin@11.0.0-rc.44:
     "@untool/core" "^1.0.0-rc.8"
     mixinable "^4.0.0"
 
+hops-mixin@11.0.0-test:
+  version "11.0.0-test"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-test.tgz#862a5f4792ef80ba082e8aadf5c526ce2db1588c"
+  integrity sha512-mzUm344mpnR2k7RMDJ05PBQTbiMo/KF4T5j3w0S/y1AIZbn7dTAzWes0l4LjLJEBKAGA//PTB5ejfF+23euhAQ==
+  dependencies:
+    "@untool/core" "^0.14.0"
+    mixinable "^3.1.2"
+
 hops-preset-defaults@11.0.0-rc.44:
   version "11.0.0-rc.44"
   resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.44.tgz#7c6f8ea1ffee79e507356d365d41d900f9627e75"
@@ -5769,6 +5794,11 @@ mixin-deep@^1.2.0:
   dependencies:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
+
+mixinable@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/mixinable/-/mixinable-3.1.2.tgz#097b8c10b4577702f0ac516a7fa078ff7078a0f5"
+  integrity sha512-RsBBcHmaKE3UQegH+GeHhN0xkUdAhLsrFcyYehJhsvQUtfd1I2UKRVyIMW9F1Nv9z0/JGKg26g9DMzCnsaUIrg==
 
 mixinable@^4.0.0:
   version "4.0.0"
