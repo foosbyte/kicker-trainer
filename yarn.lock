@@ -879,6 +879,23 @@
     mixinable "^4.0.0"
     supports-color "^5.4.0"
 
+"@untool/core@^1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@untool/core/-/core-1.0.0-rc.8.tgz#08d5f44c2e3686642117a2ac0a3fe6386a76681a"
+  integrity sha512-uxt2revn/Yi6TqVjra90mTmPPxX9PtVyW2Plq+fGJunCuG0kBnSHMhfmjRC04ZsEGd6H195e4HrO0ExCOFP0xQ==
+  dependencies:
+    cosmiconfig "^5.0.5"
+    debug "^4.0.0"
+    dotenv "^6.0.0"
+    enhanced-resolve "^4.0.0"
+    escape-string-regexp "^1.0.5"
+    find-up "^3.0.0"
+    flat "^4.0.0"
+    is-plain-object "^2.0.4"
+    lodash.mergewith "^4.6.1"
+    mixinable "^4.0.0"
+    supports-color "^5.4.0"
+
 "@untool/express@^1.0.0-rc.5", "@untool/express@^1.0.0-rc.6":
   version "1.0.0-rc.6"
   resolved "https://registry.yarnpkg.com/@untool/express/-/express-1.0.0-rc.6.tgz#38db18972e3abe967ec5d2618f172790e84ad329"
@@ -3999,6 +4016,14 @@ hops-mixin@11.0.0-rc.41:
     "@untool/core" "^1.0.0-rc.5"
     mixinable "^4.0.0"
 
+hops-mixin@11.0.0-rc.44:
+  version "11.0.0-rc.44"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-rc.44.tgz#7eee4b930654c21ee3a258a9264018b81962c959"
+  integrity sha512-22FnKuECl+AA/PfPd5t+ykK1ghAEuo3kGLQCihV0OC6BRu6OoLiIZEePIhhZXgPlpqaoDDr/yMk55SFIC8i+Dw==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.8"
+    mixinable "^4.0.0"
+
 hops-preset-defaults@11.0.0-rc.41:
   version "11.0.0-rc.41"
   resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.41.tgz#71cf7afc574eacb3ee3ea5ad4e520ce98982f985"
@@ -4035,13 +4060,13 @@ hops-react@11.0.0-rc.41:
     "@untool/react" "^1.0.0-rc.5"
     hops-mixin "11.0.0-rc.41"
 
-hops-styled-components@11.0.0-rc.41:
-  version "11.0.0-rc.41"
-  resolved "https://registry.yarnpkg.com/hops-styled-components/-/hops-styled-components-11.0.0-rc.41.tgz#96be5a76b06d740a8d704f2c96cd57f46baab9d1"
-  integrity sha512-cpYie/0PA3iW3kyPNvfoej/cmfE6eMmVJKDIZID5W5ToXG8+ryPTnw+BypT7V1zKNcYtT1i4f64fX2yMyiIY1g==
+hops-styled-components@11.0.0-rc.44:
+  version "11.0.0-rc.44"
+  resolved "https://registry.yarnpkg.com/hops-styled-components/-/hops-styled-components-11.0.0-rc.44.tgz#7a92f8cd781edd79c2657a5f38c6b51ab62e274a"
+  integrity sha512-ozbLO7Wixq3smhF79WRpxW6rczNxBoV8wNPbhSMilPSZktdopZ4jZLD/fDviQK3LjWTTZZslElMaHYM2h9KHGQ==
   dependencies:
     babel-plugin-styled-components "1.8.0"
-    hops-mixin "11.0.0-rc.41"
+    hops-mixin "11.0.0-rc.44"
 
 hops-typescript@11.0.0-rc.41:
   version "11.0.0-rc.41"
