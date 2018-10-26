@@ -879,6 +879,23 @@
     mixinable "^4.0.0"
     supports-color "^5.4.0"
 
+"@untool/core@^1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@untool/core/-/core-1.0.0-rc.8.tgz#08d5f44c2e3686642117a2ac0a3fe6386a76681a"
+  integrity sha512-uxt2revn/Yi6TqVjra90mTmPPxX9PtVyW2Plq+fGJunCuG0kBnSHMhfmjRC04ZsEGd6H195e4HrO0ExCOFP0xQ==
+  dependencies:
+    cosmiconfig "^5.0.5"
+    debug "^4.0.0"
+    dotenv "^6.0.0"
+    enhanced-resolve "^4.0.0"
+    escape-string-regexp "^1.0.5"
+    find-up "^3.0.0"
+    flat "^4.0.0"
+    is-plain-object "^2.0.4"
+    lodash.mergewith "^4.6.1"
+    mixinable "^4.0.0"
+    supports-color "^5.4.0"
+
 "@untool/express@^1.0.0-rc.5", "@untool/express@^1.0.0-rc.6":
   version "1.0.0-rc.6"
   resolved "https://registry.yarnpkg.com/@untool/express/-/express-1.0.0-rc.6.tgz#38db18972e3abe967ec5d2618f172790e84ad329"
@@ -951,6 +968,16 @@
   integrity sha512-HUi/t0wkci1QgBmwhs2oQtnrmEWn/N4sOShGffqmO37G2Ibz4lZyFUtUbQZJwU6RwJKaFBgpk7ipQlruPKI6Kw==
   dependencies:
     "@untool/core" "^1.0.0-rc.6"
+    mixinable "^4.0.0"
+    pretty-ms "^4.0.0"
+    yargs "^12.0.0"
+
+"@untool/yargs@^1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@untool/yargs/-/yargs-1.0.0-rc.8.tgz#e0529a99b4289a8b27f5525ab68b6d803198ce8b"
+  integrity sha512-Gt33TKMITZb1uKWRleo1wJ6hMW20p5C+ZsOiG20wIgcI2ydM0DnLtROZt4UI4sO5uQOhuV5Z8Z5CKVHZEtyz2w==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.8"
     mixinable "^4.0.0"
     pretty-ms "^4.0.0"
     yargs "^12.0.0"
@@ -4052,12 +4079,12 @@ hops-typescript@11.0.0-rc.41:
     ts-loader "^5.0.0"
     typescript "^3.0.0"
 
-hops@11.0.0-rc.41:
-  version "11.0.0-rc.41"
-  resolved "https://registry.yarnpkg.com/hops/-/hops-11.0.0-rc.41.tgz#c007da44b793c13551396222b05f61d30b2ee901"
-  integrity sha512-C/nZqYByFcHQI5EbfpNTP+9WQEmQLTezQx7Y+DdqUiSy4NQjEvlxj01rooyZ/rcKv+x2HQSb2TOeyH5fxpGmmQ==
+hops@11.0.0-rc.44:
+  version "11.0.0-rc.44"
+  resolved "https://registry.yarnpkg.com/hops/-/hops-11.0.0-rc.44.tgz#b0ce38fade4e33679acb621bc52fb287d5ea1d6e"
+  integrity sha512-zmzC3uU+wBYIJoSaV7AGDM1267krGCEq4HhWr9Zb4xM5FcMKjwqTzOr0Gm4ezCJU21BfwuBWB5em4jUA7l9NfA==
   dependencies:
-    "@untool/yargs" "^1.0.0-rc.5"
+    "@untool/yargs" "^1.0.0-rc.8"
     enhanced-resolve "^4.1.0"
     find-up "^3.0.0"
     pretty-ms "^3.2.0"
