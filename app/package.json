@@ -87,7 +87,7 @@
     "@types/react": "16.4.18",
     "@types/react-dom": "16.0.9",
     "@types/react-helmet": "5.0.7",
-    "@types/react-router": "4.0.32",
+    "@types/react-router": "4.4.0",
     "@types/react-router-dom": "4.3.1",
     "hops": "11.0.0-rc.44",
     "jest": "23.6.0",
