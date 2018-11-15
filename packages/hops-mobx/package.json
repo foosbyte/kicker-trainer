@@ -2,7 +2,7 @@
   "name": "hops-mobx",
   "version": "1.0.0",
   "dependencies": {
-    "hops-mixin": "11.0.0-rc.44"
+    "hops-mixin": "11.0.0-rc.46"
   },
   "peerDependencies": {
     "mobx": "^5.1.0",
