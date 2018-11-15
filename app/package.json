@@ -89,7 +89,7 @@
     "@types/react-helmet": "5.0.7",
     "@types/react-router": "4.4.1",
     "@types/react-router-dom": "4.3.1",
-    "hops": "11.0.0-rc.44",
+    "hops": "11.0.0-rc.46",
     "jest": "23.6.0",
     "jest-puppeteer": "3.5.0",
     "puppeteer": "1.10.0",
