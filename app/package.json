@@ -63,7 +63,7 @@
     "lodash.merge": "4.6.1",
     "mobx": "5.5.2",
     "mobx-react": "5.3.6",
-    "mobx-utils": "5.0.4",
+    "mobx-utils": "5.1.0",
     "prop-types": "15.6.2",
     "react": "16.6.1",
     "react-chartkick": "0.3.0",
