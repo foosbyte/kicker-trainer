@@ -931,7 +931,7 @@
     portfinder "^1.0.19"
     supports-color "^5.4.0"
 
-"@untool/react@^1.0.0-rc.10":
+"@untool/react@^1.0.0-rc.11":
   version "1.0.0-rc.11"
   resolved "https://registry.yarnpkg.com/@untool/react/-/react-1.0.0-rc.11.tgz#bd3ed43201a82347e27815705a366f3fa2a3ca2c"
   integrity sha512-qYsnu+PE7nmWZhV87tMvf2y3ZYGgx4d6/x9YIJjFuvOqb8zmfs0gtvPk7/DUkHneKy2PWGj8DbUvCsQ5kJMnTQ==
@@ -4052,6 +4052,14 @@ hops-mixin@11.0.0-rc.46:
     "@untool/core" "^1.0.0-rc.10"
     mixinable "^4.0.0"
 
+hops-mixin@11.0.0-rc.48:
+  version "11.0.0-rc.48"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-rc.48.tgz#099c6037461a4c974aab35e100b4d4a8bac09c8a"
+  integrity sha512-ReYNezC8ukkprh8agp7nsypH+h205VsihGt2z+g1Twaa74Xa/NQwx02N/waNlgSPzgq/yVoCGo0AWEs35hjzvA==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.11"
+    mixinable "^4.0.0"
+
 hops-preset-defaults@11.0.0-rc.46:
   version "11.0.0-rc.46"
   resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.46.tgz#1736d26c6e4596615c44c38d87607e223304684f"
@@ -4076,16 +4084,16 @@ hops-pwa@11.0.0-rc.46:
     webpack "^4.16.5"
     webpack-sources "^1.1.0"
 
-hops-react@11.0.0-rc.46:
-  version "11.0.0-rc.46"
-  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-11.0.0-rc.46.tgz#788a76a3ecb08ed437c64b8019016abef1a035ad"
-  integrity sha512-HCDTYwkkKQekrV9G65JRdvmNEKdZkP5nz9u2EtUbs4NsWENtVQRfPbz88spPvE57KIZnvFhpxLM5fE7OnP20gg==
+hops-react@11.0.0-rc.48:
+  version "11.0.0-rc.48"
+  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-11.0.0-rc.48.tgz#fcc97869946709b71b18f43e5756e3b72de2167b"
+  integrity sha512-PmP4f7ANVQwIemwKuj2p7D6Hnr+HHvprV2R7tG/ZvjcDbF3x3tqviwOz96svMApkJcJyAuHBdENX4IR3EUBmhg==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-transform-flow-strip-types" "^7.0.0"
-    "@untool/core" "^1.0.0-rc.10"
-    "@untool/react" "^1.0.0-rc.10"
-    hops-mixin "11.0.0-rc.46"
+    "@untool/core" "^1.0.0-rc.11"
+    "@untool/react" "^1.0.0-rc.11"
+    hops-mixin "11.0.0-rc.48"
 
 hops-styled-components@11.0.0-rc.46:
   version "11.0.0-rc.46"
