@@ -944,7 +944,7 @@
     prop-types "^15.6.2"
     serialize-javascript "^1.4.0"
 
-"@untool/webpack@^1.0.0-rc.10":
+"@untool/webpack@^1.0.0-rc.10", "@untool/webpack@^1.0.0-rc.11":
   version "1.0.0-rc.11"
   resolved "https://registry.yarnpkg.com/@untool/webpack/-/webpack-1.0.0-rc.11.tgz#2818f2f533c6e1cf388f9c1db23ad03265e1ad97"
   integrity sha512-geju4wbLQELHkfWAqqd4o0WhlWcFEiZYmEzxB52yi6Nw14efnZ/xAkVqkCTHz4RcyMbgjClU81Fbsa+AfqM95g==
@@ -4052,6 +4052,14 @@ hops-mixin@11.0.0-rc.46:
     "@untool/core" "^1.0.0-rc.10"
     mixinable "^4.0.0"
 
+hops-mixin@11.0.0-rc.48:
+  version "11.0.0-rc.48"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-rc.48.tgz#099c6037461a4c974aab35e100b4d4a8bac09c8a"
+  integrity sha512-ReYNezC8ukkprh8agp7nsypH+h205VsihGt2z+g1Twaa74Xa/NQwx02N/waNlgSPzgq/yVoCGo0AWEs35hjzvA==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.11"
+    mixinable "^4.0.0"
+
 hops-preset-defaults@11.0.0-rc.46:
   version "11.0.0-rc.46"
   resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.46.tgz#1736d26c6e4596615c44c38d87607e223304684f"
@@ -4062,16 +4070,16 @@ hops-preset-defaults@11.0.0-rc.46:
     "@untool/yargs" "^1.0.0-rc.10"
     hops-express "11.0.0-rc.46"
 
-hops-pwa@11.0.0-rc.46:
-  version "11.0.0-rc.46"
-  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-11.0.0-rc.46.tgz#b4d06ec72efb37108d42f806f8a90d0486b350bc"
-  integrity sha512-1uK9odMLnA3Ow7qZAqA7WN8QTaqQ5r5/EzMOTGmB4iNUXj+el4PqVW8Schw/a/G4eExJW4rkf8+D0Xb/RSLTFQ==
+hops-pwa@11.0.0-rc.48:
+  version "11.0.0-rc.48"
+  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-11.0.0-rc.48.tgz#f8ebed35285d168f8cffb306b9942bdaad19b006"
+  integrity sha512-U/qTa4hj1XSZGC7akAsCxqYwEvXQtLcLs+0BpC9cL7orezf45aXBW3WNzb3bYKGt5gBWH1SpVLHji1Y9n+MEEQ==
   dependencies:
-    "@untool/core" "^1.0.0-rc.10"
-    "@untool/webpack" "^1.0.0-rc.10"
+    "@untool/core" "^1.0.0-rc.11"
+    "@untool/webpack" "^1.0.0-rc.11"
     app-manifest-loader "^2.0.0"
     file-loader "^2.0.0"
-    hops-mixin "11.0.0-rc.46"
+    hops-mixin "11.0.0-rc.48"
     pathifist "^1.0.0"
     webpack "^4.16.5"
     webpack-sources "^1.1.0"
