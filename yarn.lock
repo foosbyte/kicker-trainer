@@ -944,7 +944,7 @@
     prop-types "^15.6.2"
     serialize-javascript "^1.4.0"
 
-"@untool/webpack@^1.0.0-rc.10":
+"@untool/webpack@^1.0.0-rc.10", "@untool/webpack@^1.0.0-rc.11":
   version "1.0.0-rc.11"
   resolved "https://registry.yarnpkg.com/@untool/webpack/-/webpack-1.0.0-rc.11.tgz#2818f2f533c6e1cf388f9c1db23ad03265e1ad97"
   integrity sha512-geju4wbLQELHkfWAqqd4o0WhlWcFEiZYmEzxB52yi6Nw14efnZ/xAkVqkCTHz4RcyMbgjClU81Fbsa+AfqM95g==
@@ -4017,13 +4017,13 @@ hops-config@11.0.0-rc.46:
     "@untool/core" "^1.0.0-rc.10"
     "@untool/webpack" "^1.0.0-rc.10"
 
-hops-express@11.0.0-rc.46:
-  version "11.0.0-rc.46"
-  resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-11.0.0-rc.46.tgz#d4f9e0c99ceba9251f4b828a2ef39ffa610510a9"
-  integrity sha512-jD4i+7AdSmE8BSHytX48HtTrCSm5J524kmxPqyf4vQsZYLIwL0Q+phChX1Nh9nqR2LGhM5MvLMrrm7MetaWAng==
+hops-express@11.0.0-rc.48:
+  version "11.0.0-rc.48"
+  resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-11.0.0-rc.48.tgz#2fb517b7cdf90a6cc90de1c16b8290206cfb48b6"
+  integrity sha512-D5G7sp6kVZrAJvZnbfne41EFxh2fKEq+oC8Z5B2S6vVmdn73gD+VB7g8VfxFIr+aMZLDE/ny1wlxxH4o+wD3ng==
   dependencies:
     compression "^1.7.3"
-    hops-mixin "11.0.0-rc.46"
+    hops-mixin "11.0.0-rc.48"
 
 hops-lambda@11.0.0-rc.46:
   version "11.0.0-rc.46"
@@ -4052,15 +4052,23 @@ hops-mixin@11.0.0-rc.46:
     "@untool/core" "^1.0.0-rc.10"
     mixinable "^4.0.0"
 
-hops-preset-defaults@11.0.0-rc.46:
-  version "11.0.0-rc.46"
-  resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.46.tgz#1736d26c6e4596615c44c38d87607e223304684f"
-  integrity sha512-F8j16wJ0eetA+p1Ucpq3ywyFOEhkeJneNUP0vpDxJihu45q1Z3QHgMvwMGdSwqcv+r2F4uY34lYSyUGyUdGxCg==
+hops-mixin@11.0.0-rc.48:
+  version "11.0.0-rc.48"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-rc.48.tgz#099c6037461a4c974aab35e100b4d4a8bac09c8a"
+  integrity sha512-ReYNezC8ukkprh8agp7nsypH+h205VsihGt2z+g1Twaa74Xa/NQwx02N/waNlgSPzgq/yVoCGo0AWEs35hjzvA==
   dependencies:
-    "@untool/express" "^1.0.0-rc.10"
-    "@untool/webpack" "^1.0.0-rc.10"
-    "@untool/yargs" "^1.0.0-rc.10"
-    hops-express "11.0.0-rc.46"
+    "@untool/core" "^1.0.0-rc.11"
+    mixinable "^4.0.0"
+
+hops-preset-defaults@11.0.0-rc.48:
+  version "11.0.0-rc.48"
+  resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.48.tgz#9f918c219bb59b850ed3aad62a6ca1a973640ce4"
+  integrity sha512-vyoZ1i+oCfC92qRJJKTBnC6gsmq9nywU03doEpDhYEjJghqvNIPWyerat1kzYeaSxZBRgGKS12+TJ5Pv43RcTA==
+  dependencies:
+    "@untool/express" "^1.0.0-rc.11"
+    "@untool/webpack" "^1.0.0-rc.11"
+    "@untool/yargs" "^1.0.0-rc.11"
+    hops-express "11.0.0-rc.48"
 
 hops-pwa@11.0.0-rc.46:
   version "11.0.0-rc.46"
