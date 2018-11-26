@@ -4104,12 +4104,12 @@ hops-typescript@11.0.0-rc.46:
     ts-loader "^5.0.0"
     typescript "^3.0.0"
 
-hops@11.0.0-rc.46:
-  version "11.0.0-rc.46"
-  resolved "https://registry.yarnpkg.com/hops/-/hops-11.0.0-rc.46.tgz#2d4625c90235356abe8c49c224949424df7fb5c6"
-  integrity sha512-fLXiUwPNdreGCPLj8seHBE3S4NsT2muLtmTiNIO++Y9LWAKL1ixqBsXyK4oYvFBT7JkF49tTj4BkKJ5PESdXWQ==
+hops@11.0.0-rc.48:
+  version "11.0.0-rc.48"
+  resolved "https://registry.yarnpkg.com/hops/-/hops-11.0.0-rc.48.tgz#cb931223d508f0f7735a54d093f7868fb9e18ed3"
+  integrity sha512-Z7w9tO5JIK1iY5fxEC7YdbSlGsLfd/R6WrXbCvcy4cYd+W/I1oGvVR9FR+QpbxsyxY08ZtkY+Z+0EBTBKhrVZg==
   dependencies:
-    "@untool/yargs" "^1.0.0-rc.10"
+    "@untool/yargs" "^1.0.0-rc.11"
     enhanced-resolve "^4.1.0"
     find-up "^3.0.0"
     pretty-ms "^3.2.0"
