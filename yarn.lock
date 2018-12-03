@@ -821,10 +821,10 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.6.tgz#9c03d3fed70a8d517c191b7734da2879b50ca26c"
   integrity sha512-ZBFR7TROLVzCkswA3Fmqq+IIJt62/T7aY/Dmz+QkU7CaW2QFqAitCE8Ups7IzmGhcN1YWMBT4Qcoc07jU9hOJQ==
 
-"@types/puppeteer@1.10.1":
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.10.1.tgz#03b3fa9f4591ccdda70970bf13767681429de99a"
-  integrity sha512-f4nEFqkiPapSRWTxVB24A6a47bMCb2RJd5nAkiTPFwlsONl9hmUQ+baKYtDiDXQ2skZiWS+83bKu2OD75EdsWQ==
+"@types/puppeteer@1.10.2":
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.10.2.tgz#508c36b4b3799b117142d2d2af2a39e32040845e"
+  integrity sha512-xVGTXVqZCHm+XyT65bPwG9WKNJDoB+A186D9IrZVOzFxalacR+CH3mKsWd5jF2eb4mJ5QWjix0fH/KjDUGtdVw==
   dependencies:
     "@types/node" "*"
 
