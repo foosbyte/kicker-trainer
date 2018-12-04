@@ -3,8 +3,8 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css, theme } from '../styled-components';
 
-import { View } from './view';
 import { IconType, Icon } from './icon';
+import { View } from './view';
 
 interface ButtonStyleProps {
   theme: typeof theme;
