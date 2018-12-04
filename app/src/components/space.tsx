@@ -45,15 +45,16 @@ export class Space extends React.PureComponent<SpaceProps> {
       </StyledInset>
     ) : (
       React.Children.map(this.props.children, (child, i) => {
-        const Wrapper = i < numChildren - 1 ? StyledOutset : View;
-        return (
-          <Wrapper
+        return i < numChildren - 1 ? (
+          <StyledOutset
             className={this.props.className}
             between={this.props.between}
             inline={this.props.inline}
           >
             {child}
-          </Wrapper>
+          </StyledOutset>
+        ) : (
+          <View>{child}</View>
         );
       })
     );
