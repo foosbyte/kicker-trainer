@@ -29,7 +29,7 @@ const Root = styled(View)`
 
 const Content = styled(View)`
   display: flex;
-  flex 1 0 0;
+  flex: 1 0 0;
 `;
 
 const Nav = styled(View)`
