@@ -4047,6 +4047,14 @@ hops-mixin@11.0.0-rc.48:
     "@untool/core" "^1.0.0-rc.11"
     mixinable "^4.0.0"
 
+hops-mixin@11.0.0-rc.49:
+  version "11.0.0-rc.49"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-rc.49.tgz#4bb3b7b407c6e2782380583791760f6f0de567d3"
+  integrity sha512-az9E28HUV18pFubCjQQE4yHezUZ0QmTfD7HarE9mJpFHxdYjHzPgZW1Pq+6DgfC5dpraL2g5lGt+PTpSneqotg==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.11"
+    mixinable "^4.0.0"
+
 hops-preset-defaults@11.0.0-rc.48:
   version "11.0.0-rc.48"
   resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.48.tgz#9f918c219bb59b850ed3aad62a6ca1a973640ce4"
@@ -4057,16 +4065,16 @@ hops-preset-defaults@11.0.0-rc.48:
     "@untool/yargs" "^1.0.0-rc.11"
     hops-express "11.0.0-rc.48"
 
-hops-pwa@11.0.0-rc.48:
-  version "11.0.0-rc.48"
-  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-11.0.0-rc.48.tgz#f8ebed35285d168f8cffb306b9942bdaad19b006"
-  integrity sha512-U/qTa4hj1XSZGC7akAsCxqYwEvXQtLcLs+0BpC9cL7orezf45aXBW3WNzb3bYKGt5gBWH1SpVLHji1Y9n+MEEQ==
+hops-pwa@11.0.0-rc.49:
+  version "11.0.0-rc.49"
+  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-11.0.0-rc.49.tgz#1fc4111eceb71d8375e51b38c234163ddf67789f"
+  integrity sha512-gzfGWczEbsQm8CoQ2Csl6MIIDfvP5NbxcTYcWVjKYOgZhJyRQJ1G3yuag9JlcLLxL22CuYOqnkRKXngaZfhp5w==
   dependencies:
     "@untool/core" "^1.0.0-rc.11"
     "@untool/webpack" "^1.0.0-rc.11"
     app-manifest-loader "^2.0.0"
     file-loader "^2.0.0"
-    hops-mixin "11.0.0-rc.48"
+    hops-mixin "11.0.0-rc.49"
     pathifist "^1.0.0"
     webpack "^4.16.5"
     webpack-sources "^1.1.0"
