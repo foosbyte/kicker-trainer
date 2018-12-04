@@ -4047,6 +4047,14 @@ hops-mixin@11.0.0-rc.48:
     "@untool/core" "^1.0.0-rc.11"
     mixinable "^4.0.0"
 
+hops-mixin@11.0.0-rc.49:
+  version "11.0.0-rc.49"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-rc.49.tgz#4bb3b7b407c6e2782380583791760f6f0de567d3"
+  integrity sha512-az9E28HUV18pFubCjQQE4yHezUZ0QmTfD7HarE9mJpFHxdYjHzPgZW1Pq+6DgfC5dpraL2g5lGt+PTpSneqotg==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.11"
+    mixinable "^4.0.0"
+
 hops-preset-defaults@11.0.0-rc.48:
   version "11.0.0-rc.48"
   resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.48.tgz#9f918c219bb59b850ed3aad62a6ca1a973640ce4"
@@ -4090,12 +4098,12 @@ hops-styled-components@11.0.0-rc.48:
     babel-plugin-styled-components "1.8.0"
     hops-mixin "11.0.0-rc.48"
 
-hops-typescript@11.0.0-rc.48:
-  version "11.0.0-rc.48"
-  resolved "https://registry.yarnpkg.com/hops-typescript/-/hops-typescript-11.0.0-rc.48.tgz#3ef5079167c6f387e2d39dd8ac1d7d5bade53541"
-  integrity sha512-pbH4N/R1rYC2NpFZ7EQ97FWwt0rfE+E1JJZdWYbwsdZKjoNyPuAARKnn5W0uFqhOcmoS05V/5QszphoIRFe7Xw==
+hops-typescript@11.0.0-rc.49:
+  version "11.0.0-rc.49"
+  resolved "https://registry.yarnpkg.com/hops-typescript/-/hops-typescript-11.0.0-rc.49.tgz#96ced1251a238162f6a554553b586e2356603eb5"
+  integrity sha512-a9XVbsLE4h9Jne1dfgq2NF71QHtDmpvRDsnj8vXnJPm0rLYIGIS1kg2o1A58Nw1abukNLUuMmdxPxG0NxzJR/A==
   dependencies:
-    hops-mixin "11.0.0-rc.48"
+    hops-mixin "11.0.0-rc.49"
     ts-loader "^5.0.0"
     typescript "^3.0.0"
 
