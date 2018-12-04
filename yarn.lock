@@ -4047,6 +4047,14 @@ hops-mixin@11.0.0-rc.48:
     "@untool/core" "^1.0.0-rc.11"
     mixinable "^4.0.0"
 
+hops-mixin@11.0.0-rc.49:
+  version "11.0.0-rc.49"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-rc.49.tgz#4bb3b7b407c6e2782380583791760f6f0de567d3"
+  integrity sha512-az9E28HUV18pFubCjQQE4yHezUZ0QmTfD7HarE9mJpFHxdYjHzPgZW1Pq+6DgfC5dpraL2g5lGt+PTpSneqotg==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.11"
+    mixinable "^4.0.0"
+
 hops-preset-defaults@11.0.0-rc.48:
   version "11.0.0-rc.48"
   resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.48.tgz#9f918c219bb59b850ed3aad62a6ca1a973640ce4"
@@ -4071,16 +4079,16 @@ hops-pwa@11.0.0-rc.48:
     webpack "^4.16.5"
     webpack-sources "^1.1.0"
 
-hops-react@11.0.0-rc.48:
-  version "11.0.0-rc.48"
-  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-11.0.0-rc.48.tgz#fcc97869946709b71b18f43e5756e3b72de2167b"
-  integrity sha512-PmP4f7ANVQwIemwKuj2p7D6Hnr+HHvprV2R7tG/ZvjcDbF3x3tqviwOz96svMApkJcJyAuHBdENX4IR3EUBmhg==
+hops-react@11.0.0-rc.49:
+  version "11.0.0-rc.49"
+  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-11.0.0-rc.49.tgz#c39e81fcc5d00d01f52020c5aeaa33be6f48b778"
+  integrity sha512-+eEiYH2QSg6FGiMoMy4dbGW4tK8s4MenijPwhAXlu0cV1zKpKaIdmFrmg0MwN4IdQCSS1GzteXuYMas4isjkdg==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-transform-flow-strip-types" "^7.0.0"
     "@untool/core" "^1.0.0-rc.11"
     "@untool/react" "^1.0.0-rc.11"
-    hops-mixin "11.0.0-rc.48"
+    hops-mixin "11.0.0-rc.49"
 
 hops-styled-components@11.0.0-rc.48:
   version "11.0.0-rc.48"
