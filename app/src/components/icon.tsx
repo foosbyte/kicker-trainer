@@ -1,6 +1,15 @@
 import * as React from 'react';
 
-export type IconType = 'user' | 'user-circle' | 'settings-alt' | 'bar-chart';
+export type IconType =
+  | 'user'
+  | 'user-circle'
+  | 'settings-alt'
+  | 'bar-chart'
+  | 'play'
+  | 'pause'
+  | 'stop'
+  | 'check'
+  | 'close';
 
 export type IconSize = 18;
 
@@ -19,6 +28,6 @@ export class Icon extends React.PureComponent<IconProps> {
       `jam-${this.props.icon}`,
       this.props.className,
     ].join(' ');
-    return <i className={classNames} />;
+    return <i className={classNames} style={{ fontSize: this.props.size }} />;
   }
 }

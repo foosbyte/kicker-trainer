@@ -1,29 +1,6 @@
-const defaultSpace = 16;
+const defaultSpace = 14;
 
-export interface ThemeInterface {
-  space: {
-    xxs: number;
-    xs: number;
-    s: number;
-    m: number;
-    l: number;
-    xl: number;
-  };
-  color: {
-    green: string;
-    anthrazit: string;
-  };
-  fontSize: {
-    xxs: number;
-    xs: number;
-    s: number;
-    m: number;
-    l: number;
-    xl: number;
-  };
-}
-
-export const theme: ThemeInterface = {
+export const theme = {
   space: {
     l: defaultSpace * 2,
     m: defaultSpace,
@@ -35,6 +12,15 @@ export const theme: ThemeInterface = {
   color: {
     green: '#4FD49E',
     anthrazit: '#22292F',
+    white: '#ffffff',
+    red: '#FE2753',
+    blue: '#094EFF',
+  },
+  font: {
+    m: {
+      fontSize: defaultSpace,
+      lineHeight: defaultSpace * 1.14, // ~ 18px
+    },
   },
   fontSize: {
     l: defaultSpace * 2,

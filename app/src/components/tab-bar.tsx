@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import styled, { withTheme } from 'styled-components';
+import styled, { withTheme, theme } from '../styled-components';
 
-import { ThemeInterface } from '../theme';
 import { Icon, IconType } from './icon';
 import { Space } from './space';
 import { Text } from './text';
@@ -16,7 +15,7 @@ const FlexedSpace = styled(Space)`
 const Bar = styled(View)`
   display: flex;
   flex-direction: row;
-  background-color: ${(props: { theme?: ThemeInterface }) =>
+  background-color: ${props =>
     props.theme ? props.theme.color.anthrazit : 'initial'};
 `;
 
@@ -42,7 +41,7 @@ export interface TabBarItemProps {
   title: string;
   to: string;
   icon: IconType;
-  theme?: ThemeInterface;
+  theme?: typeof theme;
 }
 
 export const TabBarItem = withTheme(

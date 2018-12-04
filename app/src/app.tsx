@@ -16,6 +16,12 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Work Sans', sans-serif;
     font-size: ${theme.fontSize.m}px;
+    background-color: ${theme.color.anthrazit};
+    color: ${theme.color.white};
+  }
+  a, a:visited, a:hover, a:focus, a:active {
+    color: ${theme.color.white};
+    text-decoration: none;
   }
 `;
 

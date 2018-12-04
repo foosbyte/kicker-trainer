@@ -1,10 +1,10 @@
 import * as React from 'react';
-import styled, { ThemeInterface } from '../styled-components';
+import styled, { theme } from '../styled-components';
 
 import { View } from './view';
 
 interface SpaceWrapperProps extends SpaceProps {
-  theme?: ThemeInterface;
+  theme?: typeof theme;
 }
 
 const StyledInset = styled.div`
@@ -24,10 +24,10 @@ const StyledOutset = styled.div`
 
 export interface SpaceProps {
   className?: string;
-  inset?: keyof ThemeInterface['space'];
+  inset?: keyof typeof theme['space'];
   squish?: boolean;
   stretch?: boolean;
-  between?: keyof ThemeInterface['space'];
+  between?: keyof typeof theme['space'];
   inline?: boolean;
 }
 

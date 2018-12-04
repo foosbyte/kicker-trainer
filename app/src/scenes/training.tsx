@@ -5,6 +5,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import styled from 'styled-components';
 import { Badge } from '../components/badge';
 import { Button } from '../components/button';
+import { ButtonGroup } from '../components/button-group';
 import { Editor } from '../components/editor';
 import { Text } from '../components/text';
 import { View } from '../components/view';
@@ -88,16 +89,33 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
           <Button onPress={this.onStart}>Start training</Button>
         ) : (
           <>
-            <Button onPress={this.onPause}>
-              {this.props.trainingSession.state === State.PAUSED
-                ? 'Resume'
-                : 'Pause'}
-            </Button>
-            <Button onPress={this.onStop}>End training</Button>
+            <ButtonGroup>
+              <Button
+                icon={
+                  this.props.trainingSession.state === State.PAUSED
+                    ? 'play'
+                    : 'pause'
+                }
+                onPress={this.onPause}
+              >
+                {this.props.trainingSession.state === State.PAUSED
+                  ? 'Resume'
+                  : 'Pause'}
+              </Button>
+              <Button icon="stop" onPress={this.onStop}>
+                End training
+              </Button>
+            </ButtonGroup>
             <div>{formatDuration(this.props.trainingSession.totalTime)}</div>
             <Text>Optionally: Track your quota</Text>
-            <Button onPress={this.onHit}>Hit</Button>
-            <Button onPress={this.onMiss}>Miss</Button>
+            <ButtonGroup>
+              <Button icon="check" intent="accept" onPress={this.onHit}>
+                Hit
+              </Button>
+              <Button icon="close" intent="dismiss" onPress={this.onMiss}>
+                Miss
+              </Button>
+            </ButtonGroup>
           </>
         )}
       </Wrapper>
