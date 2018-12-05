@@ -1,4 +1,4 @@
-import devices from 'puppeteer/DeviceDescriptors';
+import * as devices from 'puppeteer/DeviceDescriptors';
 import { getElementWithText, tapElementWithText } from './helpers';
 
 declare const page: import('puppeteer').Page;
