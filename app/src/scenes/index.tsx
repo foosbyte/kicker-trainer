@@ -1,4 +1,4 @@
-import { Miss } from 'hops-react';
+import { Miss } from 'hops';
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 

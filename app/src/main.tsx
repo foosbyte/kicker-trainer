@@ -1,4 +1,4 @@
-import { render } from 'hops-react';
+import { render } from 'hops';
 import * as React from 'react';
 import { RoutedApp } from './app';
 import * as stores from './stores';

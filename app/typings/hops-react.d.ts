@@ -1,4 +1,4 @@
-declare module 'hops-react' {
+declare module 'hops' {
   export class Miss extends React.Component<any, any> {}
 
   export interface StatusProps {

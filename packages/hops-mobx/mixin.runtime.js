@@ -1,4 +1,4 @@
-const { Mixin } = require('hops-mixin');
+const { Mixin } = require('hops');
 const React = require('react');
 const { Provider } = require('mobx-react');
 const { configure } = require('mobx');
