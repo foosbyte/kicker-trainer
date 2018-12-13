@@ -1,4 +1,4 @@
-const { Mixin } = require('hops-mixin');
+const { Mixin } = require('hops');
 
 class CustomMixin extends Mixin {
   configureBuild(webpackConfig, { allLoaderConfigs }, target) {
@@ -11,8 +11,8 @@ class CustomMixin extends Mixin {
       webpackConfig.externals = Array.isArray(webpackConfig.externals)
         ? ['mobx', ...webpackConfig.externals]
         : typeof webpackConfig.externals !== 'undefined'
-          ? ['mobx', webpackConfig.externals]
-          : ['mobx'];
+        ? ['mobx', webpackConfig.externals]
+        : ['mobx'];
     }
 
     return webpackConfig;
