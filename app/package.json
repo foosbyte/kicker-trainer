@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "chart.js": "2.7.3",
-    "css-loader": "1.0.1",
+    "css-loader": "2.0.1",
     "decko": "1.2.0",
     "hops-lambda": "11.0.0-rc.49",
     "hops-mobx": "1.0.0",
