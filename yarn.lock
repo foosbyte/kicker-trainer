@@ -950,7 +950,7 @@
     prop-types "^15.6.2"
     serialize-javascript "^1.4.0"
 
-"@untool/webpack@^1.0.0-rc.11":
+"@untool/webpack@^1.0.0-rc.11", "@untool/webpack@^1.0.0-rc.14":
   version "1.0.0-rc.14"
   resolved "https://registry.yarnpkg.com/@untool/webpack/-/webpack-1.0.0-rc.14.tgz#a468b12f097c818f4d4f050b042db5d5d9c6541f"
   integrity sha512-dCy+ujIykq/sztLlO6PGUoAsvbki48oj00DbO4Ygw7wqcVSYjQY2elSixFENanR06/MTdRswTGZPth+NUzalTA==
@@ -4012,13 +4012,13 @@ homedir-polyfill@^1.0.0:
   dependencies:
     parse-passwd "^1.0.0"
 
-hops-config@11.0.0-rc.49:
-  version "11.0.0-rc.49"
-  resolved "https://registry.yarnpkg.com/hops-config/-/hops-config-11.0.0-rc.49.tgz#d4582fd5a3ba069ecdec5ba6bf61194b8876ad4a"
-  integrity sha512-CyVhy5fdGjRfC0uhrdDQh8sn0OqUGib9SIEPihp8G+SfxgVJuBHIIRpfXQ5q0iklJsmie50ByghcSLm9NDM7Mw==
+hops-config@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/hops-config/-/hops-config-11.0.0.tgz#ddd11d50b1b32d05e7974002b34c4cce04d2dd46"
+  integrity sha512-mX1IMMt0m7h6wj2EQsFKHcdeMHR2mMwqIN/mDxxHlnIILBMfO969m5aPfQEKh1ZAR3pu4cUd48idsFowghnDPA==
   dependencies:
-    "@untool/core" "^1.0.0-rc.11"
-    "@untool/webpack" "^1.0.0-rc.11"
+    "@untool/core" "^1.0.0-rc.14"
+    "@untool/webpack" "^1.0.0-rc.14"
 
 hops-express@11.0.0-rc.49:
   version "11.0.0-rc.49"
@@ -4028,18 +4028,18 @@ hops-express@11.0.0-rc.49:
     compression "^1.7.3"
     hops-mixin "11.0.0-rc.49"
 
-hops-lambda@11.0.0-rc.49:
-  version "11.0.0-rc.49"
-  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-11.0.0-rc.49.tgz#8aef42a95738ff09c4b6fb5b267dd26bdb599e99"
-  integrity sha512-XwxuQvkLI2hR/jdhPGisi/bChwi376dC89WRn3Z5rLtnIw52e9n7jUgqfGFaofXGICeRuDjFshFyktvJ745LZw==
+hops-lambda@11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-11.0.0.tgz#18e814aef6b9b5db00910f4fbbf6bfcfd83e0e0c"
+  integrity sha512-GwEYPKOIxKN3jMuIWjgiIZwluIxbmkoOBLKlDksPZLpE2xuI6ZDzmS7H3CCTgMFkwiw/stZUWEElwy+UpLegbA==
   dependencies:
-    "@untool/core" "^1.0.0-rc.11"
-    "@untool/express" "^1.0.0-rc.11"
+    "@untool/core" "^1.0.0-rc.14"
+    "@untool/express" "^1.0.0-rc.14"
     archiver "^3.0.0"
     aws-sdk "^2.286.2"
     globby "^8.0.0"
-    hops-config "11.0.0-rc.49"
-    hops-mixin "11.0.0-rc.49"
+    hops-config "^11.0.0"
+    hops-mixin "^11.0.0"
     pathifist "^1.0.0"
     prompt "^1.0.0"
     resolve-tree "^0.1.13"
@@ -4053,6 +4053,14 @@ hops-mixin@11.0.0-rc.49:
   integrity sha512-az9E28HUV18pFubCjQQE4yHezUZ0QmTfD7HarE9mJpFHxdYjHzPgZW1Pq+6DgfC5dpraL2g5lGt+PTpSneqotg==
   dependencies:
     "@untool/core" "^1.0.0-rc.11"
+    mixinable "^4.0.0"
+
+hops-mixin@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0.tgz#c6a7eb1f0621c1bcf81e307a54cf48b6042ab9ae"
+  integrity sha512-MqHxwria/t7DVvUYvSH15b+vaD9KS8Fbe0SnDGs1a+MdbgRSNFD5ir+ii5EnZUZ+TbD1yc/IYBVzop0rMxaJFg==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.14"
     mixinable "^4.0.0"
 
 hops-preset-defaults@11.0.0-rc.49:
