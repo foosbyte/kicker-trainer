@@ -90,7 +90,7 @@
     "@types/react-router": "4.4.3",
     "@types/react-router-dom": "4.3.1",
     "@types/styled-components": "4.1.4",
-    "hops": "11.0.0-rc.49",
+    "hops": "11.0.0",
     "jest": "23.6.0",
     "jest-puppeteer": "3.5.2",
     "puppeteer": "1.11.0",
