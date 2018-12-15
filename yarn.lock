@@ -4055,6 +4055,14 @@ hops-mixin@11.0.0-rc.49:
     "@untool/core" "^1.0.0-rc.11"
     mixinable "^4.0.0"
 
+hops-mixin@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0.tgz#c6a7eb1f0621c1bcf81e307a54cf48b6042ab9ae"
+  integrity sha512-MqHxwria/t7DVvUYvSH15b+vaD9KS8Fbe0SnDGs1a+MdbgRSNFD5ir+ii5EnZUZ+TbD1yc/IYBVzop0rMxaJFg==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.14"
+    mixinable "^4.0.0"
+
 hops-preset-defaults@11.0.0-rc.49:
   version "11.0.0-rc.49"
   resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.49.tgz#751aa3c2e32c48ef765220bf315f50f70b4f50ea"
@@ -4098,14 +4106,14 @@ hops-styled-components@11.0.0-rc.49:
     babel-plugin-styled-components "1.8.0"
     hops-mixin "11.0.0-rc.49"
 
-hops-typescript@11.0.0-rc.49:
-  version "11.0.0-rc.49"
-  resolved "https://registry.yarnpkg.com/hops-typescript/-/hops-typescript-11.0.0-rc.49.tgz#96ced1251a238162f6a554553b586e2356603eb5"
-  integrity sha512-a9XVbsLE4h9Jne1dfgq2NF71QHtDmpvRDsnj8vXnJPm0rLYIGIS1kg2o1A58Nw1abukNLUuMmdxPxG0NxzJR/A==
+hops-typescript@11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/hops-typescript/-/hops-typescript-11.0.0.tgz#b7075632537bbf49b069dbbb85235d11fa66e6d1"
+  integrity sha512-aeQrgrBQl0EMy+rcS1y3HdtbrnRazx+H4O0IRFaHliQVLBrSjzxzLIpNx8Eyn0mpWFdN83/L5iVzwiuezKIpdw==
   dependencies:
-    hops-mixin "11.0.0-rc.49"
+    hops-mixin "^11.0.0"
     ts-loader "^5.0.0"
-    typescript "^3.0.0"
+    typescript "^3.2.1"
 
 hops@11.0.0-rc.49:
   version "11.0.0-rc.49"
@@ -8333,7 +8341,7 @@ typescript-template-language-service-decorator@^2.0.0:
   resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-2.2.0.tgz#4ee6d580f307fb9239978e69626f2775b8a59b2a"
   integrity sha512-xiolqt1i7e22rpqMaprPgSFVgU64u3b9n6EJlAaUYE61jumipKAdI1+O5khPlWslpTUj80YzjUKjJ2jxT0D74w==
 
-typescript@^3.0.0:
+typescript@^3.2.1:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.2.tgz#fe8101c46aa123f8353523ebdcf5730c2ae493e5"
   integrity sha512-VCj5UiSyHBjwfYacmDuc/NOk4QQixbE+Wn7MFJuS0nRuPQbof132Pw4u53dm264O8LPc2MVsc7RJNml5szurkg==
