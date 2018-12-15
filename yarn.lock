@@ -901,7 +901,7 @@
     "@types/react" "*"
     csstype "^2.2.0"
 
-"@untool/core@^1.0.0-rc.11", "@untool/core@^1.0.0-rc.14":
+"@untool/core@^1.0.0-rc.11", "@untool/core@^1.0.0-rc.13", "@untool/core@^1.0.0-rc.14":
   version "1.0.0-rc.14"
   resolved "https://registry.yarnpkg.com/@untool/core/-/core-1.0.0-rc.14.tgz#3da03b49e3ab0c2d64d1fb4357bd3292c8050537"
   integrity sha512-V2HVBDdCD8b5bdWYQqOcWpUkt77wOt+UF08E86kg9cJM+fbor36eRnWR8AbtlWJx8KI+fIeDhA2nQ46OD3Om7w==
@@ -918,7 +918,7 @@
     mixinable "^4.0.0"
     supports-color "^5.4.0"
 
-"@untool/express@^1.0.0-rc.11", "@untool/express@^1.0.0-rc.14":
+"@untool/express@^1.0.0-rc.11", "@untool/express@^1.0.0-rc.13", "@untool/express@^1.0.0-rc.14":
   version "1.0.0-rc.14"
   resolved "https://registry.yarnpkg.com/@untool/express/-/express-1.0.0-rc.14.tgz#00c1993fa572b194c95af519f5c26821fb87bcc9"
   integrity sha512-i465eqWPMZi4pD4k/nmfafedgyHn0BXq66DmM4dSKwKqwYUDUSQRcXnzrZkRW+Z0O6rDr9zGRRqPFBfl1OixAA==
@@ -950,7 +950,7 @@
     prop-types "^15.6.2"
     serialize-javascript "^1.4.0"
 
-"@untool/webpack@^1.0.0-rc.11":
+"@untool/webpack@^1.0.0-rc.11", "@untool/webpack@^1.0.0-rc.13":
   version "1.0.0-rc.14"
   resolved "https://registry.yarnpkg.com/@untool/webpack/-/webpack-1.0.0-rc.14.tgz#a468b12f097c818f4d4f050b042db5d5d9c6541f"
   integrity sha512-dCy+ujIykq/sztLlO6PGUoAsvbki48oj00DbO4Ygw7wqcVSYjQY2elSixFENanR06/MTdRswTGZPth+NUzalTA==
@@ -986,7 +986,7 @@
     webpack-hot-middleware "^2.22.2"
     webpack-sources "^1.1.0"
 
-"@untool/yargs@^1.0.0-rc.11", "@untool/yargs@^1.0.0-rc.14":
+"@untool/yargs@^1.0.0-rc.11", "@untool/yargs@^1.0.0-rc.13", "@untool/yargs@^1.0.0-rc.14":
   version "1.0.0-rc.14"
   resolved "https://registry.yarnpkg.com/@untool/yargs/-/yargs-1.0.0-rc.14.tgz#4245b6f540821248b684c60b85710699f555516d"
   integrity sha512-wLa1i/ipVNxaPhVFAzNKo5Mq4R2ARMFyHxg8iTjAbyQWTJI61UPRbmN+l2ZnxKeJjloUgj1p3lV0lyFFDLzT2Q==
@@ -4020,13 +4020,13 @@ hops-config@11.0.0-rc.49:
     "@untool/core" "^1.0.0-rc.11"
     "@untool/webpack" "^1.0.0-rc.11"
 
-hops-express@11.0.0-rc.49:
-  version "11.0.0-rc.49"
-  resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-11.0.0-rc.49.tgz#80690c6f8cc9c7f3bb49bd7efca2feaca7cec779"
-  integrity sha512-1wLlCaTRovbm8c0kV1dJOeXdMru9a36i0+pN60hyvM0TwtpaC+ELZYDDc55+VlKkXp/oitm/Bh5ALENsYUIi3g==
+hops-express@11.0.0-rc.50:
+  version "11.0.0-rc.50"
+  resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-11.0.0-rc.50.tgz#aef433976008b4e99f666262851ca94774c43cca"
+  integrity sha512-WrL+mSXOTO0on9ZkLwoLbEmSAdBh9uZeYcbF4VwPA/QcjtaUOQxi0GjrjLpZnXTIlUC5m+CM8BDGAbLKsVxmOA==
   dependencies:
     compression "^1.7.3"
-    hops-mixin "11.0.0-rc.49"
+    hops-mixin "11.0.0-rc.50"
 
 hops-lambda@11.0.0-rc.49:
   version "11.0.0-rc.49"
@@ -4055,15 +4055,23 @@ hops-mixin@11.0.0-rc.49:
     "@untool/core" "^1.0.0-rc.11"
     mixinable "^4.0.0"
 
-hops-preset-defaults@11.0.0-rc.49:
-  version "11.0.0-rc.49"
-  resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.49.tgz#751aa3c2e32c48ef765220bf315f50f70b4f50ea"
-  integrity sha512-TUQ7KN9SrW18/+NTiTCp41M7kUrO6r8nrO2spcHbwtj3GdFI1NdmaI016PnWIT+dtXGtFhs0RLx6pZzc8FZAHw==
+hops-mixin@11.0.0-rc.50:
+  version "11.0.0-rc.50"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0-rc.50.tgz#3cc22154a0e49fe0bbee6716b4770f162b29a76c"
+  integrity sha512-a7dj4uq4gupOkiFxoLI7fFbeLaV74mpKfrIHxuk7u6x3QQ0x5ouJMmelq4VjmNf24bIlGFV0BB8p/c4zr/XlKQ==
   dependencies:
-    "@untool/express" "^1.0.0-rc.11"
-    "@untool/webpack" "^1.0.0-rc.11"
-    "@untool/yargs" "^1.0.0-rc.11"
-    hops-express "11.0.0-rc.49"
+    "@untool/core" "^1.0.0-rc.13"
+    mixinable "^4.0.0"
+
+hops-preset-defaults@11.0.0-rc.50:
+  version "11.0.0-rc.50"
+  resolved "https://registry.yarnpkg.com/hops-preset-defaults/-/hops-preset-defaults-11.0.0-rc.50.tgz#857d197717ee077771ad1987b5d51d63e127497a"
+  integrity sha512-O6PYdUqnovE0Ma4onR0OxXoJ/6m21YpX6S5oXzDRI9PJ4XRlKx3DqKvyXQ9PtpnxUin7j8udp0eldF+8DFyOXQ==
+  dependencies:
+    "@untool/express" "^1.0.0-rc.13"
+    "@untool/webpack" "^1.0.0-rc.13"
+    "@untool/yargs" "^1.0.0-rc.13"
+    hops-express "11.0.0-rc.50"
 
 hops-pwa@11.0.0-rc.49:
   version "11.0.0-rc.49"
