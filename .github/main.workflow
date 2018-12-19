@@ -1,9 +1,9 @@
 workflow "Build & Test" {
   on = "push"
-  resolves = ["Test"]
+  resolves = ["Lint", "Test"]
 }
 
-action "Install with Yarn" {
+action "Install" {
   uses = "actions/npm@c555744"
   runs = "yarn"
   args = "install"
@@ -11,14 +11,14 @@ action "Install with Yarn" {
 
 action "Lint" {
   uses = "actions/npm@c555744"
-  needs = ["Install with Yarn"]
+  needs = ["Install"]
   runs = "yarn"
   args = "lint"
 }
 
 action "Build" {
   uses = "actions/npm@c555744"
-  needs = ["Lint"]
+  needs = ["Install"]
   runs = "yarn"
   args = "build --production"
 }
