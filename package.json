@@ -40,6 +40,12 @@
           "^@types/"
         ],
         "automerge": true
+      },
+      {
+        "packagePatterns": [
+          "^hops(-*)?"
+        ],
+        "groupName": "Update Hops monorepo packages"
       }
     ]
   },
