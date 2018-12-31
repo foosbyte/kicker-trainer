@@ -4012,10 +4012,10 @@ homedir-polyfill@^1.0.0:
   dependencies:
     parse-passwd "^1.0.0"
 
-hops-config@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/hops-config/-/hops-config-11.0.0.tgz#ddd11d50b1b32d05e7974002b34c4cce04d2dd46"
-  integrity sha512-mX1IMMt0m7h6wj2EQsFKHcdeMHR2mMwqIN/mDxxHlnIILBMfO969m5aPfQEKh1ZAR3pu4cUd48idsFowghnDPA==
+hops-config@^11.0.1:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/hops-config/-/hops-config-11.0.1.tgz#d8e00d745707140c6e07697b7f69d289aa363210"
+  integrity sha512-2X2KFiHahw0bppioNc38PJZqiCGiWDK16U2BwxWM+A6wqqdGaIxXLw9TOIKXDMbQuSrjpzSoTe8OTapNhDTRBQ==
   dependencies:
     "@untool/core" "^1.0.0-rc.14"
     "@untool/webpack" "^1.0.0-rc.14"
@@ -4028,18 +4028,18 @@ hops-express@^11.0.0:
     compression "^1.7.3"
     hops-mixin "^11.0.0"
 
-hops-lambda@11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-11.0.0.tgz#18e814aef6b9b5db00910f4fbbf6bfcfd83e0e0c"
-  integrity sha512-GwEYPKOIxKN3jMuIWjgiIZwluIxbmkoOBLKlDksPZLpE2xuI6ZDzmS7H3CCTgMFkwiw/stZUWEElwy+UpLegbA==
+hops-lambda@11.0.1:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-11.0.1.tgz#1e8d26cd55339dc3550dbead06dfe97e12a71965"
+  integrity sha512-JeVjgGnehqTjSw5BFXAJ22fbGJLLU2A0hKvR47EdRLYdxxYee79NlrVa0ed+DJprGid5T9/h9PZ1u8xNr6UMDg==
   dependencies:
     "@untool/core" "^1.0.0-rc.14"
     "@untool/express" "^1.0.0-rc.14"
     archiver "^3.0.0"
     aws-sdk "^2.286.2"
     globby "^8.0.0"
-    hops-config "^11.0.0"
-    hops-mixin "^11.0.0"
+    hops-config "^11.0.1"
+    hops-mixin "^11.0.1"
     pathifist "^1.0.0"
     prompt "^1.0.0"
     resolve-tree "^0.1.13"
@@ -4051,6 +4051,14 @@ hops-mixin@^11.0.0:
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.0.tgz#c6a7eb1f0621c1bcf81e307a54cf48b6042ab9ae"
   integrity sha512-MqHxwria/t7DVvUYvSH15b+vaD9KS8Fbe0SnDGs1a+MdbgRSNFD5ir+ii5EnZUZ+TbD1yc/IYBVzop0rMxaJFg==
+  dependencies:
+    "@untool/core" "^1.0.0-rc.14"
+    mixinable "^4.0.0"
+
+hops-mixin@^11.0.1:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-11.0.1.tgz#0957544b9b0cbf3ab8a70922cf1c0d2b4b6a571a"
+  integrity sha512-BgN6X6MKo1W5l4xGBj5D/juBcgAuC12/zk+3EJ63dWveJO/HEFNYqT3+vPxs2dGSNaMVi9Q2m0OlJPIKehj40w==
   dependencies:
     "@untool/core" "^1.0.0-rc.14"
     mixinable "^4.0.0"
