@@ -56,7 +56,7 @@
     "hops-lambda": "11.0.0",
     "hops-mobx": "1.0.0",
     "hops-pwa": "11.0.0",
-    "hops-styled-components": "11.0.0",
+    "hops-styled-components": "11.0.1",
     "hops-typescript": "11.0.0",
     "jam-icons": "2.0.0",
     "lodash.merge": "4.6.1",
