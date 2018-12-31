@@ -1,4 +1,4 @@
-import { action, autorun, computed, observable } from 'mobx';
+import { action, autorun, computed, observable, toJS } from 'mobx';
 import { migrate } from './migrations';
 
 export interface Training {
@@ -56,10 +56,10 @@ export class TrainingJournal {
     return JSON.stringify(
       this.exercises.map(exercise => {
         return {
-          ...exercise,
+          ...toJS(exercise),
           trainings: exercise.trainings.map(training => {
             return {
-              ...training,
+              ...toJS(training),
               exercise: undefined,
             };
           }),
