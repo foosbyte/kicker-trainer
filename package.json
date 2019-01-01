@@ -43,7 +43,7 @@
       },
       {
         "packagePatterns": [
-          "^hops(-*)?"
+          "^hops(-.*)?"
         ],
         "groupName": "Update Hops monorepo packages"
       }
