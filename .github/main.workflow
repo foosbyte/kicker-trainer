@@ -7,20 +7,20 @@ workflow "Build, Test & Deploy" {
 }
 
 action "Install" {
-  uses = "actions/npm@e7aaefe"
+  uses = "docker://node:10"
   runs = "yarn"
   args = "install"
 }
 
 action "Lint" {
-  uses = "actions/npm@e7aaefe"
+  uses = "docker://node:10"
   needs = ["Install"]
   runs = "yarn"
   args = "lint"
 }
 
 action "Build" {
-  uses = "actions/npm@e7aaefe"
+  uses = "docker://node:10"
   needs = ["Install"]
   runs = "yarn"
   args = "build --production"
@@ -40,7 +40,7 @@ action "On Master" {
 }
 
 action "Deploy" {
-  uses = "actions/npm@e7aaefe"
+  uses = "docker://node:10"
   needs = ["On Master"]
   runs = "yarn"
   args = "deploy"
