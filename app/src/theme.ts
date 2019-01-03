@@ -15,6 +15,7 @@ export const theme = {
     white: '#ffffff',
     red: '#FE2753',
     blue: '#094EFF',
+    black: '#000000',
   },
   font: {
     m: {

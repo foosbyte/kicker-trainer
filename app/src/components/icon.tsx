@@ -9,7 +9,8 @@ export type IconType =
   | 'pause'
   | 'stop'
   | 'check'
-  | 'close';
+  | 'close'
+  | 'arrow-right';
 
 export type IconSize = 18;
 
