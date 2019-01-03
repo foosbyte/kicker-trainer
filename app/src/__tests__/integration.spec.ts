@@ -50,7 +50,7 @@ describe('integration smoke tests', () => {
       await page.goto('http://localhost:8080/', { waitUntil: 'networkidle2' });
       const deregisterEventHandlers = assertClientSideNavigation(page);
       await tapElementWithText(page, 'Categories');
-      await expect(page).toMatch('3 Bar Excercises');
+      await expect(page).toMatch('3 Bar Exercises');
       deregisterEventHandlers();
     });
 
@@ -58,7 +58,7 @@ describe('integration smoke tests', () => {
       await page.goto('http://localhost:8080/categories', {
         waitUntil: 'networkidle2',
       });
-      await expect(page).toMatch('3 Bar Excercises');
+      await expect(page).toMatch('3 Bar Exercises');
     });
   });
 
@@ -67,7 +67,7 @@ describe('integration smoke tests', () => {
       await page.goto('http://localhost:8080/', { waitUntil: 'networkidle2' });
       const deregisterEventHandlers = assertClientSideNavigation(page);
       await tapElementWithText(page, 'Categories');
-      await tapElementWithText(page, '3 Bar Excercises');
+      await tapElementWithText(page, '3 Bar Exercises');
       await expect(page).toMatch('Pin Mitte: Links Lang');
       deregisterEventHandlers();
     });
@@ -85,7 +85,7 @@ describe('integration smoke tests', () => {
       await page.goto('http://localhost:8080/', { waitUntil: 'networkidle2' });
       const deregisterEventHandlers = assertClientSideNavigation(page);
       await tapElementWithText(page, 'Categories');
-      await tapElementWithText(page, '3 Bar Excercises');
+      await tapElementWithText(page, '3 Bar Exercises');
       await tapElementWithText(page, 'Pin Mitte: Links Lang');
       await expect(page).toMatch('Start training');
       deregisterEventHandlers();
@@ -95,7 +95,7 @@ describe('integration smoke tests', () => {
       await page.goto('http://localhost:8080/', { waitUntil: 'networkidle2' });
       const deregisterEventHandlers = assertClientSideNavigation(page);
       await tapElementWithText(page, 'Categories');
-      await tapElementWithText(page, '3 Bar Excercises');
+      await tapElementWithText(page, '3 Bar Exercises');
       await tapElementWithText(page, 'Pin Mitte: Links Lang');
       await tapElementWithText(page, 'Start training');
       await tapElementWithText(page, 'Hit');
