@@ -83,7 +83,7 @@
     "@types/jest": "23.3.13",
     "@types/jest-environment-puppeteer": "2.2.1",
     "@types/lodash.merge": "4.6.4",
-    "@types/node": "10.12.19",
+    "@types/node": "10.12.20",
     "@types/puppeteer": "1.11.1",
     "@types/react": "16.7.22",
     "@types/react-dom": "16.0.11",
