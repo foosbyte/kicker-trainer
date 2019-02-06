@@ -86,7 +86,7 @@
     "@types/node": "10.12.21",
     "@types/puppeteer": "1.11.1",
     "@types/react": "16.8.2",
-    "@types/react-dom": "16.0.11",
+    "@types/react-dom": "16.8.0",
     "@types/react-helmet": "5.0.8",
     "@types/react-router": "4.4.3",
     "@types/react-router-dom": "4.3.1",
