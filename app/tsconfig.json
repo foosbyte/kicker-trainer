@@ -10,7 +10,6 @@
     "rootDir": "./src",
     "declaration": false,
     "importHelpers": true,
-    "typeRoots": ["../node_modules/@types", "./typings"],
     "strict": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
