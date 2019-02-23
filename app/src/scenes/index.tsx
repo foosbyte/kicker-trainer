@@ -1,14 +1,22 @@
+/* tslint:disable */
 import { Miss } from 'hops';
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { importComponent } from '../patched-runtime';
 
-import { Categories } from './categories';
-import { Editor } from './editor';
-import { Exercises } from './exercises';
-import { Profile } from './profile';
-import { Settings } from './settings';
-import { Stats } from './stats';
-import { Training } from './training';
+const Profile = importComponent(() => import('./profile'), ns => ns.Profile);
+const Categories = importComponent(
+  () => import('./categories'),
+  ns => ns.Categories
+);
+const Exercises = importComponent(
+  () => import('./exercises'),
+  ns => ns.Exercises
+);
+const Training = importComponent(() => import('./training'), ns => ns.Training);
+const Stats = importComponent(() => import('./stats'), ns => ns.Stats);
+const Settings = importComponent(() => import('./settings'), ns => ns.Settings);
+const Editor = importComponent(() => import('./editor'), ns => ns.Editor);
 
 export interface ScenesProps {
   location?: object;

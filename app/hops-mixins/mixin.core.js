@@ -1,7 +1,7 @@
 const { Mixin } = require('hops');
 
 class CustomMixin extends Mixin {
-  configureBuild(webpackConfig, { allLoaderConfigs }, target) {
+  configureBuild(webpackConfig, { allLoaderConfigs, jsLoaderConfig }, target) {
     // moment 2.x is seriously broken: https://github.com/moment/moment/issues/2979
     webpackConfig.resolve.alias['moment$'] = 'moment/moment.js';
 
@@ -14,6 +14,17 @@ class CustomMixin extends Mixin {
         ? ['mobx', webpackConfig.externals]
         : ['mobx'];
     }
+
+    const untoolImportPluginIndex = jsLoaderConfig.options.plugins.findIndex(
+      plugin =>
+        require.resolve(Array.isArray(plugin) ? plugin[0] : plugin) ===
+        require.resolve('@untool/react/lib/babel')
+    );
+
+    jsLoaderConfig.options.plugins.splice(untoolImportPluginIndex, 1, [
+      require.resolve('./babel'),
+      { module: '../patched-runtime' },
+    ]);
 
     return webpackConfig;
   }
