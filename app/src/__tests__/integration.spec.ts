@@ -106,10 +106,10 @@ describe('integration smoke tests', () => {
       await tapElementWithText(page, 'Miss');
       await tapElementWithText(page, 'End training');
       const quota = await page.evaluate(
-        element => element.nextElementSibling.innerText,
-        await getElementWithText(page, 'Gesamt Quote')
+        element => element.innerText,
+        await page.$('[data-role="quota"]')
       );
-      expect(quota).toEqual('50%');
+      expect(quota).toEqual('50');
       deregisterEventHandlers();
     });
 

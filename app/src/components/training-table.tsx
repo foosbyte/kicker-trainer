@@ -34,7 +34,7 @@ export class TrainingTable extends React.PureComponent<TrainingTableProps> {
       <StatsTable>
         <Duration hours={hours} minutes={minutes} seconds={seconds} />
         <Label color="grey">Gesamt Trainingszeit</Label>
-        <Quota>
+        <Quota data-role="quota">
           {quota !== null ? (
             <ProgressCircle
               color="blue"
