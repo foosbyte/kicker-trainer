@@ -65,8 +65,8 @@ export class ProgressCircle extends React.PureComponent<ProgressCircleProps> {
           stroke={theme.color[this.props.textColor]}
           x={radius}
           y={radius}
-          text-anchor="middle"
-          alignment-baseline="central"
+          textAnchor="middle"
+          alignmentBaseline="central"
         >
           {progress.toFixed()}
         </text>
