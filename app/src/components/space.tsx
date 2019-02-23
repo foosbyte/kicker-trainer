@@ -6,13 +6,13 @@ import styled, { theme } from '../styled-components';
 import { View } from './view';
 
 interface SpaceWrapperProps extends SpaceProps {
-  theme?: typeof theme;
+  theme: typeof theme;
 }
 
 const StyledInset = styled.div`
   padding: ${({ theme, inset = 'm', squish, stretch }: SpaceWrapperProps) => {
-    const s = theme ? theme.space[inset] : 16;
-    return inset ? `${squish ? s / 2 : s}px ${stretch ? s * 1.5 : s}px` : '0';
+    const s = theme.space[inset];
+    return inset ? `${squish ? s / 2 : stretch ? s * 1.5 : s}px ${s}px` : '0';
   }};
 `;
 
