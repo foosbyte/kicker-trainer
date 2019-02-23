@@ -1,6 +1,7 @@
 import { bind } from 'decko';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
+import background from '../background@2x.png';
 import { Avatar } from '../components/avatar';
 import { Button } from '../components/button';
 import { RecentTrainings } from '../components/recent-trainings';
@@ -9,8 +10,6 @@ import { View } from '../components/view';
 import { PWAIntegration } from '../stores/pwa';
 import { ServiceWorker } from '../stores/service-worker';
 import styled from '../styled-components';
-
-import background from '../background@2x.png';
 
 const ProfileWrapper = styled(View)`
   display: flex;
@@ -35,7 +34,7 @@ const AvatarArc = styled(View)`
   height: ${avatarVars.height}vw;
   margin: 0 auto calc(45vh - ${avatarVars.height}vw) auto;
 
-  ::after {
+  ::before {
     content: ' ';
     border-radius: 50%;
     background-color: ${props => props.theme.color.green};
