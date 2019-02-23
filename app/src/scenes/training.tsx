@@ -2,18 +2,21 @@ import { bind } from 'decko';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import styled from 'styled-components';
 import { Badge } from '../components/badge';
 import { Button } from '../components/button';
 import { ButtonGroup } from '../components/button-group';
+import { Duration } from '../components/duration';
 import { Editor } from '../components/editor';
+import { Space } from '../components/space';
 import { Text } from '../components/text';
+import { TrainingTable } from '../components/training-table';
 import { View } from '../components/view';
 import { Analytics } from '../stores/analytics';
 import { ExerciseCatalogue } from '../stores/exercise-catalogue';
 import { TrainingJournal } from '../stores/training-journal';
 import { State, TrainingSession } from '../stores/training-session';
-import { calculateQuota, formatDuration, formatQuota } from '../utils';
+import styled from '../styled-components';
+import { calculateQuota, getDurationParts } from '../utils';
 
 const Wrapper = styled(View)`
   display: flex;
@@ -21,14 +24,16 @@ const Wrapper = styled(View)`
   flex-direction: column;
 `;
 
+const CenteredText = styled(Text)`
+  display: block;
+  text-align: center;
+  font-size: ${props => props.theme.fontSize.m}px;
+  font-weight: bold;
+`;
+
 const ImageSizer = styled(View)`
   align-self: center;
   width: 95%;
-`;
-
-const LeftRight = styled(View)`
-  display: flex;
-  justify-content: space-between;
 `;
 
 export interface ExerciseProps {
@@ -53,8 +58,18 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
     if (!exercise) {
       throw new Error(`Invalid exercise '${id}'`);
     }
-    const { arrows } = exercise;
+    const { arrows, name } = exercise;
     const [blue, red] = this.props.exerciseCatalogue.getBarPositions(id);
+
+    const [totalHours, totalMinutes, totalSeconds] = getDurationParts(
+      this.props.trainingJournal.exerciseTrainingTime(
+        this.props.match.params.id
+      ) + this.props.trainingSession.totalTime
+    );
+    const totalQuota = this.calculateQuota();
+    const [currentHours, currentMinutes, currentSeconds] = getDurationParts(
+      this.props.trainingSession.totalTime
+    );
 
     return (
       <Wrapper>
@@ -67,28 +82,28 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
             arrows={arrows}
           />
         </ImageSizer>
-        <LeftRight>
-          <Text>Gesamt Trainingszeit</Text>
-          <Badge>
-            {formatDuration(
-              this.props.trainingJournal.exerciseTrainingTime(
-                this.props.match.params.id
-              ) + this.props.trainingSession.totalTime
-            )}
-          </Badge>
-        </LeftRight>
-        <LeftRight>
-          <Text>Auslösen</Text>
-          <Badge>1h 14m</Badge>
-        </LeftRight>
-        <LeftRight>
-          <Text>Gesamt Quote</Text>
-          <Badge>{this.calculateQuota()}</Badge>
-        </LeftRight>
+        <Space inset="m" stretch>
+          <CenteredText>{name}</CenteredText>
+        </Space>
+        <Space inset="m" stretch>
+          <TrainingTable
+            hours={totalHours}
+            minutes={totalMinutes}
+            seconds={totalSeconds}
+            quota={totalQuota}
+          />
+        </Space>
         {this.props.trainingSession.state === State.NONE ? (
           <Button onPress={this.onStart}>Start training</Button>
         ) : (
-          <>
+          <Space between="m">
+            <Badge>
+              <Duration
+                hours={currentHours}
+                minutes={currentMinutes}
+                seconds={currentSeconds}
+              />
+            </Badge>
             <ButtonGroup>
               <Button
                 icon={
@@ -106,8 +121,9 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
                 End training
               </Button>
             </ButtonGroup>
-            <div>{formatDuration(this.props.trainingSession.totalTime)}</div>
-            <Text>Optionally: Track your quota</Text>
+            <CenteredText color="grey">
+              Optionally: Track your quota
+            </CenteredText>
             <ButtonGroup>
               <Button icon="check" intent="accept" onPress={this.onHit}>
                 Hit
@@ -116,19 +132,19 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
                 Miss
               </Button>
             </ButtonGroup>
-          </>
+          </Space>
         )}
       </Wrapper>
     );
   }
 
-  private calculateQuota(): string {
+  private calculateQuota(): number | null {
     const [pastHits, pastMisses] = this.props.trainingJournal.exerciseQuota(
       this.props.match.params.id
     );
     const [hits, misses] = this.props.trainingSession.quota;
 
-    return formatQuota(calculateQuota([pastHits + hits, pastMisses + misses]));
+    return calculateQuota([pastHits + hits, pastMisses + misses]);
   }
 
   @bind
