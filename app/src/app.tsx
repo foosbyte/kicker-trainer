@@ -4,11 +4,15 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
+import { Button } from './components/button';
 import { ScrollView } from './components/scroll-view';
+import { Space } from './components/space';
 import { TabBar, TabBarItem } from './components/tab-bar';
+import { Text } from './components/text';
 import { View } from './components/view';
 import manifest from './manifest.webmanifest';
 import { Scenes } from './scenes';
+import { css } from './styled-components';
 import { theme } from './theme';
 
 const GlobalStyle = createGlobalStyle`
@@ -20,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.color.white};
   }
   a, a:visited, a:hover, a:focus, a:active {
-    color: ${theme.color.white};
     text-decoration: none;
   }
 `;
@@ -43,7 +46,7 @@ const Nav = styled(View)`
 `;
 
 const Backdrop = styled.div`
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -52,11 +55,12 @@ const Backdrop = styled.div`
   align-items: center;
 `;
 
-const DataPrivacyLayer = styled.div`
-  background-color: white;
+const DataPrivacyLayer = styled.div<{ theme: typeof theme }>`
+  background-color: ${props => props.theme.color.anthrazit};
   padding: 32px;
   display: flex;
   flex-direction: column;
+  margin: ${props => css`0 ${props.theme.space.l}px`};
 `;
 
 interface AppProps extends RouteComponentProps<{}> {
@@ -123,11 +127,16 @@ class App extends React.Component<AppProps> {
     return (
       <Backdrop>
         <DataPrivacyLayer>
-          <label>
-            <input id="data-privacy" type="checkbox" defaultChecked={false} />
-            GDPR (Tracking with Google Analytics)
-          </label>
-          <button onClick={this.acceptDataPrivacyAgreement}>Accept</button>
+          <Space between="m">
+            <Text>
+              Diese Website verwendet Cookies für Analysen, personalisierte
+              Inhalte und Werbung. Indem Sie diese Website nutzen, erklären Sie
+              sich mit dieser Verwendung einverstanden.
+            </Text>
+            <Button onPress={this.acceptDataPrivacyAgreement} intent="default">
+              Akzeptieren
+            </Button>
+          </Space>
         </DataPrivacyLayer>
       </Backdrop>
     );
@@ -135,12 +144,7 @@ class App extends React.Component<AppProps> {
 
   @bind
   private acceptDataPrivacyAgreement(): void {
-    const checkbox = document.getElementById(
-      'data-privacy'
-    ) as HTMLInputElement;
-    if (checkbox.checked) {
-      this.props.dataPrivacy!.accept();
-    }
+    this.props.dataPrivacy!.accept();
   }
 }
 
