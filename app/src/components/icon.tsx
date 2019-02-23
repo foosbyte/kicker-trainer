@@ -10,9 +10,10 @@ export type IconType =
   | 'stop'
   | 'check'
   | 'close'
-  | 'arrow-right';
+  | 'arrow-right'
+  | 'cog';
 
-export type IconSize = 18;
+export type IconSize = 18 | 24;
 
 export interface IconProps {
   icon: IconType;

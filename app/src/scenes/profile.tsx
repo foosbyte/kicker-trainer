@@ -1,15 +1,24 @@
 import { bind } from 'decko';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import background from '../background@2x.png';
 import { Avatar } from '../components/avatar';
 import { Button } from '../components/button';
+import { Icon } from '../components/icon';
 import { RecentTrainings } from '../components/recent-trainings';
 import { Space } from '../components/space';
 import { View } from '../components/view';
 import { PWAIntegration } from '../stores/pwa';
 import { ServiceWorker } from '../stores/service-worker';
 import styled from '../styled-components';
+
+const SettingsButton = styled(Link)`
+  color: ${props => props.theme.color.white};
+  position: absolute;
+  top: 0;
+  right: 0;
+`;
 
 const ProfileWrapper = styled(View)`
   display: flex;
@@ -19,6 +28,11 @@ const ProfileWrapper = styled(View)`
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
+`;
+
+const ProfileHeader = styled(View)`
+  overflow: hidden;
+  position: relative;
 `;
 
 const avatarVars = {
@@ -57,14 +71,20 @@ export class Profile extends React.Component<ProfileProps> {
   public render(): JSX.Element {
     return (
       <ProfileWrapper>
-        <AvatarArc>
-          <Avatar size="normal" />
-        </AvatarArc>
+        <ProfileHeader>
+          <AvatarArc>
+            <Avatar size="normal" />
+          </AvatarArc>
+          <SettingsButton to="/settings">
+            <Space inset="m" stretch>
+              <Icon icon="cog" size={24} />
+            </Space>
+          </SettingsButton>
+        </ProfileHeader>
         <RecentTrainings />
         <Space inset="xl">
           <Space between="m">
             <Button to="/categories">Start Training</Button>
-            <Button to="/settings">Settings</Button>
             {this.props.pwa.installable && (
               <Button onPress={this.installPwa}>Install on device</Button>
             )}

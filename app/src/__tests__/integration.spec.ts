@@ -1,6 +1,10 @@
 import { Page, Request } from 'puppeteer';
 import * as devices from 'puppeteer/DeviceDescriptors';
-import { getElementWithText, tapElementWithText } from './helpers';
+import {
+  getElementWithText,
+  tapElementWithSelector,
+  tapElementWithText,
+} from './helpers';
 
 function assertClientSideNavigation(page: Page): () => void {
   function handler(request: Request): void {
@@ -31,16 +35,16 @@ describe('integration smoke tests', () => {
   describe('GDPR notice', () => {
     it('should show GDPR message', async () => {
       await page.goto('http://localhost:8080/', { waitUntil: 'networkidle2' });
-      const notice = await getElementWithText(page, 'GDPR');
+      const notice = await getElementWithText(page, 'Cookies');
       expect(await notice.isIntersectingViewport()).toBe(true);
     });
 
     it('should hide GDPR message after accepting it', async () => {
       await page.goto('http://localhost:8080/', { waitUntil: 'networkidle2' });
       const deregisterEventHandlers = assertClientSideNavigation(page);
-      await tapElementWithText(page, 'GDPR');
-      await tapElementWithText(page, 'Accept');
-      await expect(page).not.toMatch('GDPR');
+      await tapElementWithText(page, 'Cookies');
+      await tapElementWithText(page, 'Akzeptieren');
+      await expect(page).not.toMatch('Cookies');
       deregisterEventHandlers();
     });
   });
@@ -158,14 +162,14 @@ describe('integration smoke tests', () => {
     it('should be available through profile page', async () => {
       await page.goto('http://localhost:8080/', { waitUntil: 'networkidle2' });
       const deregisterEventHandlers = assertClientSideNavigation(page);
-      await tapElementWithText(page, 'Settings');
+      await tapElementWithSelector(page, 'a[href="/settings"]');
       await expect(page).toMatch('Clear storage');
       deregisterEventHandlers();
     });
 
     it('should allow to force hard reload', async () => {
       await page.goto('http://localhost:8080/', { waitUntil: 'networkidle2' });
-      await tapElementWithText(page, 'Settings');
+      await tapElementWithSelector(page, 'a[href="/settings"]');
 
       const requests = new Map();
       page.on('request', req => {
@@ -180,10 +184,10 @@ describe('integration smoke tests', () => {
 
     it('should allow to clear all local storage', async () => {
       await page.goto('http://localhost:8080/', { waitUntil: 'networkidle2' });
-      await tapElementWithText(page, 'Settings');
+      await tapElementWithSelector(page, 'a[href="/settings"]');
       await tapElementWithText(page, 'Clear storage');
       await page.waitForNavigation({ waitUntil: 'networkidle2' });
-      await expect(page).toMatch('GDPR');
+      await expect(page).toMatch('Cookies');
     });
   });
 });

@@ -17,3 +17,10 @@ export const tapElementWithText = async (
 ): Promise<void> => {
   await (await getElementWithText(page, text)).tap();
 };
+
+export const tapElementWithSelector = async (
+  page: Page,
+  selector: string
+): Promise<void> => {
+  await (await page.$(selector))!.tap();
+};
