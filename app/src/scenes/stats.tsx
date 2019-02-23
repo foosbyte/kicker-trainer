@@ -1,12 +1,12 @@
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import styled from 'styled-components';
-
+import background from '../background@2x.png';
 import { Text } from '../components/text';
 import { View } from '../components/view';
 import { ExerciseCatalogue } from '../stores/exercise-catalogue';
 import { TrainingJournal } from '../stores/training-journal';
-import { formatDuration, calculateQuota, formatQuota } from '../utils';
+import { calculateQuota, formatDuration, formatQuota } from '../utils';
 
 export interface StatsProps {
   trainingJournal: TrainingJournal;
@@ -19,6 +19,14 @@ interface StatsState {
 
 const FullWidthTable = styled.table`
   width: 100%;
+`;
+
+const StatsWrapper = styled(View)`
+  background-image: url(${background});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
 `;
 
 @inject('trainingJournal', 'exerciseCatalogue')
@@ -41,7 +49,7 @@ export class Stats extends React.Component<StatsProps, StatsState> {
     const { LineChart } = this.state;
 
     return (
-      <>
+      <StatsWrapper>
         <View>
           <Text>You are doing fabulous!</Text>
         </View>
@@ -124,7 +132,7 @@ export class Stats extends React.Component<StatsProps, StatsState> {
             })}
           />
         )}
-      </>
+      </StatsWrapper>
     );
   }
 }

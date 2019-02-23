@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-
+import background from '../background@2x.png';
 import { Icon } from '../components/icon';
 import styled, { theme } from '../styled-components';
 
@@ -86,6 +86,10 @@ const CategoryWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  background-image: url(${background});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 `;
 
 const CategoryList = styled.div`

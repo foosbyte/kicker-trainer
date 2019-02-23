@@ -2,17 +2,16 @@ import { inject } from 'mobx-react';
 import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import styled from 'styled-components';
-
+import background from '../background@2x.png';
 import { Category } from '../components/category';
 import { Image } from '../components/image';
 import { ScrollView } from '../components/scroll-view';
 import { Space } from '../components/space';
 import { Text } from '../components/text';
 import { View } from '../components/view';
-import { Bars, ExerciseCatalogue } from '../stores/exercise-catalogue';
-
 import placeholder180 from '../placeholder-180x90.png';
 import placeholder320 from '../placeholder-320x148.png';
+import { Bars, ExerciseCatalogue } from '../stores/exercise-catalogue';
 
 const ExerciseWrapper = styled(View)`
   display: flex;
@@ -45,6 +44,13 @@ class Exercise extends React.PureComponent<ExerciseProps> {
   }
 }
 
+const ExercisesWrapper = styled(View)`
+  background-image: url(${background});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+`;
+
 export interface ExercisesProps {
   exerciseCatalogue: ExerciseCatalogue;
 }
@@ -62,26 +68,28 @@ const categoryMap = {
 export class Exercises extends React.Component<ExercisesProps & RouteProps> {
   public render(): JSX.Element {
     return (
-      <ScrollView>
-        <Space between="m">
-          <Category
-            title={`${
-              categoryMap[this.props.match.params.category]
-            } Excercises`}
-            image={<Image source={placeholder320} width={320} height={148} />}
-          />
-          {this.props.exerciseCatalogue.data[
-            this.props.match.params.category
-          ].map(exercise => (
-            <Exercise
-              key={exercise.id}
-              to={exercise.id}
-              name={exercise.name}
-              cover={placeholder180}
+      <ExercisesWrapper>
+        <ScrollView>
+          <Space between="m">
+            <Category
+              title={`${
+                categoryMap[this.props.match.params.category]
+              } Excercises`}
+              image={<Image source={placeholder320} width={320} height={148} />}
             />
-          ))}
-        </Space>
-      </ScrollView>
+            {this.props.exerciseCatalogue.data[
+              this.props.match.params.category
+            ].map(exercise => (
+              <Exercise
+                key={exercise.id}
+                to={exercise.id}
+                name={exercise.name}
+                cover={placeholder180}
+              />
+            ))}
+          </Space>
+        </ScrollView>
+      </ExercisesWrapper>
     );
   }
 }
