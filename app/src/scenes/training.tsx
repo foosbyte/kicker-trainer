@@ -97,13 +97,15 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
           <Button onPress={this.onStart}>Start training</Button>
         ) : (
           <Space between="m">
-            <Badge>
-              <Duration
-                hours={currentHours}
-                minutes={currentMinutes}
-                seconds={currentSeconds}
-              />
-            </Badge>
+            <CenteredText>
+              <Badge>
+                <Duration
+                  hours={currentHours}
+                  minutes={currentMinutes}
+                  seconds={currentSeconds}
+                />
+              </Badge>
+            </CenteredText>
             <ButtonGroup>
               <Button
                 icon={

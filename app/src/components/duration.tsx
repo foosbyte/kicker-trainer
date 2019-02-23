@@ -1,8 +1,9 @@
 import * as React from 'react';
 import styled from '../styled-components';
 
-const DurationElements = styled.div`
+const DurationElements = styled.span`
   color: ${props => props.theme.color.grey};
+  vertical-align: middle;
 
   & > span {
     font-size: ${props => props.theme.fontSize.m * 1.5}px;
