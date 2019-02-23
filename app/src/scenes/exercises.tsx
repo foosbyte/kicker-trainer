@@ -81,7 +81,7 @@ export class Exercises extends React.Component<ExercisesProps & RouteProps> {
           {this.props.exerciseCatalogue.data[
             this.props.match.params.category
           ].map(exercise => (
-            <Space inset="m" squish>
+            <Space inset="m" squish key={exercise.id}>
               <Exercise
                 key={exercise.id}
                 to={exercise.id}
