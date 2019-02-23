@@ -11,7 +11,8 @@ export type IconType =
   | 'check'
   | 'close'
   | 'arrow-right'
-  | 'cog';
+  | 'cog'
+  | 'download';
 
 export type IconSize = 18 | 24;
 

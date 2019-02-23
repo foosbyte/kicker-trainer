@@ -8,10 +8,34 @@ import { Button } from '../components/button';
 import { Icon } from '../components/icon';
 import { RecentTrainings } from '../components/recent-trainings';
 import { Space } from '../components/space';
+import { Text } from '../components/text';
 import { View } from '../components/view';
 import { PWAIntegration } from '../stores/pwa';
 import { ServiceWorker } from '../stores/service-worker';
-import styled from '../styled-components';
+import styled, { css } from '../styled-components';
+
+const UpdateButton = styled.button`
+  text-decoration: initial;
+  display: flex;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+  border: 0;
+  outline: 0;
+  position: absolute;
+  top: ${props =>
+    css`
+      ${props.theme.space.m * 1.5}px
+    `};
+  left: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  align-items: center;
+  padding: ${props =>
+    css`0 ${props.theme.space.l}px 0 ${props.theme.space.s}px`};
+  background-color: ${props => props.theme.color.blue};
+  color: ${props => props.theme.color.white};
+`;
 
 const SettingsButton = styled(Link)`
   color: ${props => props.theme.color.white};
@@ -75,6 +99,12 @@ export class Profile extends React.Component<ProfileProps> {
           <AvatarArc>
             <Avatar size="normal" />
           </AvatarArc>
+          {this.props.serviceWorker.updateAvailable && (
+            <UpdateButton onClick={this.installUpdate}>
+              <Icon icon="download" size={24} />
+              <Text>Update verfügbar. Klicke zum installieren.</Text>
+            </UpdateButton>
+          )}
           <SettingsButton to="/settings">
             <Space inset="m" stretch>
               <Icon icon="cog" size={24} />
@@ -87,9 +117,6 @@ export class Profile extends React.Component<ProfileProps> {
             <Button to="/categories">Start Training</Button>
             {this.props.pwa.installable && (
               <Button onPress={this.installPwa}>Install on device</Button>
-            )}
-            {this.props.serviceWorker.updateAvailable && (
-              <Button onPress={this.installUpdate}>Install new version</Button>
             )}
           </Space>
         </Space>
