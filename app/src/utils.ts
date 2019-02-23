@@ -1,4 +1,4 @@
-export function formatDuration(duration: number): string {
+export function getDurationParts(duration: number): [string, string, string] {
   const s = Math.floor(duration / 1000) % 60;
   const m = Math.floor(duration / 1000 / 60) % 60;
   const h = Math.floor(duration / 1000 / 60 / 60);
@@ -7,6 +7,11 @@ export function formatDuration(duration: number): string {
   const minutes = m.toString().padStart(2, '0');
   const hours = h.toString().padStart(2, '0');
 
+  return [hours, minutes, seconds];
+}
+
+export function formatDuration(duration: number): string {
+  const [hours, minutes, seconds] = getDurationParts(duration);
   return `${hours}h ${minutes}m ${seconds}s`;
 }
 
