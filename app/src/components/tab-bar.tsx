@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import styled, { withTheme, theme } from '../styled-components';
-
+import styled, { theme, withTheme } from '../styled-components';
 import { Icon, IconType } from './icon';
 import { Space } from './space';
 import { Text } from './text';
@@ -15,6 +14,7 @@ const FlexedSpace = styled(Space)`
 const Bar = styled(View)`
   display: flex;
   flex-direction: row;
+  box-shadow: 3px 0 8px 0 rgba(7, 8, 9, 0.5);
   background-color: ${props =>
     props.theme ? props.theme.color.anthrazit : 'initial'};
 `;
