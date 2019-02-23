@@ -1,6 +1,8 @@
+/**
+ * Idea from https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62
+ */
 import * as React from 'react';
 import styled, { theme } from '../styled-components';
-
 import { View } from './view';
 
 interface SpaceWrapperProps extends SpaceProps {
@@ -10,7 +12,7 @@ interface SpaceWrapperProps extends SpaceProps {
 const StyledInset = styled.div`
   padding: ${({ theme, inset = 'm', squish, stretch }: SpaceWrapperProps) => {
     const s = theme ? theme.space[inset] : 16;
-    return inset ? `${s}px ${squish ? s / 2 : stretch ? s * 1.5 : s}px` : '0';
+    return inset ? `${squish ? s / 2 : s}px ${stretch ? s * 1.5 : s}px` : '0';
   }};
 `;
 

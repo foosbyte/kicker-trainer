@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-
 import { View } from './view';
 
 const ScrollViewWrapper = styled(View)`
@@ -9,8 +8,12 @@ const ScrollViewWrapper = styled(View)`
   width: 100%;
 `;
 
-export class ScrollView extends React.PureComponent {
+export class ScrollView extends React.PureComponent<{ className?: string }> {
   public render(): JSX.Element {
-    return <ScrollViewWrapper>{this.props.children}</ScrollViewWrapper>;
+    return (
+      <ScrollViewWrapper className={this.props.className}>
+        {this.props.children}
+      </ScrollViewWrapper>
+    );
   }
 }

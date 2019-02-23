@@ -1,26 +1,27 @@
 import { inject } from 'mobx-react';
 import * as React from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 import styled from 'styled-components';
 import background from '../background@2x.png';
-import { Category } from '../components/category';
-import { Image } from '../components/image';
+import { Button } from '../components/button';
+import { Headline } from '../components/headline';
 import { ScrollView } from '../components/scroll-view';
 import { Space } from '../components/space';
 import { Text } from '../components/text';
 import { View } from '../components/view';
 import placeholder180 from '../placeholder-180x90.png';
-import placeholder320 from '../placeholder-320x148.png';
 import { Bars, ExerciseCatalogue } from '../stores/exercise-catalogue';
+
+const CenteredTitle = styled(Headline)`
+  display: block;
+  width: 100%;
+  text-align: center;
+`;
 
 const ExerciseWrapper = styled(View)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`;
-
-const ExerciseImage = styled(View)`
-  width: 180px;
 `;
 
 interface ExerciseProps {
@@ -32,19 +33,21 @@ interface ExerciseProps {
 class Exercise extends React.PureComponent<ExerciseProps> {
   public render(): JSX.Element {
     return (
-      <Link to={`/training/${this.props.to}`}>
+      <Button to={`/training/${this.props.to}`}>
         <ExerciseWrapper>
           <Text>{this.props.name}</Text>
-          <ExerciseImage>
-            <Image source={this.props.cover} width={180} height={90} />
-          </ExerciseImage>
         </ExerciseWrapper>
-      </Link>
+      </Button>
     );
   }
 }
 
+const SizedScrollView = styled(ScrollView)`
+  height: 100%;
+`;
+
 const ExercisesWrapper = styled(View)`
+  height: 100%;
   background-image: url(${background});
   background-size: cover;
   background-repeat: no-repeat;
@@ -69,26 +72,25 @@ export class Exercises extends React.Component<ExercisesProps & RouteProps> {
   public render(): JSX.Element {
     return (
       <ExercisesWrapper>
-        <ScrollView>
-          <Space between="m">
-            <Category
-              title={`${
-                categoryMap[this.props.match.params.category]
-              } Excercises`}
-              image={<Image source={placeholder320} width={320} height={148} />}
-            />
-            {this.props.exerciseCatalogue.data[
-              this.props.match.params.category
-            ].map(exercise => (
+        <SizedScrollView>
+          <Space inset="m" stretch>
+            <CenteredTitle darkBackground>
+              {categoryMap[this.props.match.params.category]} Excercises
+            </CenteredTitle>
+          </Space>
+          {this.props.exerciseCatalogue.data[
+            this.props.match.params.category
+          ].map(exercise => (
+            <Space inset="m" squish>
               <Exercise
                 key={exercise.id}
                 to={exercise.id}
                 name={exercise.name}
                 cover={placeholder180}
               />
-            ))}
-          </Space>
-        </ScrollView>
+            </Space>
+          ))}
+        </SizedScrollView>
       </ExercisesWrapper>
     );
   }

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-
 import { Text } from './text';
 
 const HeadlineText = styled(Text)`
@@ -10,13 +9,17 @@ const HeadlineText = styled(Text)`
 `;
 
 export interface HeadlineProps {
+  className?: string;
   darkBackground?: boolean;
 }
 
 export class Headline extends React.Component<HeadlineProps> {
   public render(): JSX.Element {
     return (
-      <HeadlineText darkBackground={this.props.darkBackground}>
+      <HeadlineText
+        className={this.props.className}
+        darkBackground={this.props.darkBackground}
+      >
         {this.props.children}
       </HeadlineText>
     );
