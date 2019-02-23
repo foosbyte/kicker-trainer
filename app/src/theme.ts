@@ -17,6 +17,7 @@ export const theme = {
     blue: '#094EFF',
     black: '#000000',
     grey: '#9CA1A5',
+    transparentGrey: '#60676E4E',
   },
   font: {
     m: {

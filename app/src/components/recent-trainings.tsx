@@ -1,16 +1,33 @@
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
-import styled from 'styled-components';
-
 import { ExerciseCatalogue } from '../stores/exercise-catalogue';
 import { TrainingJournal } from '../stores/training-journal';
-import { formatDuration } from '../utils';
-import { Badge } from './badge';
-import { View } from './view';
+import styled, { css } from '../styled-components';
+import { getDurationParts } from '../utils';
+import { Duration } from './duration';
+import { Space } from './space';
+import { Text } from './text';
 
-const LeftRight = styled(View)`
+const RecentTrainingsList = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: ${props => props.theme.space.m}px;
+  background-color: ${props => props.theme.color.transparentGrey};
+`;
+
+const TrainingEntry = styled.li`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: ${props =>
+    css`
+      ${props.theme.space.s}px 0
+    `};
+  border-bottom: ${props => css`1px solid ${props.theme.color.anthrazit}`};
+
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 
 export interface RecentTrainingsProps {
@@ -25,27 +42,38 @@ export class RecentTrainings extends React.Component<RecentTrainingsProps> {
     if (!this.props.trainingJournal) {
       return null;
     }
+    const lastTrainings = this.props.trainingJournal.lastExercises.slice(0, 3);
+    if (lastTrainings.length === 0) {
+      return null;
+    }
+
     return (
-      <View>
-        {this.props.trainingJournal.lastExercises.slice(0, 3).map(exercise => {
-          const ex =
-            this.props.exerciseCatalogue &&
-            this.props.exerciseCatalogue.getExercise(exercise.id);
-          if (!ex) {
-            return null;
-          }
-          return (
-            <LeftRight key={exercise.id}>
-              <Badge>{ex.name}</Badge>
-              <div>
-                {formatDuration(
-                  this.props.trainingJournal!.exerciseTrainingTime(exercise.id)
-                )}
-              </div>
-            </LeftRight>
-          );
-        })}
-      </View>
+      <Space inset="l" stretch>
+        <RecentTrainingsList>
+          {lastTrainings.map(exercise => {
+            const ex =
+              this.props.exerciseCatalogue &&
+              this.props.exerciseCatalogue.getExercise(exercise.id);
+            if (!ex) {
+              return null;
+            }
+            const [hours, minutes, seconds] = getDurationParts(
+              this.props.trainingJournal!.exerciseTrainingTime(exercise.id, 1)
+            );
+            return (
+              <TrainingEntry key={exercise.id}>
+                <Text>{ex.name}</Text>
+                <Duration
+                  size="small"
+                  hours={hours}
+                  minutes={minutes}
+                  seconds={seconds}
+                />
+              </TrainingEntry>
+            );
+          })}
+        </RecentTrainingsList>
+      </Space>
     );
   }
 }

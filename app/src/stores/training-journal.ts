@@ -76,15 +76,17 @@ export class TrainingJournal {
     }
   }
 
-  public exerciseTrainingTime(id: Exercise['id']): number {
+  public exerciseTrainingTime(
+    id: Exercise['id'],
+    amountOfTrainings?: number
+  ): number {
     const exercise = this.exercises.find(e => e.id === id);
     if (!exercise) {
       return 0;
     }
-    return exercise.trainings.reduce(
-      (total, training) => total + training.duration,
-      0
-    );
+    return exercise.trainings
+      .slice(0, amountOfTrainings)
+      .reduce((total, training) => total + training.duration, 0);
   }
 
   public totalTrainingTime(): number {
