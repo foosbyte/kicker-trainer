@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 /* global __webpack_modules__, __webpack_require__ */
 /* tslint:disable */
 
