@@ -9,7 +9,6 @@ workflow "Build, Test & Deploy" {
 action "Install" {
   uses = "docker://node:10"
   runs = "yarn"
-  args = "install"
 }
 
 action "Lint" {
@@ -34,7 +33,7 @@ action "Test" {
 }
 
 action "On Master" {
-  uses = "actions/bin/filter@b2bea07"
+  uses = "actions/bin/filter@master"
   needs = ["Test"]
   args = "branch master"
 }
