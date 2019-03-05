@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
-    "@types/chart.js": "2.7.45",
+    "@types/chart.js": "2.7.46",
     "@types/expect-puppeteer": "3.3.1",
     "@types/express": "4.16.1",
     "@types/jest": "24.0.9",
