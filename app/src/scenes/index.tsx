@@ -1,8 +1,7 @@
 /* tslint:disable */
-import { Miss } from 'hops';
+import { importComponent, Miss } from 'hops';
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { importComponent } from '../patched-runtime';
 
 const Profile = importComponent(() => import('./profile'), ns => ns.Profile);
 const Categories = importComponent(
