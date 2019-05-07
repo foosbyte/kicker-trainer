@@ -98,6 +98,15 @@ describe('integration smoke tests', () => {
 
       await expect(scrollTop).toBe(100);
     });
+
+    it('should have the navigation bar in viewport, even with many exercises', async () => {
+      await page.goto('http://localhost:8080/exercises/3bar', {
+        waitUntil: 'networkidle2',
+      });
+
+      const profileButton = await getElementWithText(page, 'Profile');
+      expect(await profileButton.isIntersectingViewport()).toBe(true);
+    });
   });
 
   describe('training page', () => {
