@@ -15,8 +15,14 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: |
-    yarn install
-    yarn build -p
-    yarn test
-  displayName: 'npm install, build and test'
+- script: yarn install
+  displayName: 'Install dependencies'
+
+- script: yarn build -p
+  displayName: 'Build production'
+
+- script: yarn test
+  displayName: 'Run tests'
+
+- script: yarn deploy
+  displayName: 'Deploy to Lambda'
