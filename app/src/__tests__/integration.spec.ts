@@ -82,6 +82,22 @@ describe('integration smoke tests', () => {
       });
       await expect(page).toMatch('Pin Mitte: Links Lang');
     });
+
+    it('should allow scrolling if there are too many exercises', async () => {
+      await page.goto('http://localhost:8080/exercises/3bar', {
+        waitUntil: 'networkidle2',
+      });
+
+      const scrollView = await page.$('[data-role="scrollview"]');
+      expect(scrollView).toBeDefined();
+
+      const scrollTop = await page.evaluate(el => {
+        el.scrollTop = 100;
+        return el.scrollTop;
+      }, scrollView);
+
+      await expect(scrollTop).toBe(100);
+    });
   });
 
   describe('training page', () => {

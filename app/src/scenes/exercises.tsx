@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import background from '../background@2x.png';
 import { Button } from '../components/button';
 import { Headline } from '../components/headline';
-import { ScrollView } from '../components/scroll-view';
 import { Space } from '../components/space';
 import { Text } from '../components/text';
 import { View } from '../components/view';
@@ -42,12 +41,7 @@ class Exercise extends React.PureComponent<ExerciseProps> {
   }
 }
 
-const SizedScrollView = styled(ScrollView)`
-  height: 100%;
-`;
-
 const ExercisesWrapper = styled(View)`
-  height: 100%;
   background-image: url(${background});
   background-size: cover;
   background-repeat: no-repeat;
@@ -72,25 +66,23 @@ export class Exercises extends React.Component<ExercisesProps & RouteProps> {
   public render(): JSX.Element {
     return (
       <ExercisesWrapper>
-        <SizedScrollView>
-          <Space inset="m" stretch>
-            <CenteredTitle darkBackground>
-              {categoryMap[this.props.match.params.category]} Excercises
-            </CenteredTitle>
+        <Space inset="m" stretch>
+          <CenteredTitle darkBackground>
+            {categoryMap[this.props.match.params.category]} Excercises
+          </CenteredTitle>
+        </Space>
+        {this.props.exerciseCatalogue.data[
+          this.props.match.params.category
+        ].map(exercise => (
+          <Space inset="m" squish key={exercise.id}>
+            <Exercise
+              key={exercise.id}
+              to={exercise.id}
+              name={exercise.name}
+              cover={placeholder180}
+            />
           </Space>
-          {this.props.exerciseCatalogue.data[
-            this.props.match.params.category
-          ].map(exercise => (
-            <Space inset="m" squish key={exercise.id}>
-              <Exercise
-                key={exercise.id}
-                to={exercise.id}
-                name={exercise.name}
-                cover={placeholder180}
-              />
-            </Space>
-          ))}
-        </SizedScrollView>
+        ))}
       </ExercisesWrapper>
     );
   }
