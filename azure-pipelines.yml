@@ -3,13 +3,9 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-trigger:
-- master
-pr: none
-
 pool:
   vmImage: 'ubuntu-latest'
-
+  
 steps:
 - task: NodeTool@0
   inputs:
@@ -27,3 +23,4 @@ steps:
 
 - script: yarn deploy
   displayName: 'Deploy release'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
