@@ -14,7 +14,8 @@
   },
   "hops": {
     "browsers": [
-      "last 1 Chrome versions"
+      "last 1 Chrome versions",
+      "last 2 iOS versions"
     ],
     "node": "8.10",
     "workerFile": "<rootDir>/src/service-worker.ts",
