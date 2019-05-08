@@ -5,22 +5,26 @@
 
 pool:
   vmImage: 'ubuntu-latest'
-  
+
+env:
+  AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+  AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
+
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'Install Node.js'
 
-- script: yarn install
-  displayName: 'Install dependencies'
+  - script: yarn install
+    displayName: 'Install dependencies'
 
-- script: yarn build -p
-  displayName: 'Production build'
+  - script: yarn build -p
+    displayName: 'Production build'
 
-- script: yarn test
-  displayName: 'Run integration tests'
+  - script: yarn test
+    displayName: 'Run integration tests'
 
-- script: yarn deploy
-  displayName: 'Deploy release'
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  - script: yarn deploy
+    displayName: 'Deploy release'
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
