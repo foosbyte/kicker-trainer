@@ -6,10 +6,6 @@
 pool:
   vmImage: 'ubuntu-latest'
 
-env:
-  AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
-  AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
-
 steps:
   - task: NodeTool@0
     inputs:
@@ -28,3 +24,6 @@ steps:
   - script: yarn deploy
     displayName: 'Deploy release'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    env:
+      AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+      AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
