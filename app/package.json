@@ -93,7 +93,7 @@
     "@types/react-helmet": "5.0.8",
     "@types/react-router": "5.0.0",
     "@types/react-router-dom": "4.3.3",
-    "@types/styled-components": "4.1.14",
+    "@types/styled-components": "4.1.15",
     "jest": "24.8.0",
     "jest-puppeteer": "4.1.1",
     "puppeteer": "1.15.0",
