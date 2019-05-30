@@ -75,7 +75,7 @@
     "react-router": "5.0.0",
     "react-router-dom": "5.0.0",
     "style-loader": "0.23.1",
-    "styled-components": "4.2.0",
+    "styled-components": "4.2.1",
     "tslib": "1.9.3"
   },
   "devDependencies": {
