@@ -4,6 +4,6 @@
   "peerDependencies": {
     "hops": "^11.0.0",
     "mobx": "^5.1.0",
-    "mobx-react": "^5.2.6"
+    "mobx-react": "^5.2.6 || ^6.0.0"
   }
 }
