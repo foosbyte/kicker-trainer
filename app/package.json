@@ -72,8 +72,8 @@
     "react-dat-gui": "3.0.0",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
-    "react-router": "5.0.0",
-    "react-router-dom": "5.0.0",
+    "react-router": "5.0.1",
+    "react-router-dom": "5.0.1",
     "style-loader": "0.23.1",
     "styled-components": "4.2.1",
     "tslib": "1.9.3"
