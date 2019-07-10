@@ -62,7 +62,7 @@
     "hops-styled-components": "11.8.1",
     "hops-typescript": "11.8.0",
     "jam-icons": "2.0.0",
-    "lodash.merge": "4.6.1",
+    "lodash.merge": "4.6.2",
     "mobx": "5.11.0",
     "mobx-react": "6.1.1",
     "mobx-utils": "5.4.1",
