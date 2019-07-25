@@ -2,6 +2,7 @@ import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import styled from 'styled-components';
 import background from '../background@2x.png';
+import { PlotlyLineChart } from '../components/plotly';
 import { Text } from '../components/text';
 import { View } from '../components/view';
 import { ExerciseCatalogue } from '../stores/exercise-catalogue';
@@ -13,10 +14,6 @@ export interface StatsProps {
   exerciseCatalogue: ExerciseCatalogue;
 }
 
-interface StatsState {
-  LineChart: typeof import('react-chartkick').LineChart | null;
-}
-
 const FullWidthTable = styled.table`
   width: 100%;
 `;
@@ -26,28 +23,18 @@ const StatsWrapper = styled(View)`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100vh;
+  height: 100%;
 `;
 
 @inject('trainingJournal', 'exerciseCatalogue')
 @observer
-export class Stats extends React.Component<StatsProps, StatsState> {
-  public state: StatsState = {
-    LineChart: null,
-  };
-
-  public componentDidMount(): void {
-    Promise.all([import('chart.js'), import('react-chartkick')]).then(
-      ([Chart, ReactChartkick]) => {
-        ReactChartkick.default.addAdapter(Chart.default);
-        this.setState({ LineChart: ReactChartkick.LineChart });
-      }
-    );
+export class Stats extends React.Component<StatsProps> {
+  public async componentDidMount(): Promise<void> {
+    const { PlotlyLineChart } = await import('../components/plotly');
+    this.setState({ PlotlyLineChart });
   }
 
   public render(): JSX.Element {
-    const { LineChart } = this.state;
-
     return (
       <StatsWrapper>
         <View>
@@ -97,41 +84,12 @@ export class Stats extends React.Component<StatsProps, StatsState> {
             })}
           </tbody>
         </FullWidthTable>
-        {LineChart && (
-          <LineChart
-            xtitle="Time"
-            ytitle="Quota"
-            min={0}
-            max={100}
-            data={this.props.trainingJournal.exercises.map(exercise => {
-              const ex =
-                this.props.exerciseCatalogue &&
-                this.props.exerciseCatalogue.getExercise(exercise.id);
-              return {
-                name: (ex && ex.name) || 'unknown',
-                data: exercise.trainings.reduce(
-                  (accum, training) => {
-                    accum.quota = [
-                      accum.quota[0] + training.quota[0],
-                      accum.quota[1] + training.quota[1],
-                    ];
-                    const quota = calculateQuota(accum.quota);
-                    if (quota) {
-                      accum.data[
-                        new Date(training.date).toISOString()
-                      ] = Math.floor(quota * 100);
-                    }
-                    return accum;
-                  },
-                  { data: {}, quota: [0, 0] } as {
-                    data: { [date: string]: number };
-                    quota: [number, number];
-                  }
-                ).data,
-              };
-            })}
-          />
-        )}
+        <PlotlyLineChart
+          title="Chart"
+          x={['Jan 2019', 'Feb 2019', 'Mar 2019', 'Apr 2019']}
+          y={[[2, 12, 18, 21], [10, 15, 13, 17]]}
+          legend={['a', 'b']}
+        />
       </StatsWrapper>
     );
   }
