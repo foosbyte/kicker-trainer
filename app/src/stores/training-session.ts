@@ -24,7 +24,7 @@ export class TrainingSession {
   @observable
   public state = State.NONE;
   private id?: string;
-  private noSleep: NoSleep;
+  private noSleep!: NoSleep;
 
   constructor(private trainingJournal: TrainingJournal) {
     autorun(() => {
@@ -40,7 +40,9 @@ export class TrainingSession {
       });
     });
 
-    this.noSleep = new NoSleep();
+    if (typeof window !== 'undefined') {
+      this.noSleep = new NoSleep();
+    }
   }
 
   @computed
