@@ -1,5 +1,6 @@
 import { action, autorun, computed, observable, runInAction } from 'mobx';
 import { now } from 'mobx-utils';
+import NoSleep from 'nosleep.js';
 import { TrainingJournal } from './training-journal';
 
 export enum State {
@@ -23,6 +24,7 @@ export class TrainingSession {
   @observable
   public state = State.NONE;
   private id?: string;
+  private noSleep: NoSleep;
 
   constructor(private trainingJournal: TrainingJournal) {
     autorun(() => {
@@ -37,6 +39,8 @@ export class TrainingSession {
         }
       });
     });
+
+    this.noSleep = new NoSleep();
   }
 
   @computed
@@ -57,6 +61,7 @@ export class TrainingSession {
     this.trackedTime = 0;
     this.currentTime = 0;
     this.id = id;
+    this.noSleep.enable();
   }
 
   @action
@@ -73,6 +78,7 @@ export class TrainingSession {
     this.trackedTime = 0;
     this.hits = 0;
     this.misses = 0;
+    this.noSleep.disable();
   }
 
   @action
@@ -82,9 +88,11 @@ export class TrainingSession {
       this.startTime = undefined;
       this.trackedTime += this.currentTime;
       this.currentTime = 0;
+      this.noSleep.disable();
     } else {
       this.state = State.RUNNING;
       this.startTime = now();
+      this.noSleep.enable();
     }
   }
 
