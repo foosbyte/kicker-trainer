@@ -16,7 +16,12 @@ const Label = styled(Text)`
   order: 2;
 `;
 
-const Quota = styled.div``;
+const Quota = styled.div`
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
 
 export interface TrainingTableProps {
   hours: string;
