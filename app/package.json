@@ -30,7 +30,8 @@
       "region": "eu-central-1",
       "memorySize": 1024,
       "domainName": "trainer.nerdlabs.it",
-      "certificateArn": "arn:aws:acm:us-east-1:440520855754:certificate/2fa97b22-2cb3-4050-9f1f-73b741959fdc"
+      "certificateArn": "arn:aws:acm:us-east-1:440520855754:certificate/2fa97b22-2cb3-4050-9f1f-73b741959fdc",
+      "exclude": ["flow-typed/**", "typings/**", "plotly.js/**"]
     },
     "mixins": [
       "./hops-mixins"
