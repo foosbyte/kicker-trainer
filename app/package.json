@@ -31,7 +31,16 @@
       "memorySize": 1024,
       "domainName": "trainer.nerdlabs.it",
       "certificateArn": "arn:aws:acm:us-east-1:440520855754:certificate/2fa97b22-2cb3-4050-9f1f-73b741959fdc",
-      "exclude": ["flow-typed/**", "typings/**", "plotly.js/**"]
+      "exclude": [
+        "flow-typed/**",
+        "typings/**",
+        "**/node_modules/plotly.js/**",
+        "**/node_modules/typescript/**",
+        "**/node_modules/aws-sdk/**",
+        "**/node_modules/mapbox-gl/**",
+        "**/node_modules/@types/**",
+        "**/node_modules/gl-cone3d/**"
+      ]
     },
     "mixins": [
       "./hops-mixins"
