@@ -1,7 +1,17 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import styled from 'styled-components';
+import { theme } from '../../theme';
 import { Matrix, rad2deg, Vector } from './math';
+
+const colors = {
+  grass: theme.color.green,
+  lines: '#fff',
+  bars: 'silver',
+  bluePlayer: theme.color.blue,
+  redPlayer: theme.color.red,
+  arrow: 'yellow',
+};
 
 function drawLine(
   ctx: CanvasRenderingContext2D,
@@ -112,7 +122,7 @@ export class Editor extends React.Component<EditorProps> {
     const headLeft = new Vector(-3 * lineWidth, +1.75 * lineWidth).mul(rot);
 
     this.ctx.lineWidth = lineWidth;
-    this.ctx.strokeStyle = 'yellow';
+    this.ctx.strokeStyle = colors.arrow;
     this.ctx.beginPath();
 
     this.ctx.moveTo(start.x, start.y);
@@ -132,7 +142,7 @@ export class Editor extends React.Component<EditorProps> {
 
     this.drawGrass();
     this.ctx.lineWidth = 8 * scale;
-    this.ctx.strokeStyle = '#fff';
+    this.ctx.strokeStyle = colors.lines;
     this.ctx.lineCap = 'butt';
     this.ctx.beginPath();
 
@@ -153,7 +163,7 @@ export class Editor extends React.Component<EditorProps> {
   }
 
   private drawGrass(): void {
-    this.ctx.fillStyle = '#00c846';
+    this.ctx.fillStyle = colors.grass;
 
     const leftTop = new Vector(
       -Editor.playfieldWidth / 2,
@@ -201,7 +211,7 @@ export class Editor extends React.Component<EditorProps> {
     this.ctx.save();
     this.ctx.beginPath();
     this.ctx.arc(penaltyPoint.x, penaltyPoint.y, 8 * scale, 0, 2 * Math.PI);
-    this.ctx.fillStyle = '#fff';
+    this.ctx.fillStyle = colors.lines;
     this.ctx.fill();
     this.ctx.restore();
 
@@ -257,7 +267,7 @@ export class Editor extends React.Component<EditorProps> {
     this.ctx.save();
     this.ctx.beginPath();
     this.ctx.arc(center.x, center.y, 8 * scale, 0, 2 * Math.PI);
-    this.ctx.fillStyle = '#fff';
+    this.ctx.fillStyle = colors.lines;
     this.ctx.fill();
     this.ctx.restore();
   }
@@ -283,7 +293,7 @@ export class Editor extends React.Component<EditorProps> {
     });
 
     this.ctx.lineWidth = barWidth;
-    this.ctx.strokeStyle = 'silver';
+    this.ctx.strokeStyle = colors.bars;
     this.ctx.beginPath();
 
     // blue player
@@ -309,7 +319,7 @@ export class Editor extends React.Component<EditorProps> {
         bar.distanceBetween,
         playerWidth,
         playerHeight,
-        '#00f'
+        colors.bluePlayer
       );
     });
 
@@ -339,7 +349,7 @@ export class Editor extends React.Component<EditorProps> {
         bar.distanceBetween,
         playerWidth,
         playerHeight,
-        '#f00'
+        colors.redPlayer
       );
     });
 
