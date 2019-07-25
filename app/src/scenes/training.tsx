@@ -1,5 +1,6 @@
 import { bind } from 'decko';
 import { inject, observer } from 'mobx-react';
+import NoSleep from 'nosleep.js';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Badge } from '../components/badge';
@@ -43,11 +44,23 @@ export interface ExerciseProps {
   analytics: Analytics;
 }
 
+export interface ExerciseState {
+  nosleep: import('nosleep.js').default;
+}
+
 type RouteProps = RouteComponentProps<{ id: string }>;
 
 @inject('trainingSession', 'trainingJournal', 'exerciseCatalogue', 'analytics')
 @observer
-export class Training extends React.Component<ExerciseProps & RouteProps> {
+export class Training extends React.Component<
+  ExerciseProps & RouteProps,
+  ExerciseState
+> {
+  public componentDidMount(): void {
+    this.setState({
+      nosleep: new NoSleep(),
+    });
+  }
   public componentWillUnmount(): void {
     this.props.trainingSession.stop();
   }
@@ -155,6 +168,7 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
     this.props.analytics.track('start', {
       event_category: 'training',
     });
+    this.state.nosleep.enable();
   }
 
   @bind
@@ -163,6 +177,7 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
     this.props.analytics.track('stop', {
       event_category: 'training',
     });
+    this.state.nosleep.disable();
   }
 
   @bind
@@ -171,6 +186,9 @@ export class Training extends React.Component<ExerciseProps & RouteProps> {
     this.props.analytics.track('pause', {
       event_category: 'training',
     });
+    this.props.trainingSession.state === State.PAUSED
+      ? this.state.nosleep.enable()
+      : this.state.nosleep.disable();
   }
 
   @bind
