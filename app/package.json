@@ -85,7 +85,7 @@
     "react-plotly.js": "2.3.0",
     "react-router": "5.0.1",
     "react-router-dom": "5.0.1",
-    "style-loader": "0.23.1",
+    "style-loader": "1.0.0",
     "styled-components": "4.3.2",
     "tslib": "1.10.0"
   },
