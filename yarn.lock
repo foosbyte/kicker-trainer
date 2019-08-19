@@ -4953,7 +4953,7 @@ gl-plot2d@^1.4.2:
     glslify "^7.0.0"
     text-cache "^4.2.1"
 
-gl-plot3d@^2.2.1:
+gl-plot3d@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/gl-plot3d/-/gl-plot3d-2.2.2.tgz#4c84b53278801d0d8a2ccb4a5c8dfd2a5134b31c"
   integrity sha512-is8RoDVUEbUM7kJ2qjhKJlfGLECH3ML9pTCW1V7ylUdmUACmcZ4lzJrQr/NIRkHC5WcUNOp3QJKPjBND3ngZ2A==
@@ -7246,10 +7246,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-mapbox-gl@^1.1.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.2.1.tgz#a91acb48e5ee57d40a09fa6b4c297e92690c5909"
-  integrity sha512-CO7uhTYtcreDokGr3W2LifIdCtHz0TO/BqnRtO5rQ4Rvm8P7ndUM5ZWwZvJJmNnlkMpVwNKSESsKYX32GXHXoQ==
+mapbox-gl@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.1.1.tgz#b8e8e1dfa34edd92a7b834887831dbd1761550b8"
+  integrity sha512-i57kASg8J/U/lJzBePyqTP2ImKUcx8FkHyCjb3ssWYaBBXHUeZ4STGXXfU9u1AQU9170PjDIJLubUUB1vLLSBQ==
   dependencies:
     "@mapbox/geojson-rewind" "^0.4.0"
     "@mapbox/geojson-types" "^1.0.2"
@@ -8570,10 +8570,10 @@ please-upgrade-node@^3.1.1, please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plotly.js@1.49.1:
-  version "1.49.1"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.49.1.tgz#496003beb1629c6909c287996fe2e3d2d464c3f1"
-  integrity sha512-hWYqsKZMV/DSA/i4z5dPdqZ5o2FMPVTgerGe3f0x7TRd0UFEd8GdiUzHz8xs+lZvFn2SwMUpri1IKWJqBAxfcQ==
+plotly.js@1.49.2:
+  version "1.49.2"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.49.2.tgz#e49e6f96da5f58af820b63f3a18bdb03ca3e4ada"
+  integrity sha512-TNknrrHMyJov8cqIxTIcCwyvPdCDFB06opzMHjD25BzlaimJTEkTdPveC+ndr4TNnYHPXakHGKzDRzvtxKDsMQ==
   dependencies:
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
@@ -8599,7 +8599,7 @@ plotly.js@1.49.1:
     gl-mat4 "^1.2.0"
     gl-mesh3d "^2.1.1"
     gl-plot2d "^1.4.2"
-    gl-plot3d "^2.2.1"
+    gl-plot3d "^2.2.2"
     gl-pointcloud2d "^1.0.2"
     gl-scatter3d "^1.2.2"
     gl-select-box "^1.0.3"
@@ -8610,7 +8610,7 @@ plotly.js@1.49.1:
     glslify "^7.0.0"
     has-hover "^1.0.1"
     has-passive-events "^1.0.0"
-    mapbox-gl "^1.1.1"
+    mapbox-gl "1.1.1"
     matrix-camera-controller "^2.1.3"
     mouse-change "^1.4.0"
     mouse-event-offset "^3.0.2"
