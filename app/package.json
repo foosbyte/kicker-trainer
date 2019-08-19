@@ -10,7 +10,7 @@
     "serve": "hops serve",
     "deploy": "hops lambda deploy",
     "lint": "tslint 'src/**/*.{ts,tsx}'",
-    "test": "jest"
+    "test": "PORT=8080 jest"
   },
   "hops": {
     "browsers": [
