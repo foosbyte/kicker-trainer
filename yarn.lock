@@ -8523,10 +8523,10 @@ please-upgrade-node@^3.1.1, please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plotly.js@1.49.2:
-  version "1.49.2"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.49.2.tgz#e49e6f96da5f58af820b63f3a18bdb03ca3e4ada"
-  integrity sha512-TNknrrHMyJov8cqIxTIcCwyvPdCDFB06opzMHjD25BzlaimJTEkTdPveC+ndr4TNnYHPXakHGKzDRzvtxKDsMQ==
+plotly.js@1.49.4:
+  version "1.49.4"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.49.4.tgz#4b287f25f09597d4bc51f3ef4dbd12cca658540c"
+  integrity sha512-yOcA1GKLY6vsGLWYoGa/jWTPXcHPTyTWwkgAhopNtCgxTVexXzKfnnGQ2SslL//+TkpNX8CpCzC88HQVV4p42Q==
   dependencies:
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
