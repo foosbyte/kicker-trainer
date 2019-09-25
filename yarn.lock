@@ -1390,10 +1390,10 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react-plotly.js@2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@types/react-plotly.js/-/react-plotly.js-2.2.3.tgz#9b0d942f86244c6dd67331653ea379dee18c3ef1"
-  integrity sha512-GJAcnMnqgf6PcXr9xg7EyjhwYhPerOHFtxe5wUXnnQurpJUiSv4+0c+xN3OfEt2esozayEJ0xymcFSFpaxqiRw==
+"@types/react-plotly.js@2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@types/react-plotly.js/-/react-plotly.js-2.2.4.tgz#360fcfcace64d0ef173cf0c7d67fc2441b39f659"
+  integrity sha512-dsvngno7Ar13XoF2eJXM609Msoc5DPboNp8x4NE4L+rsBEEsu16/0b0Fze8REx3fA4HEUk4rcn3uJsx48m2sew==
   dependencies:
     "@types/plotly.js" "*"
     "@types/react" "*"
