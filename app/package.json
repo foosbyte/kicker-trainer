@@ -64,12 +64,12 @@
   "dependencies": {
     "css-loader": "3.2.0",
     "decko": "1.2.0",
-    "hops": "11.9.1",
-    "hops-lambda": "11.9.1",
+    "hops": "12.0.0-alpha.1",
+    "hops-lambda": "12.0.0-alpha.1",
     "hops-mobx": "1.0.0",
-    "hops-pwa": "11.9.1",
-    "hops-styled-components": "11.9.1",
-    "hops-typescript": "11.9.1",
+    "hops-pwa": "12.0.0-alpha.1",
+    "hops-styled-components": "12.0.0-alpha.1",
+    "hops-typescript": "12.0.0-alpha.1",
     "jam-icons": "2.0.0",
     "lodash.merge": "4.6.2",
     "mobx": "5.14.2",
@@ -114,6 +114,7 @@
     "tslint-config-prettier": "1.18.0",
     "tslint-plugin-prettier": "2.0.1",
     "tslint-react": "4.1.0",
+    "typescript": "3.6.3",
     "typescript-styled-plugin": "0.15.0"
   }
 }
