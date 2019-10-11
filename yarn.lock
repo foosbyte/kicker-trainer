@@ -4171,11 +4171,6 @@ eslint-scope@^4.0.3:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-esm@~3.0.84:
-  version "3.0.84"
-  resolved "https://registry.yarnpkg.com/esm/-/esm-3.0.84.tgz#bb108989f4673b32d4f62406869c28eed3815a63"
-  integrity sha512-SzSGoZc17S7P+12R9cg21Bdb7eybX25RnIeRZ80xZs+VZ3kdQKzqTp2k4hZJjR7p9l0186TTXSgrxzlMDBktlw==
-
 esprima@^1.0.3:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-1.2.5.tgz#0993502feaf668138325756f30f9a51feeec11e9"
@@ -4917,7 +4912,7 @@ gl-buffer@^2.0.3, gl-buffer@^2.0.6, gl-buffer@^2.0.8, gl-buffer@^2.1.1, gl-buffe
     ndarray-ops "^1.1.0"
     typedarray-pool "^1.0.0"
 
-gl-cone3d@^1.3.1:
+gl-cone3d@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/gl-cone3d/-/gl-cone3d-1.4.1.tgz#579c0e8850783eb4592926814d6991c409cdb281"
   integrity sha512-mWmUsTye5/4/dVpBMdFmkXYYxbWf1tkXQpD4RZ4Iym4T8NcSZ+w+SIlFRPoHhT2eOiUT4EN3ttjHOuZ20K0W0w==
@@ -5181,7 +5176,7 @@ gl-state@^1.0.0:
   dependencies:
     uniq "^1.0.0"
 
-gl-streamtube3d@^1.2.1:
+gl-streamtube3d@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/gl-streamtube3d/-/gl-streamtube3d-1.3.1.tgz#efef8742e0f5725f8cc688ca73cd2fe5efd0a52e"
   integrity sha512-agbhv3MWUmi06HTrlS+CtV13ZV/06NTagbYAyeviOJWHJLfz2v0HonIqSZGco2It2Q1slnNZV+1lQQmZLgw8xg==
@@ -7362,10 +7357,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-mapbox-gl@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.1.1.tgz#b8e8e1dfa34edd92a7b834887831dbd1761550b8"
-  integrity sha512-i57kASg8J/U/lJzBePyqTP2ImKUcx8FkHyCjb3ssWYaBBXHUeZ4STGXXfU9u1AQU9170PjDIJLubUUB1vLLSBQ==
+mapbox-gl@1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.3.2.tgz#6e9197485de7c0c71b1fd30e5e8e7e3824bc35dd"
+  integrity sha512-6Ro7GbTMWxcbc836m6rbBNkesgTncbE1yXWeuHlr89esSqaItKr0+ntOu8rZie3fv+GtitkbODysXzIGCA7G+w==
   dependencies:
     "@mapbox/geojson-rewind" "^0.4.0"
     "@mapbox/geojson-types" "^1.0.2"
@@ -7378,7 +7373,6 @@ mapbox-gl@1.1.1:
     "@mapbox/whoots-js" "^3.1.0"
     csscolorparser "~1.0.2"
     earcut "^2.1.5"
-    esm "~3.0.84"
     geojson-vt "^3.2.1"
     gl-matrix "^3.0.0"
     grid-index "^1.1.0"
@@ -8709,10 +8703,10 @@ please-upgrade-node@^3.1.1, please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plotly.js@1.49.5:
-  version "1.49.5"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.49.5.tgz#258d12a02ad3c01bdcf31d3729b0a04ef9d4a0da"
-  integrity sha512-R8viAou9aIeMOaI+sDWyQb4uQajGV6nFqPg2ybNTy/XcZVBetzw+2ALSdkBFR1TyzCF46IvQZcF7BcdCrdraPA==
+plotly.js@1.50.0:
+  version "1.50.0"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.50.0.tgz#dac7e36191854e420d844f92b1429298c70b20d3"
+  integrity sha512-omqeSVyb96CiQu2T/VZww7nhhc0E01H1QAOc4bJRr2RA+AluIrpV15a/RHZnzruDgf9qWmL2LAyq0qBI+AH7tg==
   dependencies:
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
@@ -8721,6 +8715,7 @@ plotly.js@1.49.5:
     alpha-shape "^1.0.0"
     canvas-fit "^1.5.0"
     color-normalize "^1.5.0"
+    color-rgba "^2.1.1"
     convex-hull "^1.0.3"
     country-regex "^1.1.0"
     d3 "^3.5.12"
@@ -8730,7 +8725,7 @@ plotly.js@1.49.5:
     delaunay-triangulate "^1.1.6"
     es6-promise "^3.0.2"
     fast-isnumeric "^1.1.3"
-    gl-cone3d "^1.3.1"
+    gl-cone3d "^1.4.1"
     gl-contour2d "^1.1.6"
     gl-error3d "^1.0.15"
     gl-heatmap2d "^1.0.5"
@@ -8743,13 +8738,13 @@ plotly.js@1.49.5:
     gl-scatter3d "^1.2.2"
     gl-select-box "^1.0.3"
     gl-spikes2d "^1.0.2"
-    gl-streamtube3d "^1.2.1"
+    gl-streamtube3d "^1.3.1"
     gl-surface3d "^1.4.6"
     gl-text "^1.1.8"
     glslify "^7.0.0"
     has-hover "^1.0.1"
     has-passive-events "^1.0.0"
-    mapbox-gl "1.1.1"
+    mapbox-gl "1.3.2"
     matrix-camera-controller "^2.1.3"
     mouse-change "^1.4.0"
     mouse-event-offset "^3.0.2"
