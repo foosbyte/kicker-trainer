@@ -98,7 +98,7 @@
     "@types/lodash.merge": "4.6.6",
     "@types/node": "12.7.12",
     "@types/plotly.js": "1.44.11",
-    "@types/puppeteer": "1.20.1",
+    "@types/puppeteer": "1.20.2",
     "@types/react": "16.9.5",
     "@types/react-dom": "16.9.1",
     "@types/react-helmet": "5.0.11",
