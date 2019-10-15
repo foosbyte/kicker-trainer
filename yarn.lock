@@ -7690,10 +7690,10 @@ mobx-react@6.1.4:
   dependencies:
     mobx-react-lite "^1.4.2"
 
-mobx-utils@5.4.1:
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.4.1.tgz#18ff5f9723b27e1ff50ae0b362938a4792eb077a"
-  integrity sha512-u5BSvFiSx1ZkzBz/7V96RB7xWn7oOFwczI+AVi1v8TV8HbT8rXLco1Aqb87tEA8Jsc2e5uvTwHdYoiv81qspaA==
+mobx-utils@5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.5.0.tgz#6e440e56d17b0931f62faa72b9ae32c2a72ba966"
+  integrity sha512-PjVtce3dj//YS25brD1P8EBE93qcXFel2ctevbKLQPL3qTv3nMxfCvUKeT6b/NAAHTg3o3V4TDnh+n5yAFXVyA==
 
 mobx@5.14.0:
   version "5.14.0"
