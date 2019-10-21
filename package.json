@@ -42,6 +42,12 @@
         "automerge": true
       },
       {
+        "updateTypes": [
+          "lockFileMaintenance"
+        ],
+        "automerge": true
+      },
+      {
         "packageNames": [
           "hops"
         ],
