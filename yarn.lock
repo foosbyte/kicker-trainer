@@ -1291,10 +1291,17 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
-"@types/plotly.js@*", "@types/plotly.js@1.44.11":
+"@types/plotly.js@*":
   version "1.44.11"
   resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.44.11.tgz#6865981884f7ba4c642e653baca414c7a391d186"
   integrity sha512-gkP5d7Rv+fandIzX00soH5ff9YcenYUpszifpyvx4AtMyDAVbUwWVd5WG8QsTC2VPlqJm794ABF4h0iE2Zi5hw==
+  dependencies:
+    "@types/d3" "^3"
+
+"@types/plotly.js@1.44.12":
+  version "1.44.12"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.44.12.tgz#2181cda646ebb5c62065025f10020c9d3823b0f2"
+  integrity sha512-APexJluj038qj7H3OWS+x6oDLFrqnnl3jNfIRFBjb4ps8/kpbzwZwLDXdCEBLVF/77VjRsLNDA5LXH0rpeBN2w==
   dependencies:
     "@types/d3" "^3"
 
@@ -8674,10 +8681,10 @@ please-upgrade-node@^3.1.1, please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plotly.js@1.50.0:
-  version "1.50.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.50.0.tgz#dac7e36191854e420d844f92b1429298c70b20d3"
-  integrity sha512-omqeSVyb96CiQu2T/VZww7nhhc0E01H1QAOc4bJRr2RA+AluIrpV15a/RHZnzruDgf9qWmL2LAyq0qBI+AH7tg==
+plotly.js@1.50.1:
+  version "1.50.1"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.50.1.tgz#8772b9ca7d49123ac1e17623902a97d151f79de0"
+  integrity sha512-+IbuR3wkr5p+0vatSm25O/KTppIWtDuJofxk2wLWpDIq0Cr39+v2cGoHtDFDhk/xm0zsrHzi9Id5oP79Ji63QQ==
   dependencies:
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
