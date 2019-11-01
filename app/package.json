@@ -104,7 +104,7 @@
     "@types/react-helmet": "5.0.14",
     "@types/react-plotly.js": "2.2.4",
     "@types/react-router": "5.1.2",
-    "@types/react-router-dom": "5.1.1",
+    "@types/react-router-dom": "5.1.2",
     "@types/styled-components": "4.1.20",
     "jest": "24.9.0",
     "jest-puppeteer": "4.3.0",
