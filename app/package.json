@@ -86,7 +86,7 @@
     "react-router": "5.1.2",
     "react-router-dom": "5.1.2",
     "style-loader": "1.0.0",
-    "styled-components": "4.4.0",
+    "styled-components": "4.4.1",
     "tslib": "1.10.0"
   },
   "devDependencies": {
@@ -105,7 +105,7 @@
     "@types/react-plotly.js": "2.2.4",
     "@types/react-router": "5.1.2",
     "@types/react-router-dom": "5.1.2",
-    "@types/styled-components": "4.1.20",
+    "@types/styled-components": "4.1.21",
     "jest": "24.9.0",
     "jest-puppeteer": "4.3.0",
     "puppeteer": "1.18.0",
