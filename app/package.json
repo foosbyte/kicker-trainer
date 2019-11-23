@@ -96,7 +96,7 @@
     "@types/jest": "24.0.23",
     "@types/jest-environment-puppeteer": "4.3.1",
     "@types/lodash.merge": "4.6.6",
-    "@types/node": "12.12.11",
+    "@types/node": "12.12.12",
     "@types/plotly.js": "1.44.17",
     "@types/puppeteer": "1.20.2",
     "@types/react": "16.9.12",
