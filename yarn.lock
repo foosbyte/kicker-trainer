@@ -793,6 +793,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.5.5":
+  version "7.7.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.4.tgz#b23a856751e4bf099262f867767889c0e3fe175b"
+  integrity sha512-r24eVUUr0QqNZa+qrImUk8fn5SPhHq+IfYvIoIMg0do3GdK9sMdiLKP3GYVVaxpPKORgm8KRKaNTEhAjgIpLMw==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.4.0", "@babel/template@^7.7.0":
   version "7.7.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.7.0.tgz#4fadc1b8e734d97f56de39c77de76f2562e597d0"
@@ -2944,10 +2951,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
-  integrity sha1-+zgB1FNGdknvNgPH1hoCvRKb3m0=
+classnames@2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
 clean-pslg@^1.1.0, clean-pslg@^1.1.2:
   version "1.1.2"
@@ -9249,12 +9256,13 @@ react-color@^2.13.8:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-dat-gui@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-dat-gui/-/react-dat-gui-3.0.0.tgz#bfba0da9dfd64ad6dceebf63a08a5e5a20ba9de7"
-  integrity sha512-O8d9yJMDeqHhLEl6FBwr3aAbPR7pVE8c0OlVCxXUu4TuKRNVFVdk7TS4zuir6F2vHx749ToA/j6RQE5y5iaLEg==
+react-dat-gui@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-dat-gui/-/react-dat-gui-4.0.0.tgz#48fbd985411d4294acfcae84fd79eeb358852eff"
+  integrity sha512-7knFkbdzx1DbpAA/Xb5Y5HCyrsFpr53PjYlLD1DFqzpU/1z9KSOq3Tt1rp44AI0712X5WCpOav56IHZcAnXCGg==
   dependencies:
-    classnames "2.2.5"
+    "@babel/runtime" "^7.5.5"
+    classnames "2.2.6"
     lodash.clamp "^4.0.2"
     lodash.clonedeep "^4.3.2"
     lodash.isfinite "^3.3.1"
