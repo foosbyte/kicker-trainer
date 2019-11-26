@@ -4972,7 +4972,7 @@ gl-matrix@^3.0.0:
   resolved "https://registry.yarnpkg.com/gl-matrix/-/gl-matrix-3.1.0.tgz#f5b2de17d8fed95a79e5025b10cded0ab9ccbed0"
   integrity sha512-526NA+3EA+ztAQi0IZpSWiM0fyQXIp7IbRvfJ4wS/TjjQD0uv0fVybXwwqqSOlq33UckivI0yMDlVtboWm3k7A==
 
-gl-mesh3d@^2.1.1:
+gl-mesh3d@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/gl-mesh3d/-/gl-mesh3d-2.1.3.tgz#6d46f43a2f4e17fa197cddeefab1dcd7116786c1"
   integrity sha512-c1zMvkVoKrVPSn/YA0JTDE/I289xqAjkH52HZBLvEGmKAg0Ezwi/Llg1M7NPIb4d5nwekCBMXGZmemsZaedI5g==
@@ -8639,10 +8639,10 @@ please-upgrade-node@^3.1.1, please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plotly.js@1.51.1:
-  version "1.51.1"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.51.1.tgz#5824cbd638856a49966a7b759eded5ff0e16c737"
-  integrity sha512-EOAP6hne7e8RyH2fo0dyTuRKiAO04TVYECK65EMrK8jnP5AqSbHIypnroNCm/nfYj3sn5DTl+GX5XsJKpyM4Aw==
+plotly.js@1.51.2:
+  version "1.51.2"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.51.2.tgz#bdf395727bb0e6b94b90f2b657c8116f9f7fced7"
+  integrity sha512-cbTOerzH8JQKgaZeEXKbMsRwH6CrxaxexUYwg1WjHTxVmMJRQveZJoutaK9SLycvL1Zbyy/W0x7kVz9CaRDSIA==
   dependencies:
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
@@ -8667,7 +8667,7 @@ plotly.js@1.51.1:
     gl-heatmap2d "^1.0.5"
     gl-line3d "^1.1.11"
     gl-mat4 "^1.2.0"
-    gl-mesh3d "^2.1.1"
+    gl-mesh3d "^2.1.3"
     gl-plot2d "^1.4.2"
     gl-plot3d "^2.3.0"
     gl-pointcloud2d "^1.0.2"
