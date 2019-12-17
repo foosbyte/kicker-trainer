@@ -17,7 +17,7 @@
       "last 1 Chrome versions",
       "last 2 iOS versions"
     ],
-    "node": "8.10",
+    "node": "12.13",
     "workerFile": "<rootDir>/src/service-worker.ts",
     "workerPath": "/sw.js",
     "assetPath": "/assets",
