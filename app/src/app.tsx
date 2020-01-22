@@ -1,7 +1,7 @@
 import { bind } from 'decko';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Button } from './components/button';
