@@ -17,9 +17,9 @@ export default (hopsConfig: any, assets: string[]): void => {
 
   self.addEventListener('activate', event => {
     return event.waitUntil(
-      removeOldCacheEntries(assetsToCache.concat(hopsConfig.locations)).then(
-        () => precache(hopsConfig.locations)
-      )
+      removeOldCacheEntries(
+        assetsToCache.concat(hopsConfig.locations)
+      ).then(() => precache(hopsConfig.locations))
     );
   });
 

@@ -87,7 +87,10 @@ export class Stats extends React.Component<StatsProps> {
         <PlotlyLineChart
           title="Chart"
           x={['Jan 2019', 'Feb 2019', 'Mar 2019', 'Apr 2019']}
-          y={[[2, 12, 18, 21], [10, 15, 13, 17]]}
+          y={[
+            [2, 12, 18, 21],
+            [10, 15, 13, 17],
+          ]}
           legend={['a', 'b']}
         />
       </StatsWrapper>

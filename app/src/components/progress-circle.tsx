@@ -12,9 +12,9 @@ export interface ProgressCircleProps {
   radius: number;
   stroke: number;
   progress: number;
-  color: keyof (typeof theme)['color'];
-  textColor: keyof (typeof theme)['color'];
-  backgroundColor: keyof (typeof theme)['color'];
+  color: keyof typeof theme['color'];
+  textColor: keyof typeof theme['color'];
+  backgroundColor: keyof typeof theme['color'];
 }
 
 export class ProgressCircle extends React.PureComponent<ProgressCircleProps> {
