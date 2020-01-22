@@ -39,6 +39,7 @@ const Root = styled(View)`
 const Content = styled(View)`
   display: flex;
   flex: 1 0 0;
+  height: 1px;
 `;
 
 const Nav = styled(View)`
