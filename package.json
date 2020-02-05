@@ -38,6 +38,7 @@
     },
     "automergeType": "pr-comment",
     "automergeComment": "bors merge",
+    "requiredStatusChecks": null,
     "packageRules": [
       {
         "updateTypes": [
