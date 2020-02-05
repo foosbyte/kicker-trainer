@@ -36,6 +36,8 @@
     "lockFileMaintenance": {
       "enabled": true
     },
+    "automergeType": "pr-comment",
+    "automergeComment": "bors merge",
     "packageRules": [
       {
         "updateTypes": [
