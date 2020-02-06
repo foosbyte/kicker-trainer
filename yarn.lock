@@ -1440,10 +1440,18 @@
     "@types/puppeteer" "*"
     jest-mock "^24"
 
-"@types/jest@*", "@types/jest@25.1.1":
+"@types/jest@*":
   version "25.1.1"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.1.1.tgz#dcf65a8ee315b91ad39c0d358ae0ddc5602ab0e9"
   integrity sha512-bKSZJYZJLzwaoVYNN4W3A0RvKNYsrLm5tsuXaMlfYDxKf4gY2sFrMYneCugNQWGg1gjPW+FHBwNrwPzEi4sIsw==
+  dependencies:
+    jest-diff "^25.1.0"
+    pretty-format "^25.1.0"
+
+"@types/jest@25.1.2":
+  version "25.1.2"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.1.2.tgz#1c4c8770c27906c7d8def5d2033df9dbd39f60da"
+  integrity sha512-EsPIgEsonlXmYV7GzUqcvORsSS9Gqxw/OvkGwHfAdpjduNRxMlhsav0O5Kb0zijc/eXSO/uW6SJt9nwull8AUQ==
   dependencies:
     jest-diff "^25.1.0"
     pretty-format "^25.1.0"
@@ -1480,10 +1488,17 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@*", "@types/plotly.js@1.44.24":
+"@types/plotly.js@*":
   version "1.44.24"
   resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.44.24.tgz#a512723547bec8bc30d28392c652a182c442c5e7"
   integrity sha512-iCGjqojhcqww7CphZPqs96JHC0qsx8AFe9R6KUw87mK/TmaogeUfv21X7BPvZcg2bT/eDxgI0BteX4Ow1gnXsA==
+  dependencies:
+    "@types/d3" "^3"
+
+"@types/plotly.js@1.44.25":
+  version "1.44.25"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.44.25.tgz#4d09d854f610b5fe31a6afad7e56ee9199e89083"
+  integrity sha512-fM0A6ewJvUuKfO9pX1wtLb2xWIyyh/A2OPgeRRSyIn47JmAPKOclyedMOeKRsCewotyNN6D6HRo0cRtz8G0Flg==
   dependencies:
     "@types/d3" "^3"
 
@@ -8061,10 +8076,10 @@ mobx-react-lite@^1.4.2:
   resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-1.5.2.tgz#c4395b0568b9cb16f07669d8869cc4efa1b8656d"
   integrity sha512-PyZmARqqWtpuQaAoHF5pKX7h6TKNLwq6vtovm4zZvG6sEbMRHHSqioGXSeQbpRmG8Kw8uln3q/W1yMO5IfL5Sg==
 
-mobx-react@6.1.5:
-  version "6.1.5"
-  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-6.1.5.tgz#66a6f67bfe845216abc05d3aea47ceec8e31e2dd"
-  integrity sha512-EfWoXmGE2CfozH4Xirb65+il1ynHFCmxBSUabMSf+511YfjVs6QRcCrHkiVw+Il8iWp1gIyfa9qKkUgbDA9/2w==
+mobx-react@6.1.6:
+  version "6.1.6"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-6.1.6.tgz#c75e3747a8bb622045d94d1a5e31dbe20e6691aa"
+  integrity sha512-1HjHkUKhvrFz0JvgaTHPHw0oCWvlM7EtMp1KlCiUaf6rY/JW855pKlQrkBJWXNqS+YvOEksiD8bfEyqp9ep8IQ==
   dependencies:
     mobx-react-lite "^1.4.2"
 
