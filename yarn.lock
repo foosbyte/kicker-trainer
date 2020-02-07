@@ -1495,10 +1495,10 @@
   dependencies:
     "@types/d3" "^3"
 
-"@types/plotly.js@1.44.26":
-  version "1.44.26"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.44.26.tgz#f3379188d4d3c279dc78ba13cef3e2ec8c670652"
-  integrity sha512-haq//Jdzh9lil0ilpx7wM4rbAtFTt3f2M+FlK9q0/kkfOYCWQC44WHH9NxNjL1bGTE2Uxh0quNuvoitY+l3oww==
+"@types/plotly.js@1.44.27":
+  version "1.44.27"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.44.27.tgz#b639064d2cbffd597768e02dd19800631d98d78f"
+  integrity sha512-FLFZ79HkM+tQLYkz58tjm6U4mi9nvGjEGu8MRRlre46GS8EFD0SCbK3zQpjdt8MRV5hDakGqMhNGxNlA+tLFOQ==
   dependencies:
     "@types/d3" "^3"
 
