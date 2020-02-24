@@ -65,6 +65,7 @@
     "prettier": "1.19.1"
   },
   "resolutions": {
+    "@types/plotly.js": "1.44.28",
     "@types/puppeteer": "^1.20.0"
   }
 }
