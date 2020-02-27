@@ -34,7 +34,7 @@ export interface SpaceProps {
 }
 
 export class Space extends React.PureComponent<SpaceProps> {
-  public render(): JSX.Element | JSX.Element[] {
+  public render(): JSX.Element | JSX.Element[] | null | undefined {
     const numChildren = React.Children.count(this.props.children);
     return this.props.inset ? (
       <StyledInset
