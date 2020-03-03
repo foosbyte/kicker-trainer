@@ -1482,7 +1482,7 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@*", "@types/plotly.js@1.44.28":
+"@types/plotly.js@*", "@types/plotly.js@1.44.28", "@types/plotly.js@1.44.29":
   version "1.44.28"
   resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.44.28.tgz#e43afd646f2e93f9080b062d3cb7b578ae926f46"
   integrity sha512-Ajvtn6QHjLMZfRySd0L7f17ONKxiYpZSzW29sx/bU9KL/pzbu+pXdfNika9n+W0G1ScLEJEtI2yBsZXT1UXDKA==
@@ -5246,7 +5246,7 @@ gl-heatmap2d@^1.0.5:
     iota-array "^1.0.0"
     typedarray-pool "^1.1.0"
 
-gl-line3d@^1.1.11:
+gl-line3d@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/gl-line3d/-/gl-line3d-1.2.0.tgz#038d339b8986e602af90dd9663f83678db64247c"
   integrity sha512-du9GDF87DMfllND2pBjySyHhFaza9upw4t2GMoXn11/I38atO6+saiznuhKmfxuDnyxGdmmZF6/HPauk0owKDA==
@@ -5323,7 +5323,7 @@ gl-plot2d@^1.4.3:
     glslify "^7.0.0"
     text-cache "^4.2.1"
 
-gl-plot3d@^2.4.2:
+gl-plot3d@^2.4.4:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/gl-plot3d/-/gl-plot3d-2.4.4.tgz#5fb8f60ae36ac55036af5566efc29c9adbe06a30"
   integrity sha512-R/V4hSrE2sFD+Xls7D6qCOlWCRmqtUff0sKbeFJdI91HfFzPJPiy9Pqa/Jh2UsvdmwkkSQPNDcBvLd6TvhRC/g==
@@ -6504,7 +6504,7 @@ is-iexplorer@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-iexplorer/-/is-iexplorer-1.0.0.tgz#1d72bc66d3fe22eaf6170dda8cf10943248cfc76"
   integrity sha1-HXK8ZtP+Iur2Fw3ajPEJQySM/HY=
 
-is-mobile@^2.1.0, is-mobile@^2.2.0:
+is-mobile@^2.2.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/is-mobile/-/is-mobile-2.2.1.tgz#10f2320012c410cc285feecb13406bd586f1b2f8"
   integrity sha512-6zELsfVFr326eq2CI53yvqq6YBanOxKBybwDT+MbMS2laBnK6Ez8m5XHSuTQQbnKRfpDzCod1CMWW5q3wZYMvA==
@@ -8037,10 +8037,10 @@ mobx-react@6.1.8:
   dependencies:
     mobx-react-lite "^1.4.2"
 
-mobx-utils@5.5.4:
-  version "5.5.4"
-  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.5.4.tgz#59e3290935d46ac7cf3503f45c11a681112ca492"
-  integrity sha512-pWgcw8vpUB2tJHMwaZ/a6l7C6muAT8rLPDyrGSTDXu1c7AvCZUx+Tt8GjuYccY67aqz3IEe+Dn/NYF9hrVBwUw==
+mobx-utils@5.5.5:
+  version "5.5.5"
+  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.5.5.tgz#07b82aa79671dcfc26cdf760eca6e3087282a515"
+  integrity sha512-N8832YcFRy3Hnl1L0YIbEKKAbwT2vXhGL3tzJsS8uI9Sp+R3osngUVFO2cbyOdApnWPBAe8KCFP0cbQuZzfXsA==
 
 mobx@5.15.4:
   version "5.15.4"
@@ -9021,10 +9021,10 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plotly.js@1.52.2:
-  version "1.52.2"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.52.2.tgz#c4511caf457b95a07a6cac4b5a4d0591483a3b15"
-  integrity sha512-EZHr2ekxVNjucmNhku+JiLFoLV1wH6gW15T/6SFqtHFMvJZY4HeZogtRUPTLijXBPfusMWxxIKEDTzlMOLXajQ==
+plotly.js@1.52.3:
+  version "1.52.3"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.52.3.tgz#2ae534811447d053765d9c2a8829878dc1f3c489"
+  integrity sha512-7szNqbVuhqn4ZgaTpJ9h4+9PzjoXJnSdzjnY5QwHddp/j0xu5kpHCGvkg+WmeF3brK3y8qwEHF/MIFBBa7i0ng==
   dependencies:
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
@@ -9048,11 +9048,11 @@ plotly.js@1.52.2:
     gl-contour2d "^1.1.6"
     gl-error3d "^1.0.15"
     gl-heatmap2d "^1.0.5"
-    gl-line3d "^1.1.11"
+    gl-line3d "1.2.0"
     gl-mat4 "^1.2.0"
     gl-mesh3d "^2.3.0"
     gl-plot2d "^1.4.3"
-    gl-plot3d "^2.4.2"
+    gl-plot3d "^2.4.4"
     gl-pointcloud2d "^1.0.2"
     gl-scatter3d "^1.2.2"
     gl-select-box "^1.0.3"
@@ -9063,7 +9063,7 @@ plotly.js@1.52.2:
     glslify "^7.0.0"
     has-hover "^1.0.1"
     has-passive-events "^1.0.0"
-    is-mobile "^2.1.0"
+    is-mobile "^2.2.0"
     mapbox-gl "1.3.2"
     matrix-camera-controller "^2.1.3"
     mouse-change "^1.4.0"
