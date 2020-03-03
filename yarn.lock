@@ -8037,10 +8037,10 @@ mobx-react@6.1.8:
   dependencies:
     mobx-react-lite "^1.4.2"
 
-mobx-utils@5.5.4:
-  version "5.5.4"
-  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.5.4.tgz#59e3290935d46ac7cf3503f45c11a681112ca492"
-  integrity sha512-pWgcw8vpUB2tJHMwaZ/a6l7C6muAT8rLPDyrGSTDXu1c7AvCZUx+Tt8GjuYccY67aqz3IEe+Dn/NYF9hrVBwUw==
+mobx-utils@5.5.5:
+  version "5.5.5"
+  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.5.5.tgz#07b82aa79671dcfc26cdf760eca6e3087282a515"
+  integrity sha512-N8832YcFRy3Hnl1L0YIbEKKAbwT2vXhGL3tzJsS8uI9Sp+R3osngUVFO2cbyOdApnWPBAe8KCFP0cbQuZzfXsA==
 
 mobx@5.15.4:
   version "5.15.4"
