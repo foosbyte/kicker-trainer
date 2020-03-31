@@ -63,11 +63,11 @@
   },
   "devDependencies": {
     "husky": "4.2.3",
-    "lint-staged": "10.0.8",
+    "lint-staged": "10.1.0",
     "prettier": "2.0.2"
   },
   "resolutions": {
-    "@types/plotly.js": "1.44.32",
+    "@types/plotly.js": "1.50.0",
     "@types/puppeteer": "^1.20.0"
   }
 }
