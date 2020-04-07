@@ -74,7 +74,7 @@
     "lodash.merge": "4.6.2",
     "mobx": "5.15.4",
     "mobx-react": "6.2.1",
-    "mobx-utils": "5.5.6",
+    "mobx-utils": "5.5.7",
     "nosleep.js": "0.9.0",
     "plotly.js": "1.53.0",
     "prop-types": "15.7.2",
