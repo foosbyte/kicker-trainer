@@ -62,7 +62,7 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "husky": "4.2.3",
+    "husky": "4.2.5",
     "lint-staged": "10.1.3",
     "prettier": "2.0.4"
   },
