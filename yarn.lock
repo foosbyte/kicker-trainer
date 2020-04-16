@@ -6073,27 +6073,27 @@ hoopy@^0.1.4:
   resolved "https://registry.yarnpkg.com/hoopy/-/hoopy-0.1.4.tgz#609207d661100033a9a9402ad3dea677381c1b1d"
   integrity sha512-HRcs+2mr52W0K+x8RzcLzuPPmVIKMSv97RGHy0Ea9y/mpcaK+xTrjICA04KAHi4GRzxliNqNJEFYWHghy3rSfQ==
 
-hops-config@^12.1.3:
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/hops-config/-/hops-config-12.1.3.tgz#2167f9d077b546255b4d08ebca9ae056a70318e5"
-  integrity sha512-KUUzsy+G83silWyUIip+tqUvdkTrvGdcJWx97AxOEXPFI3yi+P1Q0wykV262yk18yLou4LqqJc9tNhVTEoB+7w==
+hops-config@^12.1.4:
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/hops-config/-/hops-config-12.1.4.tgz#b424f548f3bfdeff670210f42119fbc907e19bb5"
+  integrity sha512-Pfo0b9TPPLAVJdC161/ADDRZH2WOAiH4Z3i7oXHg6v0nb7ImG0qxwrIsK5rkwoMI5EA0Hgu+9o4v6Aayq/dbvQ==
   dependencies:
     "@untool/core" "^2.1.3"
     "@untool/webpack" "^2.1.3"
     depd "^2.0.0"
 
-hops-lambda@12.1.3:
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-12.1.3.tgz#ad7ac046d3e48520f3685717bcb5f5c4deba69b7"
-  integrity sha512-1IGVd/OLjaIjfbRxV5PnpBmdwwB5lVRcOoSXHt9uNFMJp8KlL/ga1XIPTnOw8zPmvL6LPW01m7OlraPW4E1HEw==
+hops-lambda@12.1.4:
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-12.1.4.tgz#2fe09a9e0ad4757ff7d4ba00af91685f30f069df"
+  integrity sha512-mkxHMiufr85H5n/UybztyXtR2RaIk3j5ZtznH5qlG/GqguhpEPVv8v1J8VMrVGmHkgd/NGgbiLeRfsVraFruOQ==
   dependencies:
     "@untool/core" "^2.1.3"
     "@untool/express" "^2.1.3"
     archiver "^3.1.1"
     aws-sdk "^2.546.0"
     globby "^11.0.0"
-    hops-config "^12.1.3"
-    hops-mixin "^12.1.3"
+    hops-config "^12.1.4"
+    hops-mixin "^12.1.4"
     pathifist "^1.0.0"
     prompt "^1.0.0"
     resolve-tree "^0.1.14"
@@ -6101,69 +6101,69 @@ hops-lambda@12.1.3:
     serverless-http "^2.3.0"
     strip-indent "^3.0.0"
 
-hops-mixin@^12.1.3:
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-12.1.3.tgz#23639ef01b196337ae561a6bd0a6064b2623b0f3"
-  integrity sha512-en3F7qROnaaxH6Yz3v+9TDLEMeYQBran9LA6YciEFlPRbXZMsrWANDdiYHFI3XXV7QXxm+9uJNjTMF2ZW889kQ==
+hops-mixin@^12.1.4:
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-12.1.4.tgz#eaf49211ebbdb1c0e866b5592a110fd44e710241"
+  integrity sha512-qF5r2dI6ZQ4jZvphLyN3DDmzd6oYgk8AZzEKLvHx9DfQVD8dHH/28e+UL2jqDRwQa5SeC8A30tcLl0ZNSvJgag==
   dependencies:
     "@untool/core" "^2.1.3"
     mixinable "^4.0.0"
 
-hops-pwa@12.1.3:
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-12.1.3.tgz#003aa0756172b47e36eb3cb37c540cc18b84d28e"
-  integrity sha512-SozG0c8U5uI7MsJTTepw3NvicdedWPuh1omSefr8dcvNbZfZ+DstVc55xxhAGs3Ii5R4SKqO05GhGa4284I+fQ==
+hops-pwa@12.1.4:
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-12.1.4.tgz#1171a4bcf6e2bf54613b6a9c1b71fedbf51a43c8"
+  integrity sha512-NPEP/OXmcyVqO6n+0VsRcJ+QzxcutXdeLQOmNtuS/e5wu8Wp37rC7vtcPPug0mdmfwDwfu/9fAIPRlDwvbfo8w==
   dependencies:
     "@untool/core" "^2.1.3"
     "@untool/webpack" "^2.1.3"
     app-manifest-loader "^2.4.1"
     file-loader "^6.0.0"
-    hops-mixin "^12.1.3"
+    hops-mixin "^12.1.4"
     lodash.get "^4.4.2"
     lodash.set "^4.3.2"
     pathifist "^1.0.0"
     webpack "^4.41.0"
     webpack-sources "^1.4.3"
 
-hops-react@^12.1.3:
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-12.1.3.tgz#56ed932867f6ad4c95f7a8be8fae3a8d677f0f2e"
-  integrity sha512-ouLkO8yX4gQQKzJVzktyOVrdjEehnpq7CXU9X2rbqRg1YgCJC1i03QfAratnMw++wHjyAABdu8Ax8lEKxi7xAQ==
+hops-react@^12.1.4:
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-12.1.4.tgz#a5b91a05daac674727d2026dbc0cd116fb671307"
+  integrity sha512-+ww6UmtkjbDcTzwGfp6NA4g9qCvOwdTcLx/UhvISg6T2i0mqsDajRQI92dw6mwduboZw7hTlHlOHjzU2aw7X1A==
   dependencies:
     "@babel/core" "^7.7.0"
     "@babel/plugin-proposal-class-properties" "^7.7.0"
     "@babel/plugin-transform-flow-strip-types" "^7.7.0"
     "@untool/core" "^2.1.3"
     "@untool/react" "^2.1.3"
-    hops-mixin "^12.1.3"
+    hops-mixin "^12.1.4"
 
-hops-styled-components@12.1.3:
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/hops-styled-components/-/hops-styled-components-12.1.3.tgz#242b453d99f0561e216eba96f1ca85c0cf3f1617"
-  integrity sha512-w8hZlkHWupNZ70+hKetjSqCbicGh9NVhSE14HxLbc7c3qpFh6CUyHcEsDOALtvunNbM5aAzKrp6JvvJbaRRyKQ==
+hops-styled-components@12.1.4:
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/hops-styled-components/-/hops-styled-components-12.1.4.tgz#7c75647c6ef7a1e536f50af5a3d5ade3ff6ef170"
+  integrity sha512-CB4A/K75Ab5+rVyyNqc8GaaYgdYhg6MGTWwhNODwqmwfv3F8MH3eG4qC3OI9gv0OnuCM0blZkM/D2UXFKiU+MA==
   dependencies:
     babel-plugin-styled-components "^1.10.6"
-    hops-mixin "^12.1.3"
+    hops-mixin "^12.1.4"
 
-hops-typescript@12.1.3:
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/hops-typescript/-/hops-typescript-12.1.3.tgz#e315d5f91f91591ed07dd9a1c7c894cb2f332639"
-  integrity sha512-zNU2U2ASq3U6aD+w8uYaXwe4YeqXjmBQ6+Gd05vqegyq8zrXT9X9Xw3wX2KaRqqaoX6E9gbk/naug7oIZoZHQw==
+hops-typescript@12.1.4:
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/hops-typescript/-/hops-typescript-12.1.4.tgz#cb48d698f3cc85026651dd73649cedd0609e6ada"
+  integrity sha512-v8XW4/CpcOJVkz6nYL13CBv67aFmkfHa+cB8ihtT6gcGWl+WJkMl4PA6dy1B6Wl+HbOQJSlTVj24uco9zlhpmg==
   dependencies:
-    hops-mixin "^12.1.3"
+    hops-mixin "^12.1.4"
     ts-loader "^6.2.0"
 
-hops@12.1.3:
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/hops/-/hops-12.1.3.tgz#384e4155e27f8e1978b3c8d3d25e296a03f9abba"
-  integrity sha512-8uuwsxFVE/fnEcncbFIfh47wiQBfuq0wBDuUWAo8GEDKU/HN82ieTFq0WJBq4Nn7eLllCter69UCWEgMzZIugw==
+hops@12.1.4:
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/hops/-/hops-12.1.4.tgz#666331dcc63550551f3398b19de9617babfad135"
+  integrity sha512-l7JaAN8bpeR8lQbQLNw36c3LiV57ZPoEsZjfj99h+qcSJbjwNpFZd8jyRLhJV52zXtpNg7iEUwlnytnzyfiacA==
   dependencies:
     "@untool/express" "^2.1.3"
     "@untool/info" "^2.1.3"
     "@untool/webpack" "^2.1.3"
     "@untool/yargs" "^2.1.3"
-    hops-mixin "^12.1.3"
-    hops-react "^12.1.3"
+    hops-mixin "^12.1.4"
+    hops-react "^12.1.4"
     webpack-bundle-analyzer "^3.5.2"
 
 hosted-git-info@^2.1.4:
