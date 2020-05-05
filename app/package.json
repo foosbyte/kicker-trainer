@@ -76,7 +76,7 @@
     "mobx-react": "6.2.2",
     "mobx-utils": "5.5.7",
     "nosleep.js": "0.9.0",
-    "plotly.js": "1.54.0",
+    "plotly.js": "1.54.1",
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dat-gui": "3.0.0",
