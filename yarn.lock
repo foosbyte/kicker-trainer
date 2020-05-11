@@ -8281,6 +8281,14 @@ ndarray-warp@^1.0.0:
     cwise "^1.0.4"
     ndarray-linear-interpolate "^1.0.0"
 
+ndarray@1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/ndarray/-/ndarray-1.0.18.tgz#b60d3a73224ec555d0faa79711e502448fd3f793"
+  integrity sha1-tg06cyJOxVXQ+qeXEeUCRI/T95M=
+  dependencies:
+    iota-array "^1.0.0"
+    is-buffer "^1.0.2"
+
 ndarray@^1.0.11, ndarray@^1.0.13, ndarray@^1.0.14, ndarray@^1.0.15, ndarray@^1.0.18:
   version "1.0.19"
   resolved "https://registry.yarnpkg.com/ndarray/-/ndarray-1.0.19.tgz#6785b5f5dfa58b83e31ae5b2a058cfd1ab3f694e"
@@ -9004,10 +9012,10 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plotly.js@1.54.0:
-  version "1.54.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.54.0.tgz#91929a48bc1700ada47600e61076732be3f36f74"
-  integrity sha512-WJQPkzPhOJRAowS7fd5HghxEy1TSo/F8KJiTMhC0rFTWmxQdvHSnexHJIzp/S9Y5r4CLzSX3vw+gEAhMqHomXw==
+plotly.js@1.54.1:
+  version "1.54.1"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.54.1.tgz#7aed029e80b39c4b095957e837ee24a737b49b93"
+  integrity sha512-1tlsEQkUgX2BaQr3Eu+5drki3eyor5EhpolFRteuQouRFX9mrg9Pms39Lak29lbAx4W3ZQoCZm8DcKkQCOe9YQ==
   dependencies:
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
@@ -9052,13 +9060,13 @@ plotly.js@1.54.0:
     mouse-change "^1.4.0"
     mouse-event-offset "^3.0.2"
     mouse-wheel "^1.2.0"
-    ndarray "^1.0.18"
+    ndarray "1.0.18"
     ndarray-fill "^1.0.2"
     ndarray-homography "^1.0.0"
     parse-svg-path "^0.1.2"
     point-cluster "^3.1.8"
     polybooljs "^1.2.0"
-    regl "^1.3.11"
+    regl "1.3.11"
     regl-error2d "^2.0.8"
     regl-line2d "^3.0.15"
     regl-scatter2d "^3.1.8"
@@ -9070,6 +9078,7 @@ plotly.js@1.54.0:
     superscript-text "^1.0.0"
     svg-path-sdf "^1.1.3"
     tinycolor2 "^1.4.1"
+    to-px "1.0.1"
     topojson-client "^3.1.0"
     webgl-context "^2.2.0"
     world-calendars "^1.0.3"
@@ -9846,6 +9855,11 @@ regl-splom@^1.0.8:
     point-cluster "^3.1.8"
     raf "^3.4.1"
     regl-scatter2d "^3.1.2"
+
+regl@1.3.11:
+  version "1.3.11"
+  resolved "https://registry.yarnpkg.com/regl/-/regl-1.3.11.tgz#515e5173ffdc0618f908dd4e338a34ae9555f745"
+  integrity sha512-tmt6CRhRqbcsYDWNwv+iG7GGOXdgoOBC7lKzoPMgnzpt3WKBQ3c8i7AxgbvTRZzty29hrW92fAJeZkPFQehfWA==
 
 regl@^1.3.11:
   version "1.4.2"
@@ -11303,6 +11317,13 @@ to-object-path@^0.3.0:
   integrity sha1-KXWIt7Dn4KwI4E5nL4XB9JmeF68=
   dependencies:
     kind-of "^3.0.2"
+
+to-px@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/to-px/-/to-px-1.0.1.tgz#5bbaed5e5d4f76445bcc903c293a2307dd324646"
+  integrity sha1-W7rtXl1PdkRbzJA8KTojB90yRkY=
+  dependencies:
+    parse-unit "^1.0.1"
 
 to-px@^1.0.1:
   version "1.1.0"
