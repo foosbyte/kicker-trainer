@@ -68,6 +68,6 @@
   },
   "resolutions": {
     "@types/plotly.js": "1.50.11",
-    "@types/puppeteer": "^1.20.0"
+    "@types/puppeteer": "^2.0.0"
   }
 }
