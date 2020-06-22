@@ -1577,18 +1577,10 @@
     "@types/puppeteer" "*"
     jest-mock "^24"
 
-"@types/jest@*":
+"@types/jest@*", "@types/jest@26.0.0":
   version "26.0.0"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.0.tgz#a6d7573dffa9c68cbbdf38f2e0de26f159e11134"
   integrity sha512-/yeMsH9HQ1RLORlXAwoLXe8S98xxvhNtUz3yrgrwbaxYjT+6SFPZZRksmRKRA6L5vsUtSHeN71viDOTTyYAD+g==
-  dependencies:
-    jest-diff "^25.2.1"
-    pretty-format "^25.2.1"
-
-"@types/jest@25.2.3":
-  version "25.2.3"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.2.3.tgz#33d27e4c4716caae4eced355097a47ad363fdcaf"
-  integrity sha512-JXc1nK/tXHiDhV55dvfzqtmP4S3sy3T3ouV2tkViZgxY/zeUkcpQcQPGRlgF4KmWzWW5oiWYSZwtCB+2RsE4Fw==
   dependencies:
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
@@ -1635,10 +1627,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@*", "@types/plotly.js@1.50.12":
-  version "1.50.12"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.50.12.tgz#dd0c296d1c68d0415d2ce7241a627a73926f897e"
-  integrity sha512-ZyXsV0XCGI/clfo+o04kQNY8SAFR/9k/eiSmooEtg9EENdpOo+Z74qQSYGkGlNWZcdDvFWpWdeOAM7BrJLn/LQ==
+"@types/plotly.js@*", "@types/plotly.js@1.50.13":
+  version "1.50.13"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.50.13.tgz#bd56b37f4d849b63659ccb966fc71d7e61415315"
+  integrity sha512-uxqsHe7eZa+RtWI0kPcoBHKDTdQ0rqWWDIivwpwFOrpTtjNe9Vwj0Mc6wZdyHUiq02vsSqdAXDbl6noRKKzmkg==
   dependencies:
     "@types/d3" "^3"
 
@@ -3658,23 +3650,23 @@ css-global-keywords@^1.0.1:
   resolved "https://registry.yarnpkg.com/css-global-keywords/-/css-global-keywords-1.0.1.tgz#72a9aea72796d019b1d2a3252de4e5aaa37e4a69"
   integrity sha1-cqmupyeW0Bmx0qMlLeTlqqN+Smk=
 
-css-loader@3.5.3:
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.5.3.tgz#95ac16468e1adcd95c844729e0bb167639eb0bcf"
-  integrity sha512-UEr9NH5Lmi7+dguAm+/JSPovNjYbm2k3TK58EiwQHzOHH5Jfq1Y+XoP2bQO6TMn7PptMd0opxxedAWcaSTRKHw==
+css-loader@3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.6.0.tgz#2e4b2c7e6e2d27f8c8f28f61bffcd2e6c91ef645"
+  integrity sha512-M5lSukoWi1If8dhQAUCvj4H8vUt3vOnwbQBH9DdTm/s4Ym2B/3dPMtYZeJmq7Q3S3Pa+I94DcZ7pc9bP14cWIQ==
   dependencies:
     camelcase "^5.3.1"
     cssesc "^3.0.0"
     icss-utils "^4.1.1"
     loader-utils "^1.2.3"
     normalize-path "^3.0.0"
-    postcss "^7.0.27"
+    postcss "^7.0.32"
     postcss-modules-extract-imports "^2.0.0"
     postcss-modules-local-by-default "^3.0.2"
     postcss-modules-scope "^2.2.0"
     postcss-modules-values "^3.0.0"
-    postcss-value-parser "^4.0.3"
-    schema-utils "^2.6.6"
+    postcss-value-parser "^4.1.0"
+    schema-utils "^2.7.0"
     semver "^6.3.0"
 
 css-system-font-keywords@^1.0.0:
@@ -7786,10 +7778,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-mapbox-gl@1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.10.0.tgz#c33e74d1f328e820e245ff8ed7b5dbbbc4be204f"
-  integrity sha512-SrJXcR9s5yEsPuW2kKKumA1KqYW9RrL8j7ZcIh6glRQ/x3lwNMfwz/UEJAJcVNgeX+fiwzuBoDIdeGB/vSkZLQ==
+mapbox-gl@1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.10.1.tgz#7dbd53bdf2f78e45e125c1115e94dea286ef663c"
+  integrity sha512-0aHt+lFUpYfvh0kMIqXqNXqoYMuhuAsMlw87TbhWrw78Tx2zfuPI0Lx31/YPUgJ+Ire0tzQ4JnuBL7acDNXmMg==
   dependencies:
     "@mapbox/geojson-rewind" "^0.5.0"
     "@mapbox/geojson-types" "^1.0.2"
@@ -8118,10 +8110,10 @@ mobx-react@6.2.2:
   dependencies:
     mobx-react-lite "2"
 
-mobx-utils@5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.6.0.tgz#caf10907ac2592128ded0a17275f2521e0d18110"
-  integrity sha512-jW+VOo4LgiPU5ZI0Po87oSpLtWavJop+O/aVfi1+43Dv1WIwmvFkObpJEB/crbvRTsC/OND3fyGDzSfoNGufBw==
+mobx-utils@5.6.1:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.6.1.tgz#b7d9184b7442fe704be367d4363a2e9961be28cc"
+  integrity sha512-bpTJzM8MXniGnXCZY+ImjPDqBKQ3+G3g/QFSPtNkH6HM3x14DAPqKH7No7NDyhbXBMv3FaVetsgnoEPozbi45Q==
 
 mobx@5.15.4:
   version "5.15.4"
@@ -8321,14 +8313,6 @@ ndarray-warp@^1.0.0:
   dependencies:
     cwise "^1.0.4"
     ndarray-linear-interpolate "^1.0.0"
-
-ndarray@1.0.18:
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/ndarray/-/ndarray-1.0.18.tgz#b60d3a73224ec555d0faa79711e502448fd3f793"
-  integrity sha1-tg06cyJOxVXQ+qeXEeUCRI/T95M=
-  dependencies:
-    iota-array "^1.0.0"
-    is-buffer "^1.0.2"
 
 ndarray@^1.0.11, ndarray@^1.0.13, ndarray@^1.0.14, ndarray@^1.0.15, ndarray@^1.0.18, ndarray@^1.0.19:
   version "1.0.19"
@@ -9051,10 +9035,10 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plotly.js@1.54.1:
-  version "1.54.1"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.54.1.tgz#7aed029e80b39c4b095957e837ee24a737b49b93"
-  integrity sha512-1tlsEQkUgX2BaQr3Eu+5drki3eyor5EhpolFRteuQouRFX9mrg9Pms39Lak29lbAx4W3ZQoCZm8DcKkQCOe9YQ==
+plotly.js@1.54.3:
+  version "1.54.3"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.54.3.tgz#573a6477cabd44425f486cae90a6152b66dbd8be"
+  integrity sha512-qGtowciLnaVNIO9VVv+bvW4o0BjPL8K89py8IEfST3mrJnOIownirW4WDC7GzEVfqtBo3coLWl3yYY/J2Vt4xw==
   dependencies:
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
@@ -9094,18 +9078,18 @@ plotly.js@1.54.1:
     has-hover "^1.0.1"
     has-passive-events "^1.0.0"
     is-mobile "^2.2.1"
-    mapbox-gl "1.10.0"
+    mapbox-gl "1.10.1"
     matrix-camera-controller "^2.1.3"
     mouse-change "^1.4.0"
     mouse-event-offset "^3.0.2"
     mouse-wheel "^1.2.0"
-    ndarray "1.0.18"
+    ndarray "^1.0.19"
     ndarray-fill "^1.0.2"
     ndarray-homography "^1.0.0"
     parse-svg-path "^0.1.2"
     point-cluster "^3.1.8"
     polybooljs "^1.2.0"
-    regl "1.3.11"
+    regl "^1.6.1"
     regl-error2d "^2.0.8"
     regl-line2d "^3.0.15"
     regl-scatter2d "^3.1.8"
@@ -9218,12 +9202,12 @@ postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-value-parser@^4.0.0, postcss-value-parser@^4.0.2, postcss-value-parser@^4.0.3:
+postcss-value-parser@^4.0.0, postcss-value-parser@^4.0.2, postcss-value-parser@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
   integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
 
-postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.27, postcss@^7.0.5, postcss@^7.0.6:
+postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6:
   version "7.0.32"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.32.tgz#4310d6ee347053da3433db2be492883d62cec59d"
   integrity sha512-03eXong5NLnNCD05xscnGKGDZ98CyzoqPSMjOe6SuoQY7Z2hIj0Ld1g/O/UQRuOle2aRtiIRDg9tDcTGAkLfKw==
@@ -9902,12 +9886,7 @@ regl-splom@^1.0.8:
     raf "^3.4.1"
     regl-scatter2d "^3.1.2"
 
-regl@1.3.11:
-  version "1.3.11"
-  resolved "https://registry.yarnpkg.com/regl/-/regl-1.3.11.tgz#515e5173ffdc0618f908dd4e338a34ae9555f745"
-  integrity sha512-tmt6CRhRqbcsYDWNwv+iG7GGOXdgoOBC7lKzoPMgnzpt3WKBQ3c8i7AxgbvTRZzty29hrW92fAJeZkPFQehfWA==
-
-regl@^1.3.11:
+regl@^1.3.11, regl@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/regl/-/regl-1.6.1.tgz#6930172cda9b8fb65724abc0d4930d79333f5460"
   integrity sha512-7Z9rmpEqmLNwC9kCYCyfyu47eWZaQWeNpwZfwz99QueXN8B/Ow40DB0N+OeUeM/yu9pZAB01+JgJ+XghGveVoA==
@@ -10304,7 +10283,7 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-schema-utils@^2.6.5, schema-utils@^2.6.6:
+schema-utils@^2.6.5, schema-utils@^2.6.6, schema-utils@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.7.0.tgz#17151f76d8eae67fbbf77960c33c676ad9f4efc7"
   integrity sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==
