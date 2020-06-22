@@ -8118,10 +8118,10 @@ mobx-react@6.2.2:
   dependencies:
     mobx-react-lite "2"
 
-mobx-utils@5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.6.0.tgz#caf10907ac2592128ded0a17275f2521e0d18110"
-  integrity sha512-jW+VOo4LgiPU5ZI0Po87oSpLtWavJop+O/aVfi1+43Dv1WIwmvFkObpJEB/crbvRTsC/OND3fyGDzSfoNGufBw==
+mobx-utils@5.6.1:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.6.1.tgz#b7d9184b7442fe704be367d4363a2e9961be28cc"
+  integrity sha512-bpTJzM8MXniGnXCZY+ImjPDqBKQ3+G3g/QFSPtNkH6HM3x14DAPqKH7No7NDyhbXBMv3FaVetsgnoEPozbi45Q==
 
 mobx@5.15.4:
   version "5.15.4"
