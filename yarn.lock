@@ -1582,18 +1582,10 @@
     "@types/puppeteer" "*"
     jest-mock "^24"
 
-"@types/jest@*":
+"@types/jest@*", "@types/jest@26.0.7":
   version "26.0.7"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.7.tgz#495cb1d1818c1699dbc3b8b046baf1c86ef5e324"
   integrity sha512-+x0077/LoN6MjqBcVOe1y9dpryWnfDZ+Xfo3EqGeBcfPRJlQp3Lw62RvNlWxuGv7kOEwlHriAa54updi3Jvvwg==
-  dependencies:
-    jest-diff "^25.2.1"
-    pretty-format "^25.2.1"
-
-"@types/jest@26.0.3":
-  version "26.0.3"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.3.tgz#79534e0e94857171c0edc596db0ebe7cb7863251"
-  integrity sha512-v89ga1clpVL/Y1+YI0eIu1VMW+KU7Xl8PhylVtDKVWaSUHBHYPLXMQGBdrpHewaKoTvlXkksbYqPgz8b4cmRZg==
   dependencies:
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
@@ -1640,10 +1632,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@*", "@types/plotly.js@1.50.13":
-  version "1.50.13"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.50.13.tgz#bd56b37f4d849b63659ccb966fc71d7e61415315"
-  integrity sha512-uxqsHe7eZa+RtWI0kPcoBHKDTdQ0rqWWDIivwpwFOrpTtjNe9Vwj0Mc6wZdyHUiq02vsSqdAXDbl6noRKKzmkg==
+"@types/plotly.js@*", "@types/plotly.js@1.50.16":
+  version "1.50.16"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.50.16.tgz#04dc8f9a259905dbda06142ccd6e2d03f726d452"
+  integrity sha512-rSdNicrkgX6BYp9PIcm2IAE/Htlw2EdpAabi+L5pVm9KcgaekDyVSew9yZbIG2WpqAWfFYoNOvcSCMVcdh+nhg==
   dependencies:
     "@types/d3" "^3"
 
@@ -6448,7 +6440,7 @@ is-iexplorer@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-iexplorer/-/is-iexplorer-1.0.0.tgz#1d72bc66d3fe22eaf6170dda8cf10943248cfc76"
   integrity sha1-HXK8ZtP+Iur2Fw3ajPEJQySM/HY=
 
-is-mobile@^2.2.1:
+is-mobile@^2.2.1, is-mobile@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/is-mobile/-/is-mobile-2.2.2.tgz#f6c9c5d50ee01254ce05e739bdd835f1ed4e9954"
   integrity sha512-wW/SXnYJkTjs++tVK5b6kVITZpAZPtUrt9SF80vvxGiF/Oywal+COk1jlRkiVq15RFNEQKQY31TkV24/1T5cVg==
@@ -8830,10 +8822,10 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plotly.js@1.54.5:
-  version "1.54.5"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.54.5.tgz#eedfed1095b36da539bf73fb5d679f543b4904af"
-  integrity sha512-eO1CuPJxRoKUH18sGDaU47dfXnFWmYrb+JQrU0keGZRevII+DTsM/0gaSs0hTxgvnJ0otAaR6JONZqsgn9ca6Q==
+plotly.js@1.54.7:
+  version "1.54.7"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.54.7.tgz#a114fbab8dabf5cde272a3841aad9dbf2e4266d4"
+  integrity sha512-jNeQ5bcBioFiLkhb6N0B+Pt2szQKczYcuCw6W34ecZo0xAYsYsaNa64iNDDQUyjqTIM6GYvvUhe3KKNa36moig==
   dependencies:
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
@@ -8872,7 +8864,7 @@ plotly.js@1.54.5:
     glslify "^7.0.0"
     has-hover "^1.0.1"
     has-passive-events "^1.0.0"
-    is-mobile "^2.2.1"
+    is-mobile "^2.2.2"
     mapbox-gl "1.10.1"
     matrix-camera-controller "^2.1.3"
     mouse-change "^1.4.0"
