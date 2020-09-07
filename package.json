@@ -32,7 +32,10 @@
       ":automergeTesters",
       ":automergeTypes"
     ],
-    "baseBranches": ["master", "hops-v12.x"],
+    "baseBranches": [
+      "master",
+      "hops-v12.x"
+    ],
     "semanticPrefix": "chore:",
     "lockFileMaintenance": {
       "enabled": true
@@ -63,9 +66,9 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "husky": "4.2.5",
-    "lint-staged": "10.2.11",
-    "prettier": "2.0.5"
+    "husky": "4.3.0",
+    "lint-staged": "10.3.0",
+    "prettier": "2.1.1"
   },
   "resolutions": {
     "@types/plotly.js": "1.50.16",
