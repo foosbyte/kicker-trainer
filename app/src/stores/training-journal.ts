@@ -41,8 +41,8 @@ export class TrainingJournal {
         storedExercises
       );
       this.exercises.splice(0, this.exercises.length, ...exercises);
-      this.exercises.forEach(exercise => {
-        exercise.trainings.forEach(training => {
+      this.exercises.forEach((exercise) => {
+        exercise.trainings.forEach((training) => {
           training.exercise = exercise;
         });
       });
@@ -54,10 +54,10 @@ export class TrainingJournal {
   @computed
   private get exercisesToPersist(): string {
     return JSON.stringify(
-      this.exercises.map(exercise => {
+      this.exercises.map((exercise) => {
         return {
           ...toJS(exercise),
-          trainings: exercise.trainings.map(training => {
+          trainings: exercise.trainings.map((training) => {
             return {
               ...toJS(training),
               exercise: undefined,
@@ -80,7 +80,7 @@ export class TrainingJournal {
     id: Exercise['id'],
     amountOfTrainings?: number
   ): number {
-    const exercise = this.exercises.find(e => e.id === id);
+    const exercise = this.exercises.find((e) => e.id === id);
     if (!exercise) {
       return 0;
     }
@@ -97,12 +97,12 @@ export class TrainingJournal {
   }
 
   public exerciseQuota(id: Exercise['id']): [number, number] {
-    const exercise = this.exercises.find(e => e.id === id);
+    const exercise = this.exercises.find((e) => e.id === id);
     if (!exercise) {
       return [0, 0];
     }
     const [hits, misses] = exercise.trainings
-      .filter(t => t.quota[0] + t.quota[1] > 0)
+      .filter((t) => t.quota[0] + t.quota[1] > 0)
       .reduce(
         ([hits, misses], { quota: [th, tm] }) => [hits + th, misses + tm],
         [0, 0]
@@ -113,7 +113,7 @@ export class TrainingJournal {
 
   @action
   public addTraining(id: Exercise['id'], training: Training): void {
-    let exercise = this.exercises.find(e => e.id === id);
+    let exercise = this.exercises.find((e) => e.id === id);
     if (exercise) {
       exercise.trainings.push(training);
     } else {
@@ -129,7 +129,7 @@ export class TrainingJournal {
       .slice()
       .sort((a, b) => {
         const lastTraining = (ex: Exercise) =>
-          Math.max(...ex.trainings.map(training => training.date));
+          Math.max(...ex.trainings.map((training) => training.date));
         return lastTraining(a) > lastTraining(b) ? 1 : -1;
       })
       .reverse();

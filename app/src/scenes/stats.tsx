@@ -55,7 +55,7 @@ export class Stats extends React.Component<StatsProps> {
             </tr>
           </thead>
           <tbody>
-            {this.props.trainingJournal.exercises.map(exercise => {
+            {this.props.trainingJournal.exercises.map((exercise) => {
               const ex =
                 this.props.exerciseCatalogue &&
                 this.props.exerciseCatalogue.getExercise(exercise.id);

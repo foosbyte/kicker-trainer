@@ -21,7 +21,7 @@ describe('integration smoke tests', () => {
   beforeAll(() => {
     jest.setTimeout(90000);
 
-    page.on('console', message => {
+    page.on('console', (message) => {
       if (message.type() === 'error') {
         throw new Error(message.text());
       }
@@ -91,7 +91,7 @@ describe('integration smoke tests', () => {
       const scrollView = await page.$('[data-role="scrollview"]');
       expect(scrollView).toBeDefined();
 
-      const scrollTop = await page.evaluate(el => {
+      const scrollTop = await page.evaluate((el) => {
         el.scrollTop = 100;
         return el.scrollTop;
       }, scrollView);
@@ -131,7 +131,7 @@ describe('integration smoke tests', () => {
       await tapElementWithText(page, 'Miss');
       await tapElementWithText(page, 'End training');
       const quota = await page.evaluate(
-        element => element.innerText,
+        (element) => element.innerText,
         await page.$('[data-role="quota"]')
       );
       expect(quota).toEqual('50');
@@ -197,7 +197,7 @@ describe('integration smoke tests', () => {
       await tapElementWithSelector(page, 'a[href="/settings"]');
 
       const requests = new Map();
-      page.on('request', req => {
+      page.on('request', (req) => {
         requests.set(req.url(), req);
       });
 

@@ -15,7 +15,7 @@ const Bar = styled(View)`
   display: flex;
   flex-direction: row;
   box-shadow: 3px 0 8px 0 rgba(7, 8, 9, 0.5);
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.theme ? props.theme.color.anthrazit : 'initial'};
 `;
 

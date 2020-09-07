@@ -57,11 +57,11 @@ const Backdrop = styled.div`
 `;
 
 const DataPrivacyLayer = styled.div<{ theme: typeof theme }>`
-  background-color: ${props => props.theme.color.anthrazit};
+  background-color: ${(props) => props.theme.color.anthrazit};
   padding: 32px;
   display: flex;
   flex-direction: column;
-  margin: ${props => css`0 ${props.theme.space.l}px`};
+  margin: ${(props) => css`0 ${props.theme.space.l}px`};
 `;
 
 interface AppProps extends RouteComponentProps<{}> {
