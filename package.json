@@ -32,6 +32,7 @@
       ":automergeTesters",
       ":automergeTypes"
     ],
+    "baseBranches": ["master", "hops-v12.x"],
     "semanticPrefix": "chore:",
     "lockFileMaintenance": {
       "enabled": true
