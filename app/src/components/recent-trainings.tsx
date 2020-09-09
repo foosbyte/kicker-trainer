@@ -11,19 +11,19 @@ import { Text } from './text';
 const RecentTrainingsList = styled.ul`
   list-style-type: none;
   margin: 0;
-  padding: ${props => props.theme.space.m}px;
-  background-color: ${props => props.theme.color.transparentGrey};
+  padding: ${(props) => props.theme.space.m}px;
+  background-color: ${(props) => props.theme.color.transparentGrey};
 `;
 
 const TrainingEntry = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${props =>
+  padding: ${(props) =>
     css`
       ${props.theme.space.s}px 0
     `};
-  border-bottom: ${props => css`1px solid ${props.theme.color.anthrazit}`};
+  border-bottom: ${(props) => css`1px solid ${props.theme.color.anthrazit}`};
 
   &:last-child {
     border-bottom: none;
@@ -50,7 +50,7 @@ export class RecentTrainings extends React.Component<RecentTrainingsProps> {
     return (
       <Space inset="l" stretch>
         <RecentTrainingsList>
-          {lastTrainings.map(exercise => {
+          {lastTrainings.map((exercise) => {
             const ex =
               this.props.exerciseCatalogue &&
               this.props.exerciseCatalogue.getExercise(exercise.id);

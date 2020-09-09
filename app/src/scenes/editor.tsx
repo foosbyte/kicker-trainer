@@ -306,7 +306,7 @@ class ExerciseEditor extends React.Component<ExerciseEditorProps> {
           }
         });
       }
-      ['red', 'blue'].forEach(side => {
+      ['red', 'blue'].forEach((side) => {
         Object.assign(
           (exercise.bars as any)[side],
           (data.bars || ({} as any))[side]

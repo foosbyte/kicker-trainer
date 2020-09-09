@@ -8,7 +8,7 @@ const AvatarContainer = styled.div`
   height: 100%;
   top: 35vw;
   border-radius: 50%;
-  background-color: ${props => props.theme.color.anthrazit};
+  background-color: ${(props) => props.theme.color.anthrazit};
   display: flex;
   justify-content: center;
   align-items: center;

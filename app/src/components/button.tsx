@@ -20,7 +20,7 @@ function getButtonStyle(props: ButtonStyleProps): any {
     font-size: 14px;
     line-height: 16px;
     font-weight: 600;
-    background-color: ${props => {
+    background-color: ${(props) => {
       switch (props.intent) {
         case 'accept':
           return props.theme.color.blue;
@@ -33,7 +33,7 @@ function getButtonStyle(props: ButtonStyleProps): any {
     box-shadow: 0 1px 4px 0 rgba(32, 33, 33, 0.5);
     padding: ${props.theme.space.m}px;
     text-align: center;
-    color: ${props =>
+    color: ${(props) =>
       props.intent !== 'default'
         ? props.theme.color.white
         : props.theme.color.anthrazit};

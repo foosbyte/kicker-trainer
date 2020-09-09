@@ -27,7 +27,7 @@ export class ExerciseCatalogue {
       (xs, x) => [...xs, ...x],
       []
     );
-    return exercises.find(e => e.id === id);
+    return exercises.find((e) => e.id === id);
   }
 
   public getBarPositions(

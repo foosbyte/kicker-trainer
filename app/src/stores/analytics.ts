@@ -29,7 +29,7 @@ export class Analytics {
 
     reaction(
       () => dataPrivacy.accepted,
-      accepted => {
+      (accepted) => {
         if (accepted && hasDocument()) {
           this.loadGA();
         }
@@ -38,7 +38,7 @@ export class Analytics {
     );
     reaction(
       () => this.currentLocation,
-      location => {
+      (location) => {
         this.trackPageView(location);
       }
     );

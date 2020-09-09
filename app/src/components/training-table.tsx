@@ -7,7 +7,7 @@ import { Text } from './text';
 const StatsTable = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-gap: ${props => props.theme.space.m}px;
+  grid-gap: ${(props) => props.theme.space.m}px;
   justify-items: center;
   align-items: center;
 `;

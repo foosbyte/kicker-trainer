@@ -97,7 +97,7 @@ export class Editor extends React.Component<EditorProps> {
       this.drawTable();
       this.drawBars();
       if (this.props.arrows) {
-        this.props.arrows.forEach(arrow => {
+        this.props.arrows.forEach((arrow) => {
           this.drawArrow(
             new Vector(arrow.start.x, -arrow.start.y),
             new Vector(arrow.end.x, -arrow.end.y)
@@ -114,9 +114,7 @@ export class Editor extends React.Component<EditorProps> {
     const end = e.mul(this.renderMatrix);
 
     const angle = rad2deg(Math.atan2(e.y - s.y, e.x - s.x));
-    const rot = Matrix.rotate(angle)
-      .translate(e.x, e.y)
-      .mul(this.renderMatrix);
+    const rot = Matrix.rotate(angle).translate(e.x, e.y).mul(this.renderMatrix);
 
     const headRight = new Vector(-3 * lineWidth, -1.75 * lineWidth).mul(rot);
     const headLeft = new Vector(-3 * lineWidth, +1.75 * lineWidth).mul(rot);
@@ -285,7 +283,7 @@ export class Editor extends React.Component<EditorProps> {
       { players: 5, height: 475, offset: 0, distanceBetween: 98, max: 0 },
       { players: 3, height: 775, offset: 0, distanceBetween: 160, max: 0 },
     ];
-    bars.forEach(bar => {
+    bars.forEach((bar) => {
       bar.max =
         Editor.playfieldWidth -
         bar.offset * 2 -
@@ -297,7 +295,7 @@ export class Editor extends React.Component<EditorProps> {
     this.ctx.beginPath();
 
     // blue player
-    bars.forEach(bar => {
+    bars.forEach((bar) => {
       const left = new Vector(
         -Editor.playfieldWidth / 2,
         Editor.playfieldHeight / 2 - bar.height
@@ -324,7 +322,7 @@ export class Editor extends React.Component<EditorProps> {
     });
 
     // red player
-    bars.forEach(bar => {
+    bars.forEach((bar) => {
       const left = new Vector(
         -Editor.playfieldWidth / 2,
         -Editor.playfieldHeight / 2 + bar.height

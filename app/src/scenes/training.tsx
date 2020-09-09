@@ -27,7 +27,7 @@ const Wrapper = styled(View)`
 const CenteredText = styled(Text)`
   display: block;
   text-align: center;
-  font-size: ${props => props.theme.fontSize.m}px;
+  font-size: ${(props) => props.theme.fontSize.m}px;
   font-weight: bold;
 `;
 
