@@ -2,17 +2,17 @@ import * as React from 'react';
 import styled, { css } from '../styled-components';
 
 const DurationElements = styled.span<{ size: DurationProps['size'] }>`
-  color: ${props => props.theme.color.grey};
+  color: ${(props) => props.theme.color.grey};
   vertical-align: middle;
 
   & > span {
-    font-size: ${props => {
+    font-size: ${(props) => {
       const factor = props.size === 'normal' ? 1.5 : 1;
       return css`
         ${props.theme.fontSize.m * factor}px
       `;
     }};
-    color: ${props => props.theme.color.white};
+    color: ${(props) => props.theme.color.white};
   }
 `;
 

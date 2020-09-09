@@ -5,31 +5,31 @@ import { Route, Switch } from 'react-router-dom';
 
 const Profile = importComponent(
   () => import('./profile'),
-  ns => ns.Profile
+  (ns) => ns.Profile
 );
 const Categories = importComponent(
   () => import('./categories'),
-  ns => ns.Categories
+  (ns) => ns.Categories
 );
 const Exercises = importComponent(
   () => import('./exercises'),
-  ns => ns.Exercises
+  (ns) => ns.Exercises
 );
 const Training = importComponent(
   () => import('./training'),
-  ns => ns.Training
+  (ns) => ns.Training
 );
 const Stats = importComponent(
   () => import('./stats'),
-  ns => ns.Stats
+  (ns) => ns.Stats
 );
 const Settings = importComponent(
   () => import('./settings'),
-  ns => ns.Settings
+  (ns) => ns.Settings
 );
 const Editor = importComponent(
   () => import('./editor'),
-  ns => ns.Editor
+  (ns) => ns.Editor
 );
 
 export interface ScenesProps {

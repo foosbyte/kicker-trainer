@@ -12,5 +12,5 @@ const deleted = [
 ];
 
 export function v2(exercises: Exercise[]): Exercise[] {
-  return exercises.filter(exercise => !deleted.includes(exercise.id));
+  return exercises.filter((exercise) => !deleted.includes(exercise.id));
 }

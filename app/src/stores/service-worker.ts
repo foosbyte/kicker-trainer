@@ -31,7 +31,7 @@ export class ServiceWorker {
               if (registration.installing) {
                 registration.installing.addEventListener(
                   'statechange',
-                  function(): void {
+                  function (): void {
                     if (this.state === 'installed') {
                       callback(registration);
                     }

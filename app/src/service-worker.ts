@@ -3,19 +3,19 @@ declare var self: ServiceWorkerGlobalScope;
 const CACHE_NAME = 'hops-pwa-cache';
 
 export default (hopsConfig: any, assets: string[]): void => {
-  const assetsToCache = assets.map(asset => '/' + asset);
+  const assetsToCache = assets.map((asset) => '/' + asset);
 
-  self.addEventListener('message', messageEvent => {
+  self.addEventListener('message', (messageEvent) => {
     if (messageEvent.data === 'skipWaiting') {
       self.skipWaiting();
     }
   });
 
-  self.addEventListener('install', event => {
+  self.addEventListener('install', (event) => {
     return event.waitUntil(precacheIfNotExists(assetsToCache));
   });
 
-  self.addEventListener('activate', event => {
+  self.addEventListener('activate', (event) => {
     return event.waitUntil(
       removeOldCacheEntries(
         assetsToCache.concat(hopsConfig.locations)
@@ -23,7 +23,7 @@ export default (hopsConfig: any, assets: string[]): void => {
     );
   });
 
-  self.addEventListener('fetch', event => {
+  self.addEventListener('fetch', (event) => {
     const { request } = event;
 
     if (
@@ -36,12 +36,12 @@ export default (hopsConfig: any, assets: string[]): void => {
 
     event.respondWith(
       fromCache(request).then(
-        response => {
+        (response) => {
           event.waitUntil(updateCache(request));
           return response;
         },
         () => {
-          return fromNetwork(request, 60000).then(response => {
+          return fromNetwork(request, 60000).then((response) => {
             event.waitUntil(addToCache(request, response.clone()));
             return response;
           });
@@ -89,10 +89,10 @@ async function removeOldCacheEntries(assets: string[]): Promise<boolean[]> {
   return Promise.all(
     requests
       .filter(
-        request =>
-          !assets.some(asset => request.url === location.origin + asset)
+        (request) =>
+          !assets.some((asset) => request.url === location.origin + asset)
       )
-      .map(request => cache.delete(request))
+      .map((request) => cache.delete(request))
   );
 }
 
@@ -108,9 +108,9 @@ async function precacheIfNotExists(assets: string[]): Promise<void[]> {
   return Promise.all(
     assets
       .filter(
-        asset =>
-          !requests.some(request => request.url === location.origin + asset)
+        (asset) =>
+          !requests.some((request) => request.url === location.origin + asset)
       )
-      .map(asset => cache.add(asset))
+      .map((asset) => cache.add(asset))
   );
 }

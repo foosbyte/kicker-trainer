@@ -23,7 +23,7 @@ const UpdateButton = styled.button`
   border: 0;
   outline: 0;
   position: absolute;
-  top: ${props =>
+  top: ${(props) =>
     css`
       ${props.theme.space.m * 1.5}px
     `};
@@ -31,14 +31,14 @@ const UpdateButton = styled.button`
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   align-items: center;
-  padding: ${props =>
+  padding: ${(props) =>
     css`0 ${props.theme.space.l}px 0 ${props.theme.space.s}px`};
-  background-color: ${props => props.theme.color.blue};
-  color: ${props => props.theme.color.white};
+  background-color: ${(props) => props.theme.color.blue};
+  color: ${(props) => props.theme.color.white};
 `;
 
 const SettingsButton = styled(Link)`
-  color: ${props => props.theme.color.white};
+  color: ${(props) => props.theme.color.white};
   position: absolute;
   top: 0;
   right: 0;
@@ -75,7 +75,7 @@ const AvatarArc = styled(View)`
   ::before {
     content: ' ';
     border-radius: 50%;
-    background-color: ${props => props.theme.color.green};
+    background-color: ${(props) => props.theme.color.green};
     position: absolute;
     width: ${avatarVars.arcWidth}vw;
     height: ${avatarVars.arcHeight}vw;

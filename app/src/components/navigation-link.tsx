@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
     inverted
       ? 'transparent'
       : `linear-gradient(90deg, #46eda9 0%, ${theme.color.green} 100%)`};
-  box-shadow: 0 2px 8px 0 ${props => props.theme.color.black};
+  box-shadow: 0 2px 8px 0 ${(props) => props.theme.color.black};
 `;
 
 export interface TitleProps {
@@ -41,7 +41,7 @@ export const Title = styled.span`
 
 export const SubTitle = styled.span`
   font-size: 13px;
-  color: ${props => props.theme.color.black};
+  color: ${(props) => props.theme.color.black};
 `;
 
 export const StyledLink = styled(Link)`
