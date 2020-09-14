@@ -82,7 +82,7 @@
     "react-dat-gui": "3.0.0",
     "react-dom": "16.13.1",
     "react-helmet-async": "1.0.6",
-    "react-plotly.js": "2.4.0",
+    "react-plotly.js": "2.5.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
     "style-loader": "1.2.1",
