@@ -1672,10 +1672,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@*", "@types/plotly.js@1.50.16":
-  version "1.50.16"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.50.16.tgz#04dc8f9a259905dbda06142ccd6e2d03f726d452"
-  integrity sha512-rSdNicrkgX6BYp9PIcm2IAE/Htlw2EdpAabi+L5pVm9KcgaekDyVSew9yZbIG2WpqAWfFYoNOvcSCMVcdh+nhg==
+"@types/plotly.js@*", "@types/plotly.js@1.50.18":
+  version "1.50.18"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.50.18.tgz#12b37e3026af9b91a1f93a5e6b936fcaff54e347"
+  integrity sha512-DMIovwLr/PRRzCJNNdBVToci3G/y1AhuiBJI9HB92Rsql8MRCDdVdwFWgQbcsULaSN2kBJbaZLyWLgYjpt6MFA==
   dependencies:
     "@types/d3" "^3"
 
