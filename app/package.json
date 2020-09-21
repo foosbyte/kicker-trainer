@@ -62,7 +62,7 @@
     ]
   },
   "dependencies": {
-    "css-loader": "3.6.0",
+    "css-loader": "4.3.0",
     "decko": "1.2.0",
     "hops": "12.5.2",
     "hops-lambda": "12.5.2",
