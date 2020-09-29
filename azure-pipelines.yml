@@ -4,25 +4,25 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: "ubuntu-latest"
 
 steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: '10.x'
-    displayName: 'Install Node.js'
+      versionSpec: "14.x"
+    displayName: "Install Node.js"
 
   - script: yarn install
-    displayName: 'Install dependencies'
+    displayName: "Install dependencies"
 
   - script: yarn build -p
-    displayName: 'Production build'
+    displayName: "Production build"
 
   - script: yarn test
-    displayName: 'Run integration tests'
+    displayName: "Run integration tests"
 
   - script: yarn deploy
-    displayName: 'Deploy release'
+    displayName: "Deploy release"
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     env:
       AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
