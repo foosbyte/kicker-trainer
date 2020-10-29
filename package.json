@@ -7,12 +7,12 @@
     "app/"
   ],
   "scripts": {
-    "start": "cd app && yarn start",
-    "build": "cd app && yarn build",
-    "serve": "cd app && yarn serve",
-    "deploy": "cd app && yarn deploy",
-    "test": "cd app && yarn test",
-    "lint": "cd app && yarn lint",
+    "start": "yarn workspace foosball-trainer start",
+    "build": "yarn workspace foosball-trainer build",
+    "serve": "yarn workspace foosball-trainer serve",
+    "deploy": "yarn workspace foosball-trainer deploy",
+    "test": "yarn workspace foosball-trainer test",
+    "lint": "yarn workspace foosball-trainer lint",
     "fmt": "prettier --write '{app/src,packages}/**/*.{js,ts,tsx,json}'"
   },
   "husky": {
