@@ -1581,10 +1581,10 @@
   resolved "https://registry.yarnpkg.com/@types/d3/-/d3-3.5.44.tgz#28635f8bb9adf1cef5bbef2b06778174a9d34383"
   integrity sha512-hFEcf03YGJ2uQoDYEp3nFD5mXWxly5kf6KOstuOQFEs9sUCN7kNlKhcYkpZ3gK6PiHz4XRLkoHa80NVCJNeLBw==
 
-"@types/expect-puppeteer@4.4.4":
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/@types/expect-puppeteer/-/expect-puppeteer-4.4.4.tgz#949f3cb386b939f9c820841c72cb5f5e35cc1e29"
-  integrity sha512-1pnRCv2H0wUp+M98Y10pPjdTknf9Njqst4duIsg5xYQV+f8DgMOd1oASGPzAfCQQUEM6W9U3G2mW5lQGrdoiYw==
+"@types/expect-puppeteer@4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@types/expect-puppeteer/-/expect-puppeteer-4.4.5.tgz#832d0a1e74dbfd1bff9787ed99645d568130d5fb"
+  integrity sha512-vxPaumA8Fj6xlm3llKCR9V8L936HX4PyipaNMxDbWQIOWZoCl99jabD/6xuxXnCptOWUdUhXwDuX5cAJgCHsLg==
   dependencies:
     "@types/jest" "*"
     "@types/puppeteer" "*"
