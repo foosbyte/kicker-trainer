@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import { observable, makeObservable } from 'mobx';
 import exercises from './exercises';
 
 export enum Bars {
@@ -19,8 +19,13 @@ export interface Exercise {
 }
 
 export class ExerciseCatalogue {
-  @observable
   public data: { [B in Bars]: Exercise[] } = exercises;
+
+  constructor() {
+    makeObservable(this, {
+      data: observable,
+    });
+  }
 
   public getExercise(id: string): Exercise | undefined {
     const exercises = Object.values(this.data).reduce(

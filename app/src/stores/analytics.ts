@@ -1,4 +1,4 @@
-import { action, observable, reaction } from 'mobx';
+import { action, makeObservable, observable, reaction } from 'mobx';
 import { DataPrivacy } from './data-privacty';
 
 const GA_ID = 'UA-121233177-1';
@@ -18,10 +18,14 @@ export interface EventTrackingParameters {
 }
 
 export class Analytics {
-  @observable
-  private currentLocation!: string;
+  private currentLocation = '/';
 
   constructor(dataPrivacy: DataPrivacy) {
+    makeObservable<Analytics, 'currentLocation'>(this, {
+      currentLocation: observable,
+      setLocation: action,
+    });
+
     if (typeof window !== 'undefined') {
       (window as any).dataLayer = [];
       this.currentLocation = window.location.pathname;
@@ -56,7 +60,6 @@ export class Analytics {
     document.body.appendChild(script);
   }
 
-  @action
   public setLocation(location: string): void {
     this.currentLocation = location;
   }

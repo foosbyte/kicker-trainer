@@ -1,4 +1,3 @@
-import { bind } from 'decko';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
@@ -89,48 +88,51 @@ export interface ProfileProps {
   serviceWorker: ServiceWorker;
 }
 
-@inject('pwa', 'serviceWorker')
-@observer
-export class Profile extends React.Component<ProfileProps> {
-  public render(): JSX.Element {
-    return (
-      <ProfileWrapper>
-        <ProfileHeader>
-          <AvatarArc>
-            <Avatar size="normal" />
-          </AvatarArc>
-          {this.props.serviceWorker.updateAvailable && (
-            <UpdateButton onClick={this.installUpdate}>
-              <Icon icon="download" size={24} />
-              <Text>Update verfügbar. Klicke zum installieren.</Text>
-            </UpdateButton>
-          )}
-          <SettingsButton to="/settings">
-            <Space inset="m" stretch>
-              <Icon icon="cog" size={24} />
+export const Profile = inject(
+  'pwa',
+  'serviceWorker'
+)(
+  observer(
+    class Profile extends React.Component<ProfileProps> {
+      public render(): JSX.Element {
+        return (
+          <ProfileWrapper>
+            <ProfileHeader>
+              <AvatarArc>
+                <Avatar size="normal" />
+              </AvatarArc>
+              {this.props.serviceWorker.updateAvailable && (
+                <UpdateButton onClick={this.installUpdate}>
+                  <Icon icon="download" size={24} />
+                  <Text>Update verfügbar. Klicke zum installieren.</Text>
+                </UpdateButton>
+              )}
+              <SettingsButton to="/settings">
+                <Space inset="m" stretch>
+                  <Icon icon="cog" size={24} />
+                </Space>
+              </SettingsButton>
+            </ProfileHeader>
+            <RecentTrainings />
+            <Space inset="xl">
+              <Space between="m">
+                <Button to="/categories">Start Training</Button>
+                {this.props.pwa.installable && (
+                  <Button onPress={this.installPwa}>Install on device</Button>
+                )}
+              </Space>
             </Space>
-          </SettingsButton>
-        </ProfileHeader>
-        <RecentTrainings />
-        <Space inset="xl">
-          <Space between="m">
-            <Button to="/categories">Start Training</Button>
-            {this.props.pwa.installable && (
-              <Button onPress={this.installPwa}>Install on device</Button>
-            )}
-          </Space>
-        </Space>
-      </ProfileWrapper>
-    );
-  }
+          </ProfileWrapper>
+        );
+      }
 
-  @bind
-  private installPwa(): void {
-    this.props.pwa.install();
-  }
+      installPwa = () => {
+        this.props.pwa.install();
+      };
 
-  @bind
-  private installUpdate(): void {
-    this.props.serviceWorker.install();
-  }
-}
+      installUpdate = () => {
+        this.props.serviceWorker.install();
+      };
+    }
+  )
+);
