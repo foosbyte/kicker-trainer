@@ -1,4 +1,10 @@
-import { action, computed, observable, runInAction } from 'mobx';
+import {
+  action,
+  computed,
+  makeObservable,
+  observable,
+  runInAction,
+} from 'mobx';
 import { Analytics } from './analytics';
 
 interface PWAInstallPromptEvent extends Event {
@@ -11,12 +17,17 @@ interface PWAInstallPromptEvent extends Event {
 const hasWindow = () => typeof window !== 'undefined';
 
 export class PWAIntegration {
-  @observable
-  private installPrompt?: PWAInstallPromptEvent;
+  private installPrompt: undefined | PWAInstallPromptEvent = undefined;
 
   private analytics: Analytics;
 
   constructor(analytics: Analytics) {
+    makeObservable<PWAIntegration, 'installPrompt'>(this, {
+      installPrompt: observable,
+      installable: computed,
+      install: action,
+    });
+
     this.analytics = analytics;
     if (hasWindow()) {
       // note: beforeinstallprompt not known in typescript
@@ -35,12 +46,10 @@ export class PWAIntegration {
     }
   }
 
-  @computed
   public get installable(): boolean {
     return Boolean(this.installPrompt);
   }
 
-  @action
   public async install(): Promise<void> {
     if (this.installPrompt) {
       this.installPrompt.prompt();
