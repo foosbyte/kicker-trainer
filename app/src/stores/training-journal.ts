@@ -1,4 +1,11 @@
-import { action, autorun, computed, observable, toJS } from 'mobx';
+import {
+  action,
+  autorun,
+  computed,
+  observable,
+  toJS,
+  makeObservable,
+} from 'mobx';
 import { migrate } from './migrations';
 
 export interface Training {
@@ -14,13 +21,21 @@ export interface Exercise {
 }
 
 export class TrainingJournal {
-  @observable
   public exercises: Exercise[] = [];
   private static key = 'exercises';
   private static versionKey = 'db_version';
   private static version = 'v2';
 
   constructor() {
+    makeObservable<TrainingJournal, 'load' | 'exercisesToPersist'>(this, {
+      exercises: observable,
+      load: action,
+      exercisesToPersist: computed,
+      save: action,
+      addTraining: action,
+      lastExercises: computed,
+    });
+
     this.load();
 
     autorun(() => {
@@ -28,7 +43,6 @@ export class TrainingJournal {
     });
   }
 
-  @action
   private load(): void {
     if (typeof window !== 'undefined' && window.localStorage) {
       const storedExercises = JSON.parse(
@@ -51,7 +65,6 @@ export class TrainingJournal {
     }
   }
 
-  @computed
   private get exercisesToPersist(): string {
     return JSON.stringify(
       this.exercises.map((exercise) => {
@@ -68,7 +81,6 @@ export class TrainingJournal {
     );
   }
 
-  @action
   public save(data: string): void {
     if (typeof window !== 'undefined' && window.localStorage) {
       localStorage.setItem(TrainingJournal.versionKey, TrainingJournal.version);
@@ -111,7 +123,6 @@ export class TrainingJournal {
     return [hits, misses];
   }
 
-  @action
   public addTraining(id: Exercise['id'], training: Training): void {
     let exercise = this.exercises.find((e) => e.id === id);
     if (exercise) {
@@ -123,7 +134,6 @@ export class TrainingJournal {
     training.exercise = exercise;
   }
 
-  @computed
   public get lastExercises(): Exercise[] {
     return this.exercises
       .slice()

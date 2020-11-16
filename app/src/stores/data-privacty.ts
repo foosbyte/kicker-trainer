@@ -1,12 +1,17 @@
-import { action, computed, observable } from 'mobx';
+import { action, computed, makeObservable, observable } from 'mobx';
 
 const hasStorage = () => typeof window !== 'undefined' && window.localStorage;
 
 export class DataPrivacy {
-  @observable
-  private saved: boolean | null;
+  private saved: null | boolean = null;
 
   constructor() {
+    makeObservable<DataPrivacy, 'saved'>(this, {
+      saved: observable,
+      accepted: computed,
+      accept: action,
+    });
+
     const read = (): string =>
       hasStorage()
         ? window.localStorage.getItem('data-privacy') || 'false'
@@ -14,12 +19,10 @@ export class DataPrivacy {
     this.saved = JSON.parse(read());
   }
 
-  @computed
   public get accepted(): boolean {
     return this.saved !== false;
   }
 
-  @action
   public accept(): void {
     this.saved = true;
     if (hasStorage()) {

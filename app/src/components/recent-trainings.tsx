@@ -35,45 +35,56 @@ export interface RecentTrainingsProps {
   exerciseCatalogue?: ExerciseCatalogue;
 }
 
-@inject('trainingJournal', 'exerciseCatalogue')
-@observer
-export class RecentTrainings extends React.Component<RecentTrainingsProps> {
-  public render(): JSX.Element | null {
-    if (!this.props.trainingJournal) {
-      return null;
-    }
-    const lastTrainings = this.props.trainingJournal.lastExercises.slice(0, 3);
-    if (lastTrainings.length === 0) {
-      return null;
-    }
+export const RecentTrainings = inject(
+  'trainingJournal',
+  'exerciseCatalogue'
+)(
+  observer(
+    class RecentTrainings extends React.Component<RecentTrainingsProps> {
+      public render(): JSX.Element | null {
+        if (!this.props.trainingJournal) {
+          return null;
+        }
+        const lastTrainings = this.props.trainingJournal.lastExercises.slice(
+          0,
+          3
+        );
+        if (lastTrainings.length === 0) {
+          return null;
+        }
 
-    return (
-      <Space inset="l" stretch>
-        <RecentTrainingsList>
-          {lastTrainings.map((exercise) => {
-            const ex =
-              this.props.exerciseCatalogue &&
-              this.props.exerciseCatalogue.getExercise(exercise.id);
-            if (!ex) {
-              return null;
-            }
-            const [hours, minutes, seconds] = getDurationParts(
-              this.props.trainingJournal!.exerciseTrainingTime(exercise.id, 1)
-            );
-            return (
-              <TrainingEntry key={exercise.id}>
-                <Text>{ex.name}</Text>
-                <Duration
-                  size="small"
-                  hours={hours}
-                  minutes={minutes}
-                  seconds={seconds}
-                />
-              </TrainingEntry>
-            );
-          })}
-        </RecentTrainingsList>
-      </Space>
-    );
-  }
-}
+        return (
+          <Space inset="l" stretch>
+            <RecentTrainingsList>
+              {lastTrainings.map((exercise) => {
+                const ex =
+                  this.props.exerciseCatalogue &&
+                  this.props.exerciseCatalogue.getExercise(exercise.id);
+                if (!ex) {
+                  return null;
+                }
+                const [hours, minutes, seconds] = getDurationParts(
+                  this.props.trainingJournal!.exerciseTrainingTime(
+                    exercise.id,
+                    1
+                  )
+                );
+                return (
+                  <TrainingEntry key={exercise.id}>
+                    <Text>{ex.name}</Text>
+                    <Duration
+                      size="small"
+                      hours={hours}
+                      minutes={minutes}
+                      seconds={seconds}
+                    />
+                  </TrainingEntry>
+                );
+              })}
+            </RecentTrainingsList>
+          </Space>
+        );
+      }
+    }
+  )
+);

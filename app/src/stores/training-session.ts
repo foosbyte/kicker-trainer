@@ -1,4 +1,11 @@
-import { action, autorun, computed, observable, runInAction } from 'mobx';
+import {
+  action,
+  autorun,
+  computed,
+  makeObservable,
+  observable,
+  runInAction,
+} from 'mobx';
 import { now } from 'mobx-utils';
 import NoSleep from 'nosleep.js';
 import { TrainingJournal } from './training-journal';
@@ -10,23 +17,36 @@ export enum State {
 }
 
 export class TrainingSession {
-  private startDate?: number;
-  @observable
-  private startTime?: number;
-  @observable
+  private startDate: undefined | number = 0.0;
+  private startTime: undefined | number = 0.0;
   private currentTime = 0;
-  @observable
   private trackedTime = 0;
-  @observable
   private hits = 0;
-  @observable
   private misses = 0;
-  @observable
   public state = State.NONE;
   private id?: string;
   private noSleep!: NoSleep;
 
   constructor(private trainingJournal: TrainingJournal) {
+    makeObservable<
+      TrainingSession,
+      'startTime' | 'currentTime' | 'trackedTime' | 'hits' | 'misses'
+    >(this, {
+      startTime: observable,
+      currentTime: observable,
+      trackedTime: observable,
+      hits: observable,
+      misses: observable,
+      state: observable,
+      totalTime: computed,
+      quota: computed,
+      start: action,
+      stop: action,
+      pause: action,
+      recordHit: action,
+      recordMiss: action,
+    });
+
     autorun(() => {
       if (this.state !== State.RUNNING) {
         return;
@@ -45,17 +65,14 @@ export class TrainingSession {
     }
   }
 
-  @computed
   public get totalTime(): number {
     return this.trackedTime + this.currentTime;
   }
 
-  @computed
   public get quota(): [number, number] {
     return [this.hits, this.misses];
   }
 
-  @action
   public start(id: string): void {
     this.state = State.RUNNING;
     this.startTime = now();
@@ -66,7 +83,6 @@ export class TrainingSession {
     this.noSleep.enable();
   }
 
-  @action
   public stop(): void {
     this.state = State.NONE;
     if (this.startDate) {
@@ -83,7 +99,6 @@ export class TrainingSession {
     this.noSleep.disable();
   }
 
-  @action
   public pause(): void {
     if (this.startTime) {
       this.state = State.PAUSED;
@@ -98,12 +113,10 @@ export class TrainingSession {
     }
   }
 
-  @action
   public recordHit(): void {
     this.hits += 1;
   }
 
-  @action
   public recordMiss(): void {
     this.misses += 1;
   }

@@ -1,12 +1,16 @@
-import { bind } from 'decko';
 import installServiceWorker from 'hops-pwa';
-import { observable, action } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 
 export class ServiceWorker {
-  @observable
   public updateAvailable = false;
 
   constructor() {
+    makeObservable(this, {
+      updateAvailable: observable,
+      install: action,
+      handleUpdate: action,
+    });
+
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       let refreshing = false;
       navigator.serviceWorker.addEventListener('controllerchange', () => {
@@ -62,13 +66,10 @@ export class ServiceWorker {
     }
   }
 
-  @bind
-  @action
-  private handleUpdate(): void {
+  handleUpdate = () => {
     this.updateAvailable = true;
-  }
+  };
 
-  @action
   public async install(): Promise<void> {
     const registration = await navigator.serviceWorker.getRegistration();
     if (registration && registration.waiting) {
