@@ -1,0 +1,52 @@
+diff --git a/node_modules/hops-webpack/lib/configs/node.js b/node_modules/hops-webpack/lib/configs/node.js
+index 994e58f..666b004 100644
+--- a/node_modules/hops-webpack/lib/configs/node.js
++++ b/node_modules/hops-webpack/lib/configs/node.js
+@@ -30,9 +30,9 @@ module.exports = function getConfig(config, name) {
+           require.resolve('@babel/preset-env'),
+           {
+             modules: false,
+-            useBuiltIns: 'entry',
++            useBuiltIns: false,
+             targets: { node: config.node },
+-            corejs: 3,
++            // corejs: 3,
+             include: [],
+             exclude: [],
+           },
+@@ -91,7 +91,7 @@ module.exports = function getConfig(config, name) {
+       ...(isProduction
+         ? []
+         : [require.resolve('webpack/hot/signal') + '?RELOAD']),
+-      require.resolve('core-js/stable'),
++      // require.resolve('core-js/stable'),
+       require.resolve('../shims/node'),
+     ],
+     output: {
+@@ -125,8 +125,16 @@ module.exports = function getConfig(config, name) {
+     module: {
+       rules: [{ oneOf: allLoaderConfigs }],
+     },
+-    externals: [],
++    externals: [
++      'react',
++      'lodash.mergewith',
++      'react-dom/server',
++      'react-dom/server.js',
++      'react-dom/server.node',
++      'react-dom/cjs/react-dom-server.node.production.min.js',
++    ],
+     optimization: {
++      concatenateModules: false,
+       minimizer: [],
+     },
+     plugins: [
+@@ -140,7 +148,7 @@ module.exports = function getConfig(config, name) {
+       maxEntrypointSize: 52428800,
+       maxAssetSize: 52428800,
+     },
+-    devtool: 'inline-source-map',
++    devtool: false,
+     watchOptions: { aggregateTimeout: 300, ignored: /node_modules/ },
+   };
+ };
