@@ -1,0 +1,117 @@
+diff --git a/node_modules/hops-react/render/mixin.browser.js b/node_modules/hops-react/render/mixin.browser.js
+index aa12b49..ddcc712 100644
+--- a/node_modules/hops-react/render/mixin.browser.js
++++ b/node_modules/hops-react/render/mixin.browser.js
+@@ -26,9 +26,12 @@ class ReactMixin extends Mixin {
+         this.fetchData({}, element).then(() => {
+           const mountpoint = document.querySelector('[data-mountpoint]');
+           const isMounted = mountpoint.hasAttribute('data-mounted');
++          const { disableSSR } = this.getServerData();
+ 
+-          if (isMounted) {
+-            unmountComponentAtNode(mountpoint);
++          if (isMounted || disableSSR) {
++            if (!disableSSR) {
++              unmountComponentAtNode(mountpoint);
++            }
+             render(element, mountpoint);
+           } else {
+             hydrate(element, mountpoint);
+diff --git a/node_modules/hops-react/render/mixin.core.js b/node_modules/hops-react/render/mixin.core.js
+new file mode 100644
+index 0000000..0bc3836
+--- /dev/null
++++ b/node_modules/hops-react/render/mixin.core.js
+@@ -0,0 +1,25 @@
++'use strict';
++
++const { Mixin } = require('hops-mixin');
++
++let count = 0;
++
++class ReactRenderCoreMixin extends Mixin {
++  configureServer(app, middlewares, mode) {
++    if (mode === 'serve') {
++      middlewares.preroutes.push((req, res, next) => {
++        // todo: this middleware should check the event loop delay and set
++        // `disableSSR` to true if it exceeds the threshold
++        // note: we should give priority to crawlers in order to not impact SEO
++        // or social sharing previews
++        count += 1;
++        if (req.query.disableSSR || req.query.fakeCircuitBreaker && count % 2 === 0) {
++          res.locals.disableSSR = true;
++        }
++        next();
++      });
++    }
++  }
++}
++
++module.exports = ReactRenderCoreMixin;
+\ No newline at end of file
+diff --git a/node_modules/hops-react/render/mixin.server.js b/node_modules/hops-react/render/mixin.server.js
+index 8740f81..20d56e2 100644
+--- a/node_modules/hops-react/render/mixin.server.js
++++ b/node_modules/hops-react/render/mixin.server.js
+@@ -17,16 +17,27 @@ class ReactMixin extends Mixin {
+   constructor(config, element, options) {
+     super(config, options);
+     this.element = element;
++    this.stats = undefined;
++    this.disableSSR = false;
+   }
+ 
+   bootstrap(req, res) {
+     this.stats = res.locals.stats;
++    // note: res.locals.disableSSR should be set by our circuit breaker
++    this.disableSSR = res.locals.disableSSR;
+   }
+ 
+   renderToFragments(element) {
+     return renderToFragments(element);
+   }
+ 
++  getTemplateData(data) {
++    return {
++      ...data,
++      disableSSR: this.disableSSR,
++    };
++  }
++
+   renderTemplate(fragments, { modules }) {
+     const assets = getAssets(this.stats, modules);
+     const resourceHints = getResourceHints(this.stats);
+@@ -41,17 +52,26 @@ class ReactMixin extends Mixin {
+   }
+ 
+   render(req, res, next) {
+-    Promise.resolve()
+-      .then(() => this.bootstrap(req, res))
+-      .then(() => this.enhanceElement(this.element))
+-      .then((element) =>
+-        this.fetchData({}, element).then(() => this.renderToFragments(element))
+-      )
++    let waiting = this.bootstrap(req, res);
++
++    if (this.disableSSR) {
++      waiting = waiting.then(() => {
++        return {};
++      });
++    } else {
++      waiting = waiting
++        .then(() => this.enhanceElement(this.element))
++        .then((element) => {
++          return this.fetchData({}, element).then(() => this.renderToFragments(element));
++        });
++    }
++
++    waiting
+       .then((fragments) => {
+         // note: res.locals.helmetContext is set by the ReactHelmetMixin
+         Object.assign(
+           fragments,
+-          Object.entries(res.locals.helmetContext.helmet).reduce(
++          Object.entries(res.locals.helmetContext.helmet || {}).reduce(
+             (result, [key, value]) => ({ ...result, [key]: value.toString() }),
+             { headPrefix: '', headSuffix: '' }
+           )
