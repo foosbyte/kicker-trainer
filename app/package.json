@@ -13,6 +13,7 @@
     "test": "PORT=8080 jest"
   },
   "hops": {
+    "port": "8080",
     "browsers": [
       "last 1 Chrome versions",
       "last 2 iOS versions"
