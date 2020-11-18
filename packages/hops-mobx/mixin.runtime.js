@@ -1,9 +1,7 @@
 const { Mixin } = require('hops');
 const React = require('react');
-const { Provider, enableStaticRendering } = require('mobx-react');
+const { Provider } = require('mobx-react');
 const { configure } = require('mobx');
-
-enableStaticRendering(true);
 
 configure({
   enforceActions: 'observed',
