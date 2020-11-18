@@ -50,10 +50,39 @@ index 0000000..0bc3836
 +module.exports = ReactRenderCoreMixin;
 \ No newline at end of file
 diff --git a/node_modules/hops-react/render/mixin.server.js b/node_modules/hops-react/render/mixin.server.js
-index 8740f81..20d56e2 100644
+index 8740f81..27a0a32 100644
 --- a/node_modules/hops-react/render/mixin.server.js
 +++ b/node_modules/hops-react/render/mixin.server.js
-@@ -17,16 +17,27 @@ class ReactMixin extends Mixin {
+@@ -3,6 +3,8 @@
+ const { isValidElement } = require('react');
+ const isPlainObject = require('is-plain-obj');
+ const { override: overrideSync, async } = require('mixinable');
++const path = require('path');
++const Piscina = require('piscina');
+ const { Mixin } = require('hops-mixin');
+ const { internal: bootstrap } = require('hops-bootstrap');
+ const renderToFragments = require('../lib/fragments');
+@@ -13,20 +15,47 @@ const template = require('../lib/template');
+ const { compose, parallel, pipe, override: overrideAsync } = async;
+ const { validate, invariant } = bootstrap;
+ 
++// todo: this is ugly, we could use the fileName argument of `runTask`,
++// but we still need to be able to get stats passed into `workerData`
++let piscina = undefined;
++function getPiscina(filename, stats) {
++  if (piscina) {
++    return piscina;
++  }
++  piscina = new Piscina({
++    filename,
++    idleTimeout: 5000,
++    concurrentTasksPerWorker: 2,
++    workerData: { locals: { stats } },
++  });
++  return piscina;
++}
++
+ class ReactMixin extends Mixin {
    constructor(config, element, options) {
      super(config, options);
      this.element = element;
@@ -81,7 +110,7 @@ index 8740f81..20d56e2 100644
    renderTemplate(fragments, { modules }) {
      const assets = getAssets(this.stats, modules);
      const resourceHints = getResourceHints(this.stats);
-@@ -41,17 +52,26 @@ class ReactMixin extends Mixin {
+@@ -41,17 +70,58 @@ class ReactMixin extends Mixin {
    }
  
    render(req, res, next) {
@@ -91,6 +120,38 @@ index 8740f81..20d56e2 100644
 -      .then((element) =>
 -        this.fetchData({}, element).then(() => this.renderToFragments(element))
 -      )
++    const workerFile = path.join(this.config.serverDir, this.config.serverFile);
++
++    if (req.query.useWorkerPool && process.env.NODE_ENV === 'production' && !Piscina.isWorkerThread) {
++      const fakeRequest = {
++        url: req.url,
++        method: req.method,
++        params: req.params,
++        query: req.query,
++        headers: req.headers,
++        cookies: req.cookies,
++        app: true,
++      };
++
++      return getPiscina(workerFile, res.locals.stats)
++        .runTask(fakeRequest)
++        .then((data) => {
++          if (data.miss) {
++            next(data.error);
++          } else {
++            if (data.headers) {
++              res.set(data.headers);
++            }
++            if (data.url) {
++              res.redirect(data.status || 301, data.url);
++            } else {
++              res.status(data.status || 200);
++              res.send(data.html);
++            }
++          }
++        });
++    }
++
 +    let waiting = this.bootstrap(req, res);
 +
 +    if (this.disableSSR) {
@@ -105,7 +166,7 @@ index 8740f81..20d56e2 100644
 +        });
 +    }
 +
-+    waiting
++    return waiting
        .then((fragments) => {
          // note: res.locals.helmetContext is set by the ReactHelmetMixin
          Object.assign(
