@@ -64,12 +64,12 @@
   "dependencies": {
     "css-loader": "3.6.0",
     "decko": "1.2.0",
-    "hops": "13.2.2",
-    "hops-lambda": "13.2.2",
+    "hops": "13.3.1",
+    "hops-lambda": "13.3.1",
     "hops-mobx": "1.0.0",
-    "hops-pwa": "13.2.2",
-    "hops-styled-components": "13.2.2",
-    "hops-typescript": "13.2.2",
+    "hops-pwa": "13.3.1",
+    "hops-styled-components": "13.3.1",
+    "hops-typescript": "13.3.1",
     "jam-icons": "2.0.0",
     "lodash.merge": "4.6.2",
     "mobx": "6.0.4",
@@ -87,7 +87,7 @@
     "react-router-dom": "5.2.0",
     "style-loader": "1.3.0",
     "styled-components": "5.2.1",
-    "tslib": "2.0.3"
+    "tslib": "2.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
