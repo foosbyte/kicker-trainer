@@ -38,15 +38,19 @@
     ],
     "semanticPrefix": "chore:",
     "lockFileMaintenance": {
-      "enabled": true
+      "enabled": true,
+      "automerge": true
     },
     "automergeType": "pr-comment",
     "automergeComment": "bors merge",
-    "requiredStatusChecks": null,
+    "requiredStatusChecks": [
+      "foosbyte.kicker-trainer"
+    ],
     "packageRules": [
       {
         "updateTypes": [
-          "lockFileMaintenance"
+          "minor",
+          "patch"
         ],
         "automerge": true
       },
