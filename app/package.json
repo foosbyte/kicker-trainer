@@ -79,7 +79,7 @@
     "plotly.js": "1.58.4",
     "prop-types": "15.7.2",
     "react": "17.0.1",
-    "react-dat-gui": "3.0.0",
+    "react-dat-gui": "4.1.1",
     "react-dom": "17.0.1",
     "react-helmet-async": "1.0.7",
     "react-plotly.js": "2.5.1",
