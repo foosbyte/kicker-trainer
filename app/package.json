@@ -90,7 +90,7 @@
     "tslib": "2.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.13.1",
+    "@babel/core": "7.15.8",
     "@types/expect-puppeteer": "4.4.5",
     "@types/express": "4.17.11",
     "@types/jest": "26.0.20",
