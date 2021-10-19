@@ -5816,10 +5816,10 @@ hoopy@^0.1.4:
   resolved "https://registry.yarnpkg.com/hoopy/-/hoopy-0.1.4.tgz#609207d661100033a9a9402ad3dea677381c1b1d"
   integrity sha512-HRcs+2mr52W0K+x8RzcLzuPPmVIKMSv97RGHy0Ea9y/mpcaK+xTrjICA04KAHi4GRzxliNqNJEFYWHghy3rSfQ==
 
-hops-bootstrap@^12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-bootstrap/-/hops-bootstrap-12.5.8.tgz#f5c4c6c0c478a35224912292b516e2e4c7f5dc1b"
-  integrity sha512-qC6w+5r2xay4qd6L3FUaRHcU6vXv3w4ZxEZ0UJ2DINxbSJzk2myR1il/rMQUFB1W1YkApOJryhdcMEEmdRtDRA==
+hops-bootstrap@^12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-bootstrap/-/hops-bootstrap-12.5.10.tgz#05cf223b1c91c3b9748b64aadb621dca7b460a68"
+  integrity sha512-+pBELJ96UzP7jaS9jF40sNOXqfbcFmNDyQT3fSmPsYHFrCbpOxMxNoWeO5dlLYG1fO1/fNgVQVn7h/pz3C0TBw==
   dependencies:
     ajv "^6.10.2"
     check-error "^1.0.2"
@@ -5831,23 +5831,23 @@ hops-bootstrap@^12.5.8:
     find-up "^5.0.0"
     flat "^5.0.0"
     is-plain-obj "^2.0.0"
-    lodash.mergewith "^4.6.2"
+    lodash "^4.6.2"
     mixinable "^5.0.1"
     supports-color "^7.1.0"
 
-hops-config@^12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-config/-/hops-config-12.5.8.tgz#8a4f8e7fbd3031bdfe93afa74d6ea5623080ac9e"
-  integrity sha512-4qNnbumIk4aS/Tfucx7D04DaunvkZhwBPWXipmkznV8u1ojplt0MhfkDtsq5wWOfncAk6RmyvGnTBwLQw6HNFw==
+hops-config@^12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-config/-/hops-config-12.5.10.tgz#2d207145d0520f348f48b3b9906f4c46d8b55920"
+  integrity sha512-L0ron+PYh7R2kLUrsPum+od1AIIh7mTpTRAKu+IP+UL5zvAc/3sOJpG4gcORQ+9G191FCAuvaItnhrBu5p8Qgw==
   dependencies:
     depd "^2.0.0"
-    hops-bootstrap "^12.5.8"
-    hops-webpack "^12.5.8"
+    hops-bootstrap "^12.5.10"
+    hops-webpack "^12.5.10"
 
-hops-express@^12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-12.5.8.tgz#79bdb90ec149befc79d88ce7ec1a957036b88694"
-  integrity sha512-9nKOGagMmKM/Z6b7tCQsQ/bQYRRY3kSUGv+61iDh+60/T8zrOHZRn5cx/7uYjJnmx4XDqv2TqB/2uxi9FpXh2g==
+hops-express@^12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-express/-/hops-express-12.5.10.tgz#2794532224e5e2f10fb9a3e81de1404d5f830fb0"
+  integrity sha512-Zq3y9u8XAYM4xTK1FicCN2YhkzM64UiKctg8+YbMTEQfzIhDDbdKfX0V8uOrFwCnPd/xtWbgyNt46yYqpTHY6g==
   dependencies:
     chalk "^4.0.0"
     compression "^1.7.4"
@@ -5859,9 +5859,9 @@ hops-express@^12.5.8:
     express "^4.17.1"
     finalhandler "^1.1.2"
     helmet "^4.0.0"
-    hops-bootstrap "^12.5.8"
-    hops-mixin "^12.5.8"
-    hops-yargs "^12.5.8"
+    hops-bootstrap "^12.5.10"
+    hops-mixin "^12.5.10"
+    hops-yargs "^12.5.10"
     is-plain-obj "^2.0.0"
     mime "^2.4.4"
     mixinable "^5.0.1"
@@ -5875,31 +5875,31 @@ hops-express@^12.5.8:
     split "^1.0.1"
     supports-color "^7.1.0"
 
-hops-info@^12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-info/-/hops-info-12.5.8.tgz#e3c503270e499cf5067c3c99947897fbe8168d9b"
-  integrity sha512-KMObGrX4v5Va48Ljm5EkbU4BhzBzVxr1bukmuaUl0V2FvWEnU4i349YUUBHF/GxIq0lB/0kmee7DpzCsxAl1Xw==
+hops-info@^12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-info/-/hops-info-12.5.10.tgz#4889eec8f889f294612391e8b900729e075cfe6b"
+  integrity sha512-1dTyhnzj8F33J8NIUuprzO9Q5yT4UgAHwcWxh0Lvldo1Ez7jc7vyVjgbxWtxwh7mLA2kLotzzVEIK1VHN5vF7Q==
   dependencies:
     chalk "^4.0.0"
     duplitect "^3.0.0"
     enhanced-resolve "^4.1.1"
     escape-string-regexp "^4.0.0"
-    hops-bootstrap "^12.5.8"
-    hops-mixin "^12.5.8"
+    hops-bootstrap "^12.5.10"
+    hops-mixin "^12.5.10"
     mixinable "^5.0.1"
 
-hops-lambda@12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-12.5.8.tgz#9f9b39cdd2078696a63fc1be18d0f0c3251fdbc1"
-  integrity sha512-d2JRGJEFHWFlNk+nAFv0lIJUvJtl2geCTH98gbEcb7bht/kJ6Qhd04c34GEhAzwCCx05Fil+29nDtSMGlW8VIA==
+hops-lambda@12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-lambda/-/hops-lambda-12.5.10.tgz#f9ae472ab3541cdff77b077cda7b1c9a89e2f93e"
+  integrity sha512-4z5qjA9f9ZrTflv3P0mt55bJAsY9zsBbfeb5tsP+vPQo1XnxBqsWV2Bcpp3qdCaUdWfqtyaUf4qwCCt2BEkuug==
   dependencies:
     archiver "^5.0.0"
     aws-sdk "^2.546.0"
     globby "^11.0.0"
-    hops-bootstrap "^12.5.8"
-    hops-config "^12.5.8"
-    hops-express "^12.5.8"
-    hops-mixin "^12.5.8"
+    hops-bootstrap "^12.5.10"
+    hops-config "^12.5.10"
+    hops-express "^12.5.10"
+    hops-mixin "^12.5.10"
     pathifist "^1.0.0"
     prompt "^1.0.0"
     resolve-tree "^0.1.14"
@@ -5907,34 +5907,34 @@ hops-lambda@12.5.8:
     serverless-http "^2.3.0"
     strip-indent "^3.0.0"
 
-hops-mixin@^12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-12.5.8.tgz#da2b14c28ee3c7be0c6f486be2e61160dc6f13ad"
-  integrity sha512-JAIZh5Q3F1Ntph2j9nH0bMcQtojpBDpU4Jx3sidgiIcC33kZpSpUJiExG3mR1YoogyGdRlU3TX6vlG9eKIcMoQ==
+hops-mixin@^12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-mixin/-/hops-mixin-12.5.10.tgz#57c4e3f5f1f35392ad4766c2d9da322c0b815990"
+  integrity sha512-vNnjEL+EwixRoAG9ABuQ5gRJs8v3+bd+oQa5r0EHL5qrF7Tw8OE3Y2eFir/chsV1DRMWd0rUmozpil5wwdTEEA==
   dependencies:
-    hops-bootstrap "^12.5.8"
+    hops-bootstrap "^12.5.10"
     mixinable "^5.0.1"
 
-hops-pwa@12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-12.5.8.tgz#be0299913b5f8db67b4226c9c120ddae0a39a2ec"
-  integrity sha512-QA1UahV1Xi6rnA0sO+S+0Pn+W+6jqSfiboRa0STSgWxdOe6KsduEWMIZcVDzlO71HLVIvjgO4yFY4DS+FIOeGA==
+hops-pwa@12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-pwa/-/hops-pwa-12.5.10.tgz#4a065a45a5c1462297d970054ec7a6a63b9bcc52"
+  integrity sha512-E5MWbkjyMoKzbVirn2aYKK595U6fbDp7FFrAGOScKEcCPdmYYn9WuZxhrSTzee/41WIL4H1Mmyncqeilq2Aghw==
   dependencies:
     app-manifest-loader "^2.4.1"
     file-loader "^6.0.0"
-    hops-bootstrap "^12.5.8"
-    hops-mixin "^12.5.8"
-    hops-webpack "^12.5.8"
+    hops-bootstrap "^12.5.10"
+    hops-mixin "^12.5.10"
+    hops-webpack "^12.5.10"
     lodash.get "^4.4.2"
     lodash.set "^4.3.2"
     pathifist "^1.0.0"
     webpack "^4.41.0"
     webpack-sources "^1.4.3"
 
-hops-react@^12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-12.5.8.tgz#ff0a483dc232fd53b1703db5d9875308e1ef80e3"
-  integrity sha512-Wj1a942ku237ZYPX945Pso+8jATk7PRVQvxyNMx9c5F9R7Bn7F2J1DuqHlrtldDbxax9ipm26JVRh1TRj8khCQ==
+hops-react@^12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-react/-/hops-react-12.5.10.tgz#21d2d7a3dffb326ee0282ef6ccde9add8242e949"
+  integrity sha512-FV1hQatMnB0Fs5KsUaCvX6iw4ggXEdqay/Oot45W8x0daHy4FztfNcNOKid9zMQCSprgwOG2OHiuVSo08K6Mdw==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/plugin-proposal-class-properties" "^7.8.3"
@@ -5944,34 +5944,34 @@ hops-react@^12.5.8:
     clone "^2.1.2"
     depd "^2.0.0"
     duplitect "^3.0.0"
-    hops-bootstrap "^12.5.8"
-    hops-mixin "^12.5.8"
+    hops-bootstrap "^12.5.10"
+    hops-mixin "^12.5.10"
     is-plain-obj "^2.0.0"
     mixinable "^5.0.1"
     pathifist "^1.0.0"
     prop-types "^15.7.2"
     serialize-javascript "^4.0.0"
 
-hops-styled-components@12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-styled-components/-/hops-styled-components-12.5.8.tgz#cfd3ed79a84f75118e21246851c6a452acd1a185"
-  integrity sha512-6oCn/2ZY7moK1J8GdrJfiTL7qpJo6FiWdkaOEGyxK6Sr4wTd/o+gctGYLBmSCnS8WJz4Vdt8nXP94r+EB6YyTg==
+hops-styled-components@12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-styled-components/-/hops-styled-components-12.5.10.tgz#fb77e1fa3d3e772c9ad29ea7292e5e4e4992c1a5"
+  integrity sha512-sY2H5iECgZ94m698MxFCOU93CfNKlnrAWYImy7ZpOjROmPf1EjJV6dJ7fNZvHrX3JvmDLSjdkksZLwQ3JNNpDw==
   dependencies:
     babel-plugin-styled-components "^1.10.6"
-    hops-mixin "^12.5.8"
+    hops-mixin "^12.5.10"
 
-hops-typescript@12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-typescript/-/hops-typescript-12.5.8.tgz#49070ffe57fbd73799dd91f1eed973c1c1b88ce1"
-  integrity sha512-J4ZAV2c9PvpGZ2hDv4ytzPzHe73gdYCBAThTUR8rfPls9aDGvny6Q2nwfJLUvgtFXwiwp8KYhhWjXTrT/6eTyw==
+hops-typescript@12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-typescript/-/hops-typescript-12.5.10.tgz#e69bde59dade6a62e68e102bde6be2054601967f"
+  integrity sha512-rTSWtr/bPbsNZpEZp8DOeAws+hg9j+zYveeHFJAapcUxZB/3Vdy2k4Yx58UrNg1kXliGMJouSpDA1VYhveLykg==
   dependencies:
-    hops-mixin "^12.5.8"
+    hops-mixin "^12.5.10"
     ts-loader "^8.0.0"
 
-hops-webpack@^12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-webpack/-/hops-webpack-12.5.8.tgz#673ef2f888e45b87bd72dd8b4fe234c175e2b6e9"
-  integrity sha512-IoNwhc7KoTw2m4ROzx4JUSVz5KO8cS7hV2Mv7N+PQz/PHSRcZKNoYLLFfOVrupMruwYXMd25BEjUdN7w0NVvzw==
+hops-webpack@^12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-webpack/-/hops-webpack-12.5.10.tgz#c15f862cb86c6b012109ad6f0eb759765b8f54b5"
+  integrity sha512-sgahqAplKyPzCuw+N7EuFPqY9PzezJoEFkxTsY+/7m8aS1SqM8k5eZMA6zig1gXkQSNFA/j3rKurTixHV9uSVA==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/preset-env" "^7.9.5"
@@ -5989,9 +5989,9 @@ hops-webpack@^12.5.8:
     event-source-polyfill "^1.0.9"
     file-loader "^6.0.0"
     find-up "^5.0.0"
-    hops-bootstrap "^12.5.8"
-    hops-express "^12.5.8"
-    hops-yargs "^12.5.8"
+    hops-bootstrap "^12.5.10"
+    hops-express "^12.5.10"
+    hops-yargs "^12.5.10"
     is-plain-obj "^2.0.0"
     jsesc "^3.0.0"
     loader-utils "^2.0.0"
@@ -6016,27 +6016,27 @@ hops-webpack@^12.5.8:
     webpack-sources "^1.4.3"
     zen-observable "^0.8.15"
 
-hops-yargs@^12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops-yargs/-/hops-yargs-12.5.8.tgz#f9dc16d92921272984415b73713610b3c708e1d6"
-  integrity sha512-u7vbNURjTrnfT+tnv+j/LU9jZbPkBW4Od/qX9KiYcH0vGLxNUbLV5UWpEuB12ErekizG0BAjxnmF8z3D8hZeDA==
+hops-yargs@^12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops-yargs/-/hops-yargs-12.5.10.tgz#2d5c973af7189d1d298b850191708d633fdecd5a"
+  integrity sha512-yqSNlQzn/CYONocw1fcRsbj0p1WSsdHslXpXfHn1v7/yU4B4+I5fIxySh4gdQD+nAOr2u3ncYZVgXbv4c1+nkA==
   dependencies:
-    hops-bootstrap "^12.5.8"
+    hops-bootstrap "^12.5.10"
     is-plain-obj "^2.0.0"
     mixinable "^5.0.1"
     yargs "^15.0.0"
 
-hops@12.5.8:
-  version "12.5.8"
-  resolved "https://registry.yarnpkg.com/hops/-/hops-12.5.8.tgz#f58f1b4b45ab32d0c7b9865ea4328b6b9817773d"
-  integrity sha512-FJufUmZT9eNPZ/sJz0PFu+Dusm67/5c7GE4Or8ka2D8r2WfpqcNRX3T2u13xW2VZBGJZ7RXZFzKpEex8bSkF3Q==
+hops@12.5.10:
+  version "12.5.10"
+  resolved "https://registry.yarnpkg.com/hops/-/hops-12.5.10.tgz#08e71f505419dafa334dc8ab6dc751f1466acf0e"
+  integrity sha512-ZkZp8xEvuHd0nME/3T3B/R5eLQydCd1pNK5WNSsPbSGHeKfVQpZvMSqltfApclGCQ7Ut8jwUfynuytlIQBY5OQ==
   dependencies:
-    hops-express "^12.5.8"
-    hops-info "^12.5.8"
-    hops-mixin "^12.5.8"
-    hops-react "^12.5.8"
-    hops-webpack "^12.5.8"
-    hops-yargs "^12.5.8"
+    hops-express "^12.5.10"
+    hops-info "^12.5.10"
+    hops-mixin "^12.5.10"
+    hops-react "^12.5.10"
+    hops-webpack "^12.5.10"
+    hops-yargs "^12.5.10"
     webpack-bundle-analyzer "^3.5.2"
 
 hosted-git-info@^2.1.4:
@@ -7394,11 +7394,6 @@ lodash.merge@4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
-lodash.mergewith@^4.6.2:
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
-  integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
-
 lodash.result@^4.4.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.result/-/lodash.result-4.5.2.tgz#cb45b27fb914eaa8d8ee6f0ce7b2870b87cb70aa"
@@ -7423,6 +7418,11 @@ lodash@4.x, lodash@^4.0.1, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lo
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+
+lodash@^4.6.2:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^4.0.0:
   version "4.0.0"
