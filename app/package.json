@@ -105,7 +105,7 @@
     "@types/react-plotly.js": "2.5.0",
     "@types/react-router": "5.1.18",
     "@types/react-router-dom": "5.3.3",
-    "@types/styled-components": "5.1.20",
+    "@types/styled-components": "5.1.21",
     "jest": "27.4.7",
     "jest-puppeteer": "6.0.3",
     "puppeteer": "1.18.0",
