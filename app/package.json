@@ -90,7 +90,7 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@babel/core": "7.16.0",
+    "@babel/core": "7.16.10",
     "@types/expect-puppeteer": "4.4.7",
     "@types/express": "4.17.13",
     "@types/jest": "27.4.0",
@@ -104,7 +104,7 @@
     "@types/react-helmet": "6.1.5",
     "@types/react-plotly.js": "2.5.0",
     "@types/react-router": "5.1.18",
-    "@types/react-router-dom": "5.3.2",
+    "@types/react-router-dom": "5.3.3",
     "@types/styled-components": "5.1.20",
     "jest": "27.4.7",
     "jest-puppeteer": "6.0.3",
