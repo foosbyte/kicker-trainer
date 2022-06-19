@@ -102,7 +102,7 @@
     "@types/react": "17.0.47",
     "@types/react-dom": "16.9.16",
     "@types/react-helmet": "6.1.5",
-    "@types/react-plotly.js": "2.5.0",
+    "@types/react-plotly.js": "2.5.1",
     "@types/react-router": "5.1.18",
     "@types/react-router-dom": "5.3.3",
     "@types/styled-components": "5.1.21",
