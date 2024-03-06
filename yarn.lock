@@ -2004,12 +2004,10 @@
   dependencies:
     "@types/d3" "^3"
 
-"@types/plotly.js@1.54.22":
-  version "1.54.22"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.54.22.tgz#001b9cfafc5e0bdf133bc6ab6e30ff0af39e584d"
-  integrity sha512-/xL9++eA7VnIIZqNQOw6sZ7DtEmfoHj5rAD2CjU2LCOqem/BxTA1KlpdUWEHOiou6za4HKnM+Nvho3jTBPYJ/w==
-  dependencies:
-    "@types/d3" "^3"
+"@types/plotly.js@2.29.2":
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.29.2.tgz#e058cd17963c1658c2bd204b2b9b1b782cdf73d7"
+  integrity sha512-tJqUVa6CmNHrzTANWO/ZLNmdvjZ6zHOAnM9iQUORVnnLvWmcO9DPdQCsrNumNvHD1aqGNxQJ8pla8CK/NUiZgA==
 
 "@types/prettier@^2.1.5":
   version "2.4.1"
